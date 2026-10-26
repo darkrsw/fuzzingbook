@@ -12,6 +12,7 @@ with fuzzingbook adaptations -->
 <html>
 <head>
 <meta charset="utf-8" /><title>Mutation-Based Fuzzing - The Fuzzing Book</title>
+<link rel="me" href="https://mastodon.social/@TheFuzzingBook">
 
 <style type="text/css">
     /*!
@@ -11621,22 +11622,23 @@ td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5
 span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 .highlight .hll { background-color: #ffffcc }
 .highlight { background: #f8f8f8; }
-.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .c { color: #3D7B7B; font-style: italic } /* Comment */
 .highlight .err { border: 1px solid #FF0000 } /* Error */
 .highlight .k { color: #008000; font-weight: bold } /* Keyword */
 .highlight .o { color: #666666 } /* Operator */
-.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
-.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
-.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
-.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
-.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #9C6500 } /* Comment.Preproc */
+.highlight .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
 .highlight .gd { color: #A00000 } /* Generic.Deleted */
 .highlight .ge { font-style: italic } /* Generic.Emph */
-.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.highlight .gr { color: #E40000 } /* Generic.Error */
 .highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.highlight .gi { color: #00A000 } /* Generic.Inserted */
-.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gi { color: #008400 } /* Generic.Inserted */
+.highlight .go { color: #717171 } /* Generic.Output */
 .highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
 .highlight .gs { font-weight: bold } /* Generic.Strong */
 .highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
@@ -11649,15 +11651,15 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .kt { color: #B00040 } /* Keyword.Type */
 .highlight .m { color: #666666 } /* Literal.Number */
 .highlight .s { color: #BA2121 } /* Literal.String */
-.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .na { color: #687822 } /* Name.Attribute */
 .highlight .nb { color: #008000 } /* Name.Builtin */
 .highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
 .highlight .no { color: #880000 } /* Name.Constant */
 .highlight .nd { color: #AA22FF } /* Name.Decorator */
-.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
-.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .ni { color: #717171; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
 .highlight .nf { color: #0000FF } /* Name.Function */
-.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nl { color: #767600 } /* Name.Label */
 .highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
 .highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
 .highlight .nv { color: #19177C } /* Name.Variable */
@@ -11674,11 +11676,11 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
-.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
 .highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
-.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
 .highlight .sx { color: #008000 } /* Literal.String.Other */
-.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .sr { color: #A45A77 } /* Literal.String.Regex */
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
@@ -11795,10 +11797,13 @@ MathJax.Hub.Config({
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
+<meta name="theme-color" content="#bb0000" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#cc0000" media="(prefers-color-scheme: dark)">
+
 <meta property="og:url" content="https://www.fuzzingbook.org/html/MutationFuzzer.html" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Mutation-Based Fuzzing - The Fuzzing Book" />
-<meta property="og:description" content="Most randomly generated inputs are syntactically invalid and thus are quickly rejected by the processing program.  To exercise functionality beyond input processing, we must increase chances to obtain valid inputs.  One such way is so-called mutational fuzzing – that is, introducing small changes to existing inputs that may still keep the input valid, yet exercise new behavior.  We show how to create such mutations, and how to guide them towards yet uncovered code, applying central concepts from the popular AFL fuzzer.Prerequisites You should know how basic fuzzing works; for instance, from the &quot;Fuzzing&quot; chapter." />
+<meta property="og:description" content="Most randomly generated inputs are syntactically invalid and thus are quickly rejected by the processing program.  To exercise functionality beyond input processing, we must increase chances to obtain valid inputs.  One such way is so-called mutational fuzzing – that is, introducing small changes to existing inputs that may still keep the input valid, yet exercise new behavior.  We show how to create such mutations, and how to guide them towards yet uncovered code, applying central concepts from the popular AFL fuzzer.Prerequisites You should know how basic fuzzing works; for instance, from the &quot;Fuzzing&quot; chapter. You should understand the basics of obtaining coverage." />
 <meta property="og:image" content="https://www.fuzzingbook.org/html/PICS/wordcloud.png" />
 
 <meta name="twitter:dnt" content="on">
@@ -11886,7 +11891,7 @@ MathJax.Hub.Config({
 <li><a href="GreyboxFuzzer.html">Greybox Fuzzing</a></li>
 <li><a href="SearchBasedFuzzer.html">Search-Based Fuzzing</a></li>
 <li><a href="MutationAnalysis.html">Mutation Analysis</a></li>
-</ul><li class="has-sub"><a href="03_Syntactical_Fuzzing.html" class="chapters"><span class="part_number">III</span> Syntactical Fuzzing <i class="fa fa-fw fa-caret-right"></i></a>
+</ul><li class="has-sub"><a href="03_Syntactical_Fuzzing.html" class="chapters"><span class="part_number">III</span> Syntactic Fuzzing <i class="fa fa-fw fa-caret-right"></i></a>
 <ul>
 <li><a href="Grammars.html">Fuzzing with Grammars</a></li>
 <li><a href="GrammarFuzzer.html">Efficient Grammar Fuzzing</a></li>
@@ -11896,8 +11901,9 @@ MathJax.Hub.Config({
 <li><a href="GeneratorGrammarFuzzer.html">Fuzzing with Generators</a></li>
 <li><a href="GreyboxGrammarFuzzer.html">Greybox Fuzzing with Grammars</a></li>
 <li><a href="Reducer.html">Reducing Failure-Inducing Inputs</a></li>
-</ul><li class="has-sub"><a href="04_Semantical_Fuzzing.html" class="chapters"><span class="part_number">IV</span> Semantical Fuzzing <i class="fa fa-fw fa-caret-right"></i></a>
+</ul><li class="has-sub"><a href="04_Semantical_Fuzzing.html" class="chapters"><span class="part_number">IV</span> Semantic Fuzzing <i class="fa fa-fw fa-caret-right"></i></a>
 <ul>
+<li><a href="FuzzingWithConstraints.html">Fuzzing with Constraints</a></li>
 <li><a href="GrammarMiner.html">Mining Input Grammars</a></li>
 <li><a href="InformationFlow.html">Tracking Information Flow</a></li>
 <li><a href="ConcolicFuzzer.html">Concolic Fuzzing</a></li>
@@ -11908,6 +11914,7 @@ MathJax.Hub.Config({
 <li><a href="ConfigurationFuzzer.html">Testing Configurations</a></li>
 <li><a href="APIFuzzer.html">Fuzzing APIs</a></li>
 <li><a href="Carver.html">Carving Unit Tests</a></li>
+<li><a href="PythonFuzzer.html">Testing Compilers <strong class="new_chapter">&bull;</strong></a></li>
 <li><a href="WebFuzzer.html">Testing Web Applications</a></li>
 <li><a href="GUIFuzzer.html">Testing Graphical User Interfaces</a></li>
 </ul><li class="has-sub"><a href="06_Managing_Fuzzing.html" class="chapters"><span class="part_number">VI</span> Managing Fuzzing <i class="fa fa-fw fa-caret-right"></i></a>
@@ -11916,9 +11923,11 @@ MathJax.Hub.Config({
 <li><a href="WhenToStopFuzzing.html">When To Stop Fuzzing</a></li>
 </ul><li class="has-sub"><a href="99_Appendices.html" class="chapters">Appendices <i class="fa fa-fw fa-caret-right"></i></a>
 <ul>
+<li><a href="AcademicPrototyping.html">Academic Prototyping</a></li>
 <li><a href="PrototypingWithPython.html">Prototyping with Python</a></li>
 <li><a href="ExpectError.html">Error Handling</a></li>
 <li><a href="Timer.html">Timer</a></li>
+<li><a href="Timeout.html">Timeout</a></li>
 <li><a href="ClassDiagram.html">Class Diagrams</a></li>
 <li><a href="RailroadDiagrams.html">Railroad Diagrams</a></li>
 <li><a href="ControlFlow.html">Control Flow Graph</a></li>
@@ -11947,7 +11956,7 @@ MathJax.Hub.Config({
      
      <li class="has-sub"><a href="#"><span title="Resources"><i class="fa fa-fw fa-cube"></i> </span><span class="menu_3">Resources</span></a>
      <ul>
-     <li><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/master?filepath=docs/notebooks/MutationFuzzer.ipynb" target="_blank" class="edit_as_notebook"><i class="fa fa-fw fa-edit"></i> Edit as Notebook</a></li>
+     <li><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/HEAD?labpath=docs%2Fnotebooks/MutationFuzzer.ipynb" target="_blank" class="edit_as_notebook"><i class="fa fa-fw fa-edit"></i> Edit as Notebook</a></li>
      <li><a href="https://www.fuzzingbook.org/slides/MutationFuzzer.slides.html" target="_blank"><i class="fa fa-fw fa-video-camera"></i> View Slides</a></li>
      <li><a href="https://www.fuzzingbook.org/code/MutationFuzzer.py"><i class="fa fa-fw fa-download"></i> Download Code (.py)</a></li>
      <li><a href="https://www.fuzzingbook.org/notebooks/MutationFuzzer.ipynb"><i class="fa fa-fw fa-download"></i> Download Notebook (.ipynb)</a></li>
@@ -11960,12 +11969,14 @@ MathJax.Hub.Config({
      
      <li class="has-sub"><a href="#"><span title="Share"><i class="fa fa-fw fa-comments"></i> </span> <span class="menu_4">Share</span></a>
         <ul>
+<!--
             <li><a href="https://twitter.com/intent/tweet?text=I%20just%20read%20%22Mutation-Based%20Fuzzing%22%20(part%20of%20@FuzzingBook)%20at%20https%3a%2f%2fwww.fuzzingbook.org%2fhtml%2fMutationFuzzer.html" target="popup" 
 onclick="window.open('https://twitter.com/intent/tweet?text=I%20just%20read%20%22Mutation-Based%20Fuzzing%22%20(part%20of%20@FuzzingBook)%20at%20https%3a%2f%2fwww.fuzzingbook.org%2fhtml%2fMutationFuzzer.html','popup','width=600,height=600'); return false;"
-><i class="fa fa-fw fa-twitter"></i> Share on Twitter</a>
+><i class="fa fa-fw fa-twitter"></i> Share on X</a>
             <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.fuzzingbook.org%2fhtml%2fMutationFuzzer.html" target="popup" 
 onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.fuzzingbook.org%2fhtml%2fMutationFuzzer.html','popup','width=600,height=600'); return false;"
 ><i class="fa fa-fw fa-facebook"></i> Share on Facebook</a>
+-->
             <li><a href="mailto:?subject=Mutation-Based%20Fuzzing&body=I%20just%20read%20%22Mutation-Based%20Fuzzing%22%20(part%20of%20@FuzzingBook)%20at%20https%3a%2f%2fwww.fuzzingbook.org%2fhtml%2fMutationFuzzer.html"><i class="fa fa-fw fa-envelope"></i> Share by Email</a>
             <li><a href="#citation" id="cite" onclick="revealCitation()"><i class="fa fa-fw fa-mortar-board"></i> Cite</a>
         </ul>
@@ -11995,12 +12006,45 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 </div>
 </div>
 
+<div class="input_code">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn"><a href="https://github.com/uds-se/fuzzingbook//tree/master/notebooks/shared/bookutils" class="import" target="_blank">bookutils</a></span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;5ROhc_42jQU&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div></div>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+        <iframe
+            width="640"
+            height="360"
+            src="https://www.youtube-nocookie.com/embed/5ROhc_42jQU"
+            frameborder="0"
+            allowfullscreen
+
+        ></iframe>
+
+</div>
+
+</div>
+
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html"><p><strong>Prerequisites</strong></p>
 <ul>
 <li>You should know how basic fuzzing works; for instance, from the <a href="Fuzzer.html">"Fuzzing"</a> chapter.</li>
+<li>You should understand the basics of <a href="Coverage.html">obtaining coverage</a>.</li>
 </ul>
 </div>
 </div>
@@ -12021,26 +12065,149 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <span class="o">&gt;&gt;&gt;</span> <span class="n">mutation_fuzzer</span> <span class="o">=</span> <span class="n">MutationFuzzer</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="p">[</span><span class="n">seed_input</span><span class="p">])</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="n">mutation_fuzzer</span><span class="o">.</span><span class="n">fuzz</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
 <span class="p">[</span><span class="s1">&#39;http://www.google.com/search?q=fuzzing&#39;</span><span class="p">,</span>
- <span class="s1">&#39;http://www.coogle.com/searc?q=nuzzi~g&#39;</span><span class="p">,</span>
- <span class="s1">&#39;lttp://7ww.woogle$.co}/sear$ch?q=fuzzing&#39;</span><span class="p">,</span>
- <span class="s1">&#39;http://ww&lt;w.goAog|ve.com/seachP?qwuzzing&#39;</span><span class="p">,</span>
- <span class="s1">&#39;httpz/(/gww.goBogle.com/}searchq=f(uzzino&#39;</span><span class="p">,</span>
- <span class="s1">&#39;http://www.google.co/se?arch?=fuzzin&#39;</span><span class="p">,</span>
- <span class="s1">&#39;http:/-wwtw.google.com/search?q=fuzzing&#39;</span><span class="p">,</span>
- <span class="s1">&#39;http://www.gyogle.com/searchKq=fNuing&#39;</span><span class="p">,</span>
- <span class="s1">&#39;lttp://www.g=oNogl.om/serch?q=fuz!Kzinf&#39;</span><span class="p">,</span>
- <span class="s1">&#39;RttpX://w)ww.goo(gle.comq/sarc(q=fuzzng&#39;</span><span class="p">]</span>
+ <span class="s1">&#39;]hTtp://ww,google</span><span class="se">\x1e</span><span class="s1">com/searc?q=fuzzig&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;hppY://www.google.cm/seacH?q=fduzzing&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;http:&amp;//www.goole.com/sear#h?q=fuzz(ingw&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;http://vww.googlje.om/{earch?q5fuzzing&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;http://www.google.com/seach?q=uzzing&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;hv,tp*//www.ggogle.com/seagrch/q=fuzzing&#39;</span><span class="p">,</span>
+ <span class="s2">&quot;h(tpy:/wGw.goo&#39;l%.com/searc?q=fuz~ing&quot;</span><span class="p">,</span>
+ <span class="s1">&#39;hp://www.gooelecom/)search?q=fuz?zing?&#39;</span><span class="p">,</span>
+ <span class="s2">&quot;httpv//www.goo6gl.#om&#39;search?q=Puzzin&quot;</span><span class="p">]</span>
 </pre></div>
 <p>The <code>MutationCoverageFuzzer</code> maintains a <em>population</em> of inputs, which are then evolved in order to maximize coverage.</p>
 <div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">mutation_fuzzer</span> <span class="o">=</span> <span class="n">MutationCoverageFuzzer</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="p">[</span><span class="n">seed_input</span><span class="p">])</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">mutation_fuzzer</span><span class="o">.</span><span class="n">runs</span><span class="p">(</span><span class="n">http_runner</span><span class="p">,</span> <span class="n">trials</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">mutation_fuzzer</span><span class="o">.</span><span class="n">population</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
 <span class="p">[</span><span class="s1">&#39;http://www.google.com/search?q=fuzzing&#39;</span><span class="p">,</span>
- <span class="s1">&#39;http://wwlw.google.c&quot;om/secrch?yq=fuzzin&#39;</span><span class="p">,</span>
- <span class="s1">&#39;http://wwlw.woogle.c&quot;om/secrch)7YQ=fuzzin&#39;</span><span class="p">,</span>
- <span class="s1">&#39;http://wwlw.wooglec&quot;om-secch7YQ=fuzzinl&#39;</span><span class="p">,</span>
- <span class="s1">&#39;http://wwVhwweoogle.c&quot;oms72c)7YQ=fuzzin&#39;</span><span class="p">]</span>
+ <span class="s1">&#39;http://www.google.com&lt;/searc?q=fzzinw&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;http://twww.google.com/searc`pnu&lt;zzing&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;http://Btwnww.gIoog|e.cnsearc`pn&lt;zzing&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;http://www</span><span class="se">\x0e</span><span class="s1">google.com&lt;/sea#r#?q=_fdz0zinw&#39;</span><span class="p">]</span>
 </pre></div>
+<p><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 12.2.1 (20241206.2353)
+ -->
+<!-- Pages: 1 -->
+<svg width="318pt" height="325pt"
+ viewBox="0.00 0.00 318.38 325.25" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 321.25)">
+<g id="a_graph0"><a xlink:title="MutationCoverageFuzzer class hierarchy">
+<polygon fill="white" stroke="none" points="-4,4 -4,-321.25 314.38,-321.25 314.38,4 -4,4"/>
+</a>
+</g>
+<!-- MutationCoverageFuzzer -->
+<g id="node1" class="node">
+<title>MutationCoverageFuzzer</title>
+<g id="a_node1"><a xlink:href="#" xlink:title="class MutationCoverageFuzzer:&#10;Fuzz with mutated inputs based on coverage">
+<polygon fill="none" stroke="black" points="0,-0.5 0,-60 173.5,-60 173.5,-0.5 0,-0.5"/>
+<text text-anchor="start" x="8" y="-43.7" font-family="Patua One, Helvetica, sans-serif" font-weight="bold" font-size="14.00" fill="#b03a2e">MutationCoverageFuzzer</text>
+<polyline fill="none" stroke="black" points="0,-34 173.5,-34"/>
+<g id="a_node1_0"><a xlink:href="#" xlink:title="MutationCoverageFuzzer">
+<g id="a_node1_1"><a xlink:href="#" xlink:title="run(self, runner: FunctionCoverageRunner) &#45;&gt; Any:&#10;Run function(inp) while tracking coverage.&#10;If we reach new coverage,&#10;add inp to population and its coverage to population_coverage">
+<text text-anchor="start" x="65.75" y="-21.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-style="italic" font-size="10.00">run()</text>
+</a>
+</g>
+<g id="a_node1_2"><a xlink:href="#" xlink:title="reset(self) &#45;&gt; None:&#10;Set population to initial seed.&#10;To be overloaded in subclasses.">
+<text text-anchor="start" x="65.75" y="-8.75" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-style="italic" font-size="10.00">reset()</text>
+</a>
+</g>
+</a>
+</g>
+</a>
+</g>
+</g>
+<!-- MutationFuzzer -->
+<g id="node2" class="node">
+<title>MutationFuzzer</title>
+<g id="a_node2"><a xlink:href="#" xlink:title="class MutationFuzzer:&#10;Base class for mutational fuzzing">
+<polygon fill="none" stroke="black" points="24.75,-97 24.75,-194.75 148.75,-194.75 148.75,-97 24.75,-97"/>
+<text text-anchor="start" x="36.88" y="-178.45" font-family="Patua One, Helvetica, sans-serif" font-weight="bold" font-size="14.00" fill="#b03a2e">MutationFuzzer</text>
+<polyline fill="none" stroke="black" points="24.75,-168.75 148.75,-168.75"/>
+<g id="a_node2_3"><a xlink:href="#" xlink:title="MutationFuzzer">
+<g id="a_node2_4"><a xlink:href="#" xlink:title="__init__(self, seed: List[str], min_mutations: int = 2, max_mutations: int = 10) &#45;&gt; None:&#10;Constructor.&#10;`seed` &#45; a list of (input) strings to mutate.&#10;`min_mutations` &#45; the minimum number of mutations to apply.&#10;`max_mutations` &#45; the maximum number of mutations to apply.">
+<text text-anchor="start" x="32.75" y="-156.25" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-style="italic" font-size="10.00">__init__()</text>
+</a>
+</g>
+<g id="a_node2_5"><a xlink:href="#" xlink:title="fuzz(self) &#45;&gt; str:&#10;Return fuzz input">
+<text text-anchor="start" x="32.75" y="-143.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-style="italic" font-size="10.00">fuzz()</text>
+</a>
+</g>
+<g id="a_node2_6"><a xlink:href="#" xlink:title="create_candidate(self) &#45;&gt; str:&#10;Create a new candidate by mutating a population member">
+<text text-anchor="start" x="32.75" y="-129.75" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-size="10.00">create_candidate()</text>
+</a>
+</g>
+<g id="a_node2_7"><a xlink:href="#" xlink:title="mutate(self, inp: str) &#45;&gt; str">
+<text text-anchor="start" x="32.75" y="-117" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-size="10.00">mutate()</text>
+</a>
+</g>
+<g id="a_node2_8"><a xlink:href="#" xlink:title="reset(self) &#45;&gt; None:&#10;Set population to initial seed.&#10;To be overloaded in subclasses.">
+<text text-anchor="start" x="32.75" y="-105.25" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-style="italic" font-size="10.00">reset()</text>
+</a>
+</g>
+</a>
+</g>
+</a>
+</g>
+</g>
+<!-- MutationCoverageFuzzer&#45;&gt;MutationFuzzer -->
+<g id="edge1" class="edge">
+<title>MutationCoverageFuzzer&#45;&gt;MutationFuzzer</title>
+<path fill="none" stroke="black" d="M86.75,-60.22C86.75,-67.9 86.75,-76.48 86.75,-85.15"/>
+<polygon fill="none" stroke="black" points="83.25,-85.02 86.75,-95.02 90.25,-85.02 83.25,-85.02"/>
+</g>
+<!-- Fuzzer -->
+<g id="node3" class="node">
+<title>Fuzzer</title>
+<g id="a_node3"><a xlink:href="Fuzzer.html" xlink:title="class Fuzzer:&#10;Base class for fuzzers.">
+<polygon fill="none" stroke="black" points="48.75,-231.75 48.75,-316.75 124.75,-316.75 124.75,-231.75 48.75,-231.75"/>
+<text text-anchor="start" x="66.12" y="-300.45" font-family="Patua One, Helvetica, sans-serif" font-weight="bold" font-size="14.00" fill="#b03a2e">Fuzzer</text>
+<polyline fill="none" stroke="black" points="48.75,-290.75 124.75,-290.75"/>
+<g id="a_node3_9"><a xlink:href="#" xlink:title="Fuzzer">
+<g id="a_node3_10"><a xlink:href="Fuzzer.html" xlink:title="__init__(self) &#45;&gt; None:&#10;Constructor">
+<text text-anchor="start" x="56.75" y="-278.25" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-style="italic" font-size="10.00">__init__()</text>
+</a>
+</g>
+<g id="a_node3_11"><a xlink:href="Fuzzer.html" xlink:title="fuzz(self) &#45;&gt; str:&#10;Return fuzz input">
+<text text-anchor="start" x="56.75" y="-265.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-style="italic" font-size="10.00">fuzz()</text>
+</a>
+</g>
+<g id="a_node3_12"><a xlink:href="Fuzzer.html" xlink:title="run(self, runner: Fuzzer.Runner = &lt;Fuzzer.Runner object&gt;) &#45;&gt; Tuple[subprocess.CompletedProcess, str]:&#10;Run `runner` with fuzz input">
+<text text-anchor="start" x="56.75" y="-252.75" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-style="italic" font-size="10.00">run()</text>
+</a>
+</g>
+<g id="a_node3_13"><a xlink:href="Fuzzer.html" xlink:title="runs(self, runner: Fuzzer.Runner = &lt;Fuzzer.PrintRunner object&gt;, trials: int = 10) &#45;&gt; List[Tuple[subprocess.CompletedProcess, str]]:&#10;Run `runner` with fuzz input, `trials` times">
+<text text-anchor="start" x="56.75" y="-240" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">runs()</text>
+</a>
+</g>
+</a>
+</g>
+</a>
+</g>
+</g>
+<!-- MutationFuzzer&#45;&gt;Fuzzer -->
+<g id="edge2" class="edge">
+<title>MutationFuzzer&#45;&gt;Fuzzer</title>
+<path fill="none" stroke="black" d="M86.75,-195.01C86.75,-203.17 86.75,-211.68 86.75,-219.95"/>
+<polygon fill="none" stroke="black" points="83.25,-219.93 86.75,-229.93 90.25,-219.93 83.25,-219.93"/>
+</g>
+<!-- Legend -->
+<g id="node4" class="node">
+<title>Legend</title>
+<text text-anchor="start" x="191.12" y="-46.25" font-family="Patua One, Helvetica, sans-serif" font-weight="bold" font-size="10.00" fill="#b03a2e">Legend</text>
+<text text-anchor="start" x="191.12" y="-36.25" font-family="Patua One, Helvetica, sans-serif" font-size="10.00">• </text>
+<text text-anchor="start" x="197.12" y="-36.25" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="8.00">public_method()</text>
+<text text-anchor="start" x="191.12" y="-26.25" font-family="Patua One, Helvetica, sans-serif" font-size="10.00">• </text>
+<text text-anchor="start" x="197.12" y="-26.25" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-size="8.00">private_method()</text>
+<text text-anchor="start" x="191.12" y="-16.25" font-family="Patua One, Helvetica, sans-serif" font-size="10.00">• </text>
+<text text-anchor="start" x="197.12" y="-16.25" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-style="italic" font-size="8.00">overloaded_method()</text>
+<text text-anchor="start" x="191.12" y="-7.2" font-family="Helvetica,sans-Serif" font-size="9.00">Hover over names to see doc</text>
+</g>
+</g>
+</svg>
+</p>
 </div>
 </div>
 </div>
@@ -12051,7 +12218,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><h2 id="Fuzzing-with-Mutations">Fuzzing with Mutations<a class="anchor-link" href="#Fuzzing-with-Mutations">&#182;</a></h2><p>On November 2013, the first version of <a href="http://lcamtuf.coredump.cx/afl/">American Fuzzy Lop</a> (AFL) was released. Since then, AFL has become one of the most successful fuzzing tools and comes in many flavours, e.g., <a href="https://github.com/mboehme/aflfast">AFLFast</a>, <a href="https://github.com/aflgo/aflgo">AFLGo</a>, and <a href="https://github.com/aflsmart/aflsmart">AFLSmart</a> (which are discussed in this book). AFL has made fuzzing a popular choice for automated vulnerability detection. It was the first to demonstrate that vulnerabilities can be detected automatically at a large scale in many security-critical, real-world applications.</p>
+<div class="text_cell_render border-box-sizing rendered_html"><h2 id="Fuzzing-with-Mutations">Fuzzing with Mutations<a class="anchor-link" href="#Fuzzing-with-Mutations">&#182;</a></h2><p>On November 2013, the first version of <a href="http://lcamtuf.coredump.cx/afl/">American Fuzzy Lop</a> (AFL) was released. Since then, AFL has become one of the most successful fuzzing tools and comes in many flavors, e.g., <a href="https://github.com/mboehme/aflfast">AFLFast</a>, <a href="https://github.com/aflgo/aflgo">AFLGo</a>, and <a href="https://github.com/aflsmart/aflsmart">AFLSmart</a> (which are discussed in this book). AFL has made fuzzing a popular choice for automated vulnerability detection. It was the first to demonstrate that vulnerabilities can be detected automatically at a large scale in many security-critical, real-world applications.</p>
 <p><img src="PICS/afl_screen.png" alt="American Fuzzy Lop Command Line User Interface"></p>
 <center><b>Figure 1.</b> American Fuzzy Lop Command Line User Interface</center><p>In this chapter, we are going to introduce the basics of mutational fuzz testing; the next chapter will then further show how to direct fuzzing towards specific code goals.</p>
 </div>
@@ -12104,7 +12271,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn"><a href="https://github.com/uds-se/fuzzingbook//tree/master/notebooks/shared/bookutils" class="import" target="_blank">bookutils</a></span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn"><a href="https://github.com/uds-se/fuzzingbook//tree/master/notebooks/shared/bookutils" class="import" target="_blank">bookutils.setup</a></span>
 </pre></div>
 
 </div>
@@ -12118,12 +12285,35 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn"><a href="https://docs.python.org/3/library/urlparse.html" class="import" target="_blank">urlparse</a></span> <span class="kn">import</span> <span class="n">urlparse</span>      <span class="c1"># Python 2</span>
-<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn"><a href="https://docs.python.org/3/library/urllib.parse.html" class="import" target="_blank">urllib.parse</a></span> <span class="kn">import</span> <span class="n">urlparse</span>  <span class="c1"># Python 3</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn"><a href="https://docs.python.org/3/library/typing.html" class="import" target="_blank">typing</a></span> <span class="kn">import</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Set</span><span class="p">,</span> <span class="n">Any</span>
+</pre></div>
 
-<span class="n">urlparse</span><span class="p">(</span><span class="s2">&quot;http://www.google.com/search?q=fuzzing&quot;</span><span class="p">)</span>
+</div>
+</div></div>
+</div>
+</div>
+
+<div class="input_code">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn"><a href="https://docs.python.org/3/library/urllib.parse.html" class="import" target="_blank">urllib.parse</a></span> <span class="kn">import</span> <span class="n">urlparse</span>
+</pre></div>
+
+</div>
+</div></div>
+</div>
+</div>
+
+<div class="input_code">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">urlparse</span><span class="p">(</span><span class="s2">&quot;http://www.google.com/search?q=fuzzing&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12164,11 +12354,12 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">http_program</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">http_program</span><span class="p">(</span><span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
     <span class="n">supported_schemes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;http&quot;</span><span class="p">,</span> <span class="s2">&quot;https&quot;</span><span class="p">]</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">urlparse</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">scheme</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">supported_schemes</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Scheme must be one of &quot;</span> <span class="o">+</span> <span class="nb">repr</span><span class="p">(</span><span class="n">supported_schemes</span><span class="p">))</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Scheme must be one of &quot;</span> <span class="o">+</span> 
+                         <span class="nb">repr</span><span class="p">(</span><span class="n">supported_schemes</span><span class="p">))</span>
     <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">netloc</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Host must be non-empty&quot;</span><span class="p">)</span>
 
@@ -12436,7 +12627,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="output_area">
 
 <div class="output_text output_subarea output_execute_result">
-<pre>6.061577500000026e-05
+<pre>1.798770803725347e-05
 </pre>
 </div>
 
@@ -12469,7 +12660,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="output_area">
 
 <div class="output_text output_subarea output_execute_result">
-<pre>4507998804.848348
+<pre>1337746920.3998353
 </pre>
 </div>
 
@@ -12504,7 +12695,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="output_area">
 
 <div class="output_text output_subarea output_execute_result">
-<pre>142.849861993572
+<pre>42.39064188657678
 </pre>
 </div>
 
@@ -12558,8 +12749,8 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">delete_random_character</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Returns s with a random character deleted&quot;&quot;&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">delete_random_character</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns s with a random character deleted&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">s</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">s</span>
 
@@ -12614,8 +12805,8 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">insert_random_character</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Returns s with a random character inserted&quot;&quot;&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">insert_random_character</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns s with a random character inserted&quot;&quot;&quot;</span>
     <span class="n">pos</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
     <span class="n">random_character</span> <span class="o">=</span> <span class="nb">chr</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">127</span><span class="p">))</span>
     <span class="c1"># print(&quot;Inserting&quot;, repr(random_character), &quot;at&quot;, pos)</span>
@@ -12667,7 +12858,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">flip_random_character</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Returns s with a random bit flipped in a random position&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns s with a random bit flipped in a random position&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">s</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">s</span>
 
@@ -12732,8 +12923,8 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return s with a random mutation applied&quot;&quot;&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return s with a random mutation applied&quot;&quot;&quot;</span>
     <span class="n">mutators</span> <span class="o">=</span> <span class="p">[</span>
         <span class="n">delete_random_character</span><span class="p">,</span>
         <span class="n">insert_random_character</span><span class="p">,</span>
@@ -12814,7 +13005,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">is_valid_url</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">is_valid_url</span><span class="p">(</span><span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">result</span> <span class="o">=</span> <span class="n">http_program</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
         <span class="k">return</span> <span class="kc">True</span>
@@ -12989,7 +13180,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Success after 3656 trials in 0.01115684799999972 seconds
+<pre>Success after 3656 trials in 0.004294582991860807 seconds
 </pre>
 </div>
 
@@ -13103,13 +13294,24 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">MutationFuzzer</span><span class="p">(</span><span class="n">Fuzzer</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">seed</span><span class="p">,</span> <span class="n">min_mutations</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">max_mutations</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Base class for mutational fuzzing&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">seed</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+                 <span class="n">min_mutations</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+                 <span class="n">max_mutations</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Constructor.</span>
+<span class="sd">        `seed` - a list of (input) strings to mutate.</span>
+<span class="sd">        `min_mutations` - the minimum number of mutations to apply.</span>
+<span class="sd">        `max_mutations` - the maximum number of mutations to apply.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">seed</span> <span class="o">=</span> <span class="n">seed</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">min_mutations</span> <span class="o">=</span> <span class="n">min_mutations</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">max_mutations</span> <span class="o">=</span> <span class="n">max_mutations</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set population to initial seed.</span>
+<span class="sd">        To be overloaded in subclasses.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">population</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">seed</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">seed_index</span> <span class="o">=</span> <span class="mi">0</span>
 </pre></div>
@@ -13149,7 +13351,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">MutationFuzzer</span><span class="p">(</span><span class="n">MutationFuzzer</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">mutate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inp</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">mutate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inp</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">mutate</span><span class="p">(</span><span class="n">inp</span><span class="p">)</span>
 </pre></div>
 
@@ -13174,7 +13376,8 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">MutationFuzzer</span><span class="p">(</span><span class="n">MutationFuzzer</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">create_candidate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">create_candidate</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a new candidate by mutating a population member&quot;&quot;&quot;</span>
         <span class="n">candidate</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">population</span><span class="p">)</span>
         <span class="n">trials</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">min_mutations</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_mutations</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">trials</span><span class="p">):</span>
@@ -13203,7 +13406,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">MutationFuzzer</span><span class="p">(</span><span class="n">MutationFuzzer</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">fuzz</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">fuzz</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">seed_index</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">seed</span><span class="p">):</span>
             <span class="c1"># Still seeding</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">inp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">seed</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">seed_index</span><span class="p">]</span>
@@ -13216,6 +13419,15 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 
 </div>
 </div></div>
+</div>
+</div>
+
+<div class="input_markdown">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html"><p>Here is the <code>fuzz()</code> method in action. With every new invocation of <code>fuzz()</code>, we get another variant with multiple mutations applied.</p>
+</div>
+</div>
 </div>
 </div>
 
@@ -13293,7 +13505,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><p>With every new invocation of <code>fuzz()</code>, we get another variant with multiple mutations applied.  The higher variety in inputs, though, increases the risk of having an invalid input.  The key to success lies in the idea of <em>guiding</em> these mutations – that is, <em>keeping those that are especially valuable.</em></p>
+<div class="text_cell_render border-box-sizing rendered_html"><p>The higher variety in inputs, though, increases the risk of having an invalid input.  The key to success lies in the idea of <em>guiding</em> these mutations – that is, <em>keeping those that are especially valuable.</em></p>
 </div>
 </div>
 </div>
@@ -13348,14 +13560,14 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">FunctionRunner</span><span class="p">(</span><span class="n">Runner</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">function</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Initialize.  `function` is a function to be executed&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">function</span><span class="p">:</span> <span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize.  `function` is a function to be executed&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">function</span> <span class="o">=</span> <span class="n">function</span>
 
-    <span class="k">def</span> <span class="nf">run_function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inp</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">run_function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inp</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">function</span><span class="p">(</span><span class="n">inp</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inp</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inp</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">run_function</span><span class="p">(</span><span class="n">inp</span><span class="p">)</span>
             <span class="n">outcome</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">PASS</span>
@@ -13410,7 +13622,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn"><a href="Coverage.html" class="import" target="_blank">Coverage</a></span> <span class="kn">import</span> <span class="n">Coverage</span><span class="p">,</span> <span class="n">population_coverage</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn"><a href="Coverage.html" class="import" target="_blank">Coverage</a></span> <span class="kn">import</span> <span class="n">Coverage</span><span class="p">,</span> <span class="n">population_coverage</span><span class="p">,</span> <span class="n">Location</span>
 </pre></div>
 
 </div>
@@ -13425,7 +13637,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">FunctionCoverageRunner</span><span class="p">(</span><span class="n">FunctionRunner</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">run_function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inp</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">run_function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inp</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
         <span class="k">with</span> <span class="n">Coverage</span><span class="p">()</span> <span class="k">as</span> <span class="n">cov</span><span class="p">:</span>
             <span class="k">try</span><span class="p">:</span>
                 <span class="n">result</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">run_function</span><span class="p">(</span><span class="n">inp</span><span class="p">)</span>
@@ -13436,7 +13648,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
         <span class="bp">self</span><span class="o">.</span><span class="n">_coverage</span> <span class="o">=</span> <span class="n">cov</span><span class="o">.</span><span class="n">coverage</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">result</span>
 
-    <span class="k">def</span> <span class="nf">coverage</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">coverage</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Set</span><span class="p">[</span><span class="n">Location</span><span class="p">]:</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_coverage</span>
 </pre></div>
 
@@ -13495,7 +13707,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[(&#39;urlsplit&#39;, 458), (&#39;urlsplit&#39;, 461), (&#39;urlsplit&#39;, 464), (&#39;urlsplit&#39;, 467), (&#39;urlsplit&#39;, 473)]
+<pre>[(&#39;http_program&#39;, 11), (&#39;run_function&#39;, 7), (&#39;urlparse&#39;, 395), (&#39;_coerce_args&#39;, 129), (&#39;urlparse&#39;, 401)]
 </pre>
 </div>
 
@@ -13517,14 +13729,16 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">MutationCoverageFuzzer</span><span class="p">(</span><span class="n">MutationFuzzer</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Fuzz with mutated inputs based on coverage&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">coverages_seen</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">coverages_seen</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="nb">frozenset</span><span class="p">]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
         <span class="c1"># Now empty; we fill this with seed in the first fuzz runs</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">population</span> <span class="o">=</span> <span class="p">[]</span>
 
-    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Run function(inp) while tracking coverage.</span>
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="n">FunctionCoverageRunner</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Run function(inp) while tracking coverage.</span>
 <span class="sd">           If we reach new coverage,</span>
 <span class="sd">           add inp to population and its coverage to population_coverage</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -13573,29 +13787,19 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 
 <div class="output_text output_subarea output_execute_result">
 <pre>[&#39;http://www.google.com/search?q=fuzzing&#39;,
- &#39;http://www.goog.com/search;q=fuzzilng&#39;,
- &#39;http://ww.6goog\x0eoomosearch;/q=f}zzilng&#39;,
- &#39;http://uv.Lboo.comoseakrch;q=fuzilng&#39;,
- &#39;http://ww.6goog\x0eo/mosarch;/q=f}z{il~g&#39;,
- &#39;http://www.googme.com/sear#h?q=fuzzing&#39;,
- &#39;http://www.gokgl.#om/searsh?q}fuzzing&#39;,
- &#39;http://ww.6goog\x0eoofmoseWaRch;f/q=f}~zinng&#39;,
- &#39;http://ww7&amp;goog.co/searh;q=fzilnSw&#39;,
- &#39;http://www.google.Bco/search?q=fzzisng&#39;,
- &#39;http://wv.Lboo.somoseakrch\x1bq=fuzlng&#39;,
- &#39;http://www.googme.c/;&gt;m/selr#(q=fuzoziPng&#39;,
- &#34;http://www.gooigme\x0ec/;&gt;m&#39;sel#(q=fuzoxiPng&#34;,
- &#39;http://ww.6Ygoog.o/mosarch;/q=f}z{in~g&#39;,
- &#39;http://www.googMenc/;&gt;m/selr#|(q=fuzoziPng&#39;,
- &#39;http://ww.6goog;\x0eo/mosarch;?q=f}z{il~g&#39;,
- &#39;http://{wHww.oogle.Bco/sarch?q=fzzi#sn&#34;g&#39;,
- &#34;http://wwu.gOoigme\x0ec/;&gt;m&#39;sel#(q=fuzoxiPng&#34;,
- &#39;http://Www6gkog9\x0ek/mosarch;?q=f6}z{il~g&#39;,
- &#39;http://{wHww.ogle.B o/sarch?q=xzzi#sn&#34;g&#39;,
- &#39;http://ww.6g/og;\x0eo/moSarch?q=f}j{il~g&#39;,
- &#39;http://ww.6goog;\x0eo/mosarch;?q=f}#z{il~gY&#39;,
- &#34;http://ww.6g/og;\x0e/mo&#39;Sarch?q=f}jil~g&#34;,
- &#39;http://ww.6goog;\x0eo/mosac{h;?q=f#z{il~gY&#39;]
+ &#39;http://ww.google.co/searc(?q=fuzzin_g&#39;,
+ &#39;http://ww.google.#o/sarc(?q=fuzzhn_w&#39;,
+ &#39;Http://www.g/ogle.com/earchq=fuzzing&#39;,
+ &#39;http://$\x7fw,go0ogle.co/searc(;q=fXzin_g&#39;,
+ &#39;http://$\x7fw(g\x7f0ogle&amp;@cosWearc(;q3=fXzin_g&#39;,
+ &#39;Http://www.g/ogle*com;/ea+chq=fuzzing&#39;,
+ &#39;http://ww.Google.co/saarch?#q=fuzzi|n_o&#39;,
+ &#39;http://{$H\x7fw,o0ogle.co/sarc(;q=fXzi#n_&#34;g&#39;,
+ &#39;http://ww.gogle.bm/s;eqrh?q=fuzzi)ng&#39;,
+ &#39;Http://www.g/ogQle*com;/ea#ch=fu~ring&#39;,
+ &#39;Http://\x7fww.g/ogle*com;/Yeachq?8fuzzing&#39;,
+ &#39;Http://wwwd.g/ogQle*com;?ea#ch=fu~ring&#39;,
+ &#39;Http://www.g/ogQle*com;/1ea?#ch=fu~ring&#39;]
 </pre>
 </div>
 
@@ -13659,8 +13863,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="output_area">
 
 <div class="output_image output_png output_subarea ">
-<img src="data:image/png;base64,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
-"
+<img src="data:image/png;base64,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mZg9ezZGjhyJVq1a4V//+hemTp2K2NhYuUszGOXvrXzfrag8xFy+fBk7d+5scK0xAIOM3iwtLfHEE0/g119/1W7TaDT49ddf0blzZxkrk48QApMmTcKmTZuwe/du+Pv7y12SQejVqxdOnz6NhIQE7a19+/YYNWoUEhISoFAo5C6x3nXt2rXC1PyLFy/C19dXporkl5+fDzMz3bdihUIBjUYjU0WGx9/fHx4eHjrvu2q1GkeOHGmw77vAPyEmMTERu3btgqurq9wlyYJdS9Uwbdo0jBkzBu3bt0fHjh2xfPly3LlzBy+++KLcpcli4sSJ+Oqrr/DDDz/A3t5e22ft6OgIa2trmauTj729fYVxQra2tnB1dW2w44emTp2KLl264O2330ZERASOHj2KNWvWYM2aNXKXJptBgwbhrbfego+PD4KDg3Hy5EksXboUL730ktyl1au8vDwkJSVpv09JSUFCQgJcXFzg4+ODKVOm4M0330SzZs3g7++PuXPnwsvLC88884x8Rdexh50TT09PPPfcczhx4gR++uknlJWVad97XVxcYGlpKVfZ9U/uaVPGauXKlcLHx0dYWlqKjh07isOHD8tdkmwAVHpbt26d3KUZnIY+/VoIIX788UcREhIilEqlCAoKEmvWrJG7JFmp1Wrx2muvCR8fH2FlZSWaNGki3njjDVFUVCR3afVqz549lb6PjBkzRghxdwr23LlzRaNGjYRSqRS9evUSFy5ckLfoOvawc5KSkvLA9949e/bIXXq9koRoYJePJCIiIpPBMTJERERktBhkiIiIyGgxyBAREZHRYpAhIiIio8UgQ0REREaLQYaIiIiMFoMMERERGS0GGSIyGOfPn0enTp1gZWWFtm3bVrpPjx49MGXKlHqti4gMFy+IR0R6u3nzJh577DHcvn0blpaWcHJywrlz5+Dj41Oj444YMQK3bt3C//73P9jZ2VW6dkxWVhYsLCxgb29fo8fSV3R0NDZv3oyEhIR6fVwiejiutUREejt06BDatGkDW1tbHDlyRLseTk0lJydj4MCBD11E0sXFpcaPQ0Smg11LRKS3gwcPomvXrgCAAwcOaL9+GI1GgwULFqBx48ZQKpVo27Yttm/frr1fkiQcP34cCxYsgCRJiI6OrvQ493ct+fn54e2338ZLL70Ee3t7+Pj46CxCmZqaCkmSsH79enTp0gVWVlYICQnBvn37tPvExcXByclJ53E2b94MSZK098fExODUqVOQJAmSJCEuLg5CCERHR8PHxwdKpRJeXl6Iiop65LkgotrDFhkiqpIrV66gdevWAID8/HwoFArExcWhoKAAkiTByckJzz//PD788MNKf/7999/HkiVL8PHHH6Ndu3b43//+h8GDB+Ps2bNo1qwZ0tPT0bt3b/Tr1w8zZsyAnZ1dlWtbsmQJFi5ciDlz5mDjxo34v//7P3Tv3h2BgYHafWbOnInly5ejZcuWWLp0KQYNGoSUlJRKu6/uN2LECJw5cwbbt2/Hrl27ANxd3f27777DsmXLsH79egQHB+P69es4depUlesmoppjiwwRVYmXlxcSEhLw22+/AQCOHDmC48ePw9LSEr/88gsSEhKwYMGCB/78e++9h1mzZmHkyJEIDAzE4sWL0bZtWyxfvhwA4OHhAXNzc9jZ2cHDw0OvIDNgwABMmDABTZs2xaxZs+Dm5oY9e/bo7DNp0iQMGzYMLVq0wOrVq+Ho6IhPPvmkSse3traGnZ0dzM3N4eHhAQ8PD1hbW+PKlSvw8PBA79694ePjg44dO2LcuHFVrpuIao5BhoiqxNzcHH5+fjh//jw6dOiA1q1b4/r162jUqBG6desGPz8/uLm5VfqzarUaaWlpFbqgunbtinPnztW4tvKWIuBuF5WHhwcyMjJ09uncubPOc2nfvn2NH3v48OEoKChAkyZNMG7cOGzatAmlpaU1OiYR6YddS0RUJcHBwbh8+TJKSkqg0WhgZ2eH0tJSlJaWws7ODr6+vjh79qwstVlYWOh8L0kSNBpNlX/ezMwM90/gLCkpeeTPeXt748KFC9i1axd27tyJCRMm4N1338W+ffsq1EREdYMtMkRUJVu3bkVCQgI8PDzwxRdfICEhASEhIVi+fDkSEhKwdevWB/6sg4MDvLy8EB8fr7M9Pj4eLVu2rOvSAQCHDx/Wfl1aWorjx4+jRYsWAACVSoXc3FzcuXNHu8/906wtLS1RVlZW4bjW1tYYNGgQVqxYgb179+LQoUM4ffp03TwJIqqALTJEVCW+vr64fv06bty4gSFDhkCSJJw9exbDhg2Dp6fnI39+5syZmD9/PgICAtC2bVusW7cOCQkJ+PLLL+uhemDVqlVo1qwZWrRogWXLluH27dt46aWXAAChoaGwsbHBnDlzEBUVhSNHjiAuLk7n5/38/JCSkoKEhAQ0btwY9vb2+Prrr1FWVqb9+S+++ALW1tYPnT5ORLWLLTJEVGV79+5Fhw4dYGVlhaNHj6Jx48ZVCjEAEBUVhWnTpmH69Olo1aoVtm/fji1btqBZs2Z1XPVdixYtwqJFi9CmTRscOHAAW7Zs0Y7pcXFxwRdffIGtW7eiVatW+PrrrytM/x42bBj69euHJ598EiqVCl9//TWcnJywdu1adO3aFa1bt8auXbvw448/VmkmFBHVDl7Zl4hMWmpqKvz9/XHy5MkHLntARMaLLTJERERktBhkiIiIyGixa4mIiIiMFltkiIiIyGgxyBAREZHRYpAhIiIio8UgQ0REREaLQYaIiIiMFoMMERERGS0GGSIiIjJaDDJERERktBhkiIiIyGj9fw8QqqTDET2RAAAAAElFTkSuQmCC"
 >
 
 </div>
@@ -13691,7 +13894,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><h2 id="Next-Steps">Next Steps<a class="anchor-link" href="#Next-Steps">&#182;</a></h2><p>In the next chapter on <a href="GreyboxFuzzer.html">greybox fuzzing</a>, we further extend the concept of mutation-based testing with <em>power schedules</em> that allow to spend more energy on seeds that exercise "unlikely" paths and seeds that are "closer" to a target location.</p>
+<div class="text_cell_render border-box-sizing rendered_html"><h2 id="Next-Steps">Next Steps<a class="anchor-link" href="#Next-Steps">&#182;</a></h2><p>In the next chapter on <a href="GreyboxFuzzer.html">greybox fuzzing</a>, we further extend the concept of mutation-based testing with <em>power schedules</em> that allow spending more energy on seeds that exercise "unlikely" paths and seeds that are "closer" to a target location.</p>
 </div>
 </div>
 </div>
@@ -13762,7 +13965,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="output_area">
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&#39;Hello World&#39;, &#39;Hel+} }Wo-l&#39;, &#39;H%adt;} }Go-YlD&#39;, &#39;H%e4l+}$}Wog-l&#39;]
+<pre>[&#39;Hello World&#39;, &#39;he_&lt;+llo(or&lt;D&#39;, &#39;L}eml &amp;Wol%dD&#39;, &#39;L)q&lt;}aml &amp;cWol%d3D+&#39;]
 </pre>
 </div>
 
@@ -13785,21 +13988,20 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="output_area">
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{(&#39;__exit__&#39;, 79),
- (&#39;cgi_decode&#39;, 8),
- (&#39;cgi_decode&#39;, 9),
- (&#39;cgi_decode&#39;, 10),
- (&#39;cgi_decode&#39;, 11),
- (&#39;cgi_decode&#39;, 12),
- (&#39;cgi_decode&#39;, 15),
- (&#39;cgi_decode&#39;, 16),
+<pre>{(&#39;cgi_decode&#39;, 16),
  (&#39;cgi_decode&#39;, 17),
  (&#39;cgi_decode&#39;, 18),
  (&#39;cgi_decode&#39;, 19),
- (&#39;cgi_decode&#39;, 21),
- (&#39;cgi_decode&#39;, 30),
- (&#39;cgi_decode&#39;, 31),
- (&#39;cgi_decode&#39;, 32),
+ (&#39;cgi_decode&#39;, 20),
+ (&#39;cgi_decode&#39;, 23),
+ (&#39;cgi_decode&#39;, 24),
+ (&#39;cgi_decode&#39;, 25),
+ (&#39;cgi_decode&#39;, 26),
+ (&#39;cgi_decode&#39;, 27),
+ (&#39;cgi_decode&#39;, 29),
+ (&#39;cgi_decode&#39;, 38),
+ (&#39;cgi_decode&#39;, 39),
+ (&#39;cgi_decode&#39;, 40),
  (&#39;run_function&#39;, 7)}
 </pre>
 </div>
@@ -13830,8 +14032,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="output_area">
 
 <div class="output_image output_png output_subarea ">
-<img src="data:image/png;base64,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
-"
+<img src="data:image/png;base64,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"
 >
 
 </div>
@@ -13854,7 +14055,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <h4 id="Part-1:-Non-Guided-Mutations">Part 1: Non-Guided Mutations<a class="anchor-link" href="#Part-1:-Non-Guided-Mutations">&#182;</a></h4><p>Start with non-guided mutations.  How many of the inputs are valid?</p>
 
     
-<p><div class="solution_link"><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/master?filepath=docs/notebooks/MutationFuzzer.ipynb#Exercises" target=_blank>Use the notebook</a> to work on the exercises and see solutions.</div></p>
+<p><div class="solution_link"><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/HEAD?labpath=docs%2Fnotebooks/MutationFuzzer.ipynb#Exercises" target=_blank>Use the notebook</a> to work on the exercises and see solutions.</div></p>
 </div>
 </div>
 </div>
@@ -13876,7 +14077,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>curl -O mirrors.kernel.org/gnu/bc/bc-1.07.1.tar.gz
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>curl<span class="w"> </span>-O<span class="w"> </span>mirrors.kernel.org/gnu/bc/bc-1.07.1.tar.gz
 </pre></div>
 
 </div>
@@ -13889,7 +14090,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-100  410k  100  410k    0     0   359k      0  0:00:01  0:00:01 --:--:--  359k
+100  410k  100  410k    0     0   350k      0  0:00:01  0:00:01 --:--:--  350k
 </pre>
 </div>
 
@@ -13901,7 +14102,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>tar xfz bc-1.07.1.tar.gz
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>tar<span class="w"> </span>xfz<span class="w"> </span>bc-1.07.1.tar.gz
 </pre></div>
 
 </div>
@@ -13924,7 +14125,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span><span class="nb">cd</span> bc-1.07.1<span class="p">;</span> ./configure
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span><span class="nb">cd</span><span class="w"> </span>bc-1.07.1<span class="p">;</span><span class="w"> </span>./configure
 </pre></div>
 
 </div>
@@ -13935,9 +14136,9 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>checking for a BSD-compatible install... /usr/local/bin/ginstall -c
+<pre>checking for a BSD-compatible install... /opt/homebrew/bin/ginstall -c
 checking whether build environment is sane... yes
-checking for a thread-safe mkdir -p... /usr/local/bin/gmkdir -p
+checking for a thread-safe mkdir -p... /opt/homebrew/bin/gmkdir -p
 checking for gawk... no
 checking for mawk... no
 checking for nawk... no
@@ -14030,7 +14231,7 @@ config.status: executing depfiles commands
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span><span class="nb">cd</span> bc-1.07.1<span class="p">;</span> make <span class="nv">CFLAGS</span><span class="o">=</span><span class="s2">&quot;--coverage&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span><span class="nb">cd</span><span class="w"> </span>bc-1.07.1<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>make<span class="w"> </span>-k<span class="w"> </span><span class="nv">CFLAGS</span><span class="o">=</span><span class="s2">&quot;--coverage&quot;</span>
 </pre></div>
 
 </div>
@@ -14041,9 +14242,25 @@ config.status: executing depfiles commands
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>/Library/Developer/CommandLineTools/usr/bin/make  all-recursive
+<pre>/Applications/Xcode.app/Contents/Developer/usr/bin/make  all-recursive
 Making all in lib
 gcc -DHAVE_CONFIG_H  -I. -I..  -I. -I.. -I./../h  -g -O2 -Wall -funsigned-char --coverage -MT getopt.o -MD -MP -MF .deps/getopt.Tpo -c -o getopt.o getopt.c
+<span class="ansi-bold">getopt.c:348:28: </span><span class="ansi-magenta-intense-fg ansi-bold">warning: </span><span class="ansi-bold">passing arguments to &#39;getenv&#39;
+      without a prototype is deprecated in all versions of C and is not
+      supported in C2x [-Wdeprecated-non-prototype]</span>
+  348 |   posixly_correct = getenv (&#34;POSIXLY_CORRECT&#34;);
+      | <span class="ansi-green-intense-fg ansi-bold">                           ^
+</span>In file included from getopt.c:106:
+<span class="ansi-bold">./../h/getopt.h:144:12: </span><span class="ansi-magenta-intense-fg ansi-bold">warning: </span><span class="ansi-bold">a function declaration
+      without a prototype is deprecated in all versions of C and is treated as a
+      zero-parameter prototype in C2x, conflicting with a subsequent definition
+      [-Wdeprecated-non-prototype]</span>
+  144 | extern int getopt ();
+      | <span class="ansi-green-intense-fg ansi-bold">           ^
+</span><span class="ansi-bold">getopt.c:1135:1: </span><span class="ansi-black-intense-fg ansi-bold">note: </span>conflicting prototype is here
+ 1135 | getopt (int argc, char *const *argv, const char *optstring)
+      | <span class="ansi-green-intense-fg ansi-bold">^
+</span>2 warnings generated.
 mv -f .deps/getopt.Tpo .deps/getopt.Po
 gcc -DHAVE_CONFIG_H  -I. -I..  -I. -I.. -I./../h  -g -O2 -Wall -funsigned-char --coverage -MT getopt1.o -MD -MP -MF .deps/getopt1.Tpo -c -o getopt1.o getopt1.c
 mv -f .deps/getopt1.Tpo .deps/getopt1.Po
@@ -14056,6 +14273,18 @@ ar cru libbc.a getopt.o getopt1.o vfprintf.o number.o
 ranlib libbc.a
 Making all in bc
 gcc -DHAVE_CONFIG_H -I. -I..  -I. -I./../h  -g -O2 -Wall -funsigned-char --coverage -MT main.o -MD -MP -MF .deps/main.Tpo -c -o main.o main.c
+In file included from main.c:34:
+<span class="ansi-bold">./../h/getopt.h:144:12: </span><span class="ansi-magenta-intense-fg ansi-bold">warning: </span><span class="ansi-bold">a function declaration
+      without a prototype is deprecated in all versions of C and is treated as a
+      zero-parameter prototype in C2x, conflicting with a previous declaration
+      [-Wdeprecated-non-prototype]</span>
+  144 | extern int getopt ();
+      | <span class="ansi-green-intense-fg ansi-bold">           ^
+</span><span class="ansi-bold">/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/unistd.h:509:6: </span><span class="ansi-black-intense-fg ansi-bold">note: </span>
+      conflicting prototype is here
+  509 | int      getopt(int, char * const [], const char *) __DARWIN_ALIAS(getopt);
+      | <span class="ansi-green-intense-fg ansi-bold">         ^
+</span>1 warning generated.
 mv -f .deps/main.Tpo .deps/main.Po
 gcc -DHAVE_CONFIG_H -I. -I..  -I. -I./../h  -g -O2 -Wall -funsigned-char --coverage -MT bc.o -MD -MP -MF .deps/bc.Tpo -c -o bc.o bc.c
 mv -f .deps/bc.Tpo .deps/bc.Po
@@ -14070,9 +14299,15 @@ mv -f .deps/storage.Tpo .deps/storage.Po
 gcc -DHAVE_CONFIG_H -I. -I..  -I. -I./../h  -g -O2 -Wall -funsigned-char --coverage -MT util.o -MD -MP -MF .deps/util.Tpo -c -o util.o util.c
 mv -f .deps/util.Tpo .deps/util.Po
 gcc -DHAVE_CONFIG_H -I. -I..  -I. -I./../h  -g -O2 -Wall -funsigned-char --coverage -MT warranty.o -MD -MP -MF .deps/warranty.Tpo -c -o warranty.o warranty.c
+<span class="ansi-bold">warranty.c:56:1: </span><span class="ansi-magenta-intense-fg ansi-bold">warning: </span><span class="ansi-bold">a function definition without a
+      prototype is deprecated in all versions of C and is not supported in C2x
+      [-Wdeprecated-non-prototype]</span>
+   56 | warranty(prefix)
+      | <span class="ansi-green-intense-fg ansi-bold">^
+</span>1 warning generated.
 mv -f .deps/warranty.Tpo .deps/warranty.Po
 echo &#39;{0}&#39; &gt; libmath.h
-/Library/Developer/CommandLineTools/usr/bin/make global.o
+/Applications/Xcode.app/Contents/Developer/usr/bin/make global.o
 gcc -DHAVE_CONFIG_H -I. -I..  -I. -I./../h  -g -O2 -Wall -funsigned-char --coverage -MT global.o -MD -MP -MF .deps/global.Tpo -c -o global.o global.c
 mv -f .deps/global.Tpo .deps/global.Po
 gcc -g -O2 -Wall -funsigned-char --coverage   -o libmath.h -o fbc main.o bc.o scan.o execute.o load.o storage.o util.o warranty.o global.o ../lib/libbc.a -ll  
@@ -14096,6 +14331,12 @@ mv -f .deps/stack.Tpo .deps/stack.Po
 gcc -DHAVE_CONFIG_H -I. -I..  -I./.. -I./../h  -g -O2 -Wall -funsigned-char --coverage -MT array.o -MD -MP -MF .deps/array.Tpo -c -o array.o array.c
 mv -f .deps/array.Tpo .deps/array.Po
 gcc -DHAVE_CONFIG_H -I. -I..  -I./.. -I./../h  -g -O2 -Wall -funsigned-char --coverage -MT numeric.o -MD -MP -MF .deps/numeric.Tpo -c -o numeric.o numeric.c
+<span class="ansi-bold">numeric.c:576:1: </span><span class="ansi-magenta-intense-fg ansi-bold">warning: </span><span class="ansi-bold">a function definition without a
+      prototype is deprecated in all versions of C and is not supported in C2x
+      [-Wdeprecated-non-prototype]</span>
+  576 | out_char (ch)
+      | <span class="ansi-green-intense-fg ansi-bold">^
+</span>1 warning generated.
 mv -f .deps/numeric.Tpo .deps/numeric.Po
 gcc -DHAVE_CONFIG_H -I. -I..  -I./.. -I./../h  -g -O2 -Wall -funsigned-char --coverage -MT string.o -MD -MP -MF .deps/string.Tpo -c -o string.o string.c
 mv -f .deps/string.Tpo .deps/string.Po
@@ -14162,7 +14403,7 @@ make[3]: Nothing to be done for `all-am&#39;.
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span><span class="nb">cd</span> bc-1.07.1/bc<span class="p">;</span> <span class="nb">echo</span> <span class="m">2</span> + <span class="m">2</span> <span class="p">|</span> ./bc
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span><span class="nb">cd</span><span class="w"> </span>bc-1.07.1/bc<span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="m">2</span><span class="w"> </span>+<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>./bc
 </pre></div>
 
 </div>
@@ -14194,7 +14435,7 @@ make[3]: Nothing to be done for `all-am&#39;.
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span><span class="nb">cd</span> bc-1.07.1/bc<span class="p">;</span> gcov main.c
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span><span class="nb">cd</span><span class="w"> </span>bc-1.07.1/bc<span class="p">;</span><span class="w"> </span>gcov<span class="w"> </span>main.c
 </pre></div>
 
 </div>
@@ -14206,7 +14447,7 @@ make[3]: Nothing to be done for `all-am&#39;.
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>File &#39;main.c&#39;
-Lines executed:52.42% of 124
+Lines executed:52.55% of 137
 Creating &#39;main.c.gcov&#39;
 </pre>
 </div>
@@ -14246,7 +14487,7 @@ Creating &#39;main.c.gcov&#39;
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>rm -fr bc-1.07.1 bc-1.07.1.tar.gz
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>rm<span class="w"> </span>-fr<span class="w"> </span>bc-1.07.1<span class="w"> </span>bc-1.07.1.tar.gz
 </pre></div>
 
 </div>
@@ -14287,7 +14528,7 @@ Creating &#39;main.c.gcov&#39;
 The content of this project is licensed under the
 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target=_blank>Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 The source code that is part of the content, as well as the source code used to format and display that content is licensed under the <a href="https://github.com/uds-se/fuzzingbook/blob/master/LICENSE.md#mit-license">MIT License</a>.
-<a href="https://github.com/uds-se/fuzzingbook/commits/master/notebooks/MutationFuzzer.ipynb" target=_blank)>Last change: 2020-10-13 15:12:17+02:00</a> &bull; 
+<a href="https://github.com/uds-se/fuzzingbook/commits/master/notebooks/MutationFuzzer.ipynb" target=_blank)>Last change: 2024-11-09 17:25:56+01:00</a> &bull; 
 <a href="#citation" id="cite" onclick="revealCitation()">Cite</a> &bull;
 <a href="https://cispa.de/en/impressum" target=_blank>Imprint</a>
 </p>
@@ -14303,19 +14544,19 @@ function revealCitation() {
 <a name="citation"></a>
 <h2>How to Cite this Work</h2>
 <p>
-Andreas Zeller, Rahul Gopinath, Marcel Böhme, Gordon Fraser, and Christian Holler: "<a href="https://www.fuzzingbook.org/html/MutationFuzzer.html">Mutation-Based Fuzzing</a>".  In Andreas Zeller, Rahul Gopinath, Marcel Böhme, Gordon Fraser, and Christian Holler, "<a href="https://www.fuzzingbook.org/">The Fuzzing Book</a>", <a href="https://www.fuzzingbook.org/html/MutationFuzzer.html">https://www.fuzzingbook.org/html/MutationFuzzer.html</a>.  Retrieved 2020-10-13 15:12:17+02:00.
+Andreas Zeller, Rahul Gopinath, Marcel Böhme, Gordon Fraser, and Christian Holler: "<a href="https://www.fuzzingbook.org/html/MutationFuzzer.html">Mutation-Based Fuzzing</a>".  In Andreas Zeller, Rahul Gopinath, Marcel Böhme, Gordon Fraser, and Christian Holler, "<a href="https://www.fuzzingbook.org/">The Fuzzing Book</a>", <a href="https://www.fuzzingbook.org/html/MutationFuzzer.html">https://www.fuzzingbook.org/html/MutationFuzzer.html</a>.  Retrieved 2024-11-09 17:25:56+01:00.
 </p>
 <pre>
-@incollection{fuzzingbook2020:MutationFuzzer,
+@incollection{fuzzingbook2024:MutationFuzzer,
     author = {Andreas Zeller and Rahul Gopinath and Marcel B{\"o}hme and Gordon Fraser and Christian Holler},
     booktitle = {The Fuzzing Book},
     title = {Mutation-Based Fuzzing},
-    year = {2020},
+    year = {2024},
     publisher = {CISPA Helmholtz Center for Information Security},
     howpublished = {\url{https://www.fuzzingbook.org/html/MutationFuzzer.html}},
-    note = {Retrieved 2020-10-13 15:12:17+02:00},
+    note = {Retrieved 2024-11-09 17:25:56+01:00},
     url = {https://www.fuzzingbook.org/html/MutationFuzzer.html},
-    urldate = {2020-10-13 15:12:17+02:00}
+    urldate = {2024-11-09 17:25:56+01:00}
 }
 </pre>
 </div>

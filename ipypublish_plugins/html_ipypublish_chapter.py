@@ -38,6 +38,10 @@ fuzzingbook_tpl_dict = {
 {# Icons #}
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
+{# Header Colors #}
+<meta name="theme-color" content="#bb0000" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#cc0000" media="(prefers-color-scheme: dark)">
+
 {# Open Graph Tags #}
 <meta property="og:url" content="__CHAPTER_HTML__" />
 <meta property="og:type" content="article" />
@@ -121,7 +125,7 @@ fuzzingbook_tpl_dict = {
     <article>
    <div tabindex="-1" id="notebook" class="border-box-sizing">
      <div class="container" id="notebook-container">
-""" + latex_doc.tpl_dict['html_body_start'],
+""" + latex_doc.tpl_dict['html_body_start'] + "<__BANNER__>",
 
     'html_body_end': r"""
         <__FOOTER__>

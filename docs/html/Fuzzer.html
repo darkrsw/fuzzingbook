@@ -12,6 +12,7 @@ with fuzzingbook adaptations -->
 <html>
 <head>
 <meta charset="utf-8" /><title>Fuzzing: Breaking Things with Random Inputs - The Fuzzing Book</title>
+<link rel="me" href="https://mastodon.social/@TheFuzzingBook">
 
 <style type="text/css">
     /*!
@@ -11621,22 +11622,23 @@ td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5
 span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 .highlight .hll { background-color: #ffffcc }
 .highlight { background: #f8f8f8; }
-.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .c { color: #3D7B7B; font-style: italic } /* Comment */
 .highlight .err { border: 1px solid #FF0000 } /* Error */
 .highlight .k { color: #008000; font-weight: bold } /* Keyword */
 .highlight .o { color: #666666 } /* Operator */
-.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
-.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
-.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
-.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
-.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #9C6500 } /* Comment.Preproc */
+.highlight .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
 .highlight .gd { color: #A00000 } /* Generic.Deleted */
 .highlight .ge { font-style: italic } /* Generic.Emph */
-.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.highlight .gr { color: #E40000 } /* Generic.Error */
 .highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.highlight .gi { color: #00A000 } /* Generic.Inserted */
-.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gi { color: #008400 } /* Generic.Inserted */
+.highlight .go { color: #717171 } /* Generic.Output */
 .highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
 .highlight .gs { font-weight: bold } /* Generic.Strong */
 .highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
@@ -11649,15 +11651,15 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .kt { color: #B00040 } /* Keyword.Type */
 .highlight .m { color: #666666 } /* Literal.Number */
 .highlight .s { color: #BA2121 } /* Literal.String */
-.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .na { color: #687822 } /* Name.Attribute */
 .highlight .nb { color: #008000 } /* Name.Builtin */
 .highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
 .highlight .no { color: #880000 } /* Name.Constant */
 .highlight .nd { color: #AA22FF } /* Name.Decorator */
-.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
-.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .ni { color: #717171; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
 .highlight .nf { color: #0000FF } /* Name.Function */
-.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nl { color: #767600 } /* Name.Label */
 .highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
 .highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
 .highlight .nv { color: #19177C } /* Name.Variable */
@@ -11674,11 +11676,11 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
-.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
 .highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
-.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
 .highlight .sx { color: #008000 } /* Literal.String.Other */
-.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .sr { color: #A45A77 } /* Literal.String.Regex */
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
@@ -11795,6 +11797,9 @@ MathJax.Hub.Config({
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
+<meta name="theme-color" content="#bb0000" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#cc0000" media="(prefers-color-scheme: dark)">
+
 <meta property="og:url" content="https://www.fuzzingbook.org/html/Fuzzer.html" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Fuzzing: Breaking Things with Random Inputs - The Fuzzing Book" />
@@ -11886,7 +11891,7 @@ MathJax.Hub.Config({
 <li><a href="GreyboxFuzzer.html">Greybox Fuzzing</a></li>
 <li><a href="SearchBasedFuzzer.html">Search-Based Fuzzing</a></li>
 <li><a href="MutationAnalysis.html">Mutation Analysis</a></li>
-</ul><li class="has-sub"><a href="03_Syntactical_Fuzzing.html" class="chapters"><span class="part_number">III</span> Syntactical Fuzzing <i class="fa fa-fw fa-caret-right"></i></a>
+</ul><li class="has-sub"><a href="03_Syntactical_Fuzzing.html" class="chapters"><span class="part_number">III</span> Syntactic Fuzzing <i class="fa fa-fw fa-caret-right"></i></a>
 <ul>
 <li><a href="Grammars.html">Fuzzing with Grammars</a></li>
 <li><a href="GrammarFuzzer.html">Efficient Grammar Fuzzing</a></li>
@@ -11896,8 +11901,9 @@ MathJax.Hub.Config({
 <li><a href="GeneratorGrammarFuzzer.html">Fuzzing with Generators</a></li>
 <li><a href="GreyboxGrammarFuzzer.html">Greybox Fuzzing with Grammars</a></li>
 <li><a href="Reducer.html">Reducing Failure-Inducing Inputs</a></li>
-</ul><li class="has-sub"><a href="04_Semantical_Fuzzing.html" class="chapters"><span class="part_number">IV</span> Semantical Fuzzing <i class="fa fa-fw fa-caret-right"></i></a>
+</ul><li class="has-sub"><a href="04_Semantical_Fuzzing.html" class="chapters"><span class="part_number">IV</span> Semantic Fuzzing <i class="fa fa-fw fa-caret-right"></i></a>
 <ul>
+<li><a href="FuzzingWithConstraints.html">Fuzzing with Constraints</a></li>
 <li><a href="GrammarMiner.html">Mining Input Grammars</a></li>
 <li><a href="InformationFlow.html">Tracking Information Flow</a></li>
 <li><a href="ConcolicFuzzer.html">Concolic Fuzzing</a></li>
@@ -11908,6 +11914,7 @@ MathJax.Hub.Config({
 <li><a href="ConfigurationFuzzer.html">Testing Configurations</a></li>
 <li><a href="APIFuzzer.html">Fuzzing APIs</a></li>
 <li><a href="Carver.html">Carving Unit Tests</a></li>
+<li><a href="PythonFuzzer.html">Testing Compilers <strong class="new_chapter">&bull;</strong></a></li>
 <li><a href="WebFuzzer.html">Testing Web Applications</a></li>
 <li><a href="GUIFuzzer.html">Testing Graphical User Interfaces</a></li>
 </ul><li class="has-sub"><a href="06_Managing_Fuzzing.html" class="chapters"><span class="part_number">VI</span> Managing Fuzzing <i class="fa fa-fw fa-caret-right"></i></a>
@@ -11916,9 +11923,11 @@ MathJax.Hub.Config({
 <li><a href="WhenToStopFuzzing.html">When To Stop Fuzzing</a></li>
 </ul><li class="has-sub"><a href="99_Appendices.html" class="chapters">Appendices <i class="fa fa-fw fa-caret-right"></i></a>
 <ul>
+<li><a href="AcademicPrototyping.html">Academic Prototyping</a></li>
 <li><a href="PrototypingWithPython.html">Prototyping with Python</a></li>
 <li><a href="ExpectError.html">Error Handling</a></li>
 <li><a href="Timer.html">Timer</a></li>
+<li><a href="Timeout.html">Timeout</a></li>
 <li><a href="ClassDiagram.html">Class Diagrams</a></li>
 <li><a href="RailroadDiagrams.html">Railroad Diagrams</a></li>
 <li><a href="ControlFlow.html">Control Flow Graph</a></li>
@@ -11947,8 +11956,6 @@ MathJax.Hub.Config({
 </ul></li><li class="has-sub"><a href="#A-Fuzzing-Architecture">&nbsp;&bull;&nbsp;&nbsp; A Fuzzing Architecture</a>
 <ul><li class="has-sub"><a href="#Runner-Classes">Runner Classes</a>
 </li><li class="has-sub"><a href="#Fuzzer-Classes">Fuzzer Classes</a>
-</li><li class="has-sub"><a href="#Fuzzers">Fuzzers</a>
-</li><li class="has-sub"><a href="#Runners">Runners</a>
 </ul></li><li class="has-sub"><a href="#Lessons-Learned"><i class="fa fa-fw fa-trophy"></i> Lessons Learned</a>
 </li><li class="has-sub"><a href="#Next-Steps"><i class="fa fa-fw fa-arrows"></i> Next Steps</a>
 </li><li class="has-sub"><a href="#Background"><i class="fa fa-fw fa-mortar-board"></i> Background</a>
@@ -11961,7 +11968,7 @@ MathJax.Hub.Config({
      
      <li class="has-sub"><a href="#"><span title="Resources"><i class="fa fa-fw fa-cube"></i> </span><span class="menu_3">Resources</span></a>
      <ul>
-     <li><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/master?filepath=docs/notebooks/Fuzzer.ipynb" target="_blank" class="edit_as_notebook"><i class="fa fa-fw fa-edit"></i> Edit as Notebook</a></li>
+     <li><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/HEAD?labpath=docs%2Fnotebooks/Fuzzer.ipynb" target="_blank" class="edit_as_notebook"><i class="fa fa-fw fa-edit"></i> Edit as Notebook</a></li>
      <li><a href="https://www.fuzzingbook.org/slides/Fuzzer.slides.html" target="_blank"><i class="fa fa-fw fa-video-camera"></i> View Slides</a></li>
      <li><a href="https://www.fuzzingbook.org/code/Fuzzer.py"><i class="fa fa-fw fa-download"></i> Download Code (.py)</a></li>
      <li><a href="https://www.fuzzingbook.org/notebooks/Fuzzer.ipynb"><i class="fa fa-fw fa-download"></i> Download Notebook (.ipynb)</a></li>
@@ -11974,12 +11981,14 @@ MathJax.Hub.Config({
      
      <li class="has-sub"><a href="#"><span title="Share"><i class="fa fa-fw fa-comments"></i> </span> <span class="menu_4">Share</span></a>
         <ul>
+<!--
             <li><a href="https://twitter.com/intent/tweet?text=I%20just%20read%20%22Fuzzing%3a%20Breaking%20Things%20with Random Inputs%22%20(part%20of%20@FuzzingBook)%20at%20https%3a%2f%2fwww.fuzzingbook.org%2fhtml%2fFuzzer.html" target="popup" 
 onclick="window.open('https://twitter.com/intent/tweet?text=I%20just%20read%20%22Fuzzing%3a%20Breaking%20Things%20with Random Inputs%22%20(part%20of%20@FuzzingBook)%20at%20https%3a%2f%2fwww.fuzzingbook.org%2fhtml%2fFuzzer.html','popup','width=600,height=600'); return false;"
-><i class="fa fa-fw fa-twitter"></i> Share on Twitter</a>
+><i class="fa fa-fw fa-twitter"></i> Share on X</a>
             <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.fuzzingbook.org%2fhtml%2fFuzzer.html" target="popup" 
 onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.fuzzingbook.org%2fhtml%2fFuzzer.html','popup','width=600,height=600'); return false;"
 ><i class="fa fa-fw fa-facebook"></i> Share on Facebook</a>
+-->
             <li><a href="mailto:?subject=Fuzzing%3a%20Breaking%20Things%20with Random Inputs&body=I%20just%20read%20%22Fuzzing%3a%20Breaking%20Things%20with Random Inputs%22%20(part%20of%20@FuzzingBook)%20at%20https%3a%2f%2fwww.fuzzingbook.org%2fhtml%2fFuzzer.html"><i class="fa fa-fw fa-envelope"></i> Share by Email</a>
             <li><a href="#citation" id="cite" onclick="revealCitation()"><i class="fa fa-fw fa-mortar-board"></i> Cite</a>
         </ul>
@@ -12016,7 +12025,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn"><a href="https://github.com/uds-se/fuzzingbook//tree/master/notebooks/shared/bookutils" class="import" target="_blank">bookutils</a></span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
-<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;u833Dtfftmw&#39;</span><span class="p">)</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;YjO1pIx7wS4&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12031,7 +12040,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
         <iframe
             width="640"
             height="360"
-            src="https://www.youtube-nocookie.com/embed/u833Dtfftmw"
+            src="https://www.youtube-nocookie.com/embed/YjO1pIx7wS4"
             frameborder="0"
             allowfullscreen
 
@@ -12069,7 +12078,21 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn"><a href="https://github.com/uds-se/fuzzingbook//tree/master/notebooks/shared/bookutils" class="import" target="_blank">bookutils</a></span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn"><a href="https://github.com/uds-se/fuzzingbook//tree/master/notebooks/shared/bookutils" class="import" target="_blank">bookutils.setup</a></span>
+</pre></div>
+
+</div>
+</div></div>
+</div>
+</div>
+
+<div class="input_code">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn"><a href="https://docs.python.org/3/library/typing.html" class="import" target="_blank">typing</a></span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Any</span>
 </pre></div>
 
 </div>
@@ -12119,10 +12142,10 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <span class="o">&gt;&gt;&gt;</span> <span class="n">random_fuzzer</span><span class="o">.</span><span class="n">fuzz</span><span class="p">()</span>
 <span class="s1">&#39;%$&lt;1&amp;&lt;%+=!&quot;83?+)9:++9138 42/ &quot;7;0-,)06 &quot;1(2;6&gt;?99$%7!!*#96=&gt;2&amp;-/(5*)=$;0$$+;&lt;12&quot;?30&amp;&#39;</span>
 </pre></div>
-<p>The <code>RandomFuzzer()</code> constructor allows to specify a number of keyword arguments:</p>
+<p>The <code>RandomFuzzer()</code> constructor allows a number of keyword arguments:</p>
 <div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">RandomFuzzer</span><span class="o">.</span><span class="fm">__init__</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
 <span class="n">Produce</span> <span class="n">strings</span> <span class="n">of</span> <span class="err">`</span><span class="n">min_length</span><span class="err">`</span> <span class="n">to</span> <span class="err">`</span><span class="n">max_length</span><span class="err">`</span> <span class="n">characters</span>
-           <span class="ow">in</span> <span class="n">the</span> <span class="nb">range</span> <span class="p">[</span><span class="err">`</span><span class="n">char_start</span><span class="err">`</span><span class="p">,</span> <span class="err">`</span><span class="n">char_start</span><span class="err">`</span> <span class="o">+</span> <span class="err">`</span><span class="n">char_range</span><span class="err">`</span><span class="p">]</span>
+           <span class="ow">in</span> <span class="n">the</span> <span class="nb">range</span> <span class="p">[</span><span class="err">`</span><span class="n">char_start</span><span class="err">`</span><span class="p">,</span> <span class="err">`</span><span class="n">char_start</span><span class="err">`</span> <span class="o">+</span> <span class="err">`</span><span class="n">char_range</span><span class="err">`</span><span class="p">)</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">random_fuzzer</span> <span class="o">=</span> <span class="n">RandomFuzzer</span><span class="p">(</span><span class="n">min_length</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">char_start</span><span class="o">=</span><span class="mi">65</span><span class="p">,</span> <span class="n">char_range</span><span class="o">=</span><span class="mi">26</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">random_fuzzer</span><span class="o">.</span><span class="n">fuzz</span><span class="p">()</span>
@@ -12131,30 +12154,30 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <p><?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 2.49.1 (20210923.0004)
+<!-- Generated by graphviz version 12.2.1 (20241206.2353)
  -->
 <!-- Pages: 1 -->
-<svg width="254pt" height="174pt"
- viewBox="0.00 0.00 253.50 174.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 170)">
+<svg width="254pt" height="191pt"
+ viewBox="0.00 0.00 254.12 190.50" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 186.5)">
 <g id="a_graph0"><a xlink:title="RandomFuzzer class hierarchy">
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-170 249.5,-170 249.5,4 -4,4"/>
+<polygon fill="white" stroke="none" points="-4,4 -4,-186.5 250.12,-186.5 250.12,4 -4,4"/>
 </a>
 </g>
 <!-- RandomFuzzer -->
 <g id="node1" class="node">
 <title>RandomFuzzer</title>
 <g id="a_node1"><a xlink:href="#" xlink:title="class RandomFuzzer:&#10;Produce random inputs.">
-<polygon fill="none" stroke="black" points="0,-0.5 0,-53.5 109,-53.5 109,-0.5 0,-0.5"/>
-<text text-anchor="start" x="8" y="-39.3" font-family="Patua One, Helvetica, sans-serif" font-weight="bold" font-size="14.00" fill="#b03a2e">RandomFuzzer</text>
-<polyline fill="none" stroke="black" points="0,-30.5 109,-30.5 "/>
+<polygon fill="none" stroke="black" points="0,-0.5 0,-60 109,-60 109,-0.5 0,-0.5"/>
+<text text-anchor="start" x="8" y="-43.7" font-family="Patua One, Helvetica, sans-serif" font-weight="bold" font-size="14.00" fill="#b03a2e">RandomFuzzer</text>
+<polyline fill="none" stroke="black" points="0,-34 109,-34"/>
 <g id="a_node1_0"><a xlink:href="#" xlink:title="RandomFuzzer">
-<g id="a_node1_1"><a xlink:href="#" xlink:title="__init__(self, min_length=10, max_length=100, char_start=32, char_range=32):&#10;Produce strings of `min_length` to `max_length` characters&#10;in the range [`char_start`, `char_start` + `char_range`]">
-<text text-anchor="start" x="24.5" y="-19.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-style="italic" font-size="10.00">__init__()</text>
+<g id="a_node1_1"><a xlink:href="#" xlink:title="__init__(self, min_length: int = 10, max_length: int = 100, char_start: int = 32, char_range: int = 32) &#45;&gt; None:&#10;Produce strings of `min_length` to `max_length` characters&#10;in the range [`char_start`, `char_start` + `char_range`)">
+<text text-anchor="start" x="24.5" y="-21.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-style="italic" font-size="10.00">__init__()</text>
 </a>
 </g>
-<g id="a_node1_2"><a xlink:href="#" xlink:title="fuzz(self):&#10;Return fuzz input">
-<text text-anchor="start" x="24.5" y="-8.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-style="italic" font-size="10.00">fuzz()</text>
+<g id="a_node1_2"><a xlink:href="#" xlink:title="fuzz(self) &#45;&gt; str:&#10;Return fuzz input">
+<text text-anchor="start" x="24.5" y="-8.75" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-style="italic" font-size="10.00">fuzz()</text>
 </a>
 </g>
 </a>
@@ -12166,24 +12189,24 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <g id="node2" class="node">
 <title>Fuzzer</title>
 <g id="a_node2"><a xlink:href="#" xlink:title="class Fuzzer:&#10;Base class for fuzzers.">
-<polygon fill="none" stroke="black" points="16,-90.5 16,-165.5 93,-165.5 93,-90.5 16,-90.5"/>
-<text text-anchor="start" x="33.5" y="-151.3" font-family="Patua One, Helvetica, sans-serif" font-weight="bold" font-size="14.00" fill="#b03a2e">Fuzzer</text>
-<polyline fill="none" stroke="black" points="16,-142.5 93,-142.5 "/>
+<polygon fill="none" stroke="black" points="16.5,-97 16.5,-182 92.5,-182 92.5,-97 16.5,-97"/>
+<text text-anchor="start" x="33.88" y="-165.7" font-family="Patua One, Helvetica, sans-serif" font-weight="bold" font-size="14.00" fill="#b03a2e">Fuzzer</text>
+<polyline fill="none" stroke="black" points="16.5,-156 92.5,-156"/>
 <g id="a_node2_3"><a xlink:href="#" xlink:title="Fuzzer">
-<g id="a_node2_4"><a xlink:href="#" xlink:title="__init__(self):&#10;Initialize self. &#160;See help(type(self)) for accurate signature.">
-<text text-anchor="start" x="24.5" y="-131.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-style="italic" font-size="10.00">__init__()</text>
+<g id="a_node2_4"><a xlink:href="#" xlink:title="__init__(self) &#45;&gt; None:&#10;Constructor">
+<text text-anchor="start" x="24.5" y="-143.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-style="italic" font-size="10.00">__init__()</text>
 </a>
 </g>
-<g id="a_node2_5"><a xlink:href="#" xlink:title="fuzz(self):&#10;Return fuzz input">
-<text text-anchor="start" x="24.5" y="-120.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-style="italic" font-size="10.00">fuzz()</text>
+<g id="a_node2_5"><a xlink:href="#" xlink:title="fuzz(self) &#45;&gt; str:&#10;Return fuzz input">
+<text text-anchor="start" x="24.5" y="-130.75" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-style="italic" font-size="10.00">fuzz()</text>
 </a>
 </g>
-<g id="a_node2_6"><a xlink:href="#" xlink:title="run(self, runner=&lt;__main__.Runner object at 0x10c770d00&gt;):&#10;Run `runner` with fuzz input">
-<text text-anchor="start" x="24.5" y="-109.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">run()</text>
+<g id="a_node2_6"><a xlink:href="#" xlink:title="run(self, runner: Runner = &lt;Runner object&gt;) &#45;&gt; Tuple[subprocess.CompletedProcess, str]:&#10;Run `runner` with fuzz input">
+<text text-anchor="start" x="24.5" y="-118" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">run()</text>
 </a>
 </g>
-<g id="a_node2_7"><a xlink:href="#" xlink:title="runs(self, runner=&lt;__main__.PrintRunner object at 0x10c770460&gt;, trials=10):&#10;Run `runner` with fuzz input, `trials` times">
-<text text-anchor="start" x="24.5" y="-98.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">runs()</text>
+<g id="a_node2_7"><a xlink:href="#" xlink:title="runs(self, runner: Runner = &lt;PrintRunner object&gt;, trials: int = 10) &#45;&gt; List[Tuple[subprocess.CompletedProcess, str]]:&#10;Run `runner` with fuzz input, `trials` times">
+<text text-anchor="start" x="24.5" y="-105.25" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">runs()</text>
 </a>
 </g>
 </a>
@@ -12194,20 +12217,20 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <!-- RandomFuzzer&#45;&gt;Fuzzer -->
 <g id="edge1" class="edge">
 <title>RandomFuzzer&#45;&gt;Fuzzer</title>
-<path fill="none" stroke="black" d="M54.5,-53.75C54.5,-61.83 54.5,-71.01 54.5,-80.07"/>
-<polygon fill="none" stroke="black" points="51,-80.19 54.5,-90.19 58,-80.19 51,-80.19"/>
+<path fill="none" stroke="black" d="M54.5,-60.27C54.5,-68.04 54.5,-76.68 54.5,-85.31"/>
+<polygon fill="none" stroke="black" points="51,-85.05 54.5,-95.05 58,-85.05 51,-85.05"/>
 </g>
 <!-- Legend -->
 <g id="node3" class="node">
 <title>Legend</title>
-<text text-anchor="start" x="127.5" y="-44.5" font-family="Patua One, Helvetica, sans-serif" font-weight="bold" font-size="10.00" fill="#b03a2e">Legend</text>
-<text text-anchor="start" x="127.5" y="-34.5" font-family="Patua One, Helvetica, sans-serif" font-size="10.00">• </text>
-<text text-anchor="start" x="133.5" y="-34.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="8.00">public_method()</text>
-<text text-anchor="start" x="127.5" y="-24.5" font-family="Patua One, Helvetica, sans-serif" font-size="10.00">• </text>
-<text text-anchor="start" x="133.5" y="-24.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-size="8.00">private_method()</text>
-<text text-anchor="start" x="127.5" y="-14.5" font-family="Patua One, Helvetica, sans-serif" font-size="10.00">• </text>
-<text text-anchor="start" x="133.5" y="-14.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-style="italic" font-size="8.00">overloaded_method()</text>
-<text text-anchor="start" x="127.5" y="-5.3" font-family="Helvetica,sans-Serif" font-size="9.00">Hover over names to see doc</text>
+<text text-anchor="start" x="126.88" y="-46.25" font-family="Patua One, Helvetica, sans-serif" font-weight="bold" font-size="10.00" fill="#b03a2e">Legend</text>
+<text text-anchor="start" x="126.88" y="-36.25" font-family="Patua One, Helvetica, sans-serif" font-size="10.00">• </text>
+<text text-anchor="start" x="132.88" y="-36.25" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="8.00">public_method()</text>
+<text text-anchor="start" x="126.88" y="-26.25" font-family="Patua One, Helvetica, sans-serif" font-size="10.00">• </text>
+<text text-anchor="start" x="132.88" y="-26.25" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-size="8.00">private_method()</text>
+<text text-anchor="start" x="126.88" y="-16.25" font-family="Patua One, Helvetica, sans-serif" font-size="10.00">• </text>
+<text text-anchor="start" x="132.88" y="-16.25" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-style="italic" font-size="8.00">overloaded_method()</text>
+<text text-anchor="start" x="126.88" y="-7.2" font-family="Helvetica,sans-Serif" font-size="9.00">Hover over names to see doc</text>
 </g>
 </g>
 </svg>
@@ -12228,34 +12251,34 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <p><?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 2.49.1 (20210923.0004)
+<!-- Generated by graphviz version 12.2.1 (20241206.2353)
  -->
 <!-- Pages: 1 -->
-<svg width="372pt" height="204pt"
- viewBox="0.00 0.00 372.00 204.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 200)">
+<svg width="371pt" height="224pt"
+ viewBox="0.00 0.00 371.12 224.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 220)">
 <g id="a_graph0"><a xlink:title="ProgramRunner class hierarchy">
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-200 368,-200 368,4 -4,4"/>
+<polygon fill="white" stroke="none" points="-4,4 -4,-220 367.12,-220 367.12,4 -4,4"/>
 </a>
 </g>
 <!-- ProgramRunner -->
 <g id="node1" class="node">
 <title>ProgramRunner</title>
 <g id="a_node1"><a xlink:href="#" xlink:title="class ProgramRunner:&#10;Test a program with inputs.">
-<polygon fill="none" stroke="black" points="0,-0.5 0,-64.5 116,-64.5 116,-0.5 0,-0.5"/>
-<text text-anchor="start" x="8" y="-50.3" font-family="Patua One, Helvetica, sans-serif" font-weight="bold" font-size="14.00" fill="#b03a2e">ProgramRunner</text>
-<polyline fill="none" stroke="black" points="0,-41.5 116,-41.5 "/>
+<polygon fill="none" stroke="black" points="0,-0.5 0,-72.75 115,-72.75 115,-0.5 0,-0.5"/>
+<text text-anchor="start" x="8" y="-56.45" font-family="Patua One, Helvetica, sans-serif" font-weight="bold" font-size="14.00" fill="#b03a2e">ProgramRunner</text>
+<polyline fill="none" stroke="black" points="0,-46.75 115,-46.75"/>
 <g id="a_node1_0"><a xlink:href="#" xlink:title="ProgramRunner">
-<g id="a_node1_1"><a xlink:href="#" xlink:title="__init__(self, program):&#10;Initialize.&#10;`program` is a program spec as passed to `subprocess.run()`">
-<text text-anchor="start" x="19" y="-30" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-style="italic" font-size="10.00">__init__()</text>
+<g id="a_node1_1"><a xlink:href="#" xlink:title="__init__(self, program: Union[str, List[str]]) &#45;&gt; None:&#10;Initialize.&#10;`program` is a program spec as passed to `subprocess.run()`">
+<text text-anchor="start" x="18.5" y="-34.25" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-style="italic" font-size="10.00">__init__()</text>
 </a>
 </g>
-<g id="a_node1_2"><a xlink:href="#" xlink:title="run(self, inp=&#39;&#39;):&#10;Run the program with `inp` as input.&#10;Return test outcome based on result of `subprocess.run()`.">
-<text text-anchor="start" x="19" y="-19" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-style="italic" font-size="10.00">run()</text>
+<g id="a_node1_2"><a xlink:href="#" xlink:title="run(self, inp: str = &#39;&#39;) &#45;&gt; Tuple[subprocess.CompletedProcess, str]:&#10;Run the program with `inp` as input.&#10;Return test outcome based on result of `subprocess.run()`.">
+<text text-anchor="start" x="18.5" y="-21.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-style="italic" font-size="10.00">run()</text>
 </a>
 </g>
-<g id="a_node1_3"><a xlink:href="#" xlink:title="run_process(self, inp=&#39;&#39;):&#10;Run the program with `inp` as input.&#10;Return result of `subprocess.run()`.">
-<text text-anchor="start" x="19" y="-7" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-size="10.00">run_process()</text>
+<g id="a_node1_3"><a xlink:href="#" xlink:title="run_process(self, inp: str = &#39;&#39;) &#45;&gt; subprocess.CompletedProcess:&#10;Run the program with `inp` as input.&#10;Return result of `subprocess.run()`.">
+<text text-anchor="start" x="18.5" y="-7.75" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-size="10.00">run_process()</text>
 </a>
 </g>
 </a>
@@ -12267,32 +12290,32 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <g id="node2" class="node">
 <title>Runner</title>
 <g id="a_node2"><a xlink:href="#" xlink:title="class Runner:&#10;Base class for testing inputs.">
-<polygon fill="none" stroke="black" points="80.5,-101.5 80.5,-195.5 157.5,-195.5 157.5,-101.5 80.5,-101.5"/>
-<text text-anchor="start" x="96" y="-181.3" font-family="Patua One, Helvetica, sans-serif" font-weight="bold" font-size="14.00" fill="#b03a2e">Runner</text>
-<polyline fill="none" stroke="black" points="80.5,-172.5 157.5,-172.5 "/>
+<polygon fill="none" stroke="black" points="80.5,-109.75 80.5,-215.5 156.5,-215.5 156.5,-109.75 80.5,-109.75"/>
+<text text-anchor="start" x="95.62" y="-199.2" font-family="Patua One, Helvetica, sans-serif" font-weight="bold" font-size="14.00" fill="#b03a2e">Runner</text>
+<polyline fill="none" stroke="black" points="80.5,-189.5 156.5,-189.5"/>
 <g id="a_node2_4"><a xlink:href="#" xlink:title="Runner">
 <g id="a_node2_5"><a xlink:href="#" xlink:title="FAIL = &#39;FAIL&#39;">
-<text text-anchor="start" x="89" y="-160" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-size="10.00">FAIL</text>
+<text text-anchor="start" x="88.5" y="-176" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-size="10.00">FAIL</text>
 </a>
 </g>
 <g id="a_node2_6"><a xlink:href="#" xlink:title="PASS = &#39;PASS&#39;">
-<text text-anchor="start" x="89" y="-149" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-size="10.00">PASS</text>
+<text text-anchor="start" x="88.5" y="-163.25" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-size="10.00">PASS</text>
 </a>
 </g>
 <g id="a_node2_7"><a xlink:href="#" xlink:title="UNRESOLVED = &#39;UNRESOLVED&#39;">
-<text text-anchor="start" x="89" y="-138" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-size="10.00">UNRESOLVED</text>
+<text text-anchor="start" x="88.5" y="-150.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-size="10.00">UNRESOLVED</text>
 </a>
 </g>
 </a>
 </g>
-<polyline fill="none" stroke="black" points="80.5,-131.5 157.5,-131.5 "/>
+<polyline fill="none" stroke="black" points="80.5,-143.25 156.5,-143.25"/>
 <g id="a_node2_8"><a xlink:href="#" xlink:title="Runner">
-<g id="a_node2_9"><a xlink:href="#" xlink:title="__init__(self):&#10;Initialize">
-<text text-anchor="start" x="89" y="-120.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-style="italic" font-size="10.00">__init__()</text>
+<g id="a_node2_9"><a xlink:href="#" xlink:title="__init__(self) &#45;&gt; None:&#10;Initialize">
+<text text-anchor="start" x="88.5" y="-130.75" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-style="italic" font-size="10.00">__init__()</text>
 </a>
 </g>
-<g id="a_node2_10"><a xlink:href="#" xlink:title="run(self, inp):&#10;Run the runner with the given input">
-<text text-anchor="start" x="89" y="-109.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-style="italic" font-size="10.00">run()</text>
+<g id="a_node2_10"><a xlink:href="#" xlink:title="run(self, inp: str) &#45;&gt; Any:&#10;Run the runner with the given input">
+<text text-anchor="start" x="88.5" y="-118" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-style="italic" font-size="10.00">run()</text>
 </a>
 </g>
 </a>
@@ -12303,19 +12326,19 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <!-- ProgramRunner&#45;&gt;Runner -->
 <g id="edge1" class="edge">
 <title>ProgramRunner&#45;&gt;Runner</title>
-<path fill="none" stroke="black" d="M74.67,-64.65C79.27,-73.24 84.4,-82.83 89.49,-92.35"/>
-<polygon fill="none" stroke="black" points="86.54,-94.25 94.34,-101.42 92.71,-90.95 86.54,-94.25"/>
+<path fill="none" stroke="black" d="M74.98,-73.16C79.02,-81.37 83.44,-90.35 87.86,-99.34"/>
+<polygon fill="none" stroke="black" points="84.61,-100.66 92.16,-108.09 90.89,-97.57 84.61,-100.66"/>
 </g>
 <!-- PrintRunner -->
 <g id="node3" class="node">
 <title>PrintRunner</title>
 <g id="a_node3"><a xlink:href="#" xlink:title="class PrintRunner:&#10;Simple runner, printing the input.">
-<polygon fill="none" stroke="black" points="134,-11.5 134,-53.5 228,-53.5 228,-11.5 134,-11.5"/>
-<text text-anchor="start" x="142" y="-39.3" font-family="Patua One, Helvetica, sans-serif" font-weight="bold" font-size="14.00" fill="#b03a2e">PrintRunner</text>
-<polyline fill="none" stroke="black" points="134,-30.5 228,-30.5 "/>
+<polygon fill="none" stroke="black" points="133.25,-13.25 133.25,-60 225.75,-60 225.75,-13.25 133.25,-13.25"/>
+<text text-anchor="start" x="141.25" y="-43.7" font-family="Patua One, Helvetica, sans-serif" font-weight="bold" font-size="14.00" fill="#b03a2e">PrintRunner</text>
+<polyline fill="none" stroke="black" points="133.25,-34 225.75,-34"/>
 <g id="a_node3_11"><a xlink:href="#" xlink:title="PrintRunner">
-<g id="a_node3_12"><a xlink:href="#" xlink:title="run(self, inp):&#10;Print the given input">
-<text text-anchor="start" x="166" y="-19" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-style="italic" font-size="10.00">run()</text>
+<g id="a_node3_12"><a xlink:href="#" xlink:title="run(self, inp) &#45;&gt; Any:&#10;Print the given input">
+<text text-anchor="start" x="164.5" y="-21.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-style="italic" font-size="10.00">run()</text>
 </a>
 </g>
 </a>
@@ -12326,20 +12349,20 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <!-- PrintRunner&#45;&gt;Runner -->
 <g id="edge2" class="edge">
 <title>PrintRunner&#45;&gt;Runner</title>
-<path fill="none" stroke="black" d="M170.06,-53.62C164.18,-64.42 156.63,-78.32 149.13,-92.09"/>
-<polygon fill="none" stroke="black" points="145.94,-90.63 144.24,-101.09 152.09,-93.98 145.94,-90.63"/>
+<path fill="none" stroke="black" d="M168.31,-60.37C162.86,-71.45 156.01,-85.38 149.15,-99.33"/>
+<polygon fill="none" stroke="black" points="146.11,-97.57 144.84,-108.09 152.39,-100.66 146.11,-97.57"/>
 </g>
 <!-- Legend -->
 <g id="node4" class="node">
 <title>Legend</title>
-<text text-anchor="start" x="246" y="-50" font-family="Patua One, Helvetica, sans-serif" font-weight="bold" font-size="10.00" fill="#b03a2e">Legend</text>
-<text text-anchor="start" x="246" y="-40" font-family="Patua One, Helvetica, sans-serif" font-size="10.00">• </text>
-<text text-anchor="start" x="252" y="-40" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="8.00">public_method()</text>
-<text text-anchor="start" x="246" y="-30" font-family="Patua One, Helvetica, sans-serif" font-size="10.00">• </text>
-<text text-anchor="start" x="252" y="-30" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-size="8.00">private_method()</text>
-<text text-anchor="start" x="246" y="-20" font-family="Patua One, Helvetica, sans-serif" font-size="10.00">• </text>
-<text text-anchor="start" x="252" y="-20" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-style="italic" font-size="8.00">overloaded_method()</text>
-<text text-anchor="start" x="246" y="-10.8" font-family="Helvetica,sans-Serif" font-size="9.00">Hover over names to see doc</text>
+<text text-anchor="start" x="243.88" y="-52.62" font-family="Patua One, Helvetica, sans-serif" font-weight="bold" font-size="10.00" fill="#b03a2e">Legend</text>
+<text text-anchor="start" x="243.88" y="-42.62" font-family="Patua One, Helvetica, sans-serif" font-size="10.00">• </text>
+<text text-anchor="start" x="249.88" y="-42.62" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="8.00">public_method()</text>
+<text text-anchor="start" x="243.88" y="-32.62" font-family="Patua One, Helvetica, sans-serif" font-size="10.00">• </text>
+<text text-anchor="start" x="249.88" y="-32.62" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-size="8.00">private_method()</text>
+<text text-anchor="start" x="243.88" y="-22.62" font-family="Patua One, Helvetica, sans-serif" font-size="10.00">• </text>
+<text text-anchor="start" x="249.88" y="-22.62" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-style="italic" font-size="8.00">overloaded_method()</text>
+<text text-anchor="start" x="243.88" y="-13.57" font-family="Helvetica,sans-Serif" font-size="9.00">Hover over names to see doc</text>
 </g>
 </g>
 </svg>
@@ -12366,7 +12389,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="text_cell_render border-box-sizing rendered_html"><p>This is how the <a href="http://pages.cs.wisc.edu/~bart/fuzz/CS736-Projects-f1988.pdf">assignment</a> read:</p>
 <blockquote><p>The goal of this project is to evaluate the robustness of various UNIX utility programs, given an unpredictable input stream. [...] First, you will build a <em>fuzz generator</em>. This is a program that will output a random character stream. Second, you will take the fuzz generator and use it to attack as many UNIX utilities as possible, with the goal of trying to break them.</p>
 </blockquote>
-<p>This assignment captures the essence of fuzzing: <em>Create random inputs, and see if they break things.</em>  Just let it run long enough and you'll see.</p>
+<p>This assignment captures the essence of fuzzing: <em>Create random inputs, and see if they break things.</em>  Just let it run long enough, and you'll see.</p>
 </div>
 </div>
 </div>
@@ -12387,7 +12410,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="text_cell_render border-box-sizing rendered_html"><p>This implementation uses the following Python features and functions:</p>
 <ul>
 <li><code>random.randrange(start, end)</code> – return a random number $[$ <code>start</code>, <code>end</code> $)$</li>
-<li><code>range(start, end)</code> – create a list with integers in the range $[$ <code>start</code>, <code>end</code> $)$.  Typically used in iterations.</li>
+<li><code>range(start, end)</code> – create an iterator (which can be used as a list) with integers in the range $[$ <code>start</code>, <code>end</code> $)$.</li>
 <li><code>for elem in list: body</code> – execute <code>body</code> in a loop with <code>elem</code> taking each value from <code>list</code>.</li>
 <li><code>for i in range(start, end): body</code> – execute <code>body</code> in a loop with <code>i</code> from <code>start</code> to <code>end</code> $-$ 1.</li>
 <li><code>chr(n)</code> – return a character with ASCII code <code>n</code></li>
@@ -12435,9 +12458,9 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">fuzzer</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">char_start</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">char_range</span><span class="o">=</span><span class="mi">32</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;A string of up to `max_length` characters</span>
-<span class="sd">       in the range [`char_start`, `char_start` + `char_range`]&quot;&quot;&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">fuzzer</span><span class="p">(</span><span class="n">max_length</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">char_start</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">32</span><span class="p">,</span> <span class="n">char_range</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">32</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A string of up to `max_length` characters</span>
+<span class="sd">       in the range [`char_start`, `char_start` + `char_range`)&quot;&quot;&quot;</span>
     <span class="n">string_length</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_length</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
     <span class="n">out</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">string_length</span><span class="p">):</span>
@@ -12629,22 +12652,22 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
     <p>
     <div class="quiz_options" title="Pick a choice.">
 
-        <input type="radio" name="8a6184d6-3c9d-11ec-89c0-acde48001122" id="8a6184d6-3c9d-11ec-89c0-acde48001122-1" onclick="clear_selection('8a6184d6-3c9d-11ec-89c0-acde48001122')">
-        <label id="8a6184d6-3c9d-11ec-89c0-acde48001122-1-label" for="8a6184d6-3c9d-11ec-89c0-acde48001122-1"><code>fuzzer(100, 1, 100)</code></label><br>
+        <input type="radio" name="80efaf64-d3ed-11ef-81b8-6298cf1a5790" id="80efaf64-d3ed-11ef-81b8-6298cf1a5790-1" onclick="clear_selection('80efaf64-d3ed-11ef-81b8-6298cf1a5790')">
+        <label id="80efaf64-d3ed-11ef-81b8-6298cf1a5790-1-label" for="80efaf64-d3ed-11ef-81b8-6298cf1a5790-1"><code>fuzzer(100, 1, 100)</code></label><br>
 
-        <input type="radio" name="8a6184d6-3c9d-11ec-89c0-acde48001122" id="8a6184d6-3c9d-11ec-89c0-acde48001122-2" onclick="clear_selection('8a6184d6-3c9d-11ec-89c0-acde48001122')">
-        <label id="8a6184d6-3c9d-11ec-89c0-acde48001122-2-label" for="8a6184d6-3c9d-11ec-89c0-acde48001122-2"><code>fuzzer(100, 100, 0)</code></label><br>
+        <input type="radio" name="80efaf64-d3ed-11ef-81b8-6298cf1a5790" id="80efaf64-d3ed-11ef-81b8-6298cf1a5790-2" onclick="clear_selection('80efaf64-d3ed-11ef-81b8-6298cf1a5790')">
+        <label id="80efaf64-d3ed-11ef-81b8-6298cf1a5790-2-label" for="80efaf64-d3ed-11ef-81b8-6298cf1a5790-2"><code>fuzzer(100, 100, 0)</code></label><br>
 
-        <input type="radio" name="8a6184d6-3c9d-11ec-89c0-acde48001122" id="8a6184d6-3c9d-11ec-89c0-acde48001122-3" onclick="clear_selection('8a6184d6-3c9d-11ec-89c0-acde48001122')">
-        <label id="8a6184d6-3c9d-11ec-89c0-acde48001122-3-label" for="8a6184d6-3c9d-11ec-89c0-acde48001122-3"><code>fuzzer(100, 10, ord('0'))</code></label><br>
+        <input type="radio" name="80efaf64-d3ed-11ef-81b8-6298cf1a5790" id="80efaf64-d3ed-11ef-81b8-6298cf1a5790-3" onclick="clear_selection('80efaf64-d3ed-11ef-81b8-6298cf1a5790')">
+        <label id="80efaf64-d3ed-11ef-81b8-6298cf1a5790-3-label" for="80efaf64-d3ed-11ef-81b8-6298cf1a5790-3"><code>fuzzer(100, 10, ord('0'))</code></label><br>
 
-        <input type="radio" name="8a6184d6-3c9d-11ec-89c0-acde48001122" id="8a6184d6-3c9d-11ec-89c0-acde48001122-4" onclick="clear_selection('8a6184d6-3c9d-11ec-89c0-acde48001122')">
-        <label id="8a6184d6-3c9d-11ec-89c0-acde48001122-4-label" for="8a6184d6-3c9d-11ec-89c0-acde48001122-4"><code>fuzzer(100, ord('0'), 10)</code></label><br>
+        <input type="radio" name="80efaf64-d3ed-11ef-81b8-6298cf1a5790" id="80efaf64-d3ed-11ef-81b8-6298cf1a5790-4" onclick="clear_selection('80efaf64-d3ed-11ef-81b8-6298cf1a5790')">
+        <label id="80efaf64-d3ed-11ef-81b8-6298cf1a5790-4-label" for="80efaf64-d3ed-11ef-81b8-6298cf1a5790-4"><code>fuzzer(100, ord('0'), 10)</code></label><br>
 
     </div>
     </p>
-    <input id="8a6184d6-3c9d-11ec-89c0-acde48001122-submit" type="submit" value="Submit" onclick="check_selection('8a6184d6-3c9d-11ec-89c0-acde48001122', 16, 0, '1 ** (2 % 3) * 4')">
-    <span class="quiz_hint" id="8a6184d6-3c9d-11ec-89c0-acde48001122-hint"></span>
+    <input id="80efaf64-d3ed-11ef-81b8-6298cf1a5790-submit" type="submit" value="Submit" onclick="check_selection('80efaf64-d3ed-11ef-81b8-6298cf1a5790', 16, 0, '1 ** (2 % 3) * 4')">
+    <span class="quiz_hint" id="80efaf64-d3ed-11ef-81b8-6298cf1a5790-hint"></span>
     </div>
 
 </div>
@@ -12736,7 +12759,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmpm7dhxf0k/input.txt
+<pre>/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt
 </pre>
 </div>
 
@@ -13035,22 +13058,22 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
     <p>
     <div class="quiz_options" title="Pick a choice.">
 
-        <input type="radio" name="8a6f0520-3c9d-11ec-89c0-acde48001122" id="8a6f0520-3c9d-11ec-89c0-acde48001122-1" onclick="clear_selection('8a6f0520-3c9d-11ec-89c0-acde48001122')">
-        <label id="8a6f0520-3c9d-11ec-89c0-acde48001122-1-label" for="8a6f0520-3c9d-11ec-89c0-acde48001122-1">About one in a billion</label><br>
+        <input type="radio" name="80f74260-d3ed-11ef-81b8-6298cf1a5790" id="80f74260-d3ed-11ef-81b8-6298cf1a5790-1" onclick="clear_selection('80f74260-d3ed-11ef-81b8-6298cf1a5790')">
+        <label id="80f74260-d3ed-11ef-81b8-6298cf1a5790-1-label" for="80f74260-d3ed-11ef-81b8-6298cf1a5790-1">About one in a billion</label><br>
 
-        <input type="radio" name="8a6f0520-3c9d-11ec-89c0-acde48001122" id="8a6f0520-3c9d-11ec-89c0-acde48001122-2" onclick="clear_selection('8a6f0520-3c9d-11ec-89c0-acde48001122')">
-        <label id="8a6f0520-3c9d-11ec-89c0-acde48001122-2-label" for="8a6f0520-3c9d-11ec-89c0-acde48001122-2">About one in a million</label><br>
+        <input type="radio" name="80f74260-d3ed-11ef-81b8-6298cf1a5790" id="80f74260-d3ed-11ef-81b8-6298cf1a5790-2" onclick="clear_selection('80f74260-d3ed-11ef-81b8-6298cf1a5790')">
+        <label id="80f74260-d3ed-11ef-81b8-6298cf1a5790-2-label" for="80f74260-d3ed-11ef-81b8-6298cf1a5790-2">About one in a million</label><br>
 
-        <input type="radio" name="8a6f0520-3c9d-11ec-89c0-acde48001122" id="8a6f0520-3c9d-11ec-89c0-acde48001122-3" onclick="clear_selection('8a6f0520-3c9d-11ec-89c0-acde48001122')">
-        <label id="8a6f0520-3c9d-11ec-89c0-acde48001122-3-label" for="8a6f0520-3c9d-11ec-89c0-acde48001122-3">About one in a thousand</label><br>
+        <input type="radio" name="80f74260-d3ed-11ef-81b8-6298cf1a5790" id="80f74260-d3ed-11ef-81b8-6298cf1a5790-3" onclick="clear_selection('80f74260-d3ed-11ef-81b8-6298cf1a5790')">
+        <label id="80f74260-d3ed-11ef-81b8-6298cf1a5790-3-label" for="80f74260-d3ed-11ef-81b8-6298cf1a5790-3">About one in a thousand</label><br>
 
-        <input type="radio" name="8a6f0520-3c9d-11ec-89c0-acde48001122" id="8a6f0520-3c9d-11ec-89c0-acde48001122-4" onclick="clear_selection('8a6f0520-3c9d-11ec-89c0-acde48001122')">
-        <label id="8a6f0520-3c9d-11ec-89c0-acde48001122-4-label" for="8a6f0520-3c9d-11ec-89c0-acde48001122-4">About one in ten</label><br>
+        <input type="radio" name="80f74260-d3ed-11ef-81b8-6298cf1a5790" id="80f74260-d3ed-11ef-81b8-6298cf1a5790-4" onclick="clear_selection('80f74260-d3ed-11ef-81b8-6298cf1a5790')">
+        <label id="80f74260-d3ed-11ef-81b8-6298cf1a5790-4-label" for="80f74260-d3ed-11ef-81b8-6298cf1a5790-4">About one in ten</label><br>
 
     </div>
     </p>
-    <input id="8a6f0520-3c9d-11ec-89c0-acde48001122-submit" type="submit" value="Submit" onclick="check_selection('8a6f0520-3c9d-11ec-89c0-acde48001122', 8, 0, '9 ** 0.5')">
-    <span class="quiz_hint" id="8a6f0520-3c9d-11ec-89c0-acde48001122-hint"></span>
+    <input id="80f74260-d3ed-11ef-81b8-6298cf1a5790-submit" type="submit" value="Submit" onclick="check_selection('80f74260-d3ed-11ef-81b8-6298cf1a5790', 8, 0, '9 ** 0.5')">
+    <span class="quiz_hint" id="80f74260-d3ed-11ef-81b8-6298cf1a5790-hint"></span>
     </div>
 
 </div>
@@ -13060,7 +13083,9 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><p>The chance is actually higher than you may think. If you remove <code>/</code> (the root of all files), for instance, your entire file system will be gone. If you remove <code>~</code> (your home directory), all your files will be gone. If you remove <code>.</code> (the current folder), all the files in the current directory will be gone. For any of these to be produced, you need a string length of 1 (chance: 1 out of 100) and one of these three characters (chance: 3 out of 32), which indeed is a chance of about one in thousand.</p>
+<div class="text_cell_render border-box-sizing rendered_html"><p>The chance is actually higher than you may think. If you remove <code>/</code> (the root of all files), for instance, your entire file system will be gone. If you remove <code>.</code> (the current folder), all the files in the current directory will be gone.</p>
+<p>The probability of generating a string that is exactly 1 character long is 1/101, this is because the length of the string is determined by calling random.randrange(0, max_length + 1), where the default value of max_length is 100. Per the description given of random.randrange, that should return a random number in [0, 99 + 1). So, we end up with the inclusive range [0, 100] where there are 101 values in the interval.</p>
+<p>For <code>/</code> or <code>.</code> to be produced, you need a string length of 1 (chance: 1 out of 101) and one of these two characters (chance: 2 out of 32).</p>
 </div>
 </div>
 </div>
@@ -13072,7 +13097,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">1</span><span class="o">/</span><span class="mi">100</span> <span class="o">*</span> <span class="mi">3</span><span class="o">/</span><span class="mi">32</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">1</span><span class="o">/</span><span class="mi">101</span> <span class="o">*</span> <span class="mi">2</span><span class="o">/</span><span class="mi">32</span>
 </pre></div>
 
 </div>
@@ -13083,7 +13108,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="output_area">
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.0009375
+<pre>0.0006188118811881188
 </pre>
 </div>
 
@@ -13092,7 +13117,9 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><p>However, we can actually deal with any string as long as the <em>second</em> character is a space – after all, <code>rm -fr / WHATEVER</code> will first deal with <code>/</code>, and only then with whatever follows. The chances for the first character are 3 out of 32, for the space 1 out of 32, so we're more at 1 out of 300:</p>
+<div class="text_cell_render border-box-sizing rendered_html"><p>The above code block precludes the possibility of removing <code>~</code> (your home directory), this is because the probability of generating the character '~' is not 1/32; it is 0/32. The characters are created by calling chr(random.randrange(char_start, char_start + char_range)), where the default value of char_start is 32 and the default value of char_range is 32. The documentation for chr reads, "[r]eturn the string representing a character whose Unicode code point is the integer i." The Unicode code point for '~' is 126 and therefore, not in the interval [32, 64).</p>
+<p>If the code were to be changed so that char_range = 95 then the probability of obtaining the character '~' would be 1/94 , thus resulting in the probability of the event of deleting all files being equal to 0.000332</p>
+<p>And all your files in the home directory will be gone</p>
 </div>
 </div>
 </div>
@@ -13104,7 +13131,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">3</span><span class="o">/</span><span class="mi">32</span> <span class="o">*</span> <span class="mi">1</span><span class="o">/</span><span class="mi">32</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">3</span><span class="o">/</span><span class="mi">94</span> <span class="o">*</span> <span class="mi">1</span><span class="o">/</span><span class="mi">94</span> <span class="o">*</span> <span class="mi">99</span><span class="o">/</span><span class="mi">101</span>
 </pre></div>
 
 </div>
@@ -13115,7 +13142,44 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="output_area">
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.0029296875
+<pre>0.0003327969736765437
+</pre>
+</div>
+
+</div>
+
+<div class="input_markdown">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html"><p>However, we can actually deal with any string as long as the <em>second</em> character is a space – after all, <code>rm -fr / WHATEVER</code> will first deal with <code>/</code>, and only then with whatever follows. The chances for the first character are 2 out of 32 as the code block above only allows for the probability of obtaining a <code>/</code> or a <code>.</code> but not a <code>~</code>.</p>
+<p>For the space the probability is 1 out of 32.</p>
+<p>We have to include the term for the probability of obtaining at least 2 characters which is required for the scenario of obtaining a space as the second character. This probability is 99/101 because it is calculated as (1 - probability of obtaining a single character or no character at all), so it is equal to 1-(2/101).</p>
+<p>Therefore, the probability calculation for the event of deleting all files in the case of having a space for the second character is:</p>
+<p>[probability of obtaining '/' or '. ' followed by a space] = [the probability of obtaining either the '/' character or the '. ' character] <em> [the probability of obtaining space] </em> [Probability of getting at least 2 characters] = 0.001914</p>
+<p>Diagram of probability of obtaining at least 2 characters.</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="input_code">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">2</span><span class="o">/</span><span class="mi">32</span> <span class="o">*</span> <span class="mi">1</span><span class="o">/</span><span class="mi">32</span> <span class="o">*</span> <span class="mi">99</span><span class="o">/</span><span class="mi">101</span>
+</pre></div>
+
+</div>
+</div></div>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.0019144492574257425
 </pre>
 </div>
 
@@ -13193,7 +13257,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="output_area">
 
 <div class="output_text output_subarea output_execute_result">
-<pre>4
+<pre>9
 </pre>
 </div>
 
@@ -13239,26 +13303,9 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>&#39;5&amp;8&gt;&#34;86,?&#34;/7!1%5-**&amp;-$&amp;)$91;&#34;21(\&#39;8&#34;(%$4,(&#34;(&amp;!67%89$!.?(*(96(28$=6029:&lt;:$(6 !-+2622(&amp;4&#39;
-/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmpm7dhxf0k/input.txt 1: illegal character: &amp;
-/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmpm7dhxf0k/input.txt 1: parse error
-/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmpm7dhxf0k/input.txt 1: parse error
-/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmpm7dhxf0k/input.txt 1: illegal character: &amp;
-/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmpm7dhxf0k/input.txt 1: illegal character: $
-/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmpm7dhxf0k/input.txt 1: illegal character: &amp;
-/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmpm7dhxf0k/input.txt 1: illegal character: $
-/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmpm7dhxf0k/input.txt 1: parse error
-/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmpm7dhxf0k/input.txt 1: illegal character: $
-/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmpm7dhxf0k/input.txt 1: illegal character: &#34;
-/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmpm7dhxf0k/input.txt 1: illegal character: &amp;
-/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmpm7dhxf0k/input.txt 1: illegal character: $
-/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmpm7dhxf0k/input.txt 1: parse error
-/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmpm7dhxf0k/input.txt 1: illegal character: ?
-/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmpm7dhxf0k/input.txt 1: illegal character: $
-/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmpm7dhxf0k/input.txt 1: illegal character: :
-/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmpm7dhxf0k/input.txt 1: illegal character: :
-/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmpm7dhxf0k/input.txt 1: illegal character: $
-/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmpm7dhxf0k/input.txt 1: parse error
-/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmpm7dhxf0k/input.txt 1: illegal character: &amp;
+
+Parse error: bad character &#39;&amp;&#39;
+    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1
 </pre>
 </div>
 
@@ -13294,7 +13341,97 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="output_area">
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[]
+<pre>[&#34;\nParse error: bad character &#39;&amp;&#39;\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#34;,
+ &#39;\nParse error: bad expression\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad expression\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad token\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad token\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad token\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad token\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad token\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad expression\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad token\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad token\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad expression\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad expression\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad expression\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad expression\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad token\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad expression\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#34;\nParse error: bad character &#39;&amp;&#39;\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#34;,
+ &#39;\nParse error: bad assignment: left side must be scale, ibase, obase, seed, last, var, or array element\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad expression\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#34;\nParse error: bad character &#39;?&#39;\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#34;,
+ &#34;\nParse error: bad character &#39;&#39;&#39;\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#34;,
+ &#39;\nParse error: bad token\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#34;\nParse error: bad character &#39;?&#39;\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#34;,
+ &#34;\nParse error: bad character &#39;:&#39;\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#34;,
+ &#34;\nParse error: bad character &#39;&amp;&#39;\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#34;,
+ &#34;\nParse error: bad character &#39;:&#39;\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#34;,
+ &#39;\nParse error: bad token\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad token\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad expression\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#34;\nParse error: bad character &#39;?&#39;\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#34;,
+ &#39;\nParse error: bad assignment: left side must be scale, ibase, obase, seed, last, var, or array element\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad token\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad expression\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad token\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#34;\nParse error: bad character &#39;&amp;&#39;\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#34;,
+ &#34;\nParse error: bad character &#39;&#39;&#39;\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#34;,
+ &#39;\nParse error: bad token\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad expression\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#34;\nParse error: bad character &#39;&#39;&#39;\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#34;,
+ &#34;\nParse error: bad character &#39;&#39;&#39;\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#34;,
+ &#34;\nParse error: bad character &#39;&amp;&#39;\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#34;,
+ &#39;\nParse error: bad token\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad token\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#34;\nParse error: bad character &#39;:&#39;\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#34;,
+ &#34;\nParse error: bad character &#39;:&#39;\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#34;,
+ &#39;\nParse error: bad expression\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad expression\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad token\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#34;\nParse error: bad character &#39;&amp;&#39;\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#34;,
+ &#39;\nParse error: bad token\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad expression\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad expression\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad token\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad expression\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#34;\nParse error: bad character &#39;:&#39;\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#34;,
+ &#34;\nParse error: bad character &#39;:&#39;\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#34;,
+ &#39;\nParse error: bad expression\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad token\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad token\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad token\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad expression\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad expression\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#34;\nParse error: bad character &#39;&amp;&#39;\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#34;,
+ &#34;\nParse error: bad character &#39;&amp;&#39;\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#34;,
+ &#34;\nParse error: bad character &#39;&#39;&#39;\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#34;,
+ &#39;\nParse error: bad token\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad expression\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#34;\nParse error: bad character &#39;:&#39;\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#34;,
+ &#39;\nParse error: bad expression\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#34;\nParse error: bad character &#39;&#39;&#39;\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#34;,
+ &#39;\nParse error: bad expression\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#34;\nParse error: bad character &#39;:&#39;\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#34;,
+ &#34;\nParse error: bad character &#39;&#39;&#39;\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#34;,
+ &#39;\nParse error: bad token\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad token\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad token\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad expression\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad token\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#34;\nParse error: bad character &#39;&amp;&#39;\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#34;,
+ &#39;\nParse error: bad token\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad token\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#34;\nParse error: bad character &#39;?&#39;\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#34;,
+ &#39;\nParse error: bad expression\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad expression\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad expression\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#34;\nParse error: bad character &#39;:&#39;\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#34;,
+ &#34;\nParse error: bad character &#39;&#39;&#39;\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#34;,
+ &#39;\nParse error: bad expression\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad token\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;,
+ &#39;\nParse error: bad token\n    /var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/tmp33gvbu2n/input.txt:1\n\n&#39;]
 </pre>
 </div>
 
@@ -13326,7 +13463,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="output_area">
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0
+<pre>91
 </pre>
 </div>
 
@@ -13344,7 +13481,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><h2 id="Bugs-Fuzzers-Find">Bugs Fuzzers Find<a class="anchor-link" href="#Bugs-Fuzzers-Find">&#182;</a></h2><p>When Miller and his students ran their first fuzzers in 1989, they found an alarming result: About <strong>a third of the UNIX utilities</strong> they fuzzed had issues – they crashed, hung, or otherwise failed when confronted with fuzzing input [<a href="https://doi.org/10.1145/96267.96279">Miller <em>et al</em>, 1990</a>].  This also included the <code>bc</code> program, above.  (Apparently, the bugs have now been fixed!)</p>
+<div class="text_cell_render border-box-sizing rendered_html"><h2 id="Bugs-Fuzzers-Find">Bugs Fuzzers Find<a class="anchor-link" href="#Bugs-Fuzzers-Find">&#182;</a></h2><p>When Miller and his students ran their first fuzzers in 1989, they found an alarming result: About <strong>a third of the UNIX utilities</strong> they fuzzed had issues – they crashed, hung, or otherwise failed when confronted with fuzzing input [<a href="https://doi.org/10.1145/96267.96279">Miller <em>et al</em>, 1990</a>].  This also included the <code>bc</code> program, above.  (The <code>bc</code> above is a <a href="https://git.gavinhoward.com/gavin/bc">modern reimplementation</a> whose author is a <a href="https://git.gavinhoward.com/gavin/bc/src/branch/master/tests/fuzzing">staunch believer in fuzzing</a>!)</p>
 <p>Considering that many of these UNIX utilities were used in scripts that would also process network input, this was an alarming result.  Programmers quickly built and ran their own fuzzers, rushed to fix the reported errors, and learned not to trust external inputs anymore.</p>
 </div>
 </div>
@@ -13365,7 +13502,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html"><h3 id="Buffer-Overflows">Buffer Overflows<a class="anchor-link" href="#Buffer-Overflows">&#182;</a></h3><p>Many programs have built-in maximum lengths for inputs and input elements.  In languages like C, it is easy to excess these lengths without the program (or the programmer) even noticing, triggering so-called <strong>buffer overflows</strong>.  The following code, for instance, happily copies the <code>input</code> string into a <code>weekday</code> string even if <code>input</code> has more than eight characters:</p>
 <div class="highlight"><pre><span></span><span class="kt">char</span><span class="w"> </span><span class="n">weekday</span><span class="p">[</span><span class="mi">9</span><span class="p">];</span><span class="w"> </span><span class="c1">// 8 characters + trailing &#39;\0&#39; terminator</span>
-<span class="n">strcpy</span><span class="w"> </span><span class="p">(</span><span class="n">weekday</span><span class="p">,</span><span class="w"> </span><span class="n">input</span><span class="p">);</span><span class="w"></span>
+<span class="n">strcpy</span><span class="w"> </span><span class="p">(</span><span class="n">weekday</span><span class="p">,</span><span class="w"> </span><span class="n">input</span><span class="p">);</span>
 </pre></div>
 <p>Ironically, this already fails if <code>input</code> is <code>"Wednesday"</code> (9 characters); any excess characters (here, <code>'y'</code> and the following <code>'\0'</code> string terminator) are simply copied to whatever resides in memory after <code>weekday</code>, triggering arbitrary behavior; maybe some boolean character variable which would be set from <code>'n'</code> to <code>'y'</code>.  With fuzzing, it is very easy to produce arbitrary long inputs and input elements.</p>
 </div>
@@ -13444,9 +13581,9 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>Traceback (most recent call last):
-  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_13926/292568387.py&#34;, line 5, in &lt;module&gt;
+  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_1932/292568387.py&#34;, line 5, in &lt;module&gt;
     crash_if_too_long(s)
-  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_13926/2784561514.py&#34;, line 4, in crash_if_too_long
+  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_1932/2784561514.py&#34;, line 4, in crash_if_too_long
     raise ValueError
 ValueError (expected)
 </pre>
@@ -13467,7 +13604,7 @@ ValueError (expected)
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html"><h3 id="Missing-Error-Checks">Missing Error Checks<a class="anchor-link" href="#Missing-Error-Checks">&#182;</a></h3><p>Many programming languages do not have exceptions, but instead have functions return special <strong>error codes</strong> in exceptional circumstances.  The C function <code>getchar()</code>, for instance, normally returns a character from the standard input; if no input is available anymore, it returns the special value <code>EOF</code> (end of file).  Now assume a programmer is scanning the input for the next character, reading in characters with <code>getchar()</code> until a space character is read:</p>
-<div class="highlight"><pre><span></span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">getchar</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="sc">&#39; &#39;</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">getchar</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="sc">&#39; &#39;</span><span class="p">);</span>
 </pre></div>
 <p>What happens if the input ends prematurely, as would perfectly be feasible with fuzzing?  Well, <code>getchar()</code> returns <code>EOF</code>, and keeps on returning <code>EOF</code> when called again; so the code above simply enters an infinite loop.</p>
 </div>
@@ -13549,14 +13686,13 @@ ValueError (expected)
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>Traceback (most recent call last):
-  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_13926/3194687366.py&#34;, line 5, in &lt;module&gt;
+  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_1932/3194687366.py&#34;, line 5, in &lt;module&gt;
     hang_if_no_space(s)
-  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_13926/3035466707.py&#34;, line 7, in hang_if_no_space
-    i += 1
-  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_13926/3035466707.py&#34;, line 7, in hang_if_no_space
-    i += 1
-  File &#34;/Users/zeller/Projects/fuzzingbook/notebooks/ExpectError.ipynb&#34;, line 86, in check_time
-    raise TimeoutError
+  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_1932/3035466707.py&#34;, line 3, in hang_if_no_space
+    while True:
+          ^^^^
+  File &#34;Timeout.ipynb&#34;, line 43, in timeout_handler
+    raise TimeoutError()
 TimeoutError (expected)
 </pre>
 </div>
@@ -13576,12 +13712,12 @@ TimeoutError (expected)
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html"><h3 id="Rogue-Numbers">Rogue Numbers<a class="anchor-link" href="#Rogue-Numbers">&#182;</a></h3><p>With fuzzing, it is easy to generate <strong>uncommon values</strong> in the input, causing all kinds of interesting behavior.  Consider the following code, again in the C language, which first reads a buffer size from the input, and then allocates a buffer of the given size:</p>
-<div class="highlight"><pre><span></span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="nf">read_input</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">read_buffer_size</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">buffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">size</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="nf">read_input</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">read_buffer_size</span><span class="p">();</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">buffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">size</span><span class="p">);</span>
 <span class="w">    </span><span class="c1">// fill buffer</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">buffer</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">buffer</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 <p>What happens if <code>size</code> is very large, exceeding program memory?  What happens if <code>size</code> is less than the number of characters following?  What happens if <code>size</code> is negative?  By providing a random number here, fuzzing can create all kinds of damages.</p>
 </div>
@@ -13675,9 +13811,9 @@ TimeoutError (expected)
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>Traceback (most recent call last):
-  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_13926/2775103647.py&#34;, line 2, in &lt;module&gt;
+  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_1932/2775103647.py&#34;, line 2, in &lt;module&gt;
     collapse_if_too_large(long_number)
-  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_13926/1591744602.py&#34;, line 3, in collapse_if_too_large
+  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_1932/1591744602.py&#34;, line 3, in collapse_if_too_large
     raise ValueError
 ValueError (expected)
 </pre>
@@ -13830,7 +13966,7 @@ ValueError (expected)
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>clang -fsanitize<span class="o">=</span>address -g -o program program.c
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>clang<span class="w"> </span>-fsanitize<span class="o">=</span>address<span class="w"> </span>-g<span class="w"> </span>-o<span class="w"> </span>program<span class="w"> </span>program.c
 </pre></div>
 
 </div>
@@ -13853,7 +13989,7 @@ ValueError (expected)
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>./program <span class="m">99</span><span class="p">;</span> <span class="nb">echo</span> <span class="nv">$?</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>./program<span class="w"> </span><span class="m">99</span><span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$?</span>
 </pre></div>
 
 </div>
@@ -13864,7 +14000,8 @@ ValueError (expected)
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>42
+<pre>program(2097,0x1ff330240) malloc: nano zone abandoned due to inability to reserve vm space.
+42
 </pre>
 </div>
 
@@ -13885,7 +14022,7 @@ ValueError (expected)
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>./program <span class="m">110</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>./program<span class="w"> </span><span class="m">110</span>
 </pre></div>
 
 </div>
@@ -13896,31 +14033,32 @@ ValueError (expected)
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>=================================================================
-<span class="ansi-red-intense-fg ansi-bold">==14041==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x60b0000000ae at pc 0x000108a99eef bp 0x7ffee7168ec0 sp 0x7ffee7168eb8
+<pre>program(2132,0x1ff330240) malloc: nano zone abandoned due to inability to reserve vm space.
+=================================================================
+<span class="ansi-red-intense-fg ansi-bold">==2132==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x60b0000000ae at pc 0x000104927e84 bp 0x00016b4daa50 sp 0x00016b4daa48
 </span><span class="ansi-blue-intense-fg ansi-bold">READ of size 1 at 0x60b0000000ae thread T0</span>
-    #0 0x108a99eee in main program.c:12
-    #1 0x7fff20408f3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
+    #0 0x104927e80 in main program.c:12
+    #1 0x1956d0270  (&lt;unknown module&gt;)
 
-<span class="ansi-green-intense-fg ansi-bold">0x60b0000000ae is located 10 bytes to the right of 100-byte region [0x60b000000040,0x60b0000000a4)
+<span class="ansi-green-intense-fg ansi-bold">0x60b0000000ae is located 10 bytes after 100-byte region [0x60b000000040,0x60b0000000a4)
 </span><span class="ansi-magenta-intense-fg ansi-bold">allocated by thread T0 here:</span>
-    #0 0x108af54c0 in wrap_malloc+0xa0 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x484c0)
-    #1 0x108a99e3f in main program.c:7
-    #2 0x7fff20408f3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
+    #0 0x104e58c04 in malloc+0x94 (libclang_rt.asan_osx_dynamic.dylib:arm64e+0x54c04)
+    #1 0x104927dc8 in main program.c:7
+    #2 0x1956d0270  (&lt;unknown module&gt;)
 
 SUMMARY: AddressSanitizer: heap-buffer-overflow program.c:12 in main
 Shadow bytes around the buggy address:
-  0x1c15ffffffc0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-  0x1c15ffffffd0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-  0x1c15ffffffe0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-  0x1c15fffffff0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-  0x1c1600000000: <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> 00 00 00 00 00 00 00 00
-=&gt;0x1c1600000010: 00 00 00 00 04[<span class="ansi-red-intense-fg ansi-bold">fa</span>]<span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span>
-  0x1c1600000020: <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span>
-  0x1c1600000030: <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span>
-  0x1c1600000040: <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span>
-  0x1c1600000050: <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span>
-  0x1c1600000060: <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span>
+  0x60affffffe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x60affffffe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x60afffffff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x60afffffff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x60b000000000: <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> 00 00 00 00 00 00 00 00
+=&gt;0x60b000000080: 00 00 00 00 04[<span class="ansi-red-intense-fg ansi-bold">fa</span>]<span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span>
+  0x60b000000100: <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span>
+  0x60b000000180: <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span>
+  0x60b000000200: <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span>
+  0x60b000000280: <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span>
+  0x60b000000300: <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span> <span class="ansi-red-intense-fg ansi-bold">fa</span>
 Shadow byte legend (one shadow byte represents 8 application bytes):
   Addressable:           00
   Partially addressable: 01 02 03 04 05 06 07 
@@ -13940,8 +14078,7 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
   ASan internal:           <span class="ansi-yellow-intense-fg ansi-bold">fe</span>
   Left alloca redzone:     <span class="ansi-blue-intense-fg ansi-bold">ca</span>
   Right alloca redzone:    <span class="ansi-blue-intense-fg ansi-bold">cb</span>
-  Shadow gap:              cc
-==14041==ABORTING
+==2132==ABORTING
 </pre>
 </div>
 
@@ -14055,7 +14192,7 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>rm -fr program program.*
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>rm<span class="w"> </span>-fr<span class="w"> </span>program<span class="w"> </span>program.*
 </pre></div>
 
 </div>
@@ -14128,7 +14265,7 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">heartbeat</span><span class="p">(</span><span class="n">reply</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">memory</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">heartbeat</span><span class="p">(</span><span class="n">reply</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">length</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">memory</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
     <span class="c1"># Store reply in memory</span>
     <span class="n">memory</span> <span class="o">=</span> <span class="n">reply</span> <span class="o">+</span> <span class="n">memory</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">reply</span><span class="p">):]</span>
 
@@ -14276,8 +14413,9 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>Traceback (most recent call last):
-  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_13926/4040656327.py&#34;, line 4, in &lt;module&gt;
+  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_1932/4040656327.py&#34;, line 4, in &lt;module&gt;
     assert not s.find(uninitialized_memory_marker)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 AssertionError (expected)
 </pre>
 </div>
@@ -14335,7 +14473,7 @@ AssertionError (expected)
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">airport_codes</span> <span class="o">=</span> <span class="p">{</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">airport_codes</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;YVR&quot;</span><span class="p">:</span> <span class="s2">&quot;Vancouver&quot;</span><span class="p">,</span>
     <span class="s2">&quot;JFK&quot;</span><span class="p">:</span> <span class="s2">&quot;New York-JFK&quot;</span><span class="p">,</span>
     <span class="s2">&quot;CDG&quot;</span><span class="p">:</span> <span class="s2">&quot;Paris-Charles de Gaulle&quot;</span><span class="p">,</span>
@@ -14422,7 +14560,7 @@ AssertionError (expected)
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">code_repOK</span><span class="p">(</span><span class="n">code</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">code_repOK</span><span class="p">(</span><span class="n">code</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
     <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">code</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Airport code must have three characters: &quot;</span> <span class="o">+</span> <span class="nb">repr</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">code</span><span class="p">:</span>
         <span class="k">assert</span> <span class="n">c</span><span class="o">.</span><span class="n">isalpha</span><span class="p">(),</span> <span class="s2">&quot;Non-letter in airport code: &quot;</span> <span class="o">+</span> <span class="nb">repr</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
@@ -14532,12 +14670,15 @@ AssertionError (expected)
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>Traceback (most recent call last):
-  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_13926/2308942452.py&#34;, line 2, in &lt;module&gt;
+  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_1932/2308942452.py&#34;, line 2, in &lt;module&gt;
     assert airport_codes_repOK()
-  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_13926/480627665.py&#34;, line 3, in airport_codes_repOK
+           ^^^^^^^^^^^^^^^^^^^^^
+  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_1932/480627665.py&#34;, line 3, in airport_codes_repOK
     assert code_repOK(code)
-  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_13926/3931727536.py&#34;, line 2, in code_repOK
+           ^^^^^^^^^^^^^^^^
+  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_1932/865020192.py&#34;, line 2, in code_repOK
     assert len(code) == 3, &#34;Airport code must have three characters: &#34; + repr(code)
+           ^^^^^^^^^^^^^^
 AssertionError: Airport code must have three characters: &#39;YMML&#39; (expected)
 </pre>
 </div>
@@ -14559,7 +14700,7 @@ AssertionError: Airport code must have three characters: &#39;YMML&#39; (expecte
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">add_new_airport</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">city</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">add_new_airport</span><span class="p">(</span><span class="n">code</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">city</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="k">assert</span> <span class="n">code_repOK</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
     <span class="n">airport_codes</span><span class="p">[</span><span class="n">code</span><span class="p">]</span> <span class="o">=</span> <span class="n">city</span>
 </pre></div>
@@ -14612,12 +14753,14 @@ AssertionError: Airport code must have three characters: &#39;YMML&#39; (expecte
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>Traceback (most recent call last):
-  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_13926/1427835309.py&#34;, line 2, in &lt;module&gt;
+  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_1932/1427835309.py&#34;, line 2, in &lt;module&gt;
     add_new_airport(&#34;London-Heathrow&#34;, &#34;LHR&#34;)
-  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_13926/939447822.py&#34;, line 2, in add_new_airport
+  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_1932/2655039924.py&#34;, line 2, in add_new_airport
     assert code_repOK(code)
-  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_13926/3931727536.py&#34;, line 2, in code_repOK
+           ^^^^^^^^^^^^^^^^
+  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_1932/865020192.py&#34;, line 2, in code_repOK
     assert len(code) == 3, &#34;Airport code must have three characters: &#34; + repr(code)
+           ^^^^^^^^^^^^^^
 AssertionError: Airport code must have three characters: &#39;London-Heathrow&#39; (expected)
 </pre>
 </div>
@@ -14639,7 +14782,7 @@ AssertionError: Airport code must have three characters: &#39;London-Heathrow&#3
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">add_new_airport</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">city</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">add_new_airport_2</span><span class="p">(</span><span class="n">code</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">city</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="k">assert</span> <span class="n">code_repOK</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
     <span class="k">assert</span> <span class="n">airport_codes_repOK</span><span class="p">()</span>
     <span class="n">airport_codes</span><span class="p">[</span><span class="n">code</span><span class="p">]</span> <span class="o">=</span> <span class="n">city</span>
@@ -14667,7 +14810,7 @@ AssertionError: Airport code must have three characters: &#39;London-Heathrow&#3
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="n">ExpectError</span><span class="p">():</span>
-    <span class="n">add_new_airport</span><span class="p">(</span><span class="s2">&quot;IST&quot;</span><span class="p">,</span> <span class="s2">&quot;Istanbul Yeni Havalimanı&quot;</span><span class="p">)</span>
+    <span class="n">add_new_airport_2</span><span class="p">(</span><span class="s2">&quot;IST&quot;</span><span class="p">,</span> <span class="s2">&quot;Istanbul Yeni Havalimanı&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -14679,14 +14822,17 @@ AssertionError: Airport code must have three characters: &#39;London-Heathrow&#3
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>Traceback (most recent call last):
-  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_13926/722789334.py&#34;, line 2, in &lt;module&gt;
-    add_new_airport(&#34;IST&#34;, &#34;Istanbul Yeni Havalimanı&#34;)
-  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_13926/1820348680.py&#34;, line 3, in add_new_airport
+  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_1932/1096579022.py&#34;, line 2, in &lt;module&gt;
+    add_new_airport_2(&#34;IST&#34;, &#34;Istanbul Yeni Havalimanı&#34;)
+  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_1932/2099116665.py&#34;, line 3, in add_new_airport_2
     assert airport_codes_repOK()
-  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_13926/480627665.py&#34;, line 3, in airport_codes_repOK
+           ^^^^^^^^^^^^^^^^^^^^^
+  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_1932/480627665.py&#34;, line 3, in airport_codes_repOK
     assert code_repOK(code)
-  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_13926/3931727536.py&#34;, line 2, in code_repOK
+           ^^^^^^^^^^^^^^^^
+  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_1932/865020192.py&#34;, line 2, in code_repOK
     assert len(code) == 3, &#34;Airport code must have three characters: &#34; + repr(code)
+           ^^^^^^^^^^^^^^
 AssertionError: Airport code must have three characters: &#39;YMML&#39; (expected)
 </pre>
 </div>
@@ -14733,12 +14879,12 @@ AssertionError: Airport code must have three characters: &#39;YMML&#39; (expecte
 
     <span class="k">def</span> <span class="nf">add_element</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">elem</span><span class="p">):</span>
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">repOK</span><span class="p">()</span>
-        <span class="c1"># Add the element</span>
+        <span class="o">...</span>  <span class="c1"># Add the element</span>
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">repOK</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">delete_element</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">elem</span><span class="p">):</span>
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">repOK</span><span class="p">()</span>
-        <span class="c1"># Delete the element</span>
+        <span class="o">...</span>  <span class="c1"># Delete the element</span>
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">repOK</span><span class="p">()</span>
 </pre></div>
 
@@ -14771,21 +14917,7 @@ AssertionError: Airport code must have three characters: &#39;YMML&#39; (expecte
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn"><a href="https://docs.python.org/3/library/typing.html" class="import" target="_blank">typing</a></span> <span class="kn">import</span> <span class="n">Dict</span>
-</pre></div>
-
-</div>
-</div></div>
-</div>
-</div>
-
-<div class="input_code">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">airport_codes</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">typed_airport_codes</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;YVR&quot;</span><span class="p">:</span> <span class="s2">&quot;Vancouver&quot;</span><span class="p">,</span>  <span class="c1"># etc</span>
 <span class="p">}</span>
 </pre></div>
@@ -14810,7 +14942,7 @@ AssertionError: Airport code must have three characters: &#39;YMML&#39; (expecte
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">airport_codes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;First&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">typed_airport_codes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;First&quot;</span>
 </pre></div>
 
 </div>
@@ -14822,8 +14954,8 @@ AssertionError: Airport code must have three characters: &#39;YMML&#39; (expecte
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html"><p>this would be caught by MyPy immediately:</p>
-<div class="highlight"><pre><span></span>$ mypy airports.py
-airports.py: error: Invalid index <span class="nb">type</span> <span class="s2">&quot;int&quot;</span> <span class="k">for</span> <span class="s2">&quot;Dict[str, str]&quot;</span><span class="p">;</span> expected <span class="nb">type</span> <span class="s2">&quot;str&quot;</span>
+<div class="highlight"><pre><span></span>$<span class="w"> </span>mypy<span class="w"> </span>airports.py
+airports.py:<span class="w"> </span>error:<span class="w"> </span>Invalid<span class="w"> </span>index<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="s2">&quot;int&quot;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="s2">&quot;Dict[str, str]&quot;</span><span class="p">;</span><span class="w"> </span>expected<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="s2">&quot;str&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -14869,20 +15001,34 @@ airports.py: error: Invalid index <span class="nb">type</span> <span class="s2">
 
 <div class="inner_cell">
 <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Outcome</span> <span class="o">=</span> <span class="nb">str</span>
+</pre></div>
+
+</div>
+</div></div>
+</div>
+</div>
+
+<div class="input_code">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+<div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Runner</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Base class for testing inputs.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Base class for testing inputs.&quot;&quot;&quot;</span>
 
     <span class="c1"># Test outcomes</span>
     <span class="n">PASS</span> <span class="o">=</span> <span class="s2">&quot;PASS&quot;</span>
     <span class="n">FAIL</span> <span class="o">=</span> <span class="s2">&quot;FAIL&quot;</span>
     <span class="n">UNRESOLVED</span> <span class="o">=</span> <span class="s2">&quot;UNRESOLVED&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Initialize&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize&quot;&quot;&quot;</span>
         <span class="k">pass</span>
 
-    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inp</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Run the runner with the given input&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inp</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Run the runner with the given input&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">(</span><span class="n">inp</span><span class="p">,</span> <span class="n">Runner</span><span class="o">.</span><span class="n">UNRESOLVED</span><span class="p">)</span>
 </pre></div>
 
@@ -14908,10 +15054,10 @@ airports.py: error: Invalid index <span class="nb">type</span> <span class="s2">
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">PrintRunner</span><span class="p">(</span><span class="n">Runner</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Simple runner, printing the input.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Simple runner, printing the input.&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inp</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Print the given input&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inp</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Print the given input&quot;&quot;&quot;</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">inp</span><span class="p">)</span>
         <span class="k">return</span> <span class="p">(</span><span class="n">inp</span><span class="p">,</span> <span class="n">Runner</span><span class="o">.</span><span class="n">UNRESOLVED</span><span class="p">)</span>
 </pre></div>
@@ -15025,15 +15171,15 @@ airports.py: error: Invalid index <span class="nb">type</span> <span class="s2">
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">ProgramRunner</span><span class="p">(</span><span class="n">Runner</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Test a program with inputs.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Test a program with inputs.&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">program</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Initialize.</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">program</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize.</span>
 <span class="sd">           `program` is a program spec as passed to `subprocess.run()`&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">program</span> <span class="o">=</span> <span class="n">program</span>
 
-    <span class="k">def</span> <span class="nf">run_process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inp</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Run the program with `inp` as input.</span>
+    <span class="k">def</span> <span class="nf">run_process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inp</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">CompletedProcess</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Run the program with `inp` as input.</span>
 <span class="sd">           Return result of `subprocess.run()`.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">program</span><span class="p">,</span>
                               <span class="nb">input</span><span class="o">=</span><span class="n">inp</span><span class="p">,</span>
@@ -15041,8 +15187,8 @@ airports.py: error: Invalid index <span class="nb">type</span> <span class="s2">
                               <span class="n">stderr</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span>
                               <span class="n">universal_newlines</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inp</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Run the program with `inp` as input.  </span>
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inp</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">subprocess</span><span class="o">.</span><span class="n">CompletedProcess</span><span class="p">,</span> <span class="n">Outcome</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Run the program with `inp` as input.  </span>
 <span class="sd">           Return test outcome based on result of `subprocess.run()`.&quot;&quot;&quot;</span>
         <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">run_process</span><span class="p">(</span><span class="n">inp</span><span class="p">)</span>
 
@@ -15077,8 +15223,8 @@ airports.py: error: Invalid index <span class="nb">type</span> <span class="s2">
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">BinaryProgramRunner</span><span class="p">(</span><span class="n">ProgramRunner</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">run_process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inp</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Run the program with `inp` as input.  </span>
+    <span class="k">def</span> <span class="nf">run_process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inp</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">CompletedProcess</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Run the program with `inp` as input.  </span>
 <span class="sd">           Return result of `subprocess.run()`.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">program</span><span class="p">,</span>
                               <span class="nb">input</span><span class="o">=</span><span class="n">inp</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span>
@@ -15140,27 +15286,25 @@ airports.py: error: Invalid index <span class="nb">type</span> <span class="s2">
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Fuzzer</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Base class for fuzzers.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Base class for fuzzers.&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Constructor&quot;&quot;&quot;</span>
         <span class="k">pass</span>
 
-    <span class="k">def</span> <span class="nf">fuzz</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return fuzz input&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">fuzz</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return fuzz input&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="s2">&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="o">=</span><span class="n">Runner</span><span class="p">()):</span>
-        <span class="sd">&quot;&quot;&quot;Run `runner` with fuzz input&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="n">Runner</span> <span class="o">=</span> <span class="n">Runner</span><span class="p">())</span> \
+            <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">subprocess</span><span class="o">.</span><span class="n">CompletedProcess</span><span class="p">,</span> <span class="n">Outcome</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Run `runner` with fuzz input&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">runner</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fuzz</span><span class="p">())</span>
 
-    <span class="k">def</span> <span class="nf">runs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="o">=</span><span class="n">PrintRunner</span><span class="p">(),</span> <span class="n">trials</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Run `runner` with fuzz input, `trials` times&quot;&quot;&quot;</span>
-        <span class="c1"># Note: the list comprehension below does not invoke self.run() for subclasses</span>
-        <span class="c1"># return [self.run(runner) for i in range(trials)]</span>
-        <span class="n">outcomes</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">trials</span><span class="p">):</span>
-            <span class="n">outcomes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">runner</span><span class="p">))</span>
-        <span class="k">return</span> <span class="n">outcomes</span>
+    <span class="k">def</span> <span class="nf">runs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="n">Runner</span> <span class="o">=</span> <span class="n">PrintRunner</span><span class="p">(),</span> <span class="n">trials</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span> \
+            <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">subprocess</span><span class="o">.</span><span class="n">CompletedProcess</span><span class="p">,</span> <span class="n">Outcome</span><span class="p">]]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Run `runner` with fuzz input, `trials` times&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">runner</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">trials</span><span class="p">)]</span>
 </pre></div>
 
 </div>
@@ -15171,7 +15315,7 @@ airports.py: error: Invalid index <span class="nb">type</span> <span class="s2">
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><p>By default, <code>Fuzzer</code> objects do not do much, as their <code>fuzz()</code> function is merely an abstract placeholder.  The subclass <code>RandomFuzzer</code>, however, implements the functionality of the <code>fuzzer()</code> function, above, adding an additional parameter <code>min_length</code> to specify a minimum length.</p>
+<div class="text_cell_render border-box-sizing rendered_html"><p>By default, <code>Fuzzer</code> objects do not do much, as their <code>fuzz()</code> function is merely an abstract placeholder.  The subclass <code>RandomFuzzer</code>, however, implements the functionality of the <code>fuzzer()</code> function, above, adding a parameter <code>min_length</code> to specify a minimum length.</p>
 </div>
 </div>
 </div>
@@ -15184,18 +15328,18 @@ airports.py: error: Invalid index <span class="nb">type</span> <span class="s2">
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">RandomFuzzer</span><span class="p">(</span><span class="n">Fuzzer</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Produce random inputs.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Produce random inputs.&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
-                 <span class="n">char_start</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">char_range</span><span class="o">=</span><span class="mi">32</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Produce strings of `min_length` to `max_length` characters</span>
-<span class="sd">           in the range [`char_start`, `char_start` + `char_range`]&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_length</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">max_length</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span>
+                 <span class="n">char_start</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">32</span><span class="p">,</span> <span class="n">char_range</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">32</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Produce strings of `min_length` to `max_length` characters</span>
+<span class="sd">           in the range [`char_start`, `char_start` + `char_range`)&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">min_length</span> <span class="o">=</span> <span class="n">min_length</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">max_length</span> <span class="o">=</span> <span class="n">max_length</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">char_start</span> <span class="o">=</span> <span class="n">char_start</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">char_range</span> <span class="o">=</span> <span class="n">char_range</span>
 
-    <span class="k">def</span> <span class="nf">fuzz</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">fuzz</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="n">string_length</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">min_length</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_length</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
         <span class="n">out</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">string_length</span><span class="p">):</span>
@@ -15487,7 +15631,7 @@ Some paragraph</code></pre>
 <div class="text_cell_render border-box-sizing rendered_html"><h3 id="Exercise-1:-Simulate-Troff">Exercise 1: Simulate Troff<a class="anchor-link" href="#Exercise-1:-Simulate-Troff">&#182;</a></h3><p>For each of the above, write a Python function <code>f(s)</code> that fails if <code>s</code> fulfills the failure criterion.</p>
 
     
-<p><div class="solution_link"><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/master?filepath=docs/notebooks/Fuzzer.ipynb#Exercises" target=_blank>Use the notebook</a> to work on the exercises and see solutions.</div></p>
+<p><div class="solution_link"><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/HEAD?labpath=docs%2Fnotebooks/Fuzzer.ipynb#Exercises" target=_blank>Use the notebook</a> to work on the exercises and see solutions.</div></p>
 </div>
 </div>
 </div>
@@ -15499,7 +15643,7 @@ Some paragraph</code></pre>
 <div class="text_cell_render border-box-sizing rendered_html"><h3 id="Exercise-2:-Run-Simulated-Troff">Exercise 2: Run Simulated Troff<a class="anchor-link" href="#Exercise-2:-Run-Simulated-Troff">&#182;</a></h3><p>Create a class <code>TroffRunner</code> as subclass of <code>Runner</code> that checks for the above predicates.  Run it with <code>Fuzzer</code>.  Be sure to have the <code>Fuzzer</code> object produce the entire range of characters.  Count how frequently the individual predicates fail.</p>
 
     
-<p><div class="solution_link"><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/master?filepath=docs/notebooks/Fuzzer.ipynb#Exercises" target=_blank>Use the notebook</a> to work on the exercises and see solutions.</div></p>
+<p><div class="solution_link"><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/HEAD?labpath=docs%2Fnotebooks/Fuzzer.ipynb#Exercises" target=_blank>Use the notebook</a> to work on the exercises and see solutions.</div></p>
 </div>
 </div>
 </div>
@@ -15519,7 +15663,7 @@ Some paragraph</code></pre>
 <div class="text_cell_render border-box-sizing rendered_html"><p>Using <code>BinaryProgramRunner</code>, apply the fuzzer you configured on the real <code>troff</code> program.  Check if you can produce any run whose output code is non-zero, indicating a failure or a crash.</p>
 
     
-<p><div class="solution_link"><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/master?filepath=docs/notebooks/Fuzzer.ipynb#Exercises" target=_blank>Use the notebook</a> to work on the exercises and see solutions.</div></p>
+<p><div class="solution_link"><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/HEAD?labpath=docs%2Fnotebooks/Fuzzer.ipynb#Exercises" target=_blank>Use the notebook</a> to work on the exercises and see solutions.</div></p>
 </div>
 </div>
 </div>
@@ -15531,7 +15675,7 @@ Some paragraph</code></pre>
 The content of this project is licensed under the
 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target=_blank>Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 The source code that is part of the content, as well as the source code used to format and display that content is licensed under the <a href="https://github.com/uds-se/fuzzingbook/blob/master/LICENSE.md#mit-license">MIT License</a>.
-<a href="https://github.com/uds-se/fuzzingbook/commits/master/notebooks/Fuzzer.ipynb" target=_blank)>Last change: 2021-11-03 12:58:10+01:00</a> &bull; 
+<a href="https://github.com/uds-se/fuzzingbook/commits/master/notebooks/Fuzzer.ipynb" target=_blank)>Last change: 2024-11-09 17:07:29+01:00</a> &bull; 
 <a href="#citation" id="cite" onclick="revealCitation()">Cite</a> &bull;
 <a href="https://cispa.de/en/impressum" target=_blank>Imprint</a>
 </p>
@@ -15547,19 +15691,19 @@ function revealCitation() {
 <a name="citation"></a>
 <h2>How to Cite this Work</h2>
 <p>
-Andreas Zeller, Rahul Gopinath, Marcel Böhme, Gordon Fraser, and Christian Holler: "<a href="https://www.fuzzingbook.org/html/Fuzzer.html">Fuzzing: Breaking Things with Random Inputs</a>".  In Andreas Zeller, Rahul Gopinath, Marcel Böhme, Gordon Fraser, and Christian Holler, "<a href="https://www.fuzzingbook.org/">The Fuzzing Book</a>", <a href="https://www.fuzzingbook.org/html/Fuzzer.html">https://www.fuzzingbook.org/html/Fuzzer.html</a>.  Retrieved 2021-11-03 12:58:10+01:00.
+Andreas Zeller, Rahul Gopinath, Marcel Böhme, Gordon Fraser, and Christian Holler: "<a href="https://www.fuzzingbook.org/html/Fuzzer.html">Fuzzing: Breaking Things with Random Inputs</a>".  In Andreas Zeller, Rahul Gopinath, Marcel Böhme, Gordon Fraser, and Christian Holler, "<a href="https://www.fuzzingbook.org/">The Fuzzing Book</a>", <a href="https://www.fuzzingbook.org/html/Fuzzer.html">https://www.fuzzingbook.org/html/Fuzzer.html</a>.  Retrieved 2024-11-09 17:07:29+01:00.
 </p>
 <pre>
-@incollection{fuzzingbook2021:Fuzzer,
+@incollection{fuzzingbook2024:Fuzzer,
     author = {Andreas Zeller and Rahul Gopinath and Marcel B{\"o}hme and Gordon Fraser and Christian Holler},
     booktitle = {The Fuzzing Book},
     title = {Fuzzing: Breaking Things with Random Inputs},
-    year = {2021},
+    year = {2024},
     publisher = {CISPA Helmholtz Center for Information Security},
     howpublished = {\url{https://www.fuzzingbook.org/html/Fuzzer.html}},
-    note = {Retrieved 2021-11-03 12:58:10+01:00},
+    note = {Retrieved 2024-11-09 17:07:29+01:00},
     url = {https://www.fuzzingbook.org/html/Fuzzer.html},
-    urldate = {2021-11-03 12:58:10+01:00}
+    urldate = {2024-11-09 17:07:29+01:00}
 }
 </pre>
 </div>

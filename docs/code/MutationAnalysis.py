@@ -3,9 +3,9 @@
 
 # "Mutation Analysis" - a chapter of "The Fuzzing Book"
 # Web site: https://www.fuzzingbook.org/html/MutationAnalysis.html
-# Last change: 2021-06-04 14:41:13+02:00
+# Last change: 2025-01-16 10:40:02+01:00
 #
-# Copyright (c) 2021 CISPA Helmholtz Center for Information Security
+# Copyright (c) 2021-2025 CISPA Helmholtz Center for Information Security
 # Copyright (c) 2018-2020 Saarland University, authors, and contributors
 #
 # Permission is hereby granted, free of charge, to any person obtaining a
@@ -37,7 +37,7 @@ This file can be _executed_ as a script, running all experiments:
 or _imported_ as a package, providing classes, functions, and constants:
 
     >>> from fuzzingbook.MutationAnalysis import <identifier>
-    
+
 but before you do so, _read_ it and _interact_ with it at:
 
     https://www.fuzzingbook.org/html/MutationAnalysis.html
@@ -50,13 +50,20 @@ This chapter introduces two methods of running *mutation analysis* on subject pr
 >>>         assert gcd(0, 1) == 1, "Mirror"
 >>> mutant.pm.score()
 ->	gcd_1
-	gcd_2
-	gcd_3
+ cannot access local variable 'c' where it is not associated with a value
+
+->	gcd_2
+ Mirror
+
+->	gcd_3
 	gcd_4
+	gcd_5
+	gcd_6
+	gcd_7
  Minimal
 
 
-0.25
+0.42857142857142855
 
 The second class `MuProgramAnalyzer` targets standalone programs with test suites. Given a program `gcd` whose source code is provided in `gcd_src` and the test suite is provided by `TestGCD`, one can evaluate the mutation score of `TestGCD` as follows:
 
@@ -70,87 +77,94 @@ The second class `MuProgramAnalyzer` targets standalone programs with test suite
 >>>     mutant[test_module].runTest('TestGCD')
 >>> mutant.pm.score()
 ======================================================================
-FAIL: test_simple (__main__.TestGCD)
+FAIL: test_simple (__main__.TestGCD.test_simple)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "", line 3, in test_simple
+  File "/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_7987/2565918356.py", line 3, in test_simple
     assert cfg.gcd(1, 0) == 1
+           ^^^^^^^^^^^^^^^^^^
 AssertionError
 
 ----------------------------------------------------------------------
-Ran 1 test in 0.001s
+Ran 1 test in 0.000s
 
 FAILED (failures=1)
 ======================================================================
-FAIL: test_simple (__main__.TestGCD)
+FAIL: test_simple (__main__.TestGCD.test_simple)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "", line 3, in test_simple
+  File "/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_7987/2565918356.py", line 3, in test_simple
     assert cfg.gcd(1, 0) == 1
+           ^^^^^^^^^^^^^^^^^^
 AssertionError
 
 ----------------------------------------------------------------------
-Ran 1 test in 0.001s
+Ran 1 test in 0.000s
 
 FAILED (failures=1)
 ======================================================================
-FAIL: test_simple (__main__.TestGCD)
+FAIL: test_simple (__main__.TestGCD.test_simple)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "", line 3, in test_simple
+  File "/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_7987/2565918356.py", line 3, in test_simple
     assert cfg.gcd(1, 0) == 1
+           ^^^^^^^^^^^^^^^^^^
 AssertionError
 
 ----------------------------------------------------------------------
-Ran 1 test in 0.001s
+Ran 1 test in 0.000s
 
 FAILED (failures=1)
 ======================================================================
-FAIL: test_simple (__main__.TestGCD)
+FAIL: test_simple (__main__.TestGCD.test_simple)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "", line 3, in test_simple
+  File "/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_7987/2565918356.py", line 3, in test_simple
     assert cfg.gcd(1, 0) == 1
+           ^^^^^^^^^^^^^^^^^^
 AssertionError
 
 ----------------------------------------------------------------------
-Ran 1 test in 0.001s
+Ran 1 test in 0.000s
 
 FAILED (failures=1)
 ======================================================================
-FAIL: test_simple (__main__.TestGCD)
+FAIL: test_simple (__main__.TestGCD.test_simple)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "", line 3, in test_simple
+  File "/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_7987/2565918356.py", line 3, in test_simple
     assert cfg.gcd(1, 0) == 1
+           ^^^^^^^^^^^^^^^^^^
 AssertionError
 
 ----------------------------------------------------------------------
-Ran 1 test in 0.001s
+Ran 1 test in 0.000s
 
 FAILED (failures=1)
 ======================================================================
-FAIL: test_simple (__main__.TestGCD)
+FAIL: test_simple (__main__.TestGCD.test_simple)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "", line 3, in test_simple
+  File "/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_7987/2565918356.py", line 3, in test_simple
     assert cfg.gcd(1, 0) == 1
+           ^^^^^^^^^^^^^^^^^^
 AssertionError
 
 ----------------------------------------------------------------------
-Ran 1 test in 0.001s
+Ran 1 test in 0.000s
 
 FAILED (failures=1)
 ======================================================================
-FAIL: test_simple (__main__.TestGCD)
+FAIL: test_simple (__main__.TestGCD.test_simple)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "", line 3, in test_simple
+  File "/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_7987/2565918356.py", line 3, in test_simple
     assert cfg.gcd(1, 0) == 1
+           ^^^^^^^^^^^^^^^^^^
 AssertionError
 
 ----------------------------------------------------------------------
-Ran 1 test in 0.001s
+Ran 1 test in 0.000s
 
 FAILED (failures=1)
 
@@ -194,11 +208,11 @@ if __name__ == '__main__':
 
 
 
-def ineffective_test():
+def ineffective_test_1():
     execute_the_program_as_a_whole()
     assert True
 
-def ineffective_test():
+def ineffective_test_2():
     try:
         execute_the_program_as_a_whole()
     except:
@@ -257,7 +271,7 @@ from .Coverage import Coverage
 
 import inspect
 
-class Coverage(Coverage):
+class VisualCoverage(Coverage):
     def show_coverage(self, fn):
         src = inspect.getsource(fn)
         name = fn.__name__
@@ -267,7 +281,7 @@ class Coverage(Coverage):
             print('%s %2d: %s' % ('#' if i + 1 in covered else ' ', i + 1, s))
 
 if __name__ == '__main__':
-    with Coverage() as cov:
+    with VisualCoverage() as cov:
         strong_oracle(triangle)
 
 if __name__ == '__main__':
@@ -283,7 +297,7 @@ def weak_oracle(fn):
     assert fn(1, 2, 3) != 'Equilateral'
 
 if __name__ == '__main__':
-    with Coverage() as cov:
+    with VisualCoverage() as cov:
         weak_oracle(triangle)
 
 if __name__ == '__main__':
@@ -332,7 +346,6 @@ if __name__ == '__main__':
 
 
 import ast
-import astor
 import inspect
 
 if __name__ == '__main__':
@@ -348,7 +361,7 @@ if __name__ == '__main__':
     triangle_ast = ast.parse(triangle_source)
 
 if __name__ == '__main__':
-    print(astor.dump_tree(triangle_ast))
+    print(ast.dump(triangle_ast, indent=4))
 
 from .bookutils import rich_output
 
@@ -358,7 +371,7 @@ if __name__ == '__main__':
         showast.show_ast(triangle_ast)
 
 if __name__ == '__main__':
-    print_content(astor.to_source(triangle_ast), '.py')
+    print_content(ast.unparse(triangle_ast), '.py')
 
 ## A Simple Mutator for Functions
 ## ------------------------------
@@ -374,7 +387,7 @@ class MuFunctionAnalyzer:
         self.name = fn.__name__
         src = inspect.getsource(fn)
         self.ast = ast.parse(src)
-        self.src = astor.to_source(self.ast)  # normalize
+        self.src = ast.unparse(self.ast)  # normalize
         self.mutator = self.mutator_object()
         self.nmutations = self.get_mutation_count()
         self.un_detected = set()
@@ -470,7 +483,7 @@ class Mutant(Mutant):
     def generate_mutant(self, location):
         mutant_ast = self.pm.mutator_object(
             location).visit(ast.parse(self.pm.src))  # copy
-        return astor.to_source(mutant_ast)
+        return ast.unparse(mutant_ast)
 
 class Mutant(Mutant):
     def src(self):
@@ -571,6 +584,7 @@ def gcd(a, b):
         c = a
         a = b
         b = c % b
+
     return a
 
 if __name__ == '__main__':
@@ -578,6 +592,8 @@ if __name__ == '__main__':
         with mutant:
             assert gcd(1, 0) == 1, "Minimal"
             assert gcd(0, 1) == 1, "Mirror"
+
+if __name__ == '__main__':
     mutant.pm.score()
 
 ## Mutator for Modules and Test Suites
@@ -631,7 +647,7 @@ if __name__ == '__main__':
     runner.run(suite(StrongShapeTest))
 
 if __name__ == '__main__':
-    with Coverage() as cov:
+    with VisualCoverage() as cov:
         suite(StrongShapeTest).run(unittest.TestResult())
 
 if __name__ == '__main__':
@@ -650,7 +666,7 @@ class WeakShapeTest(unittest.TestCase):
         assert shape.triangle(1, 2, 3) != 'Equilateral'
 
 if __name__ == '__main__':
-    with Coverage() as cov:
+    with VisualCoverage() as cov:
         suite(WeakShapeTest).run(unittest.TestResult())
 
 if __name__ == '__main__':
@@ -660,7 +676,7 @@ class MuProgramAnalyzer(MuFunctionAnalyzer):
     def __init__(self, name, src):
         self.name = name
         self.ast = ast.parse(src)
-        self.src = astor.to_source(self.ast)
+        self.src = ast.unparse(self.ast)
         self.changes = []
         self.mutator = self.mutator_object()
         self.nmutations = self.get_mutation_count()
@@ -737,7 +753,7 @@ class AdvMutant(AdvMutant):
     def generate_mutant(self, locations):
         mutant_ast = self.pm.mutator_object(
             locations).visit(ast.parse(self.pm.src))  # copy
-        return astor.to_source(mutant_ast)
+        return ast.unparse(mutant_ast)
 
 class AdvMutant(AdvMutant):
     def src(self):
@@ -843,7 +859,7 @@ def new_gcd(a, b):
         a, b = b, a % b
     return a
 
-def gcd(a, b):
+def mutated_gcd(a, b):
     if a < b:
         a, b = b, a
     else:
@@ -930,18 +946,18 @@ if __name__ == '__main__':
 
 
 
-### Exercise 1:  Arithmetic Expression Mutators
+### Exercise 1: Arithmetic Expression Mutators
 
 if __name__ == '__main__':
-    print('\n### Exercise 1:  Arithmetic Expression Mutators')
+    print('\n### Exercise 1: Arithmetic Expression Mutators')
 
 
 
 if __name__ == '__main__':
-    print(astor.dump_tree(ast.parse("1 + 2 - 3 * 4 / 5")))
+    print(ast.dump(ast.parse("1 + 2 - 3 * 4 / 5"), indent=4))
 
 if __name__ == '__main__':
-    print(astor.dump_tree(ast.parse("1 + 2 - 3 * 4 / 5")))
+    print(ast.dump(ast.parse("1 + 2 - 3 * 4 / 5"), indent=4))
 
 class BinOpMutator(Mutator):
     def visit_BinOp(self, node): return self.mutable_visit(node)
@@ -954,7 +970,7 @@ class BinOpMutator(BinOpMutator):
             type(ast.Mult()): ast.Div(),
             type(ast.Div()): ast.Mult()
         }
-        
+
         try:
             node.op = replacement[type(node.op)]
         except KeyError:

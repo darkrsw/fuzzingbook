@@ -3,9 +3,9 @@
 
 # "Introduction to Software Testing" - a chapter of "The Fuzzing Book"
 # Web site: https://www.fuzzingbook.org/html/Intro_Testing.html
-# Last change: 2021-11-01 21:58:07+01:00
+# Last change: 2025-10-26 19:00:15+01:00
 #
-# Copyright (c) 2021 CISPA Helmholtz Center for Information Security
+# Copyright (c) 2021-2025 CISPA Helmholtz Center for Information Security
 # Copyright (c) 2018-2020 Saarland University, authors, and contributors
 #
 # Permission is hereby granted, free of charge, to any person obtaining a
@@ -37,7 +37,7 @@ This file can be _executed_ as a script, running all experiments:
 or _imported_ as a package, providing classes, functions, and constants:
 
     >>> from fuzzingbook.Intro_Testing import <identifier>
-    
+
 but before you do so, _read_ it and _interact_ with it at:
 
     https://www.fuzzingbook.org/html/Intro_Testing.html
@@ -64,7 +64,7 @@ if __name__ == '__main__':
 
 if __name__ == '__main__':
     from .bookutils import YouTubeVideo
-    YouTubeVideo('wFuQ4Mju5dU')
+    YouTubeVideo('C8_pjdl7pK0')
 
 ## Simple Testing
 ## --------------
@@ -254,7 +254,7 @@ if __name__ == '__main__':
 
 
 
-def sqrt_program(arg):
+def sqrt_program(arg: str) -> None:  # type: ignore
     x = int(arg)
     print('The root of', x, 'is', my_sqrt(x))
 
@@ -267,7 +267,7 @@ if __name__ == '__main__':
     with ExpectTimeout(1):
         sqrt_program("-1")
 
-def sqrt_program(arg):
+def sqrt_program(arg: str) -> None:  # type: ignore
     x = int(arg)
     if x < 0:
         print("Illegal Input")
@@ -292,7 +292,7 @@ if __name__ == '__main__':
     with ExpectError():
         sqrt_program("xyzzy")
 
-def sqrt_program(arg):
+def sqrt_program(arg: str) -> None:  # type: ignore
     try:
         x = float(arg)
     except ValueError:

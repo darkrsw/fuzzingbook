@@ -12,7 +12,8 @@ __all__ = [
     "show_ast", "input", "next_inputs",
     "unicode_escape", "terminal_escape", "project"
     "inheritance_conflicts", "extract_class_definition",
-    "quiz", "import_notebooks", "set_fixed_seed"
+    "quiz", "import_notebooks", "rich_output",
+    "InteractiveSVG"
 ]
 
 # Setup loader such that workbooks can be imported directly
@@ -25,11 +26,6 @@ except:
 if have_ipython:
     from .import_notebooks import NotebookFinder  # type: ignore
 
-# Set fixed seed
-from .set_fixed_seed import set_fixed_seed
-set_fixed_seed()
-
-
 # Check for rich output
 def rich_output() -> bool:
     try:
@@ -39,7 +35,7 @@ def rich_output() -> bool:
         rich = False
 
     return rich
-    
+
 # Project identifier
 def project() -> Optional[str]:
     wd = os.getcwd()
@@ -75,6 +71,17 @@ def YouTubeVideo(id: str, width: int = 640, height: int = 360) -> Any:
     else:
         # For code: just pass
         pass
+
+# Wrapper for interactive SVG - like SVG, but with links
+# From https://stackoverflow.com/questions/77902970/how-can-i-display-an-interactive-svg-image-that-utilizes-javascript-in-a-jupyter
+
+class InteractiveSVG:
+    def __init__(self, filename: str) -> None:
+        with open(filename, 'r', encoding='utf-8') as svg_fh:
+            self.svg_content = svg_fh.read()
+
+    def _repr_html_(self) -> str:
+        return self.svg_content
 
 
 # Checking for inheritance conflicts
@@ -130,16 +137,16 @@ def print_content(content: str, filename: Optional[str] = None, lexer: Optional[
 def getsourcelines(function: Any) -> Tuple[List[str], int]:
     """A replacement for inspect.getsourcelines(), but with syntax highlighting"""
     import inspect
-    
+
     source_lines, starting_line_number = \
        inspect.getsourcelines(function)
-       
+
     if not rich_output():
         return source_lines, starting_line_number
-        
+
     from pygments import highlight, lexers, formatters
     from pygments.lexers import get_lexer_for_filename
-    
+
     lexer = get_lexer_for_filename('.py')
     colorful_content = highlight(
         "".join(source_lines), lexer,
@@ -151,13 +158,17 @@ from ast import AST
 
 # Showing ASTs
 def show_ast(tree: AST) -> Optional[Any]:
-    if rich_output():
-        import showast  # We can import showast only when in a notebook
-        return showast.show_ast(tree)
-    else:
-        import ast  # Textual alternative111
+    if not rich_output():
+        # We can import showast only when in a notebook
+        import ast  # Textual alternative
         print(ast.dump(tree))
         return None
+
+    # For Python >=3.12,
+    # we need the patched `showast2` module instead of `showast`
+    # see git+https://github.com/andreas-zeller/show_ast.git@andreas
+    import showast2  # type: ignore
+    return showast2.show_ast(tree)
 
 # Escaping unicode characters into ASCII for user-facing strings
 def unicode_escape(s: str, error: str = 'backslashreplace') -> str:
@@ -183,9 +194,9 @@ def terminal_escape(s: str) -> str:
 import os
 firefox = None
 
-def HTML(data: Optional[str] = None, 
-         url: Optional[str] = None, 
-         filename: Optional[str] = None, 
+def HTML(data: Optional[str] = None,
+         url: Optional[str] = None,
+         filename: Optional[str] = None,
          png: bool = False,
          headless: bool = True,
          zoom: float = 2.0) -> Any:
@@ -205,11 +216,10 @@ def HTML(data: Optional[str] = None,
     # Get a webdriver
     global firefox
     if firefox is None:
-        options = Options()
-        options.headless = headless
-        profile = FirefoxProfile()
-        profile.set_preference("layout.css.devPixelsPerPx", repr(zoom))
-        firefox = webdriver.Firefox(firefox_profile=profile, options=options)
+        options = webdriver.FirefoxOptions()
+        options.headless = headless  # type: ignore
+        options.set_preference("layout.css.devPixelsPerPx", repr(zoom))
+        firefox = webdriver.Firefox(options=options)
 
     # Create a URL argument
     if data is not None:
@@ -230,10 +240,10 @@ def HTML(data: Optional[str] = None,
     # Render URL as PNG
     firefox.get(url)
     return Image(firefox.get_screenshot_as_png())
-    
-    
+
+
 # Quizzes
-# Usage: quiz('Which of these is not a fruit?', 
+# Usage: quiz('Which of these is not a fruit?',
 #             ['apple', 'banana', 'pear', 'tomato'], '27 / 9')
 import uuid
 import markdown
@@ -251,14 +261,14 @@ def quiztext(text: Union[str, object]) -> str:
 
 # Widget quizzes. No support for multiple-choice quizzes.
 # Currently unused in favor of jsquiz(), below.
-def nbquiz(question: str, options: List[str], correct_answer: int, 
-    globals: Optional[Dict[str, Any]], 
+def nbquiz(question: str, options: List[str], correct_answer: int,
+    globals: Optional[Dict[str, Any]],
     title: str = 'Quiz', debug: bool = False) -> object:
     import ipywidgets as widgets
 
     if isinstance(correct_answer, str):
         correct_answer = int(eval(correct_answer, globals))
-  
+
     radio_options = [(quiztext(words), i) for i, words in enumerate(options)]
     alternatives = widgets.RadioButtons(
         options = radio_options,
@@ -269,10 +279,10 @@ def nbquiz(question: str, options: List[str], correct_answer: int,
     title_out =  widgets.HTML(value=f'<h4>{quiztext(title)}</h4><strong>{quiztext(question)}</strong>')
 
     check = widgets.Button()
-    
+
     def clear_selection(change: Any) -> None:
         check.description = 'Submit'
-        
+
     clear_selection(None)
 
     def check_selection(change: Any) -> None:
@@ -283,21 +293,24 @@ def nbquiz(question: str, options: List[str], correct_answer: int,
         else:
             check.description = 'Incorrect!'
         return
-    
+
     check.on_click(check_selection)
     alternatives.observe(clear_selection, names='value')
-    
+
     return widgets.VBox([title_out, alternatives, check])
-    
+
 def escape_quotes(s: str) -> str:
     return html.escape(s.replace("'", r"\'"))
 
 # JavaScript quizzes.
-def jsquiz(question: str, 
-           options: List[str], 
-           correct_answer: Union[str, int, List[int], Set[int]], 
-           globals: Dict[str, Any], 
-           title: str = "Quiz", 
+def jsquiz(question: str,
+           options: List[str],
+           correct_answer: Union[str,
+                                 int,
+                                 List[Union[str, int]],
+                                 Set[Union[str, int]]],
+           globals: Dict[str, Any],
+           title: str = "Quiz",
            debug: bool = True) -> Any:  # should be IPython.core.display
 
     hint = ""
@@ -305,8 +318,11 @@ def jsquiz(question: str,
         hint = correct_answer
         correct_answer = eval(correct_answer, globals)
 
-    answer_list: List[int] = []
-    if isinstance(correct_answer, list) or isinstance(correct_answer, set):
+    answer_list: List[Union[str, int]] = []
+    if isinstance(correct_answer, list):
+        answer_list = correct_answer
+        multiple_choice = True
+    elif isinstance(correct_answer, set):
         answer_list = list(correct_answer)
         multiple_choice = True
     elif isinstance(correct_answer, int) or isinstance(correct_answer, float):
@@ -352,7 +368,7 @@ def jsquiz(question: str,
                 label = document.getElementById(quiz_id + "-" + i.toString() + "-label")
                 if (!checkbox)
                     break;
-    
+
                 if (checkbox.checked) {
                     label.style.fontWeight = "bold";
                 }
@@ -364,7 +380,7 @@ def jsquiz(question: str,
         else 
         {
             document.getElementById(quiz_id + "-submit").value = "Try again";
-            
+
             if (!bad_answers.has(quiz_id)) {
                 bad_answers.set(quiz_id, 1);
             }
@@ -397,19 +413,19 @@ def jsquiz(question: str,
     }
     </script>
     '''
-    
+
     if multiple_choice:
         input_type = "checkbox"
         instructions = "Check all that apply."
     else:
         input_type = "radio"
         instructions = "Pick a choice."
-        
+
     menu = "".join(f'''
         <input type="{input_type}" name="{quiz_id}" id="{quiz_id}-{i + 1}" onclick="clear_selection('{quiz_id}')">
         <label id="{quiz_id}-{i + 1}-label" for="{quiz_id}-{i + 1}">{quiztext(option)}</label><br>
     ''' for (i, option) in enumerate(options))
-    
+
     html_fragment = f'''
     {script}
     <div class="quiz">
@@ -429,16 +445,16 @@ def jsquiz(question: str,
     return HTML(html_fragment)
 
 # HTML quizzes. Not interactive.
-def htmlquiz(question: str, 
-             options: List[str], 
-             correct_answer: Any, 
+def htmlquiz(question: str,
+             options: List[str],
+             correct_answer: Any,
              globals: Optional[Dict[str, Any]] = None,
              title: str = 'Quiz') -> Any:  # should be IPython.core.display.HTML
-    
+
     menu = "".join(f'''
     <li> {quiztext(option)} </li>
     ''' for (i, option) in enumerate(options))
-    
+
     html = f'''
     <h2>{quiztext(title)}</h2>
     <strong>{quiztext(question)}</strong><br/>
@@ -453,7 +469,7 @@ def htmlquiz(question: str,
 def textquiz(question: str, options: List[str], correct_answer: Any, globals: Optional[Dict[str, Any]] = None, title: str = 'Quiz') -> None:
     menu = "".join(f'''
     {i}. {option}''' for (i, option) in enumerate(options))
-    
+
     text = f'''{title}: {question}
     {menu}
 
@@ -462,10 +478,13 @@ def textquiz(question: str, options: List[str], correct_answer: Any, globals: Op
     print(text)
 
 # Entry point for all of the above.
-def quiz(question: str, options: List[str], 
-         correct_answer: Union[str, int, List[int]],
+def quiz(question: str, options: List[str],
+         correct_answer: Union[str,
+                               int,
+                               List[Union[str, int]],
+                               Set[Union[str, int]]],
          globals: Optional[Dict[str, Any]] = None, **kwargs: Any) -> Any:
-    """Display a quiz. 
+    """Display a quiz.
     `question` is a question string to be asked.
     `options` is a list of strings with possible answers.
     `correct_answer` is either
@@ -475,7 +494,7 @@ def quiz(question: str, options: List[str],
       these will be displayed as is and evaluated for the correct values.
     `title` is the title to be displayed.
     """
-    
+
     if globals is None:
         globals = {}
 
@@ -484,7 +503,7 @@ def quiz(question: str, options: List[str],
 
     if have_ipython:
         return jsquiz(question, options, correct_answer, globals, **kwargs)
-        
+
     return textquiz(question, options, correct_answer, globals, **kwargs)
 
 
@@ -503,7 +522,7 @@ def input(prompt: str) -> str:
         INPUTS = INPUTS[1:]
     except:
         pass
-    
+
     if given_input:
         if rich_output():
             from IPython.display import display
@@ -511,9 +530,9 @@ def input(prompt: str) -> str:
         else:
             print(f"{prompt} {given_input}")
         return given_input
-    
+
     return original_input(prompt)
-    
+
 def next_inputs(list: List[str] = []) -> List[str]:
     global INPUTS
     INPUTS += list

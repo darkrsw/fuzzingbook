@@ -3,9 +3,9 @@
 
 # "Fuzzing in the Large" - a chapter of "The Fuzzing Book"
 # Web site: https://www.fuzzingbook.org/html/FuzzingInTheLarge.html
-# Last change: 2021-11-03 13:27:49+01:00
+# Last change: 2025-10-26 19:00:30+01:00
 #
-# Copyright (c) 2021 CISPA Helmholtz Center for Information Security
+# Copyright (c) 2021-2025 CISPA Helmholtz Center for Information Security
 # Copyright (c) 2018-2020 Saarland University, authors, and contributors
 #
 # Permission is hereby granted, free of charge, to any person obtaining a
@@ -37,13 +37,12 @@ This file can be _executed_ as a script, running all experiments:
 or _imported_ as a package, providing classes, functions, and constants:
 
     >>> from fuzzingbook.FuzzingInTheLarge import <identifier>
-    
+
 but before you do so, _read_ it and _interact_ with it at:
 
     https://www.fuzzingbook.org/html/FuzzingInTheLarge.html
 
-The Python `FuzzManager` package allows for programmatic submission of failures from a large number of (fuzzed) programs.  One can query crashes and their details, collect them into buckets to ensure thay will be treated the same, and also retrieve coverage information for debugging both programs and their tests.
-
+**Note**: The examples in this section only work after the rest of the cells have been executed.
 
 For more details, source, and documentation, see
 "The Fuzzing Book - Fuzzing in the Large"
@@ -70,14 +69,6 @@ if __name__ == '__main__':
     random.seed(2001)
 
 from . import Fuzzer
-
-## Synopsis
-## --------
-
-if __name__ == '__main__':
-    print('\n## Synopsis')
-
-
 
 ## Collecting Crashes from Multiple Fuzzers
 ## ----------------------------------------
@@ -129,23 +120,23 @@ if __name__ == '__main__':
 
 if __name__ == '__main__':
     import os
-    os.system(f'git clone https://github.com/MozillaSecurity/FuzzManager')
+    os.system(f'git clone https://github.com/uds-se/FuzzManager')
 
 if __name__ == '__main__':
     import os
-    os.system(f'cd FuzzManager; git checkout 0.4.1')
+    os.system(f'{sys.executable} -m pip install -r FuzzManager/server/requirements.txt > /dev/null')
 
 if __name__ == '__main__':
     import os
-    os.system(f'pip install -r FuzzManager/server/requirements.txt > /dev/null')
+    os.system(f'{sys.executable} -m pip install --upgrade celery > /dev/null 2>&1')
 
 if __name__ == '__main__':
     import os
-    os.system(f'cd FuzzManager; python server/manage.py migrate > /dev/null')
+    os.system(f'cd FuzzManager; {sys.executable} server/manage.py migrate > /dev/null')
 
 if __name__ == '__main__':
     import os
-    os.system(f'(cd FuzzManager; echo "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.create_superuser(\'demo\', \'demo@fuzzingbook.org\', \'demo\')" | python server/manage.py shell)')
+    os.system(f'(cd FuzzManager; echo "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.create_superuser(\'demo\', \'demo@fuzzingbook.org\', \'demo\')" | {sys.executable} server/manage.py shell)')
 
 import subprocess
 import sys
@@ -212,7 +203,7 @@ if __name__ == '__main__':
 
 
 
-from multiprocess import Process
+from multiprocess import Process  # type: ignore
 
 import subprocess
 
@@ -240,8 +231,11 @@ if __name__ == '__main__':
 
 import time
 
+DELAY_AFTER_START = 3
+DELAY_AFTER_CLICK = 1.5
+
 if __name__ == '__main__':
-    time.sleep(2)
+    time.sleep(DELAY_AFTER_START)
 
 ### End of Excursion
 
@@ -279,18 +273,20 @@ if __name__ == '__main__':
 if __name__ == '__main__':
     Image(gui_driver.get_screenshot_as_png())
 
+from selenium.webdriver.common.by import By
+
 if __name__ == '__main__':
-    username = gui_driver.find_element_by_name("username")
+    username = gui_driver.find_element(By.NAME, "username")
     username.send_keys("demo")
 
 if __name__ == '__main__':
-    password = gui_driver.find_element_by_name("password")
+    password = gui_driver.find_element(By.NAME, "password")
     password.send_keys("demo")
 
 if __name__ == '__main__':
-    login = gui_driver.find_element_by_tag_name("button")
+    login = gui_driver.find_element(By.TAG_NAME, "button")
     login.click()
-    time.sleep(1)
+    time.sleep(DELAY_AFTER_CLICK)
 
 if __name__ == '__main__':
     Image(gui_driver.get_screenshot_as_png())
@@ -305,7 +301,7 @@ if __name__ == '__main__':
 
 if __name__ == '__main__':
     import os
-    os.system(f'git clone https://github.com/choller/simply-buggy')
+    os.system(f'git clone https://github.com/uds-se/simply-buggy')
 
 if __name__ == '__main__':
     import os
@@ -354,7 +350,7 @@ if __name__ == '__main__':
     sys.path.append('FuzzManager')
 
 if __name__ == '__main__':
-    from FTB.ProgramConfiguration import ProgramConfiguration
+    from FTB.ProgramConfiguration import ProgramConfiguration  # type: ignore
 
 if __name__ == '__main__':
     configuration = ProgramConfiguration.fromBinary('simply-buggy/simple-crash')
@@ -368,7 +364,7 @@ if __name__ == '__main__':
 
 
 if __name__ == '__main__':
-    from FTB.Signatures.CrashInfo import CrashInfo
+    from FTB.Signatures.CrashInfo import CrashInfo  # type: ignore
 
 if __name__ == '__main__':
     cmd = ["simply-buggy/simple-crash"]
@@ -394,7 +390,7 @@ if __name__ == '__main__':
 
 
 if __name__ == '__main__':
-    from Collector.Collector import Collector
+    from Collector.Collector import Collector  # type: ignore
 
 if __name__ == '__main__':
     collector = Collector()
@@ -416,9 +412,9 @@ if __name__ == '__main__':
     Image(gui_driver.get_screenshot_as_png())
 
 if __name__ == '__main__':
-    crash = gui_driver.find_element_by_xpath('//td/a[contains(@href,"/crashmanager/crashes/")]')
+    crash = gui_driver.find_element(By.XPATH, '//td/a[contains(@href,"/crashmanager/crashes/")]')
     crash.click()
-    time.sleep(1)
+    time.sleep(DELAY_AFTER_CLICK)
 
 if __name__ == '__main__':
     Image(gui_driver.get_screenshot_as_png())
@@ -435,9 +431,9 @@ if __name__ == '__main__':
     Image(gui_driver.get_screenshot_as_png())
 
 if __name__ == '__main__':
-    create = gui_driver.find_element_by_xpath('//a[contains(@href,"/signatures/new/")]')
+    create = gui_driver.find_element(By.XPATH, '//a[contains(@href,"/signatures/new/")]')
     create.click()
-    time.sleep(1)
+    time.sleep(DELAY_AFTER_CLICK)
 
 if __name__ == '__main__':
     gui_driver.set_window_size(1400, 1200)
@@ -446,9 +442,9 @@ if __name__ == '__main__':
     Image(gui_driver.get_screenshot_as_png())
 
 if __name__ == '__main__':
-    save = gui_driver.find_element_by_name("submit_save")
+    save = gui_driver.find_element(By.NAME, "submit_save")
     save.click()
-    time.sleep(1)
+    time.sleep(DELAY_AFTER_CLICK)
 
 ### Crash Signatures
 
@@ -597,11 +593,11 @@ if __name__ == '__main__':
 
 if __name__ == '__main__':
     import os
-    os.system(f'git clone https://github.com/choller/simply-buggy $HOME/simply-buggy-server    ')
+    os.system(f'git clone https://github.com/uds-se/simply-buggy simply-buggy-server    ')
 
 if __name__ == '__main__':
     import os
-    os.system(f'cd FuzzManager; python3 server/manage.py setup_repository simply-buggy GITSourceCodeProvider $HOME/simply-buggy-server')
+    os.system(f'cd FuzzManager; {sys.executable} server/manage.py setup_repository simply-buggy GITSourceCodeProvider ../simply-buggy-server')
 
 import random
 import subprocess
@@ -649,7 +645,7 @@ if __name__ == '__main__':
 
 if __name__ == '__main__':
     import os
-    os.system(f'cd FuzzManager; python3 -mCovReporter --repository simply-buggy --description "Test1" --submit ../coverage.json')
+    os.system(f'cd FuzzManager; {sys.executable} -mCovReporter --repository simply-buggy --description "Test1" --submit ../coverage.json')
 
 if __name__ == '__main__':
     gui_driver.get(fuzzmanager_url + "/covmanager")
@@ -658,17 +654,17 @@ if __name__ == '__main__':
     Image(gui_driver.get_screenshot_as_png())
 
 if __name__ == '__main__':
-    first_id = gui_driver.find_element_by_xpath('//td/a[contains(@href,"/browse")]')
+    first_id = gui_driver.find_element(By.XPATH, '//td/a[contains(@href,"/browse")]')
     first_id.click()
-    time.sleep(1)
+    time.sleep(DELAY_AFTER_CLICK)
 
 if __name__ == '__main__':
     Image(gui_driver.get_screenshot_as_png())
 
 if __name__ == '__main__':
-    maze_cpp = gui_driver.find_element_by_xpath("//*[contains(text(), 'maze.cpp')]")
+    maze_cpp = gui_driver.find_element(By.XPATH, "//*[contains(text(), 'maze.cpp')]")
     maze_cpp.click()
-    time.sleep(1)
+    time.sleep(DELAY_AFTER_CLICK)
 
 if __name__ == '__main__':
     gui_driver.set_window_size(1400, 1400)
@@ -710,14 +706,6 @@ if __name__ == '__main__':
 
     print("Done!")
 
-## Synopsis
-## --------
-
-if __name__ == '__main__':
-    print('\n## Synopsis')
-
-
-
 ## Lessons Learned
 ## ---------------
 
@@ -742,7 +730,7 @@ if __name__ == '__main__':
 if __name__ == '__main__':
     home = os.path.expanduser("~")
     for temp_dir in ['coverage', 'simply-buggy', 'simply-buggy-server',
-                     os.path.join(home, 'simply-buggy-server'),
+                     'simply-buggy-server',
                      'FuzzManager']:
         if os.path.exists(temp_dir):
             shutil.rmtree(temp_dir)
@@ -775,5 +763,13 @@ if __name__ == '__main__':
 
 if __name__ == '__main__':
     print('\n### Exercise 1: Automatic Crash Reporting')
+
+
+
+## Synopsis
+## --------
+
+if __name__ == '__main__':
+    print('\n## Synopsis')
 
 

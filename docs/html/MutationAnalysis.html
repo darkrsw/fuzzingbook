@@ -12,6 +12,7 @@ with fuzzingbook adaptations -->
 <html>
 <head>
 <meta charset="utf-8" /><title>Mutation Analysis - The Fuzzing Book</title>
+<link rel="me" href="https://mastodon.social/@TheFuzzingBook">
 
 <style type="text/css">
     /*!
@@ -11621,22 +11622,23 @@ td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5
 span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 .highlight .hll { background-color: #ffffcc }
 .highlight { background: #f8f8f8; }
-.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .c { color: #3D7B7B; font-style: italic } /* Comment */
 .highlight .err { border: 1px solid #FF0000 } /* Error */
 .highlight .k { color: #008000; font-weight: bold } /* Keyword */
 .highlight .o { color: #666666 } /* Operator */
-.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
-.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
-.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
-.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
-.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #9C6500 } /* Comment.Preproc */
+.highlight .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
 .highlight .gd { color: #A00000 } /* Generic.Deleted */
 .highlight .ge { font-style: italic } /* Generic.Emph */
-.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.highlight .gr { color: #E40000 } /* Generic.Error */
 .highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.highlight .gi { color: #00A000 } /* Generic.Inserted */
-.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gi { color: #008400 } /* Generic.Inserted */
+.highlight .go { color: #717171 } /* Generic.Output */
 .highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
 .highlight .gs { font-weight: bold } /* Generic.Strong */
 .highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
@@ -11649,15 +11651,15 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .kt { color: #B00040 } /* Keyword.Type */
 .highlight .m { color: #666666 } /* Literal.Number */
 .highlight .s { color: #BA2121 } /* Literal.String */
-.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .na { color: #687822 } /* Name.Attribute */
 .highlight .nb { color: #008000 } /* Name.Builtin */
 .highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
 .highlight .no { color: #880000 } /* Name.Constant */
 .highlight .nd { color: #AA22FF } /* Name.Decorator */
-.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
-.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .ni { color: #717171; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
 .highlight .nf { color: #0000FF } /* Name.Function */
-.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nl { color: #767600 } /* Name.Label */
 .highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
 .highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
 .highlight .nv { color: #19177C } /* Name.Variable */
@@ -11674,11 +11676,11 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
-.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
 .highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
-.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
 .highlight .sx { color: #008000 } /* Literal.String.Other */
-.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .sr { color: #A45A77 } /* Literal.String.Regex */
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
@@ -11795,6 +11797,9 @@ MathJax.Hub.Config({
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
+<meta name="theme-color" content="#bb0000" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#cc0000" media="(prefers-color-scheme: dark)">
+
 <meta property="og:url" content="https://www.fuzzingbook.org/html/MutationAnalysis.html" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Mutation Analysis - The Fuzzing Book" />
@@ -11886,7 +11891,7 @@ MathJax.Hub.Config({
 <li><a href="GreyboxFuzzer.html">Greybox Fuzzing</a></li>
 <li><a href="SearchBasedFuzzer.html">Search-Based Fuzzing</a></li>
 <li><a href="MutationAnalysis.html" class="this_page">Mutation Analysis</a></li>
-</ul><li class="has-sub"><a href="03_Syntactical_Fuzzing.html" class="chapters"><span class="part_number">III</span> Syntactical Fuzzing <i class="fa fa-fw fa-caret-right"></i></a>
+</ul><li class="has-sub"><a href="03_Syntactical_Fuzzing.html" class="chapters"><span class="part_number">III</span> Syntactic Fuzzing <i class="fa fa-fw fa-caret-right"></i></a>
 <ul>
 <li><a href="Grammars.html">Fuzzing with Grammars</a></li>
 <li><a href="GrammarFuzzer.html">Efficient Grammar Fuzzing</a></li>
@@ -11896,8 +11901,9 @@ MathJax.Hub.Config({
 <li><a href="GeneratorGrammarFuzzer.html">Fuzzing with Generators</a></li>
 <li><a href="GreyboxGrammarFuzzer.html">Greybox Fuzzing with Grammars</a></li>
 <li><a href="Reducer.html">Reducing Failure-Inducing Inputs</a></li>
-</ul><li class="has-sub"><a href="04_Semantical_Fuzzing.html" class="chapters"><span class="part_number">IV</span> Semantical Fuzzing <i class="fa fa-fw fa-caret-right"></i></a>
+</ul><li class="has-sub"><a href="04_Semantical_Fuzzing.html" class="chapters"><span class="part_number">IV</span> Semantic Fuzzing <i class="fa fa-fw fa-caret-right"></i></a>
 <ul>
+<li><a href="FuzzingWithConstraints.html">Fuzzing with Constraints</a></li>
 <li><a href="GrammarMiner.html">Mining Input Grammars</a></li>
 <li><a href="InformationFlow.html">Tracking Information Flow</a></li>
 <li><a href="ConcolicFuzzer.html">Concolic Fuzzing</a></li>
@@ -11908,6 +11914,7 @@ MathJax.Hub.Config({
 <li><a href="ConfigurationFuzzer.html">Testing Configurations</a></li>
 <li><a href="APIFuzzer.html">Fuzzing APIs</a></li>
 <li><a href="Carver.html">Carving Unit Tests</a></li>
+<li><a href="PythonFuzzer.html">Testing Compilers <strong class="new_chapter">&bull;</strong></a></li>
 <li><a href="WebFuzzer.html">Testing Web Applications</a></li>
 <li><a href="GUIFuzzer.html">Testing Graphical User Interfaces</a></li>
 </ul><li class="has-sub"><a href="06_Managing_Fuzzing.html" class="chapters"><span class="part_number">VI</span> Managing Fuzzing <i class="fa fa-fw fa-caret-right"></i></a>
@@ -11916,9 +11923,11 @@ MathJax.Hub.Config({
 <li><a href="WhenToStopFuzzing.html">When To Stop Fuzzing</a></li>
 </ul><li class="has-sub"><a href="99_Appendices.html" class="chapters">Appendices <i class="fa fa-fw fa-caret-right"></i></a>
 <ul>
+<li><a href="AcademicPrototyping.html">Academic Prototyping</a></li>
 <li><a href="PrototypingWithPython.html">Prototyping with Python</a></li>
 <li><a href="ExpectError.html">Error Handling</a></li>
 <li><a href="Timer.html">Timer</a></li>
+<li><a href="Timeout.html">Timeout</a></li>
 <li><a href="ClassDiagram.html">Class Diagrams</a></li>
 <li><a href="RailroadDiagrams.html">Railroad Diagrams</a></li>
 <li><a href="ControlFlow.html">Control Flow Graph</a></li>
@@ -11943,7 +11952,7 @@ MathJax.Hub.Config({
 </li><li class="has-sub"><a href="#Next-Steps"><i class="fa fa-fw fa-arrows"></i> Next Steps</a>
 </li><li class="has-sub"><a href="#Background"><i class="fa fa-fw fa-mortar-board"></i> Background</a>
 </li><li class="has-sub"><a href="#Exercises"><i class="fa fa-fw fa-edit"></i> Exercises</a>
-<ul><li class="has-sub"><a href="#Exercise-1:--Arithmetic-Expression-Mutators">Exercise 1:  Arithmetic Expression Mutators</a>
+<ul><li class="has-sub"><a href="#Exercise-1:-Arithmetic-Expression-Mutators">Exercise 1: Arithmetic Expression Mutators</a>
 </li><li class="has-sub"><a href="#Exercise-2:-Optimizing-Mutation-Analysis">Exercise 2: Optimizing Mutation Analysis</a>
 </li><li class="has-sub"><a href="#Exercise-3:-Byte-Code-Mutator">Exercise 3: Byte Code Mutator</a>
 </li><li class="has-sub"><a href="#Exercise-4:-Estimating-Residual-Defect-Density">Exercise 4: Estimating Residual Defect Density</a>
@@ -11952,7 +11961,7 @@ MathJax.Hub.Config({
      
      <li class="has-sub"><a href="#"><span title="Resources"><i class="fa fa-fw fa-cube"></i> </span><span class="menu_3">Resources</span></a>
      <ul>
-     <li><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/master?filepath=docs/notebooks/MutationAnalysis.ipynb" target="_blank" class="edit_as_notebook"><i class="fa fa-fw fa-edit"></i> Edit as Notebook</a></li>
+     <li><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/HEAD?labpath=docs%2Fnotebooks/MutationAnalysis.ipynb" target="_blank" class="edit_as_notebook"><i class="fa fa-fw fa-edit"></i> Edit as Notebook</a></li>
      <li><a href="https://www.fuzzingbook.org/slides/MutationAnalysis.slides.html" target="_blank"><i class="fa fa-fw fa-video-camera"></i> View Slides</a></li>
      <li><a href="https://www.fuzzingbook.org/code/MutationAnalysis.py"><i class="fa fa-fw fa-download"></i> Download Code (.py)</a></li>
      <li><a href="https://www.fuzzingbook.org/notebooks/MutationAnalysis.ipynb"><i class="fa fa-fw fa-download"></i> Download Notebook (.ipynb)</a></li>
@@ -11965,12 +11974,14 @@ MathJax.Hub.Config({
      
      <li class="has-sub"><a href="#"><span title="Share"><i class="fa fa-fw fa-comments"></i> </span> <span class="menu_4">Share</span></a>
         <ul>
+<!--
             <li><a href="https://twitter.com/intent/tweet?text=I%20just%20read%20%22Mutation%20Analysis%22%20(part%20of%20@FuzzingBook)%20at%20https%3a%2f%2fwww.fuzzingbook.org%2fhtml%2fMutationAnalysis.html" target="popup" 
 onclick="window.open('https://twitter.com/intent/tweet?text=I%20just%20read%20%22Mutation%20Analysis%22%20(part%20of%20@FuzzingBook)%20at%20https%3a%2f%2fwww.fuzzingbook.org%2fhtml%2fMutationAnalysis.html','popup','width=600,height=600'); return false;"
-><i class="fa fa-fw fa-twitter"></i> Share on Twitter</a>
+><i class="fa fa-fw fa-twitter"></i> Share on X</a>
             <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.fuzzingbook.org%2fhtml%2fMutationAnalysis.html" target="popup" 
 onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.fuzzingbook.org%2fhtml%2fMutationAnalysis.html','popup','width=600,height=600'); return false;"
 ><i class="fa fa-fw fa-facebook"></i> Share on Facebook</a>
+-->
             <li><a href="mailto:?subject=Mutation%20Analysis&body=I%20just%20read%20%22Mutation%20Analysis%22%20(part%20of%20@FuzzingBook)%20at%20https%3a%2f%2fwww.fuzzingbook.org%2fhtml%2fMutationAnalysis.html"><i class="fa fa-fw fa-envelope"></i> Share by Email</a>
             <li><a href="#citation" id="cite" onclick="revealCitation()"><i class="fa fa-fw fa-mortar-board"></i> Cite</a>
         </ul>
@@ -12030,18 +12041,29 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <span class="o">&gt;&gt;&gt;</span> <span class="n">mutant</span><span class="o">.</span><span class="n">pm</span><span class="o">.</span><span class="n">score</span><span class="p">()</span>
 <span class="o">-&gt;</span>  <span class="n">gcd_1</span>
 <span class="o">&lt;-</span>  <span class="n">gcd_1</span>
+<span class="n">Detected</span> <span class="n">gcd_1</span> <span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">UnboundLocalError</span><span class="s1">&#39;&gt; cannot access local variable &#39;</span><span class="n">c</span><span class="s1">&#39; where it is not associated with a value</span>
 
 <span class="o">-&gt;</span>  <span class="n">gcd_2</span>
 <span class="o">&lt;-</span>  <span class="n">gcd_2</span>
+<span class="n">Detected</span> <span class="n">gcd_2</span> <span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">AssertionError</span><span class="s1">&#39;&gt; Mirror</span>
 
 <span class="o">-&gt;</span>  <span class="n">gcd_3</span>
 <span class="o">&lt;-</span>  <span class="n">gcd_3</span>
 
 <span class="o">-&gt;</span>  <span class="n">gcd_4</span>
 <span class="o">&lt;-</span>  <span class="n">gcd_4</span>
-<span class="n">Detected</span> <span class="n">gcd_4</span> <span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">AssertionError</span><span class="s1">&#39;&gt; Minimal</span>
 
-<span class="mf">0.25</span>
+<span class="o">-&gt;</span>  <span class="n">gcd_5</span>
+<span class="o">&lt;-</span>  <span class="n">gcd_5</span>
+
+<span class="o">-&gt;</span>  <span class="n">gcd_6</span>
+<span class="o">&lt;-</span>  <span class="n">gcd_6</span>
+
+<span class="o">-&gt;</span>  <span class="n">gcd_7</span>
+<span class="o">&lt;-</span>  <span class="n">gcd_7</span>
+<span class="n">Detected</span> <span class="n">gcd_7</span> <span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">AssertionError</span><span class="s1">&#39;&gt; Minimal</span>
+
+<span class="mf">0.42857142857142855</span>
 </pre></div>
 <p>The second class <code>MuProgramAnalyzer</code> targets standalone programs with test suites. Given a program <code>gcd</code> whose source code is provided in <code>gcd_src</code> and the test suite is provided by <code>TestGCD</code>, one can evaluate the mutation score of <code>TestGCD</code> as follows:</p>
 <div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">TestGCD</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
@@ -12054,87 +12076,94 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <span class="o">&gt;&gt;&gt;</span>     <span class="n">mutant</span><span class="p">[</span><span class="n">test_module</span><span class="p">]</span><span class="o">.</span><span class="n">runTest</span><span class="p">(</span><span class="s1">&#39;TestGCD&#39;</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">mutant</span><span class="o">.</span><span class="n">pm</span><span class="o">.</span><span class="n">score</span><span class="p">()</span>
 <span class="o">======================================================================</span>
-<span class="n">FAIL</span><span class="p">:</span> <span class="n">test_simple</span> <span class="p">(</span><span class="n">__main__</span><span class="o">.</span><span class="n">TestGCD</span><span class="p">)</span>
+<span class="n">FAIL</span><span class="p">:</span> <span class="n">test_simple</span> <span class="p">(</span><span class="n">__main__</span><span class="o">.</span><span class="n">TestGCD</span><span class="o">.</span><span class="n">test_simple</span><span class="p">)</span>
 <span class="o">----------------------------------------------------------------------</span>
 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-  <span class="n">File</span> <span class="s2">&quot;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_51289/2565918356.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">3</span><span class="p">,</span> <span class="ow">in</span> <span class="n">test_simple</span>
+  <span class="n">File</span> <span class="s2">&quot;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_7987/2565918356.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">3</span><span class="p">,</span> <span class="ow">in</span> <span class="n">test_simple</span>
     <span class="k">assert</span> <span class="n">cfg</span><span class="o">.</span><span class="n">gcd</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+           <span class="o">^^^^^^^^^^^^^^^^^^</span>
 <span class="ne">AssertionError</span>
 
 <span class="o">----------------------------------------------------------------------</span>
-<span class="n">Ran</span> <span class="mi">1</span> <span class="n">test</span> <span class="ow">in</span> <span class="mf">0.001</span><span class="n">s</span>
+<span class="n">Ran</span> <span class="mi">1</span> <span class="n">test</span> <span class="ow">in</span> <span class="mf">0.000</span><span class="n">s</span>
 
 <span class="n">FAILED</span> <span class="p">(</span><span class="n">failures</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="o">======================================================================</span>
-<span class="n">FAIL</span><span class="p">:</span> <span class="n">test_simple</span> <span class="p">(</span><span class="n">__main__</span><span class="o">.</span><span class="n">TestGCD</span><span class="p">)</span>
+<span class="n">FAIL</span><span class="p">:</span> <span class="n">test_simple</span> <span class="p">(</span><span class="n">__main__</span><span class="o">.</span><span class="n">TestGCD</span><span class="o">.</span><span class="n">test_simple</span><span class="p">)</span>
 <span class="o">----------------------------------------------------------------------</span>
 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-  <span class="n">File</span> <span class="s2">&quot;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_51289/2565918356.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">3</span><span class="p">,</span> <span class="ow">in</span> <span class="n">test_simple</span>
+  <span class="n">File</span> <span class="s2">&quot;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_7987/2565918356.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">3</span><span class="p">,</span> <span class="ow">in</span> <span class="n">test_simple</span>
     <span class="k">assert</span> <span class="n">cfg</span><span class="o">.</span><span class="n">gcd</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+           <span class="o">^^^^^^^^^^^^^^^^^^</span>
 <span class="ne">AssertionError</span>
 
 <span class="o">----------------------------------------------------------------------</span>
-<span class="n">Ran</span> <span class="mi">1</span> <span class="n">test</span> <span class="ow">in</span> <span class="mf">0.001</span><span class="n">s</span>
+<span class="n">Ran</span> <span class="mi">1</span> <span class="n">test</span> <span class="ow">in</span> <span class="mf">0.000</span><span class="n">s</span>
 
 <span class="n">FAILED</span> <span class="p">(</span><span class="n">failures</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="o">======================================================================</span>
-<span class="n">FAIL</span><span class="p">:</span> <span class="n">test_simple</span> <span class="p">(</span><span class="n">__main__</span><span class="o">.</span><span class="n">TestGCD</span><span class="p">)</span>
+<span class="n">FAIL</span><span class="p">:</span> <span class="n">test_simple</span> <span class="p">(</span><span class="n">__main__</span><span class="o">.</span><span class="n">TestGCD</span><span class="o">.</span><span class="n">test_simple</span><span class="p">)</span>
 <span class="o">----------------------------------------------------------------------</span>
 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-  <span class="n">File</span> <span class="s2">&quot;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_51289/2565918356.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">3</span><span class="p">,</span> <span class="ow">in</span> <span class="n">test_simple</span>
+  <span class="n">File</span> <span class="s2">&quot;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_7987/2565918356.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">3</span><span class="p">,</span> <span class="ow">in</span> <span class="n">test_simple</span>
     <span class="k">assert</span> <span class="n">cfg</span><span class="o">.</span><span class="n">gcd</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+           <span class="o">^^^^^^^^^^^^^^^^^^</span>
 <span class="ne">AssertionError</span>
 
 <span class="o">----------------------------------------------------------------------</span>
-<span class="n">Ran</span> <span class="mi">1</span> <span class="n">test</span> <span class="ow">in</span> <span class="mf">0.001</span><span class="n">s</span>
+<span class="n">Ran</span> <span class="mi">1</span> <span class="n">test</span> <span class="ow">in</span> <span class="mf">0.000</span><span class="n">s</span>
 
 <span class="n">FAILED</span> <span class="p">(</span><span class="n">failures</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="o">======================================================================</span>
-<span class="n">FAIL</span><span class="p">:</span> <span class="n">test_simple</span> <span class="p">(</span><span class="n">__main__</span><span class="o">.</span><span class="n">TestGCD</span><span class="p">)</span>
+<span class="n">FAIL</span><span class="p">:</span> <span class="n">test_simple</span> <span class="p">(</span><span class="n">__main__</span><span class="o">.</span><span class="n">TestGCD</span><span class="o">.</span><span class="n">test_simple</span><span class="p">)</span>
 <span class="o">----------------------------------------------------------------------</span>
 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-  <span class="n">File</span> <span class="s2">&quot;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_51289/2565918356.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">3</span><span class="p">,</span> <span class="ow">in</span> <span class="n">test_simple</span>
+  <span class="n">File</span> <span class="s2">&quot;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_7987/2565918356.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">3</span><span class="p">,</span> <span class="ow">in</span> <span class="n">test_simple</span>
     <span class="k">assert</span> <span class="n">cfg</span><span class="o">.</span><span class="n">gcd</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+           <span class="o">^^^^^^^^^^^^^^^^^^</span>
 <span class="ne">AssertionError</span>
 
 <span class="o">----------------------------------------------------------------------</span>
-<span class="n">Ran</span> <span class="mi">1</span> <span class="n">test</span> <span class="ow">in</span> <span class="mf">0.001</span><span class="n">s</span>
+<span class="n">Ran</span> <span class="mi">1</span> <span class="n">test</span> <span class="ow">in</span> <span class="mf">0.000</span><span class="n">s</span>
 
 <span class="n">FAILED</span> <span class="p">(</span><span class="n">failures</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="o">======================================================================</span>
-<span class="n">FAIL</span><span class="p">:</span> <span class="n">test_simple</span> <span class="p">(</span><span class="n">__main__</span><span class="o">.</span><span class="n">TestGCD</span><span class="p">)</span>
+<span class="n">FAIL</span><span class="p">:</span> <span class="n">test_simple</span> <span class="p">(</span><span class="n">__main__</span><span class="o">.</span><span class="n">TestGCD</span><span class="o">.</span><span class="n">test_simple</span><span class="p">)</span>
 <span class="o">----------------------------------------------------------------------</span>
 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-  <span class="n">File</span> <span class="s2">&quot;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_51289/2565918356.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">3</span><span class="p">,</span> <span class="ow">in</span> <span class="n">test_simple</span>
+  <span class="n">File</span> <span class="s2">&quot;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_7987/2565918356.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">3</span><span class="p">,</span> <span class="ow">in</span> <span class="n">test_simple</span>
     <span class="k">assert</span> <span class="n">cfg</span><span class="o">.</span><span class="n">gcd</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+           <span class="o">^^^^^^^^^^^^^^^^^^</span>
 <span class="ne">AssertionError</span>
 
 <span class="o">----------------------------------------------------------------------</span>
-<span class="n">Ran</span> <span class="mi">1</span> <span class="n">test</span> <span class="ow">in</span> <span class="mf">0.001</span><span class="n">s</span>
+<span class="n">Ran</span> <span class="mi">1</span> <span class="n">test</span> <span class="ow">in</span> <span class="mf">0.000</span><span class="n">s</span>
 
 <span class="n">FAILED</span> <span class="p">(</span><span class="n">failures</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="o">======================================================================</span>
-<span class="n">FAIL</span><span class="p">:</span> <span class="n">test_simple</span> <span class="p">(</span><span class="n">__main__</span><span class="o">.</span><span class="n">TestGCD</span><span class="p">)</span>
+<span class="n">FAIL</span><span class="p">:</span> <span class="n">test_simple</span> <span class="p">(</span><span class="n">__main__</span><span class="o">.</span><span class="n">TestGCD</span><span class="o">.</span><span class="n">test_simple</span><span class="p">)</span>
 <span class="o">----------------------------------------------------------------------</span>
 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-  <span class="n">File</span> <span class="s2">&quot;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_51289/2565918356.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">3</span><span class="p">,</span> <span class="ow">in</span> <span class="n">test_simple</span>
+  <span class="n">File</span> <span class="s2">&quot;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_7987/2565918356.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">3</span><span class="p">,</span> <span class="ow">in</span> <span class="n">test_simple</span>
     <span class="k">assert</span> <span class="n">cfg</span><span class="o">.</span><span class="n">gcd</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+           <span class="o">^^^^^^^^^^^^^^^^^^</span>
 <span class="ne">AssertionError</span>
 
 <span class="o">----------------------------------------------------------------------</span>
-<span class="n">Ran</span> <span class="mi">1</span> <span class="n">test</span> <span class="ow">in</span> <span class="mf">0.001</span><span class="n">s</span>
+<span class="n">Ran</span> <span class="mi">1</span> <span class="n">test</span> <span class="ow">in</span> <span class="mf">0.000</span><span class="n">s</span>
 
 <span class="n">FAILED</span> <span class="p">(</span><span class="n">failures</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="o">======================================================================</span>
-<span class="n">FAIL</span><span class="p">:</span> <span class="n">test_simple</span> <span class="p">(</span><span class="n">__main__</span><span class="o">.</span><span class="n">TestGCD</span><span class="p">)</span>
+<span class="n">FAIL</span><span class="p">:</span> <span class="n">test_simple</span> <span class="p">(</span><span class="n">__main__</span><span class="o">.</span><span class="n">TestGCD</span><span class="o">.</span><span class="n">test_simple</span><span class="p">)</span>
 <span class="o">----------------------------------------------------------------------</span>
 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-  <span class="n">File</span> <span class="s2">&quot;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_51289/2565918356.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">3</span><span class="p">,</span> <span class="ow">in</span> <span class="n">test_simple</span>
+  <span class="n">File</span> <span class="s2">&quot;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_7987/2565918356.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">3</span><span class="p">,</span> <span class="ow">in</span> <span class="n">test_simple</span>
     <span class="k">assert</span> <span class="n">cfg</span><span class="o">.</span><span class="n">gcd</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+           <span class="o">^^^^^^^^^^^^^^^^^^</span>
 <span class="ne">AssertionError</span>
 
 <span class="o">----------------------------------------------------------------------</span>
-<span class="n">Ran</span> <span class="mi">1</span> <span class="n">test</span> <span class="ow">in</span> <span class="mf">0.001</span><span class="n">s</span>
+<span class="n">Ran</span> <span class="mi">1</span> <span class="n">test</span> <span class="ow">in</span> <span class="mf">0.000</span><span class="n">s</span>
 
 <span class="n">FAILED</span> <span class="p">(</span><span class="n">failures</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
@@ -12163,7 +12192,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">ineffective_test</span><span class="p">():</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">ineffective_test_1</span><span class="p">():</span>
     <span class="n">execute_the_program_as_a_whole</span><span class="p">()</span>
     <span class="k">assert</span> <span class="kc">True</span>
 </pre></div>
@@ -12188,7 +12217,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">ineffective_test</span><span class="p">():</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">ineffective_test_2</span><span class="p">():</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">execute_the_program_as_a_whole</span><span class="p">()</span>
     <span class="k">except</span><span class="p">:</span>
@@ -12213,7 +12242,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><p>This is indeed, not an optimal state of affairs. How can we verify that our tests are actually useful? One alternative (hinted in the chapter on coverage) is to inject bugs into the program, and evaluate the effectiveness of test suites in catching these injected bugs. However, that introduces another problem. How do we produce these bugs in the first place? Any manual effort is likely to be biased by the preconceptions of the developer as to where the bugs are likely to occur, and what effect it would have. Further, writing good bugs is likely to take a significant amount of time, for a very indirect benefit. Hence such a solution is not sufficient.</p>
+<div class="text_cell_render border-box-sizing rendered_html"><p>This is indeed, not an optimal state of affairs. How can we verify that our tests are actually useful? One alternative (hinted in the chapter on coverage) is to inject bugs into the program, and evaluate the effectiveness of test suites in catching these injected bugs. However, that introduces another problem. How do we produce these bugs in the first place? Any manual effort is likely to be biased by the preconceptions of the developer as to where the bugs are likely to occur, and what effect it would have. Further, writing good bugs is likely to take a significant amount of time, for a very indirect benefit. Hence, such a solution is not sufficient.</p>
 </div>
 </div>
 </div>
@@ -12351,7 +12380,7 @@ What is the effectiveness of our test suite? As we saw in the <a href="Coverage.
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn"><a href="https://github.com/uds-se/fuzzingbook//tree/master/notebooks/shared/bookutils" class="import" target="_blank">bookutils</a></span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn"><a href="https://github.com/uds-se/fuzzingbook//tree/master/notebooks/shared/bookutils" class="import" target="_blank">bookutils.setup</a></span>
 </pre></div>
 
 </div>
@@ -12402,7 +12431,7 @@ What is the effectiveness of our test suite? As we saw in the <a href="Coverage.
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Coverage</span><span class="p">(</span><span class="n">Coverage</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">VisualCoverage</span><span class="p">(</span><span class="n">Coverage</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">show_coverage</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fn</span><span class="p">):</span>
         <span class="n">src</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getsource</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
         <span class="n">name</span> <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="vm">__name__</span>
@@ -12423,7 +12452,7 @@ What is the effectiveness of our test suite? As we saw in the <a href="Coverage.
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="n">Coverage</span><span class="p">()</span> <span class="k">as</span> <span class="n">cov</span><span class="p">:</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="n">VisualCoverage</span><span class="p">()</span> <span class="k">as</span> <span class="n">cov</span><span class="p">:</span>
     <span class="n">strong_oracle</span><span class="p">(</span><span class="n">triangle</span><span class="p">)</span>
 </pre></div>
 
@@ -12515,7 +12544,7 @@ That is, our set of test cases is reasonably good according to structural covera
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="n">Coverage</span><span class="p">()</span> <span class="k">as</span> <span class="n">cov</span><span class="p">:</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="n">VisualCoverage</span><span class="p">()</span> <span class="k">as</span> <span class="n">cov</span><span class="p">:</span>
     <span class="n">weak_oracle</span><span class="p">(</span><span class="n">triangle</span><span class="p">)</span>
 </pre></div>
 
@@ -12675,10 +12704,11 @@ The problem here is that coverage is unable to evaluate the <em>quality</em> of 
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>Traceback (most recent call last):
-  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_51289/3191755624.py&#34;, line 2, in &lt;module&gt;
+  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_7987/3191755624.py&#34;, line 2, in &lt;module&gt;
     strong_oracle(triangle_m1)
-  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_51289/566939880.py&#34;, line 5, in strong_oracle
+  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_7987/566939880.py&#34;, line 5, in strong_oracle
     assert fn(2, 2, 1) == &#39;Isosceles&#39;
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
 AssertionError (expected)
 </pre>
 </div>
@@ -12706,7 +12736,7 @@ AssertionError (expected)
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><p>Mutation Analysis provides an alternative to a curated set of faults. The key insight is that, if one assumes that the programmer understands the program in question, the majority of errors made are very likely small transcription errors (a small number of tokens). A compiler will likely catch most of these errors. Hence, the majority of residual faults in a program is likely to be due to small (single token) variations at certain points in the structure of the program from the correct program (This particular assumption is called the <em>Competent Programmer Hypothesis</em> or the <em>Finite Neighborhood Hypothesis</em>).</p>
+<div class="text_cell_render border-box-sizing rendered_html"><p>Mutation Analysis provides an alternative to a curated set of faults. The key insight is that, if one assumes that the programmer understands the program in question, the majority of errors made are very likely small transcription errors (a few tokens). A compiler will likely catch most of these errors. Hence, the majority of residual faults in a program is likely to be due to small (single token) variations at certain points in the structure of the program from the correct program (This particular assumption is called the <em>Competent Programmer Hypothesis</em> or the <em>Finite Neighborhood Hypothesis</em>).</p>
 <p>What about the larger faults composed of multiple smaller faults? The key insight here is that, for a majority of such complex faults, test cases that detect a single smaller fault in isolation is very likely to detect the larger complex fault that contains it. (This assumption is called the <em>Coupling Effect</em>.)</p>
 <p>How can we use these assumptions in practice? The idea is to simply generate <em>all</em> possible <em>valid</em> variants of the program that differs from the original by a small change (such as a single token change) (Such variants are called <em>mutants</em>). Next, the given test suite is applied to each variant thus generated. Any mutant detected by the test suite is said to have been <em>killed</em> by the test suite. The effectiveness of a test suite is given by the proportion of mutants killed to the valid mutants generated.</p>
 </div>
@@ -12958,7 +12988,8 @@ AssertionError (expected)
                                     orelse=[
                                         Return(
                                             value=Constant(value=&#39;Scalene&#39;))])])])],
-            decorator_list=[])],
+            decorator_list=[],
+            type_params=[])],
     type_ignores=[])
 </pre>
 </div>
@@ -13007,603 +13038,603 @@ AssertionError (expected)
 <div class="output_area">
 
 <div class="output_image output_svg output_subarea ">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1811pt" height="476pt" viewBox="0.00 0.00 1810.50 476.00">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1791pt" height="476pt" viewBox="0.00 0.00 1791.38 476.00">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 472)">
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-472 1806.5,-472 1806.5,4 -4,4"/>
+<polygon fill="white" stroke="none" points="-4,4 -4,-472 1787.38,-472 1787.38,4 -4,4"/>
 <!-- 0 -->
 <g id="node1" class="node">
 <title>0</title>
-<text text-anchor="start" x="119" y="-447.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">FunctionDef</text>
+<text text-anchor="start" x="115.88" y="-445.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">FunctionDef</text>
 </g>
 <!-- 1 -->
 <g id="node2" class="node">
 <title>1</title>
-<text text-anchor="middle" x="50.5" y="-374.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;triangle&quot;</text>
+<text text-anchor="middle" x="49.25" y="-372.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;triangle&quot;</text>
 </g>
 <!-- 0&#45;&#45;1 -->
 <g id="edge1" class="edge">
 <title>0--1</title>
-<path fill="none" stroke="black" d="M166.5,-431C166.5,-431 122.31,-411.19 88.48,-396.03"/>
+<path fill="none" stroke="black" d="M162.25,-431C162.25,-431 118.93,-411.07 85.94,-395.88"/>
 </g>
 <!-- 2 -->
 <g id="node3" class="node">
 <title>2</title>
-<text text-anchor="start" x="127.5" y="-375.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">arguments</text>
+<text text-anchor="start" x="124.12" y="-373.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">arguments</text>
 </g>
 <!-- 0&#45;&#45;2 -->
 <g id="edge2" class="edge">
 <title>0--2</title>
-<path fill="none" stroke="black" d="M166.5,-431C166.5,-431 166.12,-411.19 165.83,-396.03"/>
+<path fill="none" stroke="black" d="M162.25,-431C162.25,-431 161.86,-410.94 161.57,-395.74"/>
 </g>
 <!-- 9 -->
 <g id="node10" class="node">
 <title>9</title>
-<text text-anchor="start" x="481" y="-375.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">If</text>
+<text text-anchor="start" x="495" y="-373.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">If</text>
 </g>
 <!-- 0&#45;&#45;9 -->
 <g id="edge9" class="edge">
 <title>0--9</title>
-<path fill="none" stroke="black" d="M166.5,-431C166.5,-431 384.37,-395.93 462.24,-383.39"/>
+<path fill="none" stroke="black" d="M162.25,-431C162.25,-431 396.1,-395.34 476.49,-383.08"/>
 </g>
 <!-- 3 -->
 <g id="node4" class="node">
 <title>3</title>
-<text text-anchor="start" x="44.5" y="-303.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">arg</text>
+<text text-anchor="start" x="40.88" y="-301.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">arg</text>
 </g>
 <!-- 2&#45;&#45;3 -->
 <g id="edge3" class="edge">
 <title>2--3</title>
-<path fill="none" stroke="black" d="M159.5,-359C159.5,-359 114.78,-336.2 84.57,-320.8"/>
+<path fill="none" stroke="black" d="M155.25,-359C155.25,-359 110.27,-336.07 80.05,-320.66"/>
 </g>
 <!-- 5 -->
 <g id="node6" class="node">
 <title>5</title>
-<text text-anchor="start" x="116.5" y="-303.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">arg</text>
+<text text-anchor="start" x="112.88" y="-301.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">arg</text>
 </g>
 <!-- 2&#45;&#45;5 -->
 <g id="edge5" class="edge">
 <title>2--5</title>
-<path fill="none" stroke="black" d="M159.5,-359C159.5,-359 148.07,-339.19 139.32,-324.03"/>
+<path fill="none" stroke="black" d="M155.25,-359C155.25,-359 143.68,-338.94 134.91,-323.74"/>
 </g>
 <!-- 7 -->
 <g id="node8" class="node">
 <title>7</title>
-<text text-anchor="start" x="188.5" y="-303.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">arg</text>
+<text text-anchor="start" x="184.88" y="-301.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">arg</text>
 </g>
 <!-- 2&#45;&#45;7 -->
 <g id="edge7" class="edge">
 <title>2--7</title>
-<path fill="none" stroke="black" d="M159.5,-359C159.5,-359 175.5,-339.19 187.75,-324.03"/>
+<path fill="none" stroke="black" d="M155.25,-359C155.25,-359 171.45,-338.94 183.73,-323.74"/>
 </g>
 <!-- 4 -->
 <g id="node5" class="node">
 <title>4</title>
-<text text-anchor="middle" x="57.5" y="-230.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;a&quot;</text>
+<text text-anchor="middle" x="53.25" y="-228.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;a&quot;</text>
 </g>
 <!-- 3&#45;&#45;4 -->
 <g id="edge4" class="edge">
 <title>3--4</title>
-<path fill="none" stroke="black" d="M57.5,-287.7C57.5,-276.85 57.5,-262.92 57.5,-252.1"/>
+<path fill="none" stroke="black" d="M53.25,-288.05C53.25,-277.05 53.25,-262.76 53.25,-251.79"/>
 </g>
 <!-- 6 -->
 <g id="node7" class="node">
 <title>6</title>
-<text text-anchor="middle" x="129.5" y="-230.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;b&quot;</text>
+<text text-anchor="middle" x="125.25" y="-228.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;b&quot;</text>
 </g>
 <!-- 5&#45;&#45;6 -->
 <g id="edge6" class="edge">
 <title>5--6</title>
-<path fill="none" stroke="black" d="M129.5,-287.7C129.5,-276.85 129.5,-262.92 129.5,-252.1"/>
+<path fill="none" stroke="black" d="M125.25,-288.05C125.25,-277.05 125.25,-262.76 125.25,-251.79"/>
 </g>
 <!-- 8 -->
 <g id="node9" class="node">
 <title>8</title>
-<text text-anchor="middle" x="201.5" y="-230.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;c&quot;</text>
+<text text-anchor="middle" x="197.25" y="-228.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;c&quot;</text>
 </g>
 <!-- 7&#45;&#45;8 -->
 <g id="edge8" class="edge">
 <title>7--8</title>
-<path fill="none" stroke="black" d="M201.5,-287.7C201.5,-276.85 201.5,-262.92 201.5,-252.1"/>
+<path fill="none" stroke="black" d="M197.25,-288.05C197.25,-277.05 197.25,-262.76 197.25,-251.79"/>
 </g>
 <!-- 10 -->
 <g id="node11" class="node">
 <title>10</title>
-<text text-anchor="start" x="352" y="-303.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Compare</text>
+<text text-anchor="start" x="348.38" y="-301.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Compare</text>
 </g>
 <!-- 9&#45;&#45;10 -->
 <g id="edge10" class="edge">
 <title>9--10</title>
-<path fill="none" stroke="black" d="M507.5,-359C507.5,-359 456.42,-337.92 419.3,-322.6"/>
+<path fill="none" stroke="black" d="M521.25,-359C521.25,-359 456.62,-335.66 413.96,-320.26"/>
 </g>
 <!-- 18 -->
 <g id="node19" class="node">
 <title>18</title>
-<text text-anchor="start" x="643" y="-303.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">If</text>
+<text text-anchor="start" x="656" y="-301.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">If</text>
 </g>
 <!-- 9&#45;&#45;18 -->
 <g id="edge18" class="edge">
 <title>9--18</title>
-<path fill="none" stroke="black" d="M507.5,-359C507.5,-359 582.7,-331.84 624.41,-316.78"/>
+<path fill="none" stroke="black" d="M521.25,-359C521.25,-359 595.93,-331.84 637.35,-316.78"/>
 </g>
 <!-- 33 -->
 <g id="node34" class="node">
 <title>33</title>
-<text text-anchor="start" x="1199" y="-303.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">If</text>
+<text text-anchor="start" x="1187" y="-301.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">If</text>
 </g>
 <!-- 9&#45;&#45;33 -->
 <g id="edge33" class="edge">
 <title>9--33</title>
-<path fill="none" stroke="black" d="M507.5,-359C507.5,-359 1051.84,-318.56 1180.49,-309.01"/>
+<path fill="none" stroke="black" d="M521.25,-359C521.25,-359 1043.06,-318.74 1168.41,-309.07"/>
 </g>
 <!-- 11 -->
 <g id="node12" class="node">
 <title>11</title>
-<text text-anchor="start" x="256.5" y="-231.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Name</text>
+<text text-anchor="start" x="252.75" y="-229.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Name</text>
 </g>
 <!-- 10&#45;&#45;11 -->
 <g id="edge11" class="edge">
 <title>10--11</title>
-<path fill="none" stroke="black" d="M375.5,-287C375.5,-287 330.78,-264.2 300.57,-248.8"/>
+<path fill="none" stroke="black" d="M371.25,-287C371.25,-287 326.27,-264.07 296.05,-248.66"/>
 </g>
 <!-- 14 -->
 <g id="node15" class="node">
 <title>14</title>
-<text text-anchor="middle" x="345.5" y="-230.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">Eq</text>
+<text text-anchor="middle" x="341.25" y="-228.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">Eq</text>
 </g>
 <!-- 10&#45;&#45;14 -->
 <g id="edge14" class="edge">
 <title>10--14</title>
-<path fill="none" stroke="black" d="M375.5,-287C375.5,-287 364.07,-267.19 355.32,-252.03"/>
+<path fill="none" stroke="black" d="M371.25,-287C371.25,-287 359.68,-266.94 350.91,-251.74"/>
 </g>
 <!-- 15 -->
 <g id="node16" class="node">
 <title>15</title>
-<text text-anchor="start" x="400.5" y="-231.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Name</text>
+<text text-anchor="start" x="396.75" y="-229.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Name</text>
 </g>
 <!-- 10&#45;&#45;15 -->
 <g id="edge15" class="edge">
 <title>10--15</title>
-<path fill="none" stroke="black" d="M375.5,-287C375.5,-287 391.5,-267.19 403.75,-252.03"/>
+<path fill="none" stroke="black" d="M371.25,-287C371.25,-287 387.45,-266.94 399.73,-251.74"/>
 </g>
 <!-- 12 -->
 <g id="node13" class="node">
 <title>12</title>
-<text text-anchor="middle" x="201.5" y="-158.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;a&quot;</text>
+<text text-anchor="middle" x="197.25" y="-156.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;a&quot;</text>
 </g>
 <!-- 11&#45;&#45;12 -->
 <g id="edge12" class="edge">
 <title>11--12</title>
-<path fill="none" stroke="black" d="M265.5,-215C265.5,-215 241.12,-195.19 222.46,-180.03"/>
+<path fill="none" stroke="black" d="M262.25,-215C262.25,-215 237.18,-194.94 218.17,-179.74"/>
 </g>
 <!-- 13 -->
 <g id="node14" class="node">
 <title>13</title>
-<text text-anchor="middle" x="273.5" y="-158.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">Load</text>
+<text text-anchor="middle" x="269.25" y="-156.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">Load</text>
 </g>
 <!-- 11&#45;&#45;13 -->
 <g id="edge13" class="edge">
 <title>11--13</title>
-<path fill="none" stroke="black" d="M265.5,-215C265.5,-215 268.55,-195.19 270.88,-180.03"/>
+<path fill="none" stroke="black" d="M262.25,-215C262.25,-215 264.95,-194.94 267,-179.74"/>
 </g>
 <!-- 16 -->
 <g id="node17" class="node">
 <title>16</title>
-<text text-anchor="middle" x="345.5" y="-158.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;b&quot;</text>
+<text text-anchor="middle" x="341.25" y="-156.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;b&quot;</text>
 </g>
 <!-- 15&#45;&#45;16 -->
 <g id="edge16" class="edge">
 <title>15--16</title>
-<path fill="none" stroke="black" d="M409.5,-215C409.5,-215 385.12,-195.19 366.46,-180.03"/>
+<path fill="none" stroke="black" d="M406.25,-215C406.25,-215 381.18,-194.94 362.17,-179.74"/>
 </g>
 <!-- 17 -->
 <g id="node18" class="node">
 <title>17</title>
-<text text-anchor="middle" x="417.5" y="-158.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">Load</text>
+<text text-anchor="middle" x="413.25" y="-156.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">Load</text>
 </g>
 <!-- 15&#45;&#45;17 -->
 <g id="edge17" class="edge">
 <title>15--17</title>
-<path fill="none" stroke="black" d="M409.5,-215C409.5,-215 412.55,-195.19 414.88,-180.03"/>
+<path fill="none" stroke="black" d="M406.25,-215C406.25,-215 408.95,-194.94 411,-179.74"/>
 </g>
 <!-- 19 -->
 <g id="node20" class="node">
 <title>19</title>
-<text text-anchor="start" x="555" y="-231.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Compare</text>
+<text text-anchor="start" x="564.38" y="-229.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Compare</text>
 </g>
 <!-- 18&#45;&#45;19 -->
 <g id="edge19" class="edge">
 <title>18--19</title>
-<path fill="none" stroke="black" d="M657.5,-287C657.5,-287 629.69,-267.19 608.4,-252.03"/>
+<path fill="none" stroke="black" d="M670.25,-287C670.25,-287 640.55,-266.94 618.04,-251.74"/>
 </g>
 <!-- 27 -->
 <g id="node28" class="node">
 <title>27</title>
-<text text-anchor="start" x="661" y="-231.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Return</text>
+<text text-anchor="start" x="674.5" y="-229.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Return</text>
 </g>
 <!-- 18&#45;&#45;27 -->
 <g id="edge27" class="edge">
 <title>18--27</title>
-<path fill="none" stroke="black" d="M657.5,-287C657.5,-287 668.55,-267.19 677,-252.03"/>
+<path fill="none" stroke="black" d="M670.25,-287C670.25,-287 681.44,-266.94 689.91,-251.74"/>
 </g>
 <!-- 30 -->
 <g id="node31" class="node">
 <title>30</title>
-<text text-anchor="start" x="805" y="-231.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Return</text>
+<text text-anchor="start" x="799.5" y="-229.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Return</text>
 </g>
 <!-- 18&#45;&#45;30 -->
 <g id="edge30" class="edge">
 <title>18--30</title>
-<path fill="none" stroke="black" d="M657.5,-287C657.5,-287 746.39,-260.28 796.73,-245.15"/>
+<path fill="none" stroke="black" d="M670.25,-287C670.25,-287 746.39,-261.29 791.59,-246.03"/>
 </g>
 <!-- 20 -->
 <g id="node21" class="node">
 <title>20</title>
-<text text-anchor="start" x="472.5" y="-159.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Name</text>
+<text text-anchor="start" x="468.75" y="-157.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Name</text>
 </g>
 <!-- 19&#45;&#45;20 -->
 <g id="edge20" class="edge">
 <title>19--20</title>
-<path fill="none" stroke="black" d="M580.5,-215C580.5,-215 543.61,-193.92 516.8,-178.6"/>
+<path fill="none" stroke="black" d="M587.25,-215C587.25,-215 542.27,-192.07 512.05,-176.66"/>
 </g>
 <!-- 23 -->
 <g id="node24" class="node">
 <title>23</title>
-<text text-anchor="middle" x="561.5" y="-158.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">Eq</text>
+<text text-anchor="middle" x="557.25" y="-156.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">Eq</text>
 </g>
 <!-- 19&#45;&#45;23 -->
 <g id="edge23" class="edge">
 <title>19--23</title>
-<path fill="none" stroke="black" d="M580.5,-215C580.5,-215 573.26,-195.19 567.72,-180.03"/>
+<path fill="none" stroke="black" d="M587.25,-215C587.25,-215 575.68,-194.94 566.91,-179.74"/>
 </g>
 <!-- 24 -->
 <g id="node25" class="node">
 <title>24</title>
-<text text-anchor="start" x="616.5" y="-159.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Name</text>
+<text text-anchor="start" x="612.75" y="-157.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Name</text>
 </g>
 <!-- 19&#45;&#45;24 -->
 <g id="edge24" class="edge">
 <title>19--24</title>
-<path fill="none" stroke="black" d="M580.5,-215C580.5,-215 600.69,-195.19 616.15,-180.03"/>
+<path fill="none" stroke="black" d="M587.25,-215C587.25,-215 603.45,-194.94 615.73,-179.74"/>
 </g>
 <!-- 21 -->
 <g id="node22" class="node">
 <title>21</title>
-<text text-anchor="middle" x="417.5" y="-86.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;b&quot;</text>
+<text text-anchor="middle" x="413.25" y="-84.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;b&quot;</text>
 </g>
 <!-- 20&#45;&#45;21 -->
 <g id="edge21" class="edge">
 <title>20--21</title>
-<path fill="none" stroke="black" d="M481.5,-143C481.5,-143 457.12,-123.19 438.46,-108.03"/>
+<path fill="none" stroke="black" d="M478.25,-143C478.25,-143 453.18,-122.94 434.17,-107.74"/>
 </g>
 <!-- 22 -->
 <g id="node23" class="node">
 <title>22</title>
-<text text-anchor="middle" x="489.5" y="-86.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">Load</text>
+<text text-anchor="middle" x="485.25" y="-84.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">Load</text>
 </g>
 <!-- 20&#45;&#45;22 -->
 <g id="edge22" class="edge">
 <title>20--22</title>
-<path fill="none" stroke="black" d="M481.5,-143C481.5,-143 484.55,-123.19 486.88,-108.03"/>
+<path fill="none" stroke="black" d="M478.25,-143C478.25,-143 480.95,-122.94 483,-107.74"/>
 </g>
 <!-- 25 -->
 <g id="node26" class="node">
 <title>25</title>
-<text text-anchor="middle" x="561.5" y="-86.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;c&quot;</text>
+<text text-anchor="middle" x="557.25" y="-84.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;c&quot;</text>
 </g>
 <!-- 24&#45;&#45;25 -->
 <g id="edge25" class="edge">
 <title>24--25</title>
-<path fill="none" stroke="black" d="M625.5,-143C625.5,-143 601.12,-123.19 582.46,-108.03"/>
+<path fill="none" stroke="black" d="M622.25,-143C622.25,-143 597.18,-122.94 578.17,-107.74"/>
 </g>
 <!-- 26 -->
 <g id="node27" class="node">
 <title>26</title>
-<text text-anchor="middle" x="633.5" y="-86.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">Load</text>
+<text text-anchor="middle" x="629.25" y="-84.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">Load</text>
 </g>
 <!-- 24&#45;&#45;26 -->
 <g id="edge26" class="edge">
 <title>24--26</title>
-<path fill="none" stroke="black" d="M625.5,-143C625.5,-143 628.55,-123.19 630.88,-108.03"/>
+<path fill="none" stroke="black" d="M622.25,-143C622.25,-143 624.95,-122.94 627,-107.74"/>
 </g>
 <!-- 28 -->
 <g id="node29" class="node">
 <title>28</title>
-<text text-anchor="start" x="697.5" y="-159.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Constant</text>
+<text text-anchor="start" x="693.25" y="-157.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Constant</text>
 </g>
 <!-- 27&#45;&#45;28 -->
 <g id="edge28" class="edge">
 <title>27--28</title>
-<path fill="none" stroke="black" d="M697.62,-215.7C704.6,-204.85 713.55,-190.92 720.5,-180.1"/>
+<path fill="none" stroke="black" d="M705.79,-216.05C710.03,-205.05 715.54,-190.76 719.77,-179.79"/>
 </g>
 <!-- 29 -->
 <g id="node30" class="node">
 <title>29</title>
-<text text-anchor="middle" x="741.5" y="-86.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;Equilateral&quot;</text>
+<text text-anchor="middle" x="736.25" y="-84.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;Equilateral&quot;</text>
 </g>
 <!-- 28&#45;&#45;29 -->
 <g id="edge29" class="edge">
 <title>28--29</title>
-<path fill="none" stroke="black" d="M733.97,-143.7C735.52,-132.85 737.51,-118.92 739.06,-108.1"/>
+<path fill="none" stroke="black" d="M728.67,-144.05C730.24,-133.05 732.28,-118.76 733.85,-107.79"/>
 </g>
 <!-- 31 -->
 <g id="node32" class="node">
 <title>31</title>
-<text text-anchor="start" x="821.5" y="-159.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Constant</text>
+<text text-anchor="start" x="815.25" y="-157.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Constant</text>
 </g>
 <!-- 30&#45;&#45;31 -->
 <g id="edge31" class="edge">
 <title>30--31</title>
-<path fill="none" stroke="black" d="M836.68,-215.7C840.55,-204.85 845.53,-190.92 849.39,-180.1"/>
+<path fill="none" stroke="black" d="M830.06,-216.05C833.83,-205.05 838.73,-190.76 842.49,-179.79"/>
 </g>
 <!-- 32 -->
 <g id="node33" class="node">
 <title>32</title>
-<text text-anchor="middle" x="877.5" y="-86.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;Isosceles&quot;</text>
+<text text-anchor="middle" x="869.25" y="-84.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;Isosceles&quot;</text>
 </g>
 <!-- 31&#45;&#45;32 -->
 <g id="edge32" class="edge">
 <title>31--32</title>
-<path fill="none" stroke="black" d="M860.94,-143.7C864.35,-132.85 868.73,-118.92 872.12,-108.1"/>
+<path fill="none" stroke="black" d="M853.33,-144.05C856.64,-133.05 860.92,-118.76 864.21,-107.79"/>
 </g>
 <!-- 34 -->
 <g id="node35" class="node">
 <title>34</title>
-<text text-anchor="start" x="1113" y="-231.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Compare</text>
+<text text-anchor="start" x="1102.38" y="-229.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Compare</text>
 </g>
 <!-- 33&#45;&#45;34 -->
 <g id="edge34" class="edge">
 <title>33--34</title>
-<path fill="none" stroke="black" d="M1215.5,-287C1215.5,-287 1187.69,-267.19 1166.4,-252.03"/>
+<path fill="none" stroke="black" d="M1203.25,-287C1203.25,-287 1175.48,-266.94 1154.43,-251.74"/>
 </g>
 <!-- 42 -->
 <g id="node43" class="node">
 <title>42</title>
-<text text-anchor="start" x="1221" y="-231.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Return</text>
+<text text-anchor="start" x="1209.5" y="-229.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Return</text>
 </g>
 <!-- 33&#45;&#45;42 -->
 <g id="edge42" class="edge">
 <title>33--42</title>
-<path fill="none" stroke="black" d="M1215.5,-287C1215.5,-287 1227.31,-267.19 1236.35,-252.03"/>
+<path fill="none" stroke="black" d="M1203.25,-287C1203.25,-287 1215.21,-266.94 1224.27,-251.74"/>
 </g>
 <!-- 45 -->
 <g id="node46" class="node">
 <title>45</title>
-<text text-anchor="start" x="1537" y="-231.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">If</text>
+<text text-anchor="start" x="1521" y="-229.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">If</text>
 </g>
 <!-- 33&#45;&#45;45 -->
 <g id="edge45" class="edge">
 <title>33--45</title>
-<path fill="none" stroke="black" d="M1215.5,-287C1215.5,-287 1439.68,-251.67 1518.49,-239.26"/>
+<path fill="none" stroke="black" d="M1203.25,-287C1203.25,-287 1424.19,-251.76 1502.29,-239.3"/>
 </g>
 <!-- 35 -->
 <g id="node36" class="node">
 <title>35</title>
-<text text-anchor="start" x="1032.5" y="-159.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Name</text>
+<text text-anchor="start" x="1022.75" y="-157.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Name</text>
 </g>
 <!-- 34&#45;&#45;35 -->
 <g id="edge35" class="edge">
 <title>34--35</title>
-<path fill="none" stroke="black" d="M1138.5,-215C1138.5,-215 1102.86,-194.18 1076.69,-178.88"/>
+<path fill="none" stroke="black" d="M1128.25,-215C1128.25,-215 1092.17,-193.92 1065.95,-178.6"/>
 </g>
 <!-- 38 -->
 <g id="node39" class="node">
 <title>38</title>
-<text text-anchor="middle" x="1121.5" y="-158.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">Eq</text>
+<text text-anchor="middle" x="1111.25" y="-156.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">Eq</text>
 </g>
 <!-- 34&#45;&#45;38 -->
 <g id="edge38" class="edge">
 <title>34--38</title>
-<path fill="none" stroke="black" d="M1138.5,-215C1138.5,-215 1132.02,-195.19 1127.07,-180.03"/>
+<path fill="none" stroke="black" d="M1128.25,-215C1128.25,-215 1121.69,-194.94 1116.72,-179.74"/>
 </g>
 <!-- 39 -->
 <g id="node40" class="node">
 <title>39</title>
-<text text-anchor="start" x="1176.5" y="-159.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Name</text>
+<text text-anchor="start" x="1166.75" y="-157.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Name</text>
 </g>
 <!-- 34&#45;&#45;39 -->
 <g id="edge39" class="edge">
 <title>34--39</title>
-<path fill="none" stroke="black" d="M1138.5,-215C1138.5,-215 1159.45,-195.19 1175.49,-180.03"/>
+<path fill="none" stroke="black" d="M1128.25,-215C1128.25,-215 1149.47,-194.94 1165.54,-179.74"/>
 </g>
 <!-- 36 -->
 <g id="node37" class="node">
 <title>36</title>
-<text text-anchor="middle" x="977.5" y="-86.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;b&quot;</text>
+<text text-anchor="middle" x="967.25" y="-84.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;b&quot;</text>
 </g>
 <!-- 35&#45;&#45;36 -->
 <g id="edge36" class="edge">
 <title>35--36</title>
-<path fill="none" stroke="black" d="M1041.5,-143C1041.5,-143 1017.12,-123.19 998.46,-108.03"/>
+<path fill="none" stroke="black" d="M1032.25,-143C1032.25,-143 1007.18,-122.94 988.17,-107.74"/>
 </g>
 <!-- 37 -->
 <g id="node38" class="node">
 <title>37</title>
-<text text-anchor="middle" x="1049.5" y="-86.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">Load</text>
+<text text-anchor="middle" x="1039.25" y="-84.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">Load</text>
 </g>
 <!-- 35&#45;&#45;37 -->
 <g id="edge37" class="edge">
 <title>35--37</title>
-<path fill="none" stroke="black" d="M1041.5,-143C1041.5,-143 1044.55,-123.19 1046.88,-108.03"/>
+<path fill="none" stroke="black" d="M1032.25,-143C1032.25,-143 1034.95,-122.94 1037,-107.74"/>
 </g>
 <!-- 40 -->
 <g id="node41" class="node">
 <title>40</title>
-<text text-anchor="middle" x="1121.5" y="-86.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;c&quot;</text>
+<text text-anchor="middle" x="1111.25" y="-84.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;c&quot;</text>
 </g>
 <!-- 39&#45;&#45;40 -->
 <g id="edge40" class="edge">
 <title>39--40</title>
-<path fill="none" stroke="black" d="M1185.5,-143C1185.5,-143 1161.12,-123.19 1142.46,-108.03"/>
+<path fill="none" stroke="black" d="M1176.25,-143C1176.25,-143 1151.18,-122.94 1132.17,-107.74"/>
 </g>
 <!-- 41 -->
 <g id="node42" class="node">
 <title>41</title>
-<text text-anchor="middle" x="1193.5" y="-86.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">Load</text>
+<text text-anchor="middle" x="1183.25" y="-84.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">Load</text>
 </g>
 <!-- 39&#45;&#45;41 -->
 <g id="edge41" class="edge">
 <title>39--41</title>
-<path fill="none" stroke="black" d="M1185.5,-143C1185.5,-143 1188.55,-123.19 1190.88,-108.03"/>
+<path fill="none" stroke="black" d="M1176.25,-143C1176.25,-143 1178.95,-122.94 1181,-107.74"/>
 </g>
 <!-- 43 -->
 <g id="node44" class="node">
 <title>43</title>
-<text text-anchor="start" x="1253.5" y="-159.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Constant</text>
+<text text-anchor="start" x="1242.25" y="-157.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Constant</text>
 </g>
 <!-- 42&#45;&#45;43 -->
 <g id="edge43" class="edge">
 <title>42--43</title>
-<path fill="none" stroke="black" d="M1256.63,-215.7C1262.99,-204.85 1271.15,-190.92 1277.48,-180.1"/>
+<path fill="none" stroke="black" d="M1244.17,-216.05C1250.62,-205.05 1258.99,-190.76 1265.42,-179.79"/>
 </g>
 <!-- 44 -->
 <g id="node45" class="node">
 <title>44</title>
-<text text-anchor="middle" x="1293.5" y="-86.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;Isosceles&quot;</text>
+<text text-anchor="middle" x="1281.25" y="-84.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;Isosceles&quot;</text>
 </g>
 <!-- 43&#45;&#45;44 -->
 <g id="edge44" class="edge">
 <title>43--44</title>
-<path fill="none" stroke="black" d="M1288.98,-143.7C1289.91,-132.85 1291.11,-118.92 1292.03,-108.1"/>
+<path fill="none" stroke="black" d="M1276.7,-144.05C1277.65,-133.05 1278.87,-118.76 1279.81,-107.79"/>
 </g>
 <!-- 46 -->
 <g id="node47" class="node">
 <title>46</title>
-<text text-anchor="start" x="1451" y="-159.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Compare</text>
+<text text-anchor="start" x="1436.38" y="-157.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Compare</text>
 </g>
 <!-- 45&#45;&#45;46 -->
 <g id="edge46" class="edge">
 <title>45--46</title>
-<path fill="none" stroke="black" d="M1554.5,-215C1554.5,-215 1526.31,-195.19 1504.73,-180.03"/>
+<path fill="none" stroke="black" d="M1538.25,-215C1538.25,-215 1510.09,-194.94 1488.75,-179.74"/>
 </g>
 <!-- 54 -->
 <g id="node55" class="node">
 <title>54</title>
-<text text-anchor="start" x="1585" y="-159.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Return</text>
+<text text-anchor="start" x="1569.5" y="-157.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Return</text>
 </g>
 <!-- 45&#45;&#45;54 -->
 <g id="edge54" class="edge">
 <title>45--54</title>
-<path fill="none" stroke="black" d="M1554.5,-215C1554.5,-215 1575.83,-195.19 1592.16,-180.03"/>
+<path fill="none" stroke="black" d="M1538.25,-215C1538.25,-215 1559.85,-194.94 1576.22,-179.74"/>
 </g>
 <!-- 57 -->
 <g id="node58" class="node">
 <title>57</title>
-<text text-anchor="start" x="1708" y="-159.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Return</text>
+<text text-anchor="start" x="1690.5" y="-157.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Return</text>
 </g>
 <!-- 45&#45;&#45;57 -->
 <g id="edge57" class="edge">
 <title>45--57</title>
-<path fill="none" stroke="black" d="M1554.5,-215C1554.5,-215 1647.98,-187.84 1699.83,-172.78"/>
+<path fill="none" stroke="black" d="M1538.25,-215C1538.25,-215 1631.69,-187.55 1682.79,-172.54"/>
 </g>
 <!-- 47 -->
 <g id="node48" class="node">
 <title>47</title>
-<text text-anchor="start" x="1376.5" y="-87.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Name</text>
+<text text-anchor="start" x="1362.75" y="-85.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Name</text>
 </g>
 <!-- 46&#45;&#45;47 -->
 <g id="edge47" class="edge">
 <title>46--47</title>
-<path fill="none" stroke="black" d="M1477.5,-143C1477.5,-143 1445.1,-122.94 1420.54,-107.74"/>
+<path fill="none" stroke="black" d="M1463.25,-143C1463.25,-143 1430.44,-122.69 1405.83,-107.45"/>
 </g>
 <!-- 50 -->
 <g id="node51" class="node">
 <title>50</title>
-<text text-anchor="middle" x="1465.5" y="-86.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">Eq</text>
+<text text-anchor="middle" x="1451.25" y="-84.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">Eq</text>
 </g>
 <!-- 46&#45;&#45;50 -->
 <g id="edge50" class="edge">
 <title>46--50</title>
-<path fill="none" stroke="black" d="M1477.5,-143C1477.5,-143 1472.93,-123.19 1469.43,-108.03"/>
+<path fill="none" stroke="black" d="M1463.25,-143C1463.25,-143 1458.62,-122.94 1455.11,-107.74"/>
 </g>
 <!-- 51 -->
 <g id="node52" class="node">
 <title>51</title>
-<text text-anchor="start" x="1520.5" y="-87.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Name</text>
+<text text-anchor="start" x="1506.75" y="-85.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Name</text>
 </g>
 <!-- 46&#45;&#45;51 -->
 <g id="edge51" class="edge">
 <title>46--51</title>
-<path fill="none" stroke="black" d="M1477.5,-143C1477.5,-143 1500.36,-123.19 1517.85,-108.03"/>
+<path fill="none" stroke="black" d="M1463.25,-143C1463.25,-143 1486.4,-122.94 1503.94,-107.74"/>
 </g>
 <!-- 48 -->
 <g id="node49" class="node">
 <title>48</title>
-<text text-anchor="middle" x="1321.5" y="-14.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;a&quot;</text>
+<text text-anchor="middle" x="1307.25" y="-12.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;a&quot;</text>
 </g>
 <!-- 47&#45;&#45;48 -->
 <g id="edge48" class="edge">
 <title>47--48</title>
-<path fill="none" stroke="black" d="M1385.5,-71C1385.5,-71 1361.12,-51.19 1342.46,-36.03"/>
+<path fill="none" stroke="black" d="M1372.25,-71C1372.25,-71 1347.18,-50.94 1328.17,-35.74"/>
 </g>
 <!-- 49 -->
 <g id="node50" class="node">
 <title>49</title>
-<text text-anchor="middle" x="1393.5" y="-14.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">Load</text>
+<text text-anchor="middle" x="1379.25" y="-12.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">Load</text>
 </g>
 <!-- 47&#45;&#45;49 -->
 <g id="edge49" class="edge">
 <title>47--49</title>
-<path fill="none" stroke="black" d="M1385.5,-71C1385.5,-71 1388.55,-51.19 1390.88,-36.03"/>
+<path fill="none" stroke="black" d="M1372.25,-71C1372.25,-71 1374.95,-50.94 1377,-35.74"/>
 </g>
 <!-- 52 -->
 <g id="node53" class="node">
 <title>52</title>
-<text text-anchor="middle" x="1465.5" y="-14.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;c&quot;</text>
+<text text-anchor="middle" x="1451.25" y="-12.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;c&quot;</text>
 </g>
 <!-- 51&#45;&#45;52 -->
 <g id="edge52" class="edge">
 <title>51--52</title>
-<path fill="none" stroke="black" d="M1529.5,-71C1529.5,-71 1505.12,-51.19 1486.46,-36.03"/>
+<path fill="none" stroke="black" d="M1516.25,-71C1516.25,-71 1491.18,-50.94 1472.17,-35.74"/>
 </g>
 <!-- 53 -->
 <g id="node54" class="node">
 <title>53</title>
-<text text-anchor="middle" x="1537.5" y="-14.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">Load</text>
+<text text-anchor="middle" x="1523.25" y="-12.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">Load</text>
 </g>
 <!-- 51&#45;&#45;53 -->
 <g id="edge53" class="edge">
 <title>51--53</title>
-<path fill="none" stroke="black" d="M1529.5,-71C1529.5,-71 1532.55,-51.19 1534.88,-36.03"/>
+<path fill="none" stroke="black" d="M1516.25,-71C1516.25,-71 1518.95,-50.94 1521,-35.74"/>
 </g>
 <!-- 55 -->
 <g id="node56" class="node">
 <title>55</title>
-<text text-anchor="start" x="1597.5" y="-87.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Constant</text>
+<text text-anchor="start" x="1582.25" y="-85.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Constant</text>
 </g>
 <!-- 54&#45;&#45;55 -->
 <g id="edge55" class="edge">
 <title>54--55</title>
-<path fill="none" stroke="black" d="M1615.69,-143.7C1618.95,-132.85 1623.12,-118.92 1626.37,-108.1"/>
+<path fill="none" stroke="black" d="M1599.33,-144.05C1602.64,-133.05 1606.92,-118.76 1610.21,-107.79"/>
 </g>
 <!-- 56 -->
 <g id="node57" class="node">
 <title>56</title>
-<text text-anchor="middle" x="1637.5" y="-14.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;Isosceles&quot;</text>
+<text text-anchor="middle" x="1621.25" y="-12.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;Isosceles&quot;</text>
 </g>
 <!-- 55&#45;&#45;56 -->
 <g id="edge56" class="edge">
 <title>55--56</title>
-<path fill="none" stroke="black" d="M1632.98,-71.7C1633.91,-60.85 1635.11,-46.92 1636.03,-36.1"/>
+<path fill="none" stroke="black" d="M1616.7,-72.05C1617.65,-61.05 1618.87,-46.76 1619.81,-35.79"/>
 </g>
 <!-- 58 -->
 <g id="node59" class="node">
 <title>58</title>
-<text text-anchor="start" x="1714.5" y="-87.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Constant</text>
+<text text-anchor="start" x="1697.25" y="-85.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Constant</text>
 </g>
 <!-- 57&#45;&#45;58 -->
 <g id="edge58" class="edge">
 <title>57--58</title>
-<path fill="none" stroke="black" d="M1737.21,-143.7C1739.53,-132.85 1742.52,-118.92 1744.83,-108.1"/>
+<path fill="none" stroke="black" d="M1718.88,-144.05C1721.24,-133.05 1724.3,-118.76 1726.65,-107.79"/>
 </g>
 <!-- 59 -->
 <g id="node60" class="node">
 <title>59</title>
-<text text-anchor="middle" x="1756.5" y="-14.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;Scalene&quot;</text>
+<text text-anchor="middle" x="1738.25" y="-12.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;Scalene&quot;</text>
 </g>
 <!-- 58&#45;&#45;59 -->
 <g id="edge59" class="edge">
 <title>58--59</title>
-<path fill="none" stroke="black" d="M1750.48,-71.7C1751.72,-60.85 1753.31,-46.92 1754.55,-36.1"/>
+<path fill="none" stroke="black" d="M1732.19,-72.05C1733.44,-61.05 1735.08,-46.76 1736.33,-35.79"/>
 </g>
 </g>
 </svg>
@@ -14576,6 +14607,7 @@ Detected triangle_5 &lt;class &#39;AssertionError&#39;&gt;
         <span class="n">c</span> <span class="o">=</span> <span class="n">a</span>
         <span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
         <span class="n">b</span> <span class="o">=</span> <span class="n">c</span> <span class="o">%</span> <span class="n">b</span>
+
     <span class="k">return</span> <span class="n">a</span>
 </pre></div>
 
@@ -14603,7 +14635,6 @@ Detected triangle_5 &lt;class &#39;AssertionError&#39;&gt;
     <span class="k">with</span> <span class="n">mutant</span><span class="p">:</span>
         <span class="k">assert</span> <span class="n">gcd</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Minimal&quot;</span>
         <span class="k">assert</span> <span class="n">gcd</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Mirror&quot;</span>
-<span class="n">mutant</span><span class="o">.</span><span class="n">pm</span><span class="o">.</span><span class="n">score</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -14616,7 +14647,7 @@ Detected triangle_5 &lt;class &#39;AssertionError&#39;&gt;
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>-&gt;	gcd_1
 &lt;-	gcd_1
-Detected gcd_1 &lt;class &#39;UnboundLocalError&#39;&gt; local variable &#39;c&#39; referenced before assignment
+Detected gcd_1 &lt;class &#39;UnboundLocalError&#39;&gt; cannot access local variable &#39;c&#39; where it is not associated with a value
 
 -&gt;	gcd_2
 &lt;-	gcd_2
@@ -14640,6 +14671,20 @@ Detected gcd_7 &lt;class &#39;AssertionError&#39;&gt; Minimal
 </pre>
 </div>
 
+</div>
+
+<div class="input_code">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mutant</span><span class="o">.</span><span class="n">pm</span><span class="o">.</span><span class="n">score</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div></div>
+</div>
 </div>
 
 <div class="output_area">
@@ -14932,7 +14977,7 @@ OK
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="n">Coverage</span><span class="p">()</span> <span class="k">as</span> <span class="n">cov</span><span class="p">:</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="n">VisualCoverage</span><span class="p">()</span> <span class="k">as</span> <span class="n">cov</span><span class="p">:</span>
     <span class="n">suite</span><span class="p">(</span><span class="n">StrongShapeTest</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestResult</span><span class="p">())</span>
 </pre></div>
 
@@ -15026,7 +15071,7 @@ OK
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="n">Coverage</span><span class="p">()</span> <span class="k">as</span> <span class="n">cov</span><span class="p">:</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="n">VisualCoverage</span><span class="p">()</span> <span class="k">as</span> <span class="n">cov</span><span class="p">:</span>
     <span class="n">suite</span><span class="p">(</span><span class="n">WeakShapeTest</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestResult</span><span class="p">())</span>
 </pre></div>
 
@@ -15670,31 +15715,32 @@ shape_(5, 0)
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>======================================================================
-FAIL: test_equilateral (__main__.WeakShapeTest)
+FAIL: test_equilateral (__main__.WeakShapeTest.test_equilateral)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_51289/511514204.py&#34;, line 3, in test_equilateral
+  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_7987/511514204.py&#34;, line 3, in test_equilateral
     assert shape.triangle(1, 1, 1) == &#39;Equilateral&#39;
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 AssertionError
 
 ----------------------------------------------------------------------
-Ran 1 test in 0.001s
+Ran 1 test in 0.000s
 
 FAILED (failures=1)
 ----------------------------------------------------------------------
-Ran 3 tests in 0.001s
+Ran 3 tests in 0.000s
 
 OK
 ----------------------------------------------------------------------
-Ran 3 tests in 0.001s
+Ran 3 tests in 0.000s
 
 OK
 ----------------------------------------------------------------------
-Ran 3 tests in 0.001s
+Ran 3 tests in 0.000s
 
 OK
 ----------------------------------------------------------------------
-Ran 3 tests in 0.001s
+Ran 3 tests in 0.000s
 
 OK
 </pre>
@@ -15740,63 +15786,68 @@ OK
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>======================================================================
-FAIL: test_equilateral (__main__.StrongShapeTest)
+FAIL: test_equilateral (__main__.StrongShapeTest.test_equilateral)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_51289/2670057129.py&#34;, line 4, in test_equilateral
+  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_7987/2670057129.py&#34;, line 4, in test_equilateral
     assert shape.triangle(1, 1, 1) == &#39;Equilateral&#39;
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 AssertionError
 
 ----------------------------------------------------------------------
-Ran 1 test in 0.001s
+Ran 1 test in 0.000s
 
 FAILED (failures=1)
 ======================================================================
-FAIL: test_isosceles (__main__.StrongShapeTest)
+FAIL: test_isosceles (__main__.StrongShapeTest.test_isosceles)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_51289/2670057129.py&#34;, line 8, in test_isosceles
+  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_7987/2670057129.py&#34;, line 8, in test_isosceles
     assert shape.triangle(2, 2, 1) == &#39;Isosceles&#39;
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 AssertionError
 
 ----------------------------------------------------------------------
-Ran 2 tests in 0.001s
+Ran 2 tests in 0.000s
 
 FAILED (failures=1)
 ======================================================================
-FAIL: test_isosceles (__main__.StrongShapeTest)
+FAIL: test_isosceles (__main__.StrongShapeTest.test_isosceles)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_51289/2670057129.py&#34;, line 9, in test_isosceles
+  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_7987/2670057129.py&#34;, line 9, in test_isosceles
     assert shape.triangle(1, 2, 2) == &#39;Isosceles&#39;
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 AssertionError
 
 ----------------------------------------------------------------------
-Ran 2 tests in 0.001s
+Ran 2 tests in 0.000s
 
 FAILED (failures=1)
 ======================================================================
-FAIL: test_isosceles (__main__.StrongShapeTest)
+FAIL: test_isosceles (__main__.StrongShapeTest.test_isosceles)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_51289/2670057129.py&#34;, line 7, in test_isosceles
+  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_7987/2670057129.py&#34;, line 7, in test_isosceles
     assert shape.triangle(1, 2, 1) == &#39;Isosceles&#39;
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 AssertionError
 
 ----------------------------------------------------------------------
-Ran 2 tests in 0.001s
+Ran 2 tests in 0.000s
 
 FAILED (failures=1)
 ======================================================================
-FAIL: test_scalene (__main__.StrongShapeTest)
+FAIL: test_scalene (__main__.StrongShapeTest.test_scalene)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_51289/2670057129.py&#34;, line 12, in test_scalene
+  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_7987/2670057129.py&#34;, line 12, in test_scalene
     assert shape.triangle(1, 2, 3) == &#39;Scalene&#39;
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 AssertionError
 
 ----------------------------------------------------------------------
-Ran 3 tests in 0.001s
+Ran 3 tests in 0.000s
 
 FAILED (failures=1)
 </pre>
@@ -15876,56 +15927,59 @@ FAILED (failures=1)
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>======================================================================
-ERROR: test_mirror (__main__.TestGCD)
+ERROR: test_mirror (__main__.TestGCD.test_mirror)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_51289/2565918356.py&#34;, line 6, in test_mirror
+  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_7987/2565918356.py&#34;, line 6, in test_mirror
     assert cfg.gcd(0, 1) == 1
+           ^^^^^^^^^^^^^
   File &#34;&lt;string&gt;&#34;, line 5, in gcd
-UnboundLocalError: local variable &#39;c&#39; referenced before assignment
+UnboundLocalError: cannot access local variable &#39;c&#39; where it is not associated with a value
 
 ----------------------------------------------------------------------
-Ran 2 tests in 0.001s
+Ran 2 tests in 0.000s
 
 FAILED (errors=1)
 ======================================================================
-FAIL: test_mirror (__main__.TestGCD)
+FAIL: test_mirror (__main__.TestGCD.test_mirror)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_51289/2565918356.py&#34;, line 6, in test_mirror
+  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_7987/2565918356.py&#34;, line 6, in test_mirror
     assert cfg.gcd(0, 1) == 1
+           ^^^^^^^^^^^^^^^^^^
 AssertionError
 
 ----------------------------------------------------------------------
-Ran 2 tests in 0.001s
+Ran 2 tests in 0.000s
 
 FAILED (failures=1)
 ----------------------------------------------------------------------
-Ran 2 tests in 0.001s
+Ran 2 tests in 0.000s
 
 OK
 ----------------------------------------------------------------------
-Ran 2 tests in 0.001s
+Ran 2 tests in 0.000s
 
 OK
 ----------------------------------------------------------------------
-Ran 2 tests in 0.001s
+Ran 2 tests in 0.000s
 
 OK
 ----------------------------------------------------------------------
-Ran 2 tests in 0.001s
+Ran 2 tests in 0.000s
 
 OK
 ======================================================================
-FAIL: test_simple (__main__.TestGCD)
+FAIL: test_simple (__main__.TestGCD.test_simple)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_51289/2565918356.py&#34;, line 3, in test_simple
+  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_7987/2565918356.py&#34;, line 3, in test_simple
     assert cfg.gcd(1, 0) == 1
+           ^^^^^^^^^^^^^^^^^^
 AssertionError
 
 ----------------------------------------------------------------------
-Ran 1 test in 0.001s
+Ran 1 test in 0.000s
 
 FAILED (failures=1)
 </pre>
@@ -15997,7 +16051,7 @@ FAILED (failures=1)
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">mutated_gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">:</span>
         <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span>
     <span class="k">else</span><span class="p">:</span>
@@ -16035,33 +16089,33 @@ FAILED (failures=1)
     if a &lt; b:
         pass
     else:
-        (a, b) = (a, b)
+        a, b = (a, b)
     while b != 0:
-        (a, b) = (b, a % b)
+        a, b = (b, a % b)
     return a
 1 def new_gcd(a, b):
     if a &lt; b:
-        (a, b) = (b, a)
+        a, b = (b, a)
     else:
         pass
     while b != 0:
-        (a, b) = (b, a % b)
+        a, b = (b, a % b)
     return a
 2 def new_gcd(a, b):
     if a &lt; b:
-        (a, b) = (b, a)
+        a, b = (b, a)
     else:
-        (a, b) = (a, b)
+        a, b = (a, b)
     while b != 0:
         pass
     return a
 3 def new_gcd(a, b):
     if a &lt; b:
-        (a, b) = (b, a)
+        a, b = (b, a)
     else:
-        (a, b) = (a, b)
+        a, b = (a, b)
     while b != 0:
-        (a, b) = (b, a % b)
+        a, b = (b, a % b)
     pass
 </pre>
 </div>
@@ -16189,7 +16243,7 @@ For more details see the chapter on <a href="WhenToStopFuzzing.html">when to sto
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><h3 id="Exercise-1:--Arithmetic-Expression-Mutators">Exercise 1:  Arithmetic Expression Mutators<a class="anchor-link" href="#Exercise-1:--Arithmetic-Expression-Mutators">&#182;</a></h3><p>Our simple statement deletion mutation is only one of the ways in which a program could be mutated. Another category of mutants is <em>expression mutation</em> where arithmetic operators such as <code>{+,-,*,/}</code> etc are replaced for one another. For example, given an expression such as</p>
+<div class="text_cell_render border-box-sizing rendered_html"><h3 id="Exercise-1:-Arithmetic-Expression-Mutators">Exercise 1: Arithmetic Expression Mutators<a class="anchor-link" href="#Exercise-1:-Arithmetic-Expression-Mutators">&#182;</a></h3><p>Our simple statement deletion mutation is only one of the ways in which a program could be mutated. Another category of mutants is <em>expression mutation</em> where arithmetic operators such as <code>{+,-,*,/}</code> etc. are replaced for one another. For example, given an expression such as</p>
 
 <pre><code>x = x + 1</code></pre>
 <p>One can mutate it to</p>
@@ -16260,7 +16314,7 @@ For more details see the chapter on <a href="WhenToStopFuzzing.html">when to sto
 <div class="text_cell_render border-box-sizing rendered_html"><p>To mutate the tree, you thus need to change the <code>op</code> attribute (which has one of the values <code>Add</code>, <code>Sub</code>, <code>Mult</code>, and <code>Div</code>)</p>
 
     
-<p><div class="solution_link"><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/master?filepath=docs/notebooks/MutationAnalysis.ipynb#Exercises" target=_blank>Use the notebook</a> to work on the exercises and see solutions.</div></p>
+<p><div class="solution_link"><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/HEAD?labpath=docs%2Fnotebooks/MutationAnalysis.ipynb#Exercises" target=_blank>Use the notebook</a> to work on the exercises and see solutions.</div></p>
 </div>
 </div>
 </div>
@@ -16272,7 +16326,7 @@ For more details see the chapter on <a href="WhenToStopFuzzing.html">when to sto
 <div class="text_cell_render border-box-sizing rendered_html"><p>To mutate the tree, we need to change the <code>op</code> attribute (which has one of the values <code>Add</code>, <code>Sub</code>, <code>Mult</code>, and <code>Div</code>).  Write a class <code>BinOpMutator</code> that does the necessary mutations, and then create a  class <code>MuBinOpAnalyzer</code> as subclass of <code>MuFunctionAnalyzer</code> which makes use of <code>BinOpMutator</code>.</p>
 
     
-<p><div class="solution_link"><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/master?filepath=docs/notebooks/MutationAnalysis.ipynb#Exercises" target=_blank>Use the notebook</a> to work on the exercises and see solutions.</div></p>
+<p><div class="solution_link"><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/HEAD?labpath=docs%2Fnotebooks/MutationAnalysis.ipynb#Exercises" target=_blank>Use the notebook</a> to work on the exercises and see solutions.</div></p>
 </div>
 </div>
 </div>
@@ -16284,7 +16338,7 @@ For more details see the chapter on <a href="WhenToStopFuzzing.html">when to sto
 <div class="text_cell_render border-box-sizing rendered_html"><h3 id="Exercise-2:-Optimizing-Mutation-Analysis">Exercise 2: Optimizing Mutation Analysis<a class="anchor-link" href="#Exercise-2:-Optimizing-Mutation-Analysis">&#182;</a></h3><p>Our technique for mutation analysis is somewhat inefficient in that we run the tests even on mutants that have mutations in code not covered by the test case. Test cases have no possibility of detecting errors on portions of code they do not cover. Hence, one of the simplest optimizations is to first recover the coverage information from the given test case, and only run the test case on mutants where the mutations lie in the code being covered by the test case. Can you modify the <code>MuFunctionAnalyzer</code> to incorporate recovering coverage as the first step?</p>
 
     
-<p><div class="solution_link"><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/master?filepath=docs/notebooks/MutationAnalysis.ipynb#Exercises" target=_blank>Use the notebook</a> to work on the exercises and see solutions.</div></p>
+<p><div class="solution_link"><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/HEAD?labpath=docs%2Fnotebooks/MutationAnalysis.ipynb#Exercises" target=_blank>Use the notebook</a> to work on the exercises and see solutions.</div></p>
 </div>
 </div>
 </div>
@@ -16296,7 +16350,7 @@ For more details see the chapter on <a href="WhenToStopFuzzing.html">when to sto
 <div class="text_cell_render border-box-sizing rendered_html"><h3 id="Exercise-3:-Byte-Code-Mutator">Exercise 3: Byte Code Mutator<a class="anchor-link" href="#Exercise-3:-Byte-Code-Mutator">&#182;</a></h3><p>We have seen how to mutate the AST given the source. One of the deficiencies with this approach is that the Python bytecode is targeted by other languages too. In such cases, the source may not be readily converted to a Python AST, and it is desirable to mutate the bytecode instead. Can you implement a bytecode mutator for Python function that mutates the bytecode instead of fetching the source and then mutating it?</p>
 
     
-<p><div class="solution_link"><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/master?filepath=docs/notebooks/MutationAnalysis.ipynb#Exercises" target=_blank>Use the notebook</a> to work on the exercises and see solutions.</div></p>
+<p><div class="solution_link"><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/HEAD?labpath=docs%2Fnotebooks/MutationAnalysis.ipynb#Exercises" target=_blank>Use the notebook</a> to work on the exercises and see solutions.</div></p>
 </div>
 </div>
 </div>
@@ -16305,10 +16359,10 @@ For more details see the chapter on <a href="WhenToStopFuzzing.html">when to sto
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><h3 id="Exercise-4:-Estimating-Residual-Defect-Density">Exercise 4: Estimating Residual Defect Density<a class="anchor-link" href="#Exercise-4:-Estimating-Residual-Defect-Density">&#182;</a></h3><p>The defect density of a program is the number of defects in a program that that were detected before release divided by the program size. The residual defect density is the percentage of defects that escaped detection. While estimation of the real residual defect density is difficult, mutation analysis can provide an upper bound. The number of mutants that remain undetected is a plausible upper bound on the number of defects that remain within the program. However, this upper bound may be too wide. The reason is that some of the remaining faults can interact with each other, and if present together, can be detected by the available test suite. Hence, a tighter bound is the number of mutants that can exist <em>together</em> in a given program without being detected by the given test suite. This can be accomplished by starting with the complete set of mutations possible, and applying delta-debugging from <a href="Reducer.html">the chapter on reducing</a> to determine the minimum number of mutations that need to be removed to make the mutant pass undetected by the test suite. Can you produce a new <code>RDDEstimator</code> by extending the <code>MuFunctionAnalyzer</code> that estimates the residual defect density upper bound using this technique?</p>
+<div class="text_cell_render border-box-sizing rendered_html"><h3 id="Exercise-4:-Estimating-Residual-Defect-Density">Exercise 4: Estimating Residual Defect Density<a class="anchor-link" href="#Exercise-4:-Estimating-Residual-Defect-Density">&#182;</a></h3><p>The defect density of a program is the number of defects in a program that that were detected before release divided by the program size. The residual defect density is the percentage of defects that escaped detection. While estimation of the real residual defect density is difficult, mutation analysis can provide an upper bound. The number of mutants that remain undetected is a plausible upper bound on the number of defects that remain within the program. However, this upper bound may be too wide. The reason is that some remaining faults can interact with each other, and if present together, can be detected by the available test suite. Hence, a tighter bound is the number of mutants that can exist <em>together</em> in a given program without being detected by the given test suite. This can be accomplished by starting with the complete set of mutations possible, and applying delta-debugging from <a href="Reducer.html">the chapter on reducing</a> to determine the minimum number of mutations that need to be removed to make the mutant pass undetected by the test suite. Can you produce a new <code>RDDEstimator</code> by extending the <code>MuFunctionAnalyzer</code> that estimates the residual defect density upper bound using this technique?</p>
 
     
-<p><div class="solution_link"><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/master?filepath=docs/notebooks/MutationAnalysis.ipynb#Exercises" target=_blank>Use the notebook</a> to work on the exercises and see solutions.</div></p>
+<p><div class="solution_link"><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/HEAD?labpath=docs%2Fnotebooks/MutationAnalysis.ipynb#Exercises" target=_blank>Use the notebook</a> to work on the exercises and see solutions.</div></p>
 </div>
 </div>
 </div>
@@ -16320,7 +16374,7 @@ For more details see the chapter on <a href="WhenToStopFuzzing.html">when to sto
 The content of this project is licensed under the
 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target=_blank>Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 The source code that is part of the content, as well as the source code used to format and display that content is licensed under the <a href="https://github.com/uds-se/fuzzingbook/blob/master/LICENSE.md#mit-license">MIT License</a>.
-<a href="https://github.com/uds-se/fuzzingbook/commits/master/notebooks/MutationAnalysis.ipynb" target=_blank)>Last change: 2021-10-14 17:43:14+02:00</a> &bull; 
+<a href="https://github.com/uds-se/fuzzingbook/commits/master/notebooks/MutationAnalysis.ipynb" target=_blank)>Last change: 2023-11-11 18:18:06+01:00</a> &bull; 
 <a href="#citation" id="cite" onclick="revealCitation()">Cite</a> &bull;
 <a href="https://cispa.de/en/impressum" target=_blank>Imprint</a>
 </p>
@@ -16336,19 +16390,19 @@ function revealCitation() {
 <a name="citation"></a>
 <h2>How to Cite this Work</h2>
 <p>
-Andreas Zeller, Rahul Gopinath, Marcel Böhme, Gordon Fraser, and Christian Holler: "<a href="https://www.fuzzingbook.org/html/MutationAnalysis.html">Mutation Analysis</a>".  In Andreas Zeller, Rahul Gopinath, Marcel Böhme, Gordon Fraser, and Christian Holler, "<a href="https://www.fuzzingbook.org/">The Fuzzing Book</a>", <a href="https://www.fuzzingbook.org/html/MutationAnalysis.html">https://www.fuzzingbook.org/html/MutationAnalysis.html</a>.  Retrieved 2021-10-14 17:43:14+02:00.
+Andreas Zeller, Rahul Gopinath, Marcel Böhme, Gordon Fraser, and Christian Holler: "<a href="https://www.fuzzingbook.org/html/MutationAnalysis.html">Mutation Analysis</a>".  In Andreas Zeller, Rahul Gopinath, Marcel Böhme, Gordon Fraser, and Christian Holler, "<a href="https://www.fuzzingbook.org/">The Fuzzing Book</a>", <a href="https://www.fuzzingbook.org/html/MutationAnalysis.html">https://www.fuzzingbook.org/html/MutationAnalysis.html</a>.  Retrieved 2023-11-11 18:18:06+01:00.
 </p>
 <pre>
-@incollection{fuzzingbook2021:MutationAnalysis,
+@incollection{fuzzingbook2023:MutationAnalysis,
     author = {Andreas Zeller and Rahul Gopinath and Marcel B{\"o}hme and Gordon Fraser and Christian Holler},
     booktitle = {The Fuzzing Book},
     title = {Mutation Analysis},
-    year = {2021},
+    year = {2023},
     publisher = {CISPA Helmholtz Center for Information Security},
     howpublished = {\url{https://www.fuzzingbook.org/html/MutationAnalysis.html}},
-    note = {Retrieved 2021-10-14 17:43:14+02:00},
+    note = {Retrieved 2023-11-11 18:18:06+01:00},
     url = {https://www.fuzzingbook.org/html/MutationAnalysis.html},
-    urldate = {2021-10-14 17:43:14+02:00}
+    urldate = {2023-11-11 18:18:06+01:00}
 }
 </pre>
 </div>

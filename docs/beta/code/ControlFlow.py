@@ -3,9 +3,9 @@
 
 # "Control Flow Graph" - a chapter of "The Fuzzing Book"
 # Web site: https://www.fuzzingbook.org/html/ControlFlow.html
-# Last change: 2021-10-18 13:42:06+02:00
+# Last change: 2025-10-26 19:06:11+01:00
 #
-# Copyright (c) 2021 CISPA Helmholtz Center for Information Security
+# Copyright (c) 2021-2025 CISPA Helmholtz Center for Information Security
 # Copyright (c) 2018-2020 Saarland University, authors, and contributors
 #
 # Permission is hereby granted, free of charge, to any person obtaining a
@@ -37,7 +37,7 @@ This file can be _executed_ as a script, running all experiments:
 or _imported_ as a package, providing classes, functions, and constants:
 
     >>> from fuzzingbook.ControlFlow import <identifier>
-    
+
 but before you do so, _read_ it and _interact_ with it at:
 
     https://www.fuzzingbook.org/html/ControlFlow.html
@@ -183,26 +183,6 @@ class CFGNode(dict):
             'at': self.lineno(),
             'ast': self.source()
         }
-
-REGISTRY_IDX = 0
-
-REGISTRY = {}
-
-def get_registry_idx():
-    global REGISTRY_IDX
-    v = REGISTRY_IDX
-    REGISTRY_IDX += 1
-    return v
-
-def reset_registry():
-    global REGISTRY_IDX
-    global REGISTRY
-    REGISTRY_IDX = 0
-    REGISTRY = {}
-
-def register_node(node):
-    node.rid = get_registry_idx()
-    REGISTRY[node.rid] = node
 
 ### PyCFG
 
@@ -434,7 +414,7 @@ class PyCFG(PyCFG):
         myparents[0].add_calls(mid)
 
         # these need to be unlinked later if our module actually defines these
-        # functions. Otherwsise we may leave them around.
+        # functions. Otherwise we may leave them around.
         # during a call, the direct child is not the next
         # statement in text.
         for c in p:
@@ -859,7 +839,8 @@ if __name__ == '__main__':
 
 
 import os
-import networkx as nx
+
+import networkx as nx  # type: ignore
 
 ### Call Graph Helpers
 
@@ -894,7 +875,11 @@ def callgraph(code, name="callgraph"):
 def get_callgraph(code, name="callgraph"):
     if not os.path.isfile(name + '.dot'):
         construct_callgraph(code, name)
-    return nx.drawing.nx_pydot.read_dot(name + '.dot')
+
+    # This is deprecated:
+    # return nx.drawing.nx_pydot.read_dot(name + '.dot')
+    
+    return nx.nx_agraph.read_dot(name + '.dot')
 
 ### Example: Maze
 
@@ -913,6 +898,12 @@ if __name__ == '__main__':
 |     |#|
 +-----+-+
 """
+
+def maze(s: str) -> str:
+    return ""  # Will be overwritten by exec()
+
+def target_tile() -> str:
+    return ' '  # Will be overwritten by exec()
 
 def generate_print_maze(maze_string):
     return """

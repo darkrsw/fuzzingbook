@@ -3,9 +3,9 @@
 
 # "Railroad Diagrams" - a chapter of "The Fuzzing Book"
 # Web site: https://www.fuzzingbook.org/html/RailroadDiagrams.html
-# Last change: 2021-06-02 17:56:53+02:00
+# Last change: 2025-01-16 11:17:12+01:00
 #
-# Copyright (c) 2021 CISPA Helmholtz Center for Information Security
+# Copyright (c) 2021-2025 CISPA Helmholtz Center for Information Security
 # Copyright (c) 2018-2020 Saarland University, authors, and contributors
 #
 # Permission is hereby granted, free of charge, to any person obtaining a
@@ -37,7 +37,7 @@ This file can be _executed_ as a script, running all experiments:
 or _imported_ as a package, providing classes, functions, and constants:
 
     >>> from fuzzingbook.RailroadDiagrams import <identifier>
-    
+
 but before you do so, _read_ it and _interact_ with it at:
 
     https://www.fuzzingbook.org/html/RailroadDiagrams.html
@@ -144,7 +144,7 @@ def addDebug(el):
     el.attrs['data-x'] = "{0} w:{1} h:{2}/{3}/{4}".format(
         type(el).__name__, el.width, el.up, el.height, el.down)
 
-class DiagramItem(object):
+class DiagramItem:
     def __init__(self, name, attrs=None, text=None):
         self.name = name
         # up = distance it projects above the entry line

@@ -12,6 +12,7 @@ with fuzzingbook adaptations -->
 <html>
 <head>
 <meta charset="utf-8" /><title>Tracking Information Flow - The Fuzzing Book</title>
+<link rel="me" href="https://mastodon.social/@TheFuzzingBook">
 
 <style type="text/css">
     /*!
@@ -11621,22 +11622,23 @@ td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5
 span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 .highlight .hll { background-color: #ffffcc }
 .highlight { background: #f8f8f8; }
-.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .c { color: #3D7B7B; font-style: italic } /* Comment */
 .highlight .err { border: 1px solid #FF0000 } /* Error */
 .highlight .k { color: #008000; font-weight: bold } /* Keyword */
 .highlight .o { color: #666666 } /* Operator */
-.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
-.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
-.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
-.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
-.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #9C6500 } /* Comment.Preproc */
+.highlight .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
 .highlight .gd { color: #A00000 } /* Generic.Deleted */
 .highlight .ge { font-style: italic } /* Generic.Emph */
-.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.highlight .gr { color: #E40000 } /* Generic.Error */
 .highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.highlight .gi { color: #00A000 } /* Generic.Inserted */
-.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gi { color: #008400 } /* Generic.Inserted */
+.highlight .go { color: #717171 } /* Generic.Output */
 .highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
 .highlight .gs { font-weight: bold } /* Generic.Strong */
 .highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
@@ -11649,15 +11651,15 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .kt { color: #B00040 } /* Keyword.Type */
 .highlight .m { color: #666666 } /* Literal.Number */
 .highlight .s { color: #BA2121 } /* Literal.String */
-.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .na { color: #687822 } /* Name.Attribute */
 .highlight .nb { color: #008000 } /* Name.Builtin */
 .highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
 .highlight .no { color: #880000 } /* Name.Constant */
 .highlight .nd { color: #AA22FF } /* Name.Decorator */
-.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
-.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .ni { color: #717171; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
 .highlight .nf { color: #0000FF } /* Name.Function */
-.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nl { color: #767600 } /* Name.Label */
 .highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
 .highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
 .highlight .nv { color: #19177C } /* Name.Variable */
@@ -11674,11 +11676,11 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
-.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
 .highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
-.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
 .highlight .sx { color: #008000 } /* Literal.String.Other */
-.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .sr { color: #A45A77 } /* Literal.String.Regex */
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
@@ -11795,6 +11797,9 @@ MathJax.Hub.Config({
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
+<meta name="theme-color" content="#bb0000" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#cc0000" media="(prefers-color-scheme: dark)">
+
 <meta property="og:url" content="https://www.fuzzingbook.org/html/InformationFlow.html" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Tracking Information Flow - The Fuzzing Book" />
@@ -11886,7 +11891,7 @@ MathJax.Hub.Config({
 <li><a href="GreyboxFuzzer.html">Greybox Fuzzing</a></li>
 <li><a href="SearchBasedFuzzer.html">Search-Based Fuzzing</a></li>
 <li><a href="MutationAnalysis.html">Mutation Analysis</a></li>
-</ul><li class="has-sub"><a href="03_Syntactical_Fuzzing.html" class="chapters"><span class="part_number">III</span> Syntactical Fuzzing <i class="fa fa-fw fa-caret-right"></i></a>
+</ul><li class="has-sub"><a href="03_Syntactical_Fuzzing.html" class="chapters"><span class="part_number">III</span> Syntactic Fuzzing <i class="fa fa-fw fa-caret-right"></i></a>
 <ul>
 <li><a href="Grammars.html">Fuzzing with Grammars</a></li>
 <li><a href="GrammarFuzzer.html">Efficient Grammar Fuzzing</a></li>
@@ -11896,8 +11901,9 @@ MathJax.Hub.Config({
 <li><a href="GeneratorGrammarFuzzer.html">Fuzzing with Generators</a></li>
 <li><a href="GreyboxGrammarFuzzer.html">Greybox Fuzzing with Grammars</a></li>
 <li><a href="Reducer.html">Reducing Failure-Inducing Inputs</a></li>
-</ul><li class="has-sub"><a href="04_Semantical_Fuzzing.html" class="chapters"><span class="part_number">IV</span> Semantical Fuzzing <i class="fa fa-fw fa-caret-right"></i></a>
+</ul><li class="has-sub"><a href="04_Semantical_Fuzzing.html" class="chapters"><span class="part_number">IV</span> Semantic Fuzzing <i class="fa fa-fw fa-caret-right"></i></a>
 <ul>
+<li><a href="FuzzingWithConstraints.html">Fuzzing with Constraints</a></li>
 <li><a href="GrammarMiner.html">Mining Input Grammars</a></li>
 <li><a href="InformationFlow.html" class="this_page">Tracking Information Flow</a></li>
 <li><a href="ConcolicFuzzer.html">Concolic Fuzzing</a></li>
@@ -11908,6 +11914,7 @@ MathJax.Hub.Config({
 <li><a href="ConfigurationFuzzer.html">Testing Configurations</a></li>
 <li><a href="APIFuzzer.html">Fuzzing APIs</a></li>
 <li><a href="Carver.html">Carving Unit Tests</a></li>
+<li><a href="PythonFuzzer.html">Testing Compilers <strong class="new_chapter">&bull;</strong></a></li>
 <li><a href="WebFuzzer.html">Testing Web Applications</a></li>
 <li><a href="GUIFuzzer.html">Testing Graphical User Interfaces</a></li>
 </ul><li class="has-sub"><a href="06_Managing_Fuzzing.html" class="chapters"><span class="part_number">VI</span> Managing Fuzzing <i class="fa fa-fw fa-caret-right"></i></a>
@@ -11916,9 +11923,11 @@ MathJax.Hub.Config({
 <li><a href="WhenToStopFuzzing.html">When To Stop Fuzzing</a></li>
 </ul><li class="has-sub"><a href="99_Appendices.html" class="chapters">Appendices <i class="fa fa-fw fa-caret-right"></i></a>
 <ul>
+<li><a href="AcademicPrototyping.html">Academic Prototyping</a></li>
 <li><a href="PrototypingWithPython.html">Prototyping with Python</a></li>
 <li><a href="ExpectError.html">Error Handling</a></li>
 <li><a href="Timer.html">Timer</a></li>
+<li><a href="Timeout.html">Timeout</a></li>
 <li><a href="ClassDiagram.html">Class Diagrams</a></li>
 <li><a href="RailroadDiagrams.html">Railroad Diagrams</a></li>
 <li><a href="ControlFlow.html">Control Flow Graph</a></li>
@@ -11928,26 +11937,24 @@ MathJax.Hub.Config({
      </li>
      <li class="has-sub"><a href="#"><span title="Tracking Information Flow"><i class="fa fa-fw fa-list-ul"></i></span> <span class="menu_2">Tracking Information Flow</span></a>
            <ul><li class="has-sub"><a href="#Synopsis"><i class="fa fa-fw fa-map"></i> Synopsis</a>
-</li><li class="has-sub"><a href="#A-Vulnerable-Database">&nbsp;&bull;&nbsp;&nbsp; A Vulnerable Database</a>
+<ul><li class="has-sub"><a href="#Tracking-String-Taints">Tracking String Taints</a>
+</li><li class="has-sub"><a href="#Tracking-Character-Origins">Tracking Character Origins</a>
+</ul></li><li class="has-sub"><a href="#A-Vulnerable-Database">&nbsp;&bull;&nbsp;&nbsp; A Vulnerable Database</a>
 <ul><li class="has-sub"><a href="#Representing-Tables">Representing Tables</a>
 </li><li class="has-sub"><a href="#Executing-SQL-Statements">Executing SQL Statements</a>
-</li><li class="has-sub"><a href="#Selecting-Data">Selecting Data</a>
-</li><li class="has-sub"><a href="#Inserting-Data">Inserting Data</a>
-</li><li class="has-sub"><a href="#Updating-Data">Updating Data</a>
-</li><li class="has-sub"><a href="#Deleting-Data">Deleting Data</a>
-</li><li class="has-sub"><a href="#All-Methods-Together">All Methods Together</a>
+</li><li class="has-sub"><a href="#Excursion:-Implementing-SQL-Statements">Excursion: Implementing SQL Statements</a>
 </li><li class="has-sub"><a href="#Fuzzing-SQL">Fuzzing SQL</a>
-</ul></li><li class="has-sub"><a href="#The-Evil-of-Eval">&nbsp;&bull;&nbsp;&nbsp; The Evil of Eval</a>
-</li><li class="has-sub"><a href="#Tracking-String-Taints">&nbsp;&bull;&nbsp;&nbsp; Tracking String Taints</a>
+</li><li class="has-sub"><a href="#The-Evil-of-Eval">The Evil of Eval</a>
+</ul></li><li class="has-sub"><a href="#Tracking-String-Taints">&nbsp;&bull;&nbsp;&nbsp; Tracking String Taints</a>
 <ul><li class="has-sub"><a href="#A-Class-for-Tainted-Strings">A Class for Tainted Strings</a>
 </li><li class="has-sub"><a href="#String-Operators">String Operators</a>
 </ul></li><li class="has-sub"><a href="#Tracking-Untrusted-Input">&nbsp;&bull;&nbsp;&nbsp; Tracking Untrusted Input</a>
 </li><li class="has-sub"><a href="#Taint-Aware-Fuzzing">&nbsp;&bull;&nbsp;&nbsp; Taint Aware Fuzzing</a>
 <ul><li class="has-sub"><a href="#TaintedDB">TaintedDB</a>
 </ul></li><li class="has-sub"><a href="#Preventing-Privacy-Leaks">&nbsp;&bull;&nbsp;&nbsp; Preventing Privacy Leaks</a>
-<ul><li class="has-sub"><a href="#Tracking-Character-Origins">Tracking Character Origins</a>
-</li><li class="has-sub"><a href="#Tracking-Individual-Characters">Tracking Individual Characters</a>
-</li><li class="has-sub"><a href="#A-Class-for-Tracking-Character-Origins">A Class for Tracking Character Origins</a>
+</li><li class="has-sub"><a href="#Tracking-Individual-Characters">&nbsp;&bull;&nbsp;&nbsp; Tracking Individual Characters</a>
+<ul><li class="has-sub"><a href="#A-Class-for-Tracking-Character-Origins">A Class for Tracking Character Origins</a>
+</li><li class="has-sub"><a href="#Excursion:-Implementing-String-Methods">Excursion: Implementing String Methods</a>
 </li><li class="has-sub"><a href="#Checking-Origins">Checking Origins</a>
 </li><li class="has-sub"><a href="#Privacy-Leaks-Revisited">Privacy Leaks Revisited</a>
 </ul></li><li class="has-sub"><a href="#Taint-Directed-Fuzzing">&nbsp;&bull;&nbsp;&nbsp; Taint-Directed Fuzzing</a>
@@ -11965,7 +11972,7 @@ MathJax.Hub.Config({
      
      <li class="has-sub"><a href="#"><span title="Resources"><i class="fa fa-fw fa-cube"></i> </span><span class="menu_3">Resources</span></a>
      <ul>
-     <li><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/master?filepath=docs/notebooks/InformationFlow.ipynb" target="_blank" class="edit_as_notebook"><i class="fa fa-fw fa-edit"></i> Edit as Notebook</a></li>
+     <li><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/HEAD?labpath=docs%2Fnotebooks/InformationFlow.ipynb" target="_blank" class="edit_as_notebook"><i class="fa fa-fw fa-edit"></i> Edit as Notebook</a></li>
      <li><a href="https://www.fuzzingbook.org/slides/InformationFlow.slides.html" target="_blank"><i class="fa fa-fw fa-video-camera"></i> View Slides</a></li>
      <li><a href="https://www.fuzzingbook.org/code/InformationFlow.py"><i class="fa fa-fw fa-download"></i> Download Code (.py)</a></li>
      <li><a href="https://www.fuzzingbook.org/notebooks/InformationFlow.ipynb"><i class="fa fa-fw fa-download"></i> Download Notebook (.ipynb)</a></li>
@@ -11978,12 +11985,14 @@ MathJax.Hub.Config({
      
      <li class="has-sub"><a href="#"><span title="Share"><i class="fa fa-fw fa-comments"></i> </span> <span class="menu_4">Share</span></a>
         <ul>
+<!--
             <li><a href="https://twitter.com/intent/tweet?text=I%20just%20read%20%22Tracking%20Information%20Flow%22%20(part%20of%20@FuzzingBook)%20at%20https%3a%2f%2fwww.fuzzingbook.org%2fhtml%2fInformationFlow.html" target="popup" 
 onclick="window.open('https://twitter.com/intent/tweet?text=I%20just%20read%20%22Tracking%20Information%20Flow%22%20(part%20of%20@FuzzingBook)%20at%20https%3a%2f%2fwww.fuzzingbook.org%2fhtml%2fInformationFlow.html','popup','width=600,height=600'); return false;"
-><i class="fa fa-fw fa-twitter"></i> Share on Twitter</a>
+><i class="fa fa-fw fa-twitter"></i> Share on X</a>
             <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.fuzzingbook.org%2fhtml%2fInformationFlow.html" target="popup" 
 onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.fuzzingbook.org%2fhtml%2fInformationFlow.html','popup','width=600,height=600'); return false;"
 ><i class="fa fa-fw fa-facebook"></i> Share on Facebook</a>
+-->
             <li><a href="mailto:?subject=Tracking%20Information%20Flow&body=I%20just%20read%20%22Tracking%20Information%20Flow%22%20(part%20of%20@FuzzingBook)%20at%20https%3a%2f%2fwww.fuzzingbook.org%2fhtml%2fInformationFlow.html"><i class="fa fa-fw fa-envelope"></i> Share by Email</a>
             <li><a href="#citation" id="cite" onclick="revealCitation()"><i class="fa fa-fw fa-mortar-board"></i> Cite</a>
         </ul>
@@ -12014,6 +12023,38 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 </div>
 </div>
 
+<div class="input_code">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn"><a href="https://github.com/uds-se/fuzzingbook//tree/master/notebooks/shared/bookutils" class="import" target="_blank">bookutils</a></span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;WZi0dTvJ2Ug&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div></div>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+        <iframe
+            width="640"
+            height="360"
+            src="https://www.youtube-nocookie.com/embed/WZi0dTvJ2Ug"
+            frameborder="0"
+            allowfullscreen
+
+        ></iframe>
+
+</div>
+
+</div>
+
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
@@ -12042,7 +12083,21 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn"><a href="https://github.com/uds-se/fuzzingbook//tree/master/notebooks/shared/bookutils" class="import" target="_blank">bookutils</a></span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn"><a href="https://github.com/uds-se/fuzzingbook//tree/master/notebooks/shared/bookutils" class="import" target="_blank">bookutils.setup</a></span>
+</pre></div>
+
+</div>
+</div></div>
+</div>
+</div>
+
+<div class="input_code">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn"><a href="https://docs.python.org/3/library/typing.html" class="import" target="_blank">typing</a></span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Union</span>
 </pre></div>
 
 </div>
@@ -12060,20 +12115,444 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 </pre></div>
 <p>and then make use of the following features.</p>
 <p>This chapter provides two wrappers to Python <em>strings</em> that allow one to track various properties. These include information on the security properties of the input, and information on originating indexes of the input string.</p>
-<p>For tracking information on security properties, use <code>tstr</code> as follows:</p>
+<h3 id="Tracking-String-Taints">Tracking String Taints<a class="anchor-link" href="#Tracking-String-Taints">&#182;</a></h3><p><code>tstr</code> objects are replacements for Python strings that allows tracking and checking <em>taints</em> – that is, information on from where a string originated. For instance, one can mark strings that originate from third party input with a taint of "LOW", meaning that they have a low security level. The taint is passed in the constructor of a <code>tstr</code> object:</p>
 <div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">thello</span> <span class="o">=</span> <span class="n">tstr</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="n">taint</span><span class="o">=</span><span class="s1">&#39;LOW&#39;</span><span class="p">)</span>
 </pre></div>
-<p>Now, any operation from <code>thello</code> that results in a string fragment would include the correct taint. For example:</p>
+<p>A <code>tstr</code> object is fully compatible with original Python strings. For instance, we can index it and access substrings:</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">thello</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
+<span class="s1">&#39;hell&#39;</span>
+</pre></div>
+<p>However, the <code>tstr</code> object also stores the taint, which can be accessed using the <code>taint</code> attribute:</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">thello</span><span class="o">.</span><span class="n">taint</span>
+<span class="s1">&#39;LOW&#39;</span>
+</pre></div>
+<p>The neat thing about taints is that they propagate to all strings derived from the original tainted string.
+Indeed, any operation from a  <code>tstr</code> string that results in a string fragment produces another <code>tstr</code> object that includes the original taint. For example:</p>
 <div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">thello</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">taint</span>
 <span class="s1">&#39;LOW&#39;</span>
 </pre></div>
-<p>For tracking the originating indexes from the input string, use <code>ostr</code> as follows:</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">ohw</span> <span class="o">=</span> <span class="n">ostr</span><span class="p">(</span><span class="s2">&quot;hello</span><span class="se">\t</span><span class="s2">world&quot;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<p><code>tstr</code> objects duplicate most <code>str</code> methods, as indicated in the class diagram:</p>
+<p><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 12.2.1 (20241206.2353)
+ -->
+<!-- Pages: 1 -->
+<svg width="270pt" height="562pt"
+ viewBox="0.00 0.00 269.62 562.25" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 558.25)">
+<g id="a_graph0"><a xlink:title="tstr class hierarchy">
+<polygon fill="white" stroke="none" points="-4,4 -4,-558.25 265.62,-558.25 265.62,4 -4,4"/>
+</a>
+</g>
+<!-- tstr -->
+<g id="node1" class="node">
+<title>tstr</title>
+<g id="a_node1"><a xlink:href="#" xlink:title="class tstr:&#10;Wrapper for strings, saving taint information">
+<polygon fill="none" stroke="black" points="0,-0.5 0,-480.75 124,-480.75 124,-0.5 0,-0.5"/>
+<text text-anchor="start" x="51.12" y="-464.45" font-family="Patua One, Helvetica, sans-serif" font-weight="bold" font-size="14.00" fill="#b03a2e">tstr</text>
+<polyline fill="none" stroke="black" points="0,-454.75 124,-454.75"/>
+<g id="a_node1_0"><a xlink:href="#" xlink:title="tstr">
+<g id="a_node1_1"><a xlink:href="#" xlink:title="__add__(self, *args, **kwargs):&#10;Return self+value.">
+<text text-anchor="start" x="8" y="-442.25" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">__add__()</text>
+</a>
+</g>
+<g id="a_node1_2"><a xlink:href="#" xlink:title="__format__(self, *args, **kwargs):&#10;Return a formatted version of the string as described by format_spec.">
+<text text-anchor="start" x="8" y="-429.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">__format__()</text>
+</a>
+</g>
+<g id="a_node1_3"><a xlink:href="#" xlink:title="__getitem__(self, *args, **kwargs):&#10;Return self[key].">
+<text text-anchor="start" x="8" y="-416.75" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">__getitem__()</text>
+</a>
+</g>
+<g id="a_node1_4"><a xlink:href="#" xlink:title="__init__(self, value: Any, taint: Any = None, **kwargs) &#45;&gt; None:&#10;Constructor.&#10;`value` is the string value the `tstr` object is to be constructed from.&#10;`taint` is an (optional) taint to be propagated to derived strings.">
+<text text-anchor="start" x="8" y="-404" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">__init__()</text>
+</a>
+</g>
+<g id="a_node1_5"><a xlink:href="#" xlink:title="__mod__(self, *args, **kwargs):&#10;Return self%value.">
+<text text-anchor="start" x="8" y="-391.25" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">__mod__()</text>
+</a>
+</g>
+<g id="a_node1_6"><a xlink:href="#" xlink:title="__mul__(self, *args, **kwargs):&#10;Return self*value.">
+<text text-anchor="start" x="8" y="-378.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">__mul__()</text>
+</a>
+</g>
+<g id="a_node1_7"><a xlink:href="#" xlink:title="__new__(cls, value, *args, **kw):&#10;Create a tstr() instance. Used internally.">
+<text text-anchor="start" x="8" y="-365.75" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">__new__()</text>
+</a>
+</g>
+<g id="a_node1_8"><a xlink:href="#" xlink:title="__radd__(self, value):&#10;Return value + self, as a `tstr` object">
+<text text-anchor="start" x="8" y="-353" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">__radd__()</text>
+</a>
+</g>
+<g id="a_node1_9"><a xlink:href="#" xlink:title="__repr__(self) &#45;&gt; tstr:&#10;Return a representation.">
+<text text-anchor="start" x="8" y="-340.25" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">__repr__()</text>
+</a>
+</g>
+<g id="a_node1_10"><a xlink:href="#" xlink:title="__rmod__(self, *args, **kwargs):&#10;Return value%self.">
+<text text-anchor="start" x="8" y="-327.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">__rmod__()</text>
+</a>
+</g>
+<g id="a_node1_11"><a xlink:href="#" xlink:title="__rmul__(self, *args, **kwargs):&#10;Return value*self.">
+<text text-anchor="start" x="8" y="-314.75" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">__rmul__()</text>
+</a>
+</g>
+<g id="a_node1_12"><a xlink:href="#" xlink:title="__str__(self) &#45;&gt; str:&#10;Convert to string">
+<text text-anchor="start" x="8" y="-302" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">__str__()</text>
+</a>
+</g>
+<g id="a_node1_13"><a xlink:href="#" xlink:title="capitalize(self, *args, **kwargs):&#10;Return a capitalized version of the string.&#10;&#10;More specifically, make the first character have upper case and the rest lower&#10;case.">
+<text text-anchor="start" x="8" y="-289.25" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">capitalize()</text>
+</a>
+</g>
+<g id="a_node1_14"><a xlink:href="#" xlink:title="casefold(self, *args, **kwargs):&#10;Return a version of the string suitable for caseless comparisons.">
+<text text-anchor="start" x="8" y="-276.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">casefold()</text>
+</a>
+</g>
+<g id="a_node1_15"><a xlink:href="#" xlink:title="center(self, *args, **kwargs):&#10;Return a centered string of length width.&#10;&#10;Padding is done using the specified fill character (default is a space).">
+<text text-anchor="start" x="8" y="-263.75" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">center()</text>
+</a>
+</g>
+<g id="a_node1_16"><a xlink:href="#" xlink:title="clear_taint(self):&#10;Remove taint">
+<text text-anchor="start" x="8" y="-251" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">clear_taint()</text>
+</a>
+</g>
+<g id="a_node1_17"><a xlink:href="#" xlink:title="encode(self, *args, **kwargs):&#10;Encode the string using the codec registered for encoding.&#10;&#10;encoding&#10;The encoding in which to encode the string.&#10;errors&#10;The error handling scheme to use for encoding errors.&#10;The default is &#39;strict&#39; meaning that encoding errors raise a&#10;UnicodeEncodeError. &#160;Other possible values are &#39;ignore&#39;, &#39;replace&#39; and&#10;&#39;xmlcharrefreplace&#39; as well as any other name registered with&#10;codecs.register_error that can handle UnicodeEncodeErrors.">
+<text text-anchor="start" x="8" y="-238.25" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">encode()</text>
+</a>
+</g>
+<g id="a_node1_18"><a xlink:href="#" xlink:title="expandtabs(self, *args, **kwargs):&#10;Return a copy where all tab characters are expanded using spaces.&#10;&#10;If tabsize is not given, a tab size of 8 characters is assumed.">
+<text text-anchor="start" x="8" y="-225.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">expandtabs()</text>
+</a>
+</g>
+<g id="a_node1_19"><a xlink:href="#" xlink:title="format(self, *args, **kwargs):&#10;S.format(*args, **kwargs) &#45;&gt; str&#10;&#10;Return a formatted version of S, using substitutions from args and kwargs.&#10;The substitutions are identified by braces (&#39;{&#39; and &#39;}&#39;).">
+<text text-anchor="start" x="8" y="-212.75" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">format()</text>
+</a>
+</g>
+<g id="a_node1_20"><a xlink:href="#" xlink:title="format_map(self, *args, **kwargs):&#10;S.format_map(mapping) &#45;&gt; str&#10;&#10;Return a formatted version of S, using substitutions from mapping.&#10;The substitutions are identified by braces (&#39;{&#39; and &#39;}&#39;).">
+<text text-anchor="start" x="8" y="-200" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">format_map()</text>
+</a>
+</g>
+<g id="a_node1_21"><a xlink:href="#" xlink:title="has_taint(self):&#10;Check if taint is present">
+<text text-anchor="start" x="8" y="-187.25" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">has_taint()</text>
+</a>
+</g>
+<g id="a_node1_22"><a xlink:href="#" xlink:title="join(self, *args, **kwargs):&#10;Concatenate any number of strings.&#10;&#10;The string whose method is called is inserted in between each given string.&#10;The result is returned as a new string.&#10;&#10;Example: &#39;.&#39;.join([&#39;ab&#39;, &#39;pq&#39;, &#39;rs&#39;]) &#45;&gt; &#39;ab.pq.rs&#39;">
+<text text-anchor="start" x="8" y="-174.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">join()</text>
+</a>
+</g>
+<g id="a_node1_23"><a xlink:href="#" xlink:title="ljust(self, *args, **kwargs):&#10;Return a left&#45;justified string of length width.&#10;&#10;Padding is done using the specified fill character (default is a space).">
+<text text-anchor="start" x="8" y="-161.75" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">ljust()</text>
+</a>
+</g>
+<g id="a_node1_24"><a xlink:href="#" xlink:title="lower(self, *args, **kwargs):&#10;Return a copy of the string converted to lowercase.">
+<text text-anchor="start" x="8" y="-149" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">lower()</text>
+</a>
+</g>
+<g id="a_node1_25"><a xlink:href="#" xlink:title="lstrip(self, *args, **kwargs):&#10;Return a copy of the string with leading whitespace removed.&#10;&#10;If chars is given and not None, remove characters in chars instead.">
+<text text-anchor="start" x="8" y="-136.25" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">lstrip()</text>
+</a>
+</g>
+<g id="a_node1_26"><a xlink:href="#" xlink:title="make_str_wrapper(fun):&#10;Make `fun` (a `str` method) a method in `tstr`">
+<text text-anchor="start" x="8" y="-123.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">make_str_wrapper()</text>
+</a>
+</g>
+<g id="a_node1_27"><a xlink:href="#" xlink:title="replace(self, *args, **kwargs):&#10;Return a copy with all occurrences of substring old replaced by new.&#10;&#10;count&#10;Maximum number of occurrences to replace.&#10;&#45;1 (the default value) means replace all occurrences.&#10;&#10;If the optional argument count is given, only the first count occurrences are&#10;replaced.">
+<text text-anchor="start" x="8" y="-110.75" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">replace()</text>
+</a>
+</g>
+<g id="a_node1_28"><a xlink:href="#" xlink:title="rjust(self, *args, **kwargs):&#10;Return a right&#45;justified string of length width.&#10;&#10;Padding is done using the specified fill character (default is a space).">
+<text text-anchor="start" x="8" y="-98" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">rjust()</text>
+</a>
+</g>
+<g id="a_node1_29"><a xlink:href="#" xlink:title="rstrip(self, *args, **kwargs):&#10;Return a copy of the string with trailing whitespace removed.&#10;&#10;If chars is given and not None, remove characters in chars instead.">
+<text text-anchor="start" x="8" y="-85.25" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">rstrip()</text>
+</a>
+</g>
+<g id="a_node1_30"><a xlink:href="#" xlink:title="strip(self, *args, **kwargs):&#10;Return a copy of the string with leading and trailing whitespace removed.&#10;&#10;If chars is given and not None, remove characters in chars instead.">
+<text text-anchor="start" x="8" y="-72.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">strip()</text>
+</a>
+</g>
+<g id="a_node1_31"><a xlink:href="#" xlink:title="swapcase(self, *args, **kwargs):&#10;Convert uppercase characters to lowercase and lowercase characters to uppercase.">
+<text text-anchor="start" x="8" y="-59.75" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">swapcase()</text>
+</a>
+</g>
+<g id="a_node1_32"><a xlink:href="#" xlink:title="title(self, *args, **kwargs):&#10;Return a version of the string where each word is titlecased.&#10;&#10;More specifically, words start with uppercased characters and all remaining&#10;cased characters have lower case.">
+<text text-anchor="start" x="8" y="-47" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">title()</text>
+</a>
+</g>
+<g id="a_node1_33"><a xlink:href="#" xlink:title="translate(self, *args, **kwargs):&#10;Replace each character in the string using the given translation table.&#10;&#10;table&#10;Translation table, which must be a mapping of Unicode ordinals to&#10;Unicode ordinals, strings, or None.&#10;&#10;The table must implement lookup/indexing via __getitem__, for instance a&#10;dictionary or list. &#160;If this operation raises LookupError, the character is&#10;left untouched. &#160;Characters mapped to None are deleted.">
+<text text-anchor="start" x="8" y="-34.25" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">translate()</text>
+</a>
+</g>
+<g id="a_node1_34"><a xlink:href="#" xlink:title="upper(self, *args, **kwargs):&#10;Return a copy of the string converted to uppercase.">
+<text text-anchor="start" x="8" y="-21.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">upper()</text>
+</a>
+</g>
+<g id="a_node1_35"><a xlink:href="#" xlink:title="create(self, s)">
+<text text-anchor="start" x="8" y="-7.75" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-size="10.00">create()</text>
+</a>
+</g>
+</a>
+</g>
+</a>
+</g>
+</g>
+<!-- str -->
+<g id="node2" class="node">
+<title>str</title>
+<g id="a_node2"><a xlink:href="builtins.html" xlink:title="class str:&#10;str(object=&#39;&#39;) &#45;&gt; str&#10;str(bytes_or_buffer[, encoding[, errors]]) &#45;&gt; str&#10;&#10;Create a new string object from the given object. If encoding or&#10;errors is specified, then the object must expose a data buffer&#10;that will be decoded using the given encoding and error handler.&#10;Otherwise, returns the result of object.__str__() (if defined)&#10;or repr(object).&#10;encoding defaults to sys.getdefaultencoding().&#10;errors defaults to &#39;strict&#39;.">
+<polygon fill="none" stroke="black" points="35,-517.75 35,-553.75 89,-553.75 89,-517.75 35,-517.75"/>
+<text text-anchor="start" x="53.5" y="-532.45" font-family="Patua One, Helvetica, sans-serif" font-weight="bold" font-size="14.00" fill="#b03a2e">str</text>
+</a>
+</g>
+</g>
+<!-- tstr&#45;&gt;str -->
+<g id="edge1" class="edge">
+<title>tstr&#45;&gt;str</title>
+<path fill="none" stroke="black" d="M62,-480.99C62,-490.28 62,-498.72 62,-506.02"/>
+<polygon fill="none" stroke="black" points="58.5,-506.01 62,-516.01 65.5,-506.01 58.5,-506.01"/>
+</g>
+<!-- Legend -->
+<g id="node3" class="node">
+<title>Legend</title>
+<text text-anchor="start" x="142.38" y="-256.62" font-family="Patua One, Helvetica, sans-serif" font-weight="bold" font-size="10.00" fill="#b03a2e">Legend</text>
+<text text-anchor="start" x="142.38" y="-246.62" font-family="Patua One, Helvetica, sans-serif" font-size="10.00">• </text>
+<text text-anchor="start" x="148.38" y="-246.62" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="8.00">public_method()</text>
+<text text-anchor="start" x="142.38" y="-236.62" font-family="Patua One, Helvetica, sans-serif" font-size="10.00">• </text>
+<text text-anchor="start" x="148.38" y="-236.62" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-size="8.00">private_method()</text>
+<text text-anchor="start" x="142.38" y="-226.62" font-family="Patua One, Helvetica, sans-serif" font-size="10.00">• </text>
+<text text-anchor="start" x="148.38" y="-226.62" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-style="italic" font-size="8.00">overloaded_method()</text>
+<text text-anchor="start" x="142.38" y="-217.57" font-family="Helvetica,sans-Serif" font-size="9.00">Hover over names to see doc</text>
+</g>
+</g>
+</svg>
+</p>
+<h3 id="Tracking-Character-Origins">Tracking Character Origins<a class="anchor-link" href="#Tracking-Character-Origins">&#182;</a></h3><p><code>ostr</code> objects extend <code>tstr</code> objects by not only tracking a taint, but also the originating <em>indexes</em> from the input string, This allows you to exactly track where individual characters came from. Assume you have a long string, which at index 100 contains the password <code>"joshua1234"</code>. Then you can save this origin information using an <code>ostr</code> as follows:</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">secret</span> <span class="o">=</span> <span class="n">ostr</span><span class="p">(</span><span class="s2">&quot;joshua1234&quot;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">taint</span><span class="o">=</span><span class="s1">&#39;SECRET&#39;</span><span class="p">)</span>
 </pre></div>
-<p>The originating indexes can be recovered as follows:</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="n">ohw</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span> <span class="o">+</span><span class="s2">&quot;-&quot;</span><span class="o">+</span> <span class="n">ohw</span><span class="p">[</span><span class="mi">6</span><span class="p">:])</span><span class="o">.</span><span class="n">origin</span>
-<span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">102</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">106</span><span class="p">,</span> <span class="mi">107</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">109</span><span class="p">,</span> <span class="mi">110</span><span class="p">]</span>
+<p>The <code>origin</code> attribute of an <code>ostr</code> provides access to a list of indexes:</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">secret</span><span class="o">.</span><span class="n">origin</span>
+<span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">102</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="mi">104</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">106</span><span class="p">,</span> <span class="mi">107</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">109</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">secret</span><span class="o">.</span><span class="n">taint</span>
+<span class="s1">&#39;SECRET&#39;</span>
 </pre></div>
+<p><code>ostr</code> objects are compatible with Python strings, except that string operations return <code>ostr</code> objects (together with the saved origin an index information). An index of <code>-1</code> indicates that the corresponding character has no origin as supplied to the <code>ostr()</code> constructor:</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">secret_substr</span> <span class="o">=</span> <span class="p">(</span><span class="n">secret</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">+</span> <span class="n">secret</span><span class="p">[</span><span class="mi">6</span><span class="p">:])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">secret_substr</span><span class="o">.</span><span class="n">taint</span>
+<span class="s1">&#39;SECRET&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">secret_substr</span><span class="o">.</span><span class="n">origin</span>
+<span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">102</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">106</span><span class="p">,</span> <span class="mi">107</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">109</span><span class="p">]</span>
+</pre></div>
+<p><code>ostr</code> objects duplicate most <code>str</code> methods, as indicated in the class diagram:</p>
+<p><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 12.2.1 (20241206.2353)
+ -->
+<!-- Pages: 1 -->
+<svg width="252pt" height="596pt"
+ viewBox="0.00 0.00 251.62 595.75" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 591.75)">
+<g id="a_graph0"><a xlink:title="ostr class hierarchy">
+<polygon fill="white" stroke="none" points="-4,4 -4,-591.75 247.62,-591.75 247.62,4 -4,4"/>
+</a>
+</g>
+<!-- ostr -->
+<g id="node1" class="node">
+<title>ostr</title>
+<g id="a_node1"><a xlink:href="#" xlink:title="class ostr:&#10;Wrapper for strings, saving taint and origin information">
+<polygon fill="none" stroke="black" points="0,-0.5 0,-514.25 106,-514.25 106,-0.5 0,-0.5"/>
+<text text-anchor="start" x="41" y="-497.95" font-family="Patua One, Helvetica, sans-serif" font-weight="bold" font-size="14.00" fill="#b03a2e">ostr</text>
+<polyline fill="none" stroke="black" points="0,-488.25 106,-488.25"/>
+<g id="a_node1_0"><a xlink:href="#" xlink:title="ostr">
+<g id="a_node1_1"><a xlink:href="#" xlink:title="DEFAULT_ORIGIN = 0">
+<text text-anchor="start" x="11" y="-474.75" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-size="10.00">DEFAULT_ORIGIN</text>
+</a>
+</g>
+<g id="a_node1_2"><a xlink:href="#" xlink:title="UNKNOWN_ORIGIN = &#45;1">
+<text text-anchor="start" x="11" y="-462" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-size="10.00">UNKNOWN_ORIGIN</text>
+</a>
+</g>
+</a>
+</g>
+<polyline fill="none" stroke="black" points="0,-454.75 106,-454.75"/>
+<g id="a_node1_3"><a xlink:href="#" xlink:title="ostr">
+<g id="a_node1_4"><a xlink:href="#" xlink:title="__add__(self, other):&#10;Return self+value.">
+<text text-anchor="start" x="8" y="-442.25" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">__add__()</text>
+</a>
+</g>
+<g id="a_node1_5"><a xlink:href="#" xlink:title="__getitem__(self, key):&#10;Return self[key].">
+<text text-anchor="start" x="8" y="-429.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">__getitem__()</text>
+</a>
+</g>
+<g id="a_node1_6"><a xlink:href="#" xlink:title="__init__(self, value: Any, taint: Any = None, origin: Union[int, List[int], NoneType] = None, **kwargs) &#45;&gt; None:&#10;Constructor.&#10;`value` is the string value the `ostr` object is to be constructed from.&#10;`taint` is an (optional) taint to be propagated to derived strings.&#10;`origin` (optional) is either&#10;&#45; an integer denoting the index of the first character in `value`, or&#10;&#45; a list of integers denoting the origins of the characters in `value`,">
+<text text-anchor="start" x="8" y="-416.75" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">__init__()</text>
+</a>
+</g>
+<g id="a_node1_7"><a xlink:href="#" xlink:title="__iter__(self):&#10;Implement iter(self).">
+<text text-anchor="start" x="8" y="-404" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">__iter__()</text>
+</a>
+</g>
+<g id="a_node1_8"><a xlink:href="#" xlink:title="__mod__(self, s):&#10;Return self%value.">
+<text text-anchor="start" x="8" y="-391.25" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">__mod__()</text>
+</a>
+</g>
+<g id="a_node1_9"><a xlink:href="#" xlink:title="__new__(cls, value, *args, **kw):&#10;Create an ostr() instance. Used internally.">
+<text text-anchor="start" x="8" y="-378.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">__new__()</text>
+</a>
+</g>
+<g id="a_node1_10"><a xlink:href="#" xlink:title="__repr__(self):&#10;Return repr(self).">
+<text text-anchor="start" x="8" y="-365.75" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">__repr__()</text>
+</a>
+</g>
+<g id="a_node1_11"><a xlink:href="#" xlink:title="__rmod__(self, s):&#10;Return value%self.">
+<text text-anchor="start" x="8" y="-353" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">__rmod__()</text>
+</a>
+</g>
+<g id="a_node1_12"><a xlink:href="#" xlink:title="__str__(self):&#10;Return str(self).">
+<text text-anchor="start" x="8" y="-340.25" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">__str__()</text>
+</a>
+</g>
+<g id="a_node1_13"><a xlink:href="#" xlink:title="capitalize(self):&#10;Return a capitalized version of the string.&#10;&#10;More specifically, make the first character have upper case and the rest lower&#10;case.">
+<text text-anchor="start" x="8" y="-327.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">capitalize()</text>
+</a>
+</g>
+<g id="a_node1_14"><a xlink:href="#" xlink:title="expandtabs(self, n=8):&#10;Return a copy where all tab characters are expanded using spaces.&#10;&#10;If tabsize is not given, a tab size of 8 characters is assumed.">
+<text text-anchor="start" x="8" y="-314.75" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">expandtabs()</text>
+</a>
+</g>
+<g id="a_node1_15"><a xlink:href="#" xlink:title="join(self, iterable):&#10;Concatenate any number of strings.&#10;&#10;The string whose method is called is inserted in between each given string.&#10;The result is returned as a new string.&#10;&#10;Example: &#39;.&#39;.join([&#39;ab&#39;, &#39;pq&#39;, &#39;rs&#39;]) &#45;&gt; &#39;ab.pq.rs&#39;">
+<text text-anchor="start" x="8" y="-302" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">join()</text>
+</a>
+</g>
+<g id="a_node1_16"><a xlink:href="#" xlink:title="ljust(self, width, fillchar=&#39; &#39;):&#10;Return a left&#45;justified string of length width.&#10;&#10;Padding is done using the specified fill character (default is a space).">
+<text text-anchor="start" x="8" y="-289.25" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">ljust()</text>
+</a>
+</g>
+<g id="a_node1_17"><a xlink:href="#" xlink:title="lower(self):&#10;Return a copy of the string converted to lowercase.">
+<text text-anchor="start" x="8" y="-276.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">lower()</text>
+</a>
+</g>
+<g id="a_node1_18"><a xlink:href="#" xlink:title="lstrip(self, cl=None):&#10;Return a copy of the string with leading whitespace removed.&#10;&#10;If chars is given and not None, remove characters in chars instead.">
+<text text-anchor="start" x="8" y="-263.75" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">lstrip()</text>
+</a>
+</g>
+<g id="a_node1_19"><a xlink:href="#" xlink:title="partition(self, sep):&#10;Partition the string into three parts using the given separator.&#10;&#10;This will search for the separator in the string. &#160;If the separator is found,&#10;returns a 3&#45;tuple containing the part before the separator, the separator&#10;itself, and the part after it.&#10;&#10;If the separator is not found, returns a 3&#45;tuple containing the original string&#10;and two empty strings.">
+<text text-anchor="start" x="8" y="-251" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">partition()</text>
+</a>
+</g>
+<g id="a_node1_20"><a xlink:href="#" xlink:title="replace(self, a, b, n=None):&#10;Return a copy with all occurrences of substring old replaced by new.&#10;&#10;count&#10;Maximum number of occurrences to replace.&#10;&#45;1 (the default value) means replace all occurrences.&#10;&#10;If the optional argument count is given, only the first count occurrences are&#10;replaced.">
+<text text-anchor="start" x="8" y="-238.25" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">replace()</text>
+</a>
+</g>
+<g id="a_node1_21"><a xlink:href="#" xlink:title="rjust(self, width, fillchar=&#39; &#39;):&#10;Return a right&#45;justified string of length width.&#10;&#10;Padding is done using the specified fill character (default is a space).">
+<text text-anchor="start" x="8" y="-225.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">rjust()</text>
+</a>
+</g>
+<g id="a_node1_22"><a xlink:href="#" xlink:title="rpartition(self, sep):&#10;Partition the string into three parts using the given separator.&#10;&#10;This will search for the separator in the string, starting at the end. If&#10;the separator is found, returns a 3&#45;tuple containing the part before the&#10;separator, the separator itself, and the part after it.&#10;&#10;If the separator is not found, returns a 3&#45;tuple containing two empty strings&#10;and the original string.">
+<text text-anchor="start" x="8" y="-212.75" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">rpartition()</text>
+</a>
+</g>
+<g id="a_node1_23"><a xlink:href="#" xlink:title="rsplit(self, sep=None, maxsplit=&#45;1):&#10;Return a list of the substrings in the string, using sep as the separator string.&#10;&#10;sep&#10;The separator used to split the string.&#10;&#10;When set to None (the default value), will split on any whitespace&#10;character (including \n \r \t \f and spaces) and will discard&#10;empty strings from the result.&#10;maxsplit&#10;Maximum number of splits.&#10;&#45;1 (the default value) means no limit.&#10;&#10;Splitting starts at the end of the string and works to the front.">
+<text text-anchor="start" x="8" y="-200" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">rsplit()</text>
+</a>
+</g>
+<g id="a_node1_24"><a xlink:href="#" xlink:title="rstrip(self, cl=None):&#10;Return a copy of the string with trailing whitespace removed.&#10;&#10;If chars is given and not None, remove characters in chars instead.">
+<text text-anchor="start" x="8" y="-187.25" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">rstrip()</text>
+</a>
+</g>
+<g id="a_node1_25"><a xlink:href="#" xlink:title="split(self, sep=None, maxsplit=&#45;1):&#10;Return a list of the substrings in the string, using sep as the separator string.&#10;&#10;sep&#10;The separator used to split the string.&#10;&#10;When set to None (the default value), will split on any whitespace&#10;character (including \n \r \t \f and spaces) and will discard&#10;empty strings from the result.&#10;maxsplit&#10;Maximum number of splits.&#10;&#45;1 (the default value) means no limit.&#10;&#10;Splitting starts at the front of the string and works to the end.&#10;&#10;Note, str.split() is mainly useful for data that has been intentionally&#10;delimited. &#160;With natural text that includes punctuation, consider using&#10;the regular expression module.">
+<text text-anchor="start" x="8" y="-174.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">split()</text>
+</a>
+</g>
+<g id="a_node1_26"><a xlink:href="#" xlink:title="strip(self, cl=None):&#10;Return a copy of the string with leading and trailing whitespace removed.&#10;&#10;If chars is given and not None, remove characters in chars instead.">
+<text text-anchor="start" x="8" y="-161.75" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">strip()</text>
+</a>
+</g>
+<g id="a_node1_27"><a xlink:href="#" xlink:title="swapcase(self):&#10;Convert uppercase characters to lowercase and lowercase characters to uppercase.">
+<text text-anchor="start" x="8" y="-149" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">swapcase()</text>
+</a>
+</g>
+<g id="a_node1_28"><a xlink:href="#" xlink:title="title(self):&#10;Return a version of the string where each word is titlecased.&#10;&#10;More specifically, words start with uppercased characters and all remaining&#10;cased characters have lower case.">
+<text text-anchor="start" x="8" y="-136.25" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">title()</text>
+</a>
+</g>
+<g id="a_node1_29"><a xlink:href="#" xlink:title="upper(self):&#10;Return a copy of the string converted to uppercase.">
+<text text-anchor="start" x="8" y="-123.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">upper()</text>
+</a>
+</g>
+<g id="a_node1_30"><a xlink:href="#" xlink:title="x(self, i=0):&#10;Extract substring at index/slice `i`">
+<text text-anchor="start" x="8" y="-110.75" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">x()</text>
+</a>
+</g>
+<g id="a_node1_31"><a xlink:href="#" xlink:title="__radd__(self, other)">
+<text text-anchor="start" x="8" y="-97" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-size="10.00">__radd__()</text>
+</a>
+</g>
+<g id="a_node1_32"><a xlink:href="#" xlink:title="_split_helper(self, sep, splitted)">
+<text text-anchor="start" x="8" y="-84.25" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-size="10.00">_split_helper()</text>
+</a>
+</g>
+<g id="a_node1_33"><a xlink:href="#" xlink:title="_split_space(self, splitted)">
+<text text-anchor="start" x="8" y="-71.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-size="10.00">_split_space()</text>
+</a>
+</g>
+<g id="a_node1_34"><a xlink:href="#" xlink:title="clear_origin(self)">
+<text text-anchor="start" x="8" y="-58.75" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-size="10.00">clear_origin()</text>
+</a>
+</g>
+<g id="a_node1_35"><a xlink:href="#" xlink:title="clear_taint(self)">
+<text text-anchor="start" x="8" y="-46" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-size="10.00">clear_taint()</text>
+</a>
+</g>
+<g id="a_node1_36"><a xlink:href="#" xlink:title="create(self, res, origin=None)">
+<text text-anchor="start" x="8" y="-33.25" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-size="10.00">create()</text>
+</a>
+</g>
+<g id="a_node1_37"><a xlink:href="#" xlink:title="has_origin(self)">
+<text text-anchor="start" x="8" y="-20.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-size="10.00">has_origin()</text>
+</a>
+</g>
+<g id="a_node1_38"><a xlink:href="#" xlink:title="has_taint(self)">
+<text text-anchor="start" x="8" y="-7.75" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-size="10.00">has_taint()</text>
+</a>
+</g>
+</a>
+</g>
+</a>
+</g>
+</g>
+<!-- str -->
+<g id="node2" class="node">
+<title>str</title>
+<g id="a_node2"><a xlink:href="builtins.html" xlink:title="class str:&#10;str(object=&#39;&#39;) &#45;&gt; str&#10;str(bytes_or_buffer[, encoding[, errors]]) &#45;&gt; str&#10;&#10;Create a new string object from the given object. If encoding or&#10;errors is specified, then the object must expose a data buffer&#10;that will be decoded using the given encoding and error handler.&#10;Otherwise, returns the result of object.__str__() (if defined)&#10;or repr(object).&#10;encoding defaults to sys.getdefaultencoding().&#10;errors defaults to &#39;strict&#39;.">
+<polygon fill="none" stroke="black" points="26,-551.25 26,-587.25 80,-587.25 80,-551.25 26,-551.25"/>
+<text text-anchor="start" x="44.5" y="-565.95" font-family="Patua One, Helvetica, sans-serif" font-weight="bold" font-size="14.00" fill="#b03a2e">str</text>
+</a>
+</g>
+</g>
+<!-- ostr&#45;&gt;str -->
+<g id="edge1" class="edge">
+<title>ostr&#45;&gt;str</title>
+<path fill="none" stroke="black" d="M53,-514.63C53,-523.94 53,-532.38 53,-539.67"/>
+<polygon fill="none" stroke="black" points="49.5,-539.62 53,-549.62 56.5,-539.62 49.5,-539.62"/>
+</g>
+<!-- Legend -->
+<g id="node3" class="node">
+<title>Legend</title>
+<text text-anchor="start" x="124.38" y="-273.38" font-family="Patua One, Helvetica, sans-serif" font-weight="bold" font-size="10.00" fill="#b03a2e">Legend</text>
+<text text-anchor="start" x="124.38" y="-263.38" font-family="Patua One, Helvetica, sans-serif" font-size="10.00">• </text>
+<text text-anchor="start" x="130.38" y="-263.38" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="8.00">public_method()</text>
+<text text-anchor="start" x="124.38" y="-253.38" font-family="Patua One, Helvetica, sans-serif" font-size="10.00">• </text>
+<text text-anchor="start" x="130.38" y="-253.38" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-size="8.00">private_method()</text>
+<text text-anchor="start" x="124.38" y="-243.38" font-family="Patua One, Helvetica, sans-serif" font-size="10.00">• </text>
+<text text-anchor="start" x="130.38" y="-243.38" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-style="italic" font-size="8.00">overloaded_method()</text>
+<text text-anchor="start" x="124.38" y="-234.32" font-family="Helvetica,sans-Serif" font-size="9.00">Hover over names to see doc</text>
+</g>
+</g>
+</svg>
+</p>
 </div>
 </div>
 </div>
@@ -12352,16 +12831,19 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">DB</span><span class="p">(</span><span class="n">DB</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">do_select</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">):</span>
-        <span class="k">assert</span> <span class="kc">False</span>
+        <span class="o">...</span>
+
     <span class="k">def</span> <span class="nf">do_update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">):</span>
-        <span class="k">assert</span> <span class="kc">False</span>
+        <span class="o">...</span>
+
     <span class="k">def</span> <span class="nf">do_insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">):</span>
-        <span class="k">assert</span> <span class="kc">False</span>
+        <span class="o">...</span>
+
     <span class="k">def</span> <span class="nf">do_delete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">):</span>
-        <span class="k">assert</span> <span class="kc">False</span>
+        <span class="o">...</span>
 
     <span class="k">def</span> <span class="nf">sql</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">):</span>
-        <span class="n">methods</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;select &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">do_select</span><span class="p">),</span> 
+        <span class="n">methods</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;select &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">do_select</span><span class="p">),</span>
                    <span class="p">(</span><span class="s1">&#39;update &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">do_update</span><span class="p">),</span>
                    <span class="p">(</span><span class="s1">&#39;insert into &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">do_insert</span><span class="p">),</span>
                    <span class="p">(</span><span class="s1">&#39;delete from&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">do_delete</span><span class="p">)]</span>
@@ -12379,16 +12861,43 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><p>At this point, the individual methods for handling SQL statements are not yet defined.  Let us do this in the next steps.</p>
+<div class="text_cell_render border-box-sizing rendered_html"><p>Here's an example of how to use the <code>DB</code> class:</p>
 </div>
 </div>
+</div>
+</div>
+
+<div class="input_code">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">some_db</span> <span class="o">=</span> <span class="n">DB</span><span class="p">()</span>
+<span class="n">some_db</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s1">&#39;select year from inventory&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div></div>
 </div>
 </div>
 
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><h3 id="Selecting-Data">Selecting Data<a class="anchor-link" href="#Selecting-Data">&#182;</a></h3><p>The <code>do_select()</code> method handles SQL <code>select</code> statements to retrieve data from a table.</p>
+<div class="text_cell_render border-box-sizing rendered_html"><p>However, at this point, the individual methods for handling SQL statements are not yet defined. Let us do this in the next steps.</p>
+</div>
+</div>
+</div>
+</div>
+
+<details id="Excursion:-Implementing-SQL-Statements">
+<summary>Implementing SQL Statements</summary>
+
+<div class="input_markdown">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html"><h4 id="Selecting-Data">Selecting Data<a class="anchor-link" href="#Selecting-Data">&#182;</a></h4><p>The <code>do_select()</code> method handles SQL <code>select</code> statements to retrieve data from a table.</p>
 </div>
 </div>
 </div>
@@ -12441,7 +12950,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <li>In the form <code>select</code> $x$, $y$, $z$ <code>from</code> $t$, it <em>evaluates</em> (and returns) the expressions $x$, $y$, $z$ in the contexts of the selected rows.</li>
 <li>If a clause <code>where</code> $p$ is given, it also evaluates $p$ in the context of the rows and includes the rows in the selection only if $p$ holds.</li>
 </ol>
-<p>To evaluate expressions like $x$, $y$, $z$ or $p$, we make use of the Python evaluation function.</p>
+<p>To evaluate expressions like $x$, $y$, $z$ or $p$, the method <code>expression_clause()</code> makes use of the Python <code>eval()</code> evaluation function.</p>
 </div>
 </div>
 </div>
@@ -12470,7 +12979,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><p>Which internally calls <code>my_eval()</code> to evaluate any given statement.</p>
+<div class="text_cell_render border-box-sizing rendered_html"><p>If <code>eval()</code> fails for whatever reason, we raise an exception:</p>
 </div>
 </div>
 </div>
@@ -12486,7 +12995,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
     <span class="k">def</span> <span class="nf">my_eval</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">statement</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">l</span><span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="k">return</span> <span class="nb">eval</span><span class="p">(</span><span class="n">statement</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span>
-        <span class="k">except</span><span class="p">:</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">SQLException</span><span class="p">(</span><span class="s1">&#39;Invalid WHERE (</span><span class="si">%s</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="nb">repr</span><span class="p">(</span><span class="n">statement</span><span class="p">))</span>
 </pre></div>
 
@@ -12564,7 +13073,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><h3 id="Inserting-Data">Inserting Data<a class="anchor-link" href="#Inserting-Data">&#182;</a></h3><p>The <code>do_insert()</code> method handles SQL <code>insert</code> statements.</p>
+<div class="text_cell_render border-box-sizing rendered_html"><h4 id="Inserting-Data">Inserting Data<a class="anchor-link" href="#Inserting-Data">&#182;</a></h4><p>The <code>do_insert()</code> method handles SQL <code>insert</code> statements.</p>
 </div>
 </div>
 </div>
@@ -12602,7 +13111,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
             <span class="k">raise</span> <span class="n">SQLException</span><span class="p">(</span>
                 <span class="s1">&#39;names(</span><span class="si">%s</span><span class="s1">) != values(</span><span class="si">%s</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">names</span><span class="p">),</span> <span class="nb">repr</span><span class="p">(</span><span class="n">values</span><span class="p">)))</span>
 
-        <span class="c1"># dict lookups happen in C code, so we cant use that</span>
+        <span class="c1"># dict lookups happen in C code, so we can&#39;t use that</span>
         <span class="n">kvs</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
             <span class="k">for</span> <span class="n">key</span><span class="p">,</span><span class="n">kval</span> <span class="ow">in</span> <span class="n">decls</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
@@ -12751,7 +13260,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><h3 id="Updating-Data">Updating Data<a class="anchor-link" href="#Updating-Data">&#182;</a></h3><p>Similarly, <code>do_update()</code> handles SQL <code>update</code> statements.</p>
+<div class="text_cell_render border-box-sizing rendered_html"><h4 id="Updating-Data">Updating Data<a class="anchor-link" href="#Updating-Data">&#182;</a></h4><p>Similarly, <code>do_update()</code> handles SQL <code>update</code> statements.</p>
 </div>
 </div>
 </div>
@@ -12798,7 +13307,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 
         <span class="k">for</span> <span class="n">hm</span> <span class="ow">in</span> <span class="n">updated</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">sets</span><span class="p">:</span>
-                <span class="c1"># we can not do dict lookups because it is implemetned in C.</span>
+                <span class="c1"># we can not do dict lookups because it is implemented in C.</span>
                 <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">kval</span> <span class="ow">in</span> <span class="n">decls</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
                     <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">k</span><span class="p">:</span>
                         <span class="n">hm</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">kval</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
@@ -12905,7 +13414,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><h3 id="Deleting-Data">Deleting Data<a class="anchor-link" href="#Deleting-Data">&#182;</a></h3><p>Finally, SQL <code>delete</code> statements are handled by <code>do_delete()</code>.</p>
+<div class="text_cell_render border-box-sizing rendered_html"><h4 id="Deleting-Data">Deleting Data<a class="anchor-link" href="#Deleting-Data">&#182;</a></h4><p>Finally, SQL <code>delete</code> statements are handled by <code>do_delete()</code>.</p>
 </div>
 </div>
 </div>
@@ -12923,6 +13432,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
         <span class="n">table_end</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">WHERE</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">table_end</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">SQLException</span><span class="p">(</span><span class="s1">&#39;Invalid DELETE (</span><span class="si">%s</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="n">query</span><span class="p">)</span>
+
         <span class="n">t_name</span> <span class="o">=</span> <span class="n">query</span><span class="p">[:</span><span class="n">table_end</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
         <span class="n">_</span><span class="p">,</span> <span class="n">table</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="n">t_name</span><span class="p">)</span>
         <span class="n">where</span> <span class="o">=</span> <span class="n">query</span><span class="p">[</span><span class="n">table_end</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">WHERE</span><span class="p">):]</span>
@@ -12930,6 +13440,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
         <span class="n">deleted</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">hm</span> <span class="ow">in</span> <span class="n">selected</span> <span class="k">if</span> <span class="n">d</span><span class="p">]</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">deleted</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
             <span class="k">del</span> <span class="n">table</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
         <span class="k">return</span> <span class="s2">&quot;</span><span class="si">%d</span><span class="s2"> records were deleted&quot;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">deleted</span><span class="p">)</span>
 </pre></div>
 
@@ -13036,10 +13547,12 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 
 </div>
 
+</details>
+
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><h3 id="All-Methods-Together">All Methods Together<a class="anchor-link" href="#All-Methods-Together">&#182;</a></h3><p>Here is how our database can be used.</p>
+<div class="text_cell_render border-box-sizing rendered_html"><p>Here is how our database can be used.</p>
 </div>
 </div>
 </div>
@@ -13062,7 +13575,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><p>Again, we first create a table in our database with the correct data types.</p>
+<div class="text_cell_render border-box-sizing rendered_html"><p>We first create a table in our database with the correct data types.</p>
 </div>
 </div>
 </div>
@@ -13397,6 +13910,9 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 </div>
 </div>
 
+<details id="Excursion:-Defining-a-SQL-grammar">
+<summary>Defining a SQL grammar</summary>
+
 <div class="input_code">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -13417,7 +13933,22 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">EXPR_GRAMMAR</span> <span class="o">=</span> <span class="p">{</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn"><a href="Grammars.html" class="import" target="_blank">Grammars</a></span> <span class="kn">import</span> <span class="n">START_SYMBOL</span><span class="p">,</span> <span class="n">Grammar</span><span class="p">,</span> <span class="n">Expansion</span><span class="p">,</span> \
+    <span class="n">is_valid_grammar</span><span class="p">,</span> <span class="n">extend_grammar</span>
+</pre></div>
+
+</div>
+</div></div>
+</div>
+</div>
+
+<div class="input_code">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">EXPR_GRAMMAR</span><span class="p">:</span> <span class="n">Grammar</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;&lt;start&gt;&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;&lt;expr&gt;&quot;</span><span class="p">],</span>
     <span class="s2">&quot;&lt;expr&gt;&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;&lt;bexpr&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;aexpr&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;(&lt;expr&gt;)&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;term&gt;&quot;</span><span class="p">],</span>
     <span class="s2">&quot;&lt;bexpr&gt;&quot;</span><span class="p">:</span> <span class="p">[</span>
@@ -13442,6 +13973,8 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
     <span class="s2">&quot;&lt;letter&gt;&quot;</span><span class="p">:</span>
     <span class="nb">list</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_letters</span> <span class="o">+</span> <span class="s1">&#39;_:.&#39;</span><span class="p">)</span>
 <span class="p">}</span>
+
+<span class="k">assert</span> <span class="n">is_valid_grammar</span><span class="p">(</span><span class="n">EXPR_GRAMMAR</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13455,8 +13988,23 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">INVENTORY_GRAMMAR</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
-    <span class="n">EXPR_GRAMMAR</span><span class="p">,</span> <span class="o">**</span><span class="p">{</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">PRINTABLE_CHARS</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">string</span><span class="o">.</span><span class="n">printable</span> 
+                                    <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s2">&quot;&lt;&gt;&#39;</span><span class="se">\&quot;\t\n\r\x0b\x0c\x00</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;&lt;lt&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;gt&gt;&#39;</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div></div>
+</div>
+</div>
+
+<div class="input_code">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">INVENTORY_GRAMMAR</span> <span class="o">=</span> <span class="n">extend_grammar</span><span class="p">(</span><span class="n">EXPR_GRAMMAR</span><span class="p">,</span>
+    <span class="p">{</span>
         <span class="s1">&#39;&lt;start&gt;&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;&lt;query&gt;&#39;</span><span class="p">],</span>
         <span class="s1">&#39;&lt;query&gt;&#39;</span><span class="p">:</span> <span class="p">[</span>
             <span class="s1">&#39;select &lt;exprs&gt; from &lt;table&gt;&#39;</span><span class="p">,</span>
@@ -13474,10 +14022,10 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
         <span class="s1">&#39;&lt;kvp&gt;&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;&lt;column&gt;=&lt;value&gt;&#39;</span><span class="p">],</span>
         <span class="s1">&#39;&lt;value&gt;&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;&lt;word&gt;&#39;</span><span class="p">],</span>
         <span class="s1">&#39;&lt;chars&gt;&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;&lt;char&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;char&gt;&lt;chars&gt;&#39;</span><span class="p">],</span>
-        <span class="s1">&#39;&lt;char&gt;&#39;</span><span class="p">:</span>
-        <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">string</span><span class="o">.</span><span class="n">printable</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s2">&quot;&lt;&gt;&#39;</span><span class="se">\&quot;\t\n\r\x0b\x0c\x00</span><span class="s2">&quot;</span>
-         <span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;&lt;lt&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;gt&gt;&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;&lt;char&gt;&#39;</span><span class="p">:</span> <span class="n">PRINTABLE_CHARS</span><span class="p">,</span>
     <span class="p">})</span>
+
+<span class="k">assert</span> <span class="n">is_valid_grammar</span><span class="p">(</span><span class="n">INVENTORY_GRAMMAR</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13500,13 +14048,16 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">INVENTORY_GRAMMAR_F</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">INVENTORY_GRAMMAR</span><span class="p">,</span> <span class="o">**</span><span class="p">{</span><span class="s1">&#39;&lt;table&gt;&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;inventory&#39;</span><span class="p">]})</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">INVENTORY_GRAMMAR_F</span> <span class="o">=</span> <span class="n">extend_grammar</span><span class="p">(</span><span class="n">INVENTORY_GRAMMAR</span><span class="p">,</span> 
+                                     <span class="p">{</span><span class="s1">&#39;&lt;table&gt;&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;inventory&#39;</span><span class="p">]})</span>
 </pre></div>
 
 </div>
 </div></div>
 </div>
 </div>
+
+</details>
 
 <div class="input_code">
 <div class="cell border-box-sizing code_cell rendered">
@@ -13598,7 +14149,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><h2 id="The-Evil-of-Eval">The Evil of Eval<a class="anchor-link" href="#The-Evil-of-Eval">&#182;</a></h2><p>In our implementation, we have made use of <code>eval()</code> to evaluate expressions using the Python interpreter.  This allows us to unleash the full power of Python expressions within our SQL statements.</p>
+<div class="text_cell_render border-box-sizing rendered_html"><h3 id="The-Evil-of-Eval">The Evil of Eval<a class="anchor-link" href="#The-Evil-of-Eval">&#182;</a></h3><p>In our database implementation – notably in the <code>expression_clause()</code> method -, we have made use of <code>eval()</code> to evaluate expressions using the Python interpreter.  This allows us to unleash the full power of Python expressions within our SQL statements.</p>
 </div>
 </div>
 </div>
@@ -13732,7 +14283,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><p>One method that allows such differentiation is that of <em>dynamic taint analysis</em>. The idea is to identify the functions that accept user input as <em>sources</em> that <em>taint</em> any string that comes in through them, and those functions that perform dangerous operations as <em>sinks</em>. Finally we bless certain functions as <em>taint sanitizers</em>. The idea is that an input from the source should never reach the sink without undergoing sanitization first. This allows us to use a stronger oracle than simply checking for crashes.</p>
+<div class="text_cell_render border-box-sizing rendered_html"><p>One method that allows such differentiation is that of <em>dynamic taint analysis</em>. The idea is to identify the functions that accept user input as <em>sources</em> that <em>taint</em> any string that comes in through them, and those functions that perform dangerous operations as <em>sinks</em>. Finally, we bless certain functions as <em>taint sanitizers</em>. The idea is that an input from the source should never reach the sink without undergoing sanitization first. This allows us to use a stronger oracle than simply checking for crashes.</p>
 </div>
 </div>
 </div>
@@ -13763,11 +14314,17 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">tstr</span><span class="p">(</span><span class="nb">str</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Wrapper for strings, saving taint information&quot;&quot;&quot;</span>
+
     <span class="k">def</span> <span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a tstr() instance. Used internally.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">str</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">taint</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">taint</span> <span class="o">=</span> <span class="n">taint</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">taint</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Constructor.</span>
+<span class="sd">        `value` is the string value the `tstr` object is to be constructed from.</span>
+<span class="sd">        `taint` is an (optional) taint to be propagated to derived strings.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">taint</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="n">taint</span>
 </pre></div>
 
 </div>
@@ -13782,7 +14339,8 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">tstr</span><span class="p">(</span><span class="n">tstr</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">tstr</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a representation.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">tstr</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span> <span class="n">taint</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">taint</span><span class="p">)</span>
 </pre></div>
 
@@ -13798,7 +14356,8 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">tstr</span><span class="p">(</span><span class="n">tstr</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert to string&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">str</span><span class="o">.</span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 </pre></div>
 
@@ -13822,7 +14381,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">thello</span> <span class="o">=</span> <span class="n">tstr</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="n">taint</span><span class="o">=</span><span class="s1">&#39;LOW&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">thello</span><span class="p">:</span> <span class="n">tstr</span> <span class="o">=</span> <span class="n">tstr</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="n">taint</span><span class="o">=</span><span class="s1">&#39;LOW&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13879,7 +14438,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><p>By default, when we wrap a string, it is tainted. Hence we also need a way to clear the taint in the string. One way is to simply return a <code>str</code> instance as above. However, one may sometimes wish to remove the taint from an existing instance. This is accomplished with <code>clear_taint()</code>. During <code>clear_taint()</code>, we simply set the taint to <code>None</code>. This method comes with a pair method <code>has_taint()</code> which checks whether a <code>tstr</code> instance is currently origined.</p>
+<div class="text_cell_render border-box-sizing rendered_html"><p>By default, when we wrap a string, it is tainted. Hence, we also need a way to clear the taint in the string. One way is to simply return a <code>str</code> instance as above. However, one may sometimes wish to remove the taint from an existing instance. This is accomplished with <code>clear_taint()</code>. During <code>clear_taint()</code>, we simply set the taint to <code>None</code>. This method comes with a paired method <code>has_taint()</code> which checks whether a <code>tstr</code> instance has a taint.</p>
 </div>
 </div>
 </div>
@@ -13893,10 +14452,12 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">tstr</span><span class="p">(</span><span class="n">tstr</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">clear_taint</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Remove taint&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">taint</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="k">return</span> <span class="bp">self</span>
 
     <span class="k">def</span> <span class="nf">has_taint</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if taint is present&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">taint</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
 </pre></div>
 
@@ -13954,11 +14515,19 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">make_str_wrapper</span><span class="p">(</span><span class="n">fun</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">proxy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="n">res</span> <span class="o">=</span> <span class="n">fun</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">proxy</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">tstr</span><span class="p">(</span><span class="n">tstr</span><span class="p">):</span>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">make_str_wrapper</span><span class="p">(</span><span class="n">fun</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Make `fun` (a `str` method) a method in `tstr`&quot;&quot;&quot;</span>
+        <span class="k">def</span> <span class="nf">proxy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">fun</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="s1">&#39;__doc__&#39;</span><span class="p">):</span>
+            <span class="c1"># Copy docstring</span>
+            <span class="n">proxy</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="n">fun</span><span class="o">.</span><span class="vm">__doc__</span>
+
+        <span class="k">return</span> <span class="n">proxy</span>
 </pre></div>
 
 </div>
@@ -13982,12 +14551,14 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">informationflow_init_1</span><span class="p">():</span>
-    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;__format__&#39;</span><span class="p">,</span> <span class="s1">&#39;__mod__&#39;</span><span class="p">,</span> <span class="s1">&#39;__rmod__&#39;</span><span class="p">,</span> <span class="s1">&#39;__getitem__&#39;</span><span class="p">,</span> <span class="s1">&#39;__add__&#39;</span><span class="p">,</span> <span class="s1">&#39;__mul__&#39;</span><span class="p">,</span> <span class="s1">&#39;__rmul__&#39;</span><span class="p">,</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;__format__&#39;</span><span class="p">,</span> <span class="s1">&#39;__mod__&#39;</span><span class="p">,</span> <span class="s1">&#39;__rmod__&#39;</span><span class="p">,</span> <span class="s1">&#39;__getitem__&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;__add__&#39;</span><span class="p">,</span> <span class="s1">&#39;__mul__&#39;</span><span class="p">,</span> <span class="s1">&#39;__rmul__&#39;</span><span class="p">,</span>
                  <span class="s1">&#39;capitalize&#39;</span><span class="p">,</span> <span class="s1">&#39;casefold&#39;</span><span class="p">,</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="s1">&#39;encode&#39;</span><span class="p">,</span>
-                 <span class="s1">&#39;expandtabs&#39;</span><span class="p">,</span> <span class="s1">&#39;format&#39;</span><span class="p">,</span> <span class="s1">&#39;format_map&#39;</span><span class="p">,</span> <span class="s1">&#39;join&#39;</span><span class="p">,</span> <span class="s1">&#39;ljust&#39;</span><span class="p">,</span> <span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="s1">&#39;lstrip&#39;</span><span class="p">,</span> <span class="s1">&#39;replace&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;expandtabs&#39;</span><span class="p">,</span> <span class="s1">&#39;format&#39;</span><span class="p">,</span> <span class="s1">&#39;format_map&#39;</span><span class="p">,</span> <span class="s1">&#39;join&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;ljust&#39;</span><span class="p">,</span> <span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="s1">&#39;lstrip&#39;</span><span class="p">,</span> <span class="s1">&#39;replace&#39;</span><span class="p">,</span>
                  <span class="s1">&#39;rjust&#39;</span><span class="p">,</span> <span class="s1">&#39;rstrip&#39;</span><span class="p">,</span> <span class="s1">&#39;strip&#39;</span><span class="p">,</span> <span class="s1">&#39;swapcase&#39;</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;translate&#39;</span><span class="p">,</span> <span class="s1">&#39;upper&#39;</span><span class="p">]:</span>
         <span class="n">fun</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
-        <span class="nb">setattr</span><span class="p">(</span><span class="n">tstr</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">make_str_wrapper</span><span class="p">(</span><span class="n">fun</span><span class="p">))</span>
+        <span class="nb">setattr</span><span class="p">(</span><span class="n">tstr</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">tstr</span><span class="o">.</span><span class="n">make_str_wrapper</span><span class="p">(</span><span class="n">fun</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -14055,8 +14626,9 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">tstr</span><span class="p">(</span><span class="n">tstr</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__radd__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">s</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+    <span class="k">def</span> <span class="fm">__radd__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return value + self, as a `tstr` object&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">value</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -14321,20 +14893,6 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 
 </div>
 
-<div class="input_code">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn"><a href="https://docs.python.org/3/library/string.html" class="import" target="_blank">string</a></span>
-</pre></div>
-
-</div>
-</div></div>
-</div>
-</div>
-
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
@@ -14418,10 +14976,11 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>Traceback (most recent call last):
-  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_18538/3935989889.py&#34;, line 2, in &lt;module&gt;
+  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_34365/3935989889.py&#34;, line 2, in &lt;module&gt;
     bdb.sql(&#34;select year from INVENTORY&#34;)
-  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_18538/995123203.py&#34;, line 3, in sql
+  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_34365/995123203.py&#34;, line 3, in sql
     assert isinstance(s, tstr), &#34;Need a tainted string&#34;
+           ^^^^^^^^^^^^^^^^^^^
 AssertionError: Need a tainted string (expected)
 </pre>
 </div>
@@ -14431,7 +14990,7 @@ AssertionError: Need a tainted string (expected)
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><p>Additionally any user input would be originally tagged with <code>"UNTRUSTED"</code> as taint.  If we place an untrusted string into our better calculator, it will also fail:</p>
+<div class="text_cell_render border-box-sizing rendered_html"><p>Additionally, any user input would be originally tagged with <code>"UNTRUSTED"</code> as taint.  If we place an untrusted string into our better calculator, it will also fail:</p>
 </div>
 </div>
 </div>
@@ -14457,10 +15016,11 @@ AssertionError: Need a tainted string (expected)
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>Traceback (most recent call last):
-  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_18538/3307042773.py&#34;, line 3, in &lt;module&gt;
+  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_34365/3307042773.py&#34;, line 3, in &lt;module&gt;
     bdb.sql(bad_user_input)
-  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_18538/995123203.py&#34;, line 4, in sql
+  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_34365/995123203.py&#34;, line 4, in sql
     assert s.taint == &#39;TRUSTED&#39;, &#34;Need a string with trusted taint&#34;
+           ^^^^^^^^^^^^^^^^^^^^
 AssertionError: Need a string with trusted taint (expected)
 </pre>
 </div>
@@ -14656,10 +15216,11 @@ AssertionError: Need a string with trusted taint (expected)
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>Traceback (most recent call last):
-  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_18538/249000876.py&#34;, line 2, in &lt;module&gt;
+  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_34365/249000876.py&#34;, line 2, in &lt;module&gt;
     bdb.sql(sanitized_input)
-  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_18538/995123203.py&#34;, line 4, in sql
+  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_34365/995123203.py&#34;, line 4, in sql
     assert s.taint == &#39;TRUSTED&#39;, &#34;Need a string with trusted taint&#34;
+           ^^^^^^^^^^^^^^^^^^^^
 AssertionError: Need a string with trusted taint (expected)
 </pre>
 </div>
@@ -14669,7 +15230,7 @@ AssertionError: Need a string with trusted taint (expected)
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><p>In a similar fashion, we can prevent SQL and code injections discussed in <a href="WebFuzzer.html">the chapter on Web fuzzing</a>.</p>
+<div class="text_cell_render border-box-sizing rendered_html"><p>Similarly, we can prevent SQL and code injections discussed in <a href="WebFuzzer.html">the chapter on Web fuzzing</a>.</p>
 </div>
 </div>
 </div>
@@ -15078,10 +15639,11 @@ AssertionError: Need a string with trusted taint (expected)
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>Traceback (most recent call last):
-  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_18538/3747050841.py&#34;, line 2, in &lt;module&gt;
+  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_34365/3747050841.py&#34;, line 2, in &lt;module&gt;
     send_back(reply)
-  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_18538/1061364539.py&#34;, line 2, in send_back
-    assert not isinstance(s, tstr) and not s.taint == &#39;SECRET&#39;
+  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_34365/3158733057.py&#34;, line 2, in send_back
+    assert not isinstance(s, tstr) and not s.taint == &#39;SECRET&#39;  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 AssertionError (expected)
 </pre>
 </div>
@@ -15091,7 +15653,7 @@ AssertionError (expected)
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><h3 id="Tracking-Character-Origins">Tracking Character Origins<a class="anchor-link" href="#Tracking-Character-Origins">&#182;</a></h3><p>Our <code>tstr</code> solution can help to identify information leaks – but it is by no means complete.  If we actually take the <code>heartbeat()</code> implementation from <a href="Fuzzer.html">the chapter on Fuzzing</a>, we will see that <em>any</em> reply is marked as <code>SECRET</code> – even those not even accessing secret memory:</p>
+<div class="text_cell_render border-box-sizing rendered_html"><p>Our <code>tstr</code> solution can help to identify information leaks – but it is by no means complete.  If we actually take the <code>heartbeat()</code> implementation from <a href="Fuzzer.html">the chapter on Fuzzing</a>, we will see that <em>any</em> reply is marked as <code>SECRET</code> – even those not even accessing secret memory:</p>
 </div>
 </div>
 </div>
@@ -15258,7 +15820,7 @@ AssertionError (expected)
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><h3 id="Tracking-Individual-Characters">Tracking Individual Characters<a class="anchor-link" href="#Tracking-Individual-Characters">&#182;</a></h3><p>Fortunately, there is a better, more generic way to solve the above problems.  The key to composition of differently tainted strings is to assign taints not only to strings, but actually to every bit of information – in our case, characters.  If every character has a taint on its own, a new composition of characters will simply inherit this very taint <em>per character</em>.  To this end, we introduce a second bit of information named <em>origin</em>.</p>
+<div class="text_cell_render border-box-sizing rendered_html"><h2 id="Tracking-Individual-Characters">Tracking Individual Characters<a class="anchor-link" href="#Tracking-Individual-Characters">&#182;</a></h2><p>Fortunately, there is a better, more generic way to solve the above problems.  The key to composition of differently tainted strings is to assign taints not only to strings, but actually to every bit of information – in our case, characters.  If every character has a taint on its own, a new composition of characters will simply inherit this very taint <em>per character</em>.  To this end, we introduce a second bit of information named <em>origin</em>.</p>
 </div>
 </div>
 </div>
@@ -15267,7 +15829,7 @@ AssertionError (expected)
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><p>Distinguishing various untrusted sources may be accomplished by origining each instance as separate instance (called <em>colors</em> in dynamic origin research). You will see an instance of this technique in the chapter on <a href="GrammarMiner.html">Grammar Mining</a>.</p>
+<div class="text_cell_render border-box-sizing rendered_html"><p>Distinguishing various untrusted sources may be accomplished by originating each instance as separate instance (called <em>colors</em> in dynamic origin research). You will see an instance of this technique in the chapter on <a href="GrammarMiner.html">Grammar Mining</a>.</p>
 </div>
 </div>
 </div>
@@ -15276,7 +15838,7 @@ AssertionError (expected)
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><p>In this section, we carry <em>character level</em> origins. That is, given a fragment that resulted from a portion of the original origined string, one will be able to tell which portion of the input string the fragment was taken from. In essence, each input character index from an origined source gets its own color.</p>
+<div class="text_cell_render border-box-sizing rendered_html"><p>In this section, we carry <em>character level</em> origins. That is, given a fragment that resulted from a portion of the original originated string, one will be able to tell which portion of the input string the fragment was taken from. In essence, each input character index from an originated source gets its own color.</p>
 </div>
 </div>
 </div>
@@ -15285,7 +15847,7 @@ AssertionError (expected)
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><p>More complex origining such as <em>bitmap origins</em> are possible where a single character may result from multiple origined character indexes (such as <em>checksum</em> operations on strings). We do not consider these in this chapter.</p>
+<div class="text_cell_render border-box-sizing rendered_html"><p>More complex originating such as <em>bitmap origins</em> are possible where a single character may result from multiple origined character indexes (such as <em>checksum</em> operations on strings). We do not consider these in this chapter.</p>
 </div>
 </div>
 </div>
@@ -15307,12 +15869,22 @@ AssertionError (expected)
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">ostr</span><span class="p">(</span><span class="nb">str</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Wrapper for strings, saving taint and origin information&quot;&quot;&quot;</span>
     <span class="n">DEFAULT_ORIGIN</span> <span class="o">=</span> <span class="mi">0</span>
 
     <span class="k">def</span> <span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create an ostr() instance. Used internally.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">str</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">taint</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">taint</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="n">origin</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Constructor.</span>
+<span class="sd">        `value` is the string value the `ostr` object is to be constructed from.</span>
+<span class="sd">        `taint` is an (optional) taint to be propagated to derived strings.</span>
+<span class="sd">        `origin` (optional) is either</span>
+<span class="sd">        - an integer denoting the index of the first character in `value`, or</span>
+<span class="sd">        - a list of integers denoting the origins of the characters in `value`,</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">taint</span> <span class="o">=</span> <span class="n">taint</span>
 
         <span class="k">if</span> <span class="n">origin</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -15326,6 +15898,15 @@ AssertionError (expected)
 
 </div>
 </div></div>
+</div>
+</div>
+
+<div class="input_markdown">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html"><p>As with <code>tstr</code>, above, we implement methods for conversion into (regular) Python strings:</p>
+</div>
+</div>
 </div>
 </div>
 
@@ -15359,6 +15940,7 @@ AssertionError (expected)
         <span class="n">origin</span> <span class="o">=</span> <span class="p">[</span><span class="n">ostr</span><span class="o">.</span><span class="n">UNKNOWN_ORIGIN</span><span class="p">]</span>
         <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">o</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">origin</span><span class="p">):</span>
             <span class="n">origin</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">o</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">s</span><span class="p">))</span> <span class="o">-</span> <span class="mi">2</span><span class="p">))</span>
+
         <span class="n">origin</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ostr</span><span class="o">.</span><span class="n">UNKNOWN_ORIGIN</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ostr</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span> <span class="n">taint</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">taint</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="n">origin</span><span class="p">)</span>
 </pre></div>
@@ -15399,8 +15981,8 @@ AssertionError (expected)
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">thello</span> <span class="o">=</span> <span class="n">ostr</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span>
-<span class="k">assert</span> <span class="n">thello</span><span class="o">.</span><span class="n">origin</span> <span class="o">==</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">othello</span> <span class="o">=</span> <span class="n">ostr</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">othello</span><span class="o">.</span><span class="n">origin</span> <span class="o">==</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 </pre></div>
 
 </div>
@@ -15484,7 +16066,7 @@ AssertionError (expected)
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">thello</span><span class="p">))</span> <span class="o">==</span> <span class="nb">str</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">othello</span><span class="p">))</span> <span class="o">==</span> <span class="nb">str</span>
 </pre></div>
 
 </div>
@@ -15507,7 +16089,7 @@ AssertionError (expected)
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">repr</span><span class="p">(</span><span class="n">thello</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">repr</span><span class="p">(</span><span class="n">othello</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -15530,7 +16112,7 @@ AssertionError (expected)
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">repr</span><span class="p">(</span><span class="n">thello</span><span class="p">)</span><span class="o">.</span><span class="n">origin</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">repr</span><span class="p">(</span><span class="n">othello</span><span class="p">)</span><span class="o">.</span><span class="n">origin</span>
 </pre></div>
 
 </div>
@@ -15602,8 +16184,8 @@ AssertionError (expected)
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">thello</span> <span class="o">=</span> <span class="n">ostr</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">)</span>
-<span class="k">assert</span> <span class="n">thello</span><span class="o">.</span><span class="n">has_origin</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">othello</span> <span class="o">=</span> <span class="n">ostr</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">othello</span><span class="o">.</span><span class="n">has_origin</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -15617,8 +16199,8 @@ AssertionError (expected)
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">thello</span><span class="o">.</span><span class="n">clear_origin</span><span class="p">()</span>
-<span class="k">assert</span> <span class="ow">not</span> <span class="n">thello</span><span class="o">.</span><span class="n">has_origin</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">othello</span><span class="o">.</span><span class="n">clear_origin</span><span class="p">()</span>
+<span class="k">assert</span> <span class="ow">not</span> <span class="n">othello</span><span class="o">.</span><span class="n">has_origin</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -15635,10 +16217,13 @@ AssertionError (expected)
 </div>
 </div>
 
+<details id="Excursion:-Implementing-String-Methods">
+<summary>Implementing String Methods</summary>
+
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><h4 id="Create">Create<a class="anchor-link" href="#Create">&#182;</a></h4><p>We need to create new substrings that are wrapped in <code>ostr</code> objects. However, we also want to allow our subclasses to create their own instances. Hence we again provide a <code>create()</code> method that produces a new <code>ostr</code> instance.</p>
+<div class="text_cell_render border-box-sizing rendered_html"><h4 id="Create">Create<a class="anchor-link" href="#Create">&#182;</a></h4><p>We need to create new substrings that are wrapped in <code>ostr</code> objects. However, we also want to allow our subclasses to create their own instances. Hence, we again provide a <code>create()</code> method that produces a new <code>ostr</code> instance.</p>
 </div>
 </div>
 </div>
@@ -15666,8 +16251,8 @@ AssertionError (expected)
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">thello</span> <span class="o">=</span> <span class="n">ostr</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="n">taint</span><span class="o">=</span><span class="s1">&#39;HIGH&#39;</span><span class="p">)</span>
-<span class="n">tworld</span> <span class="o">=</span> <span class="n">thello</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;world&#39;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">othello</span> <span class="o">=</span> <span class="n">ostr</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="n">taint</span><span class="o">=</span><span class="s1">&#39;HIGH&#39;</span><span class="p">)</span>
+<span class="n">otworld</span> <span class="o">=</span> <span class="n">othello</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;world&#39;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -15681,7 +16266,7 @@ AssertionError (expected)
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tworld</span><span class="o">.</span><span class="n">origin</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">otworld</span><span class="o">.</span><span class="n">origin</span>
 </pre></div>
 
 </div>
@@ -15704,7 +16289,7 @@ AssertionError (expected)
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tworld</span><span class="o">.</span><span class="n">taint</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">otworld</span><span class="o">.</span><span class="n">taint</span>
 </pre></div>
 
 </div>
@@ -15727,7 +16312,7 @@ AssertionError (expected)
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="p">(</span><span class="n">thello</span><span class="o">.</span><span class="n">origin</span><span class="p">,</span> <span class="n">tworld</span><span class="o">.</span><span class="n">origin</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="p">(</span><span class="n">othello</span><span class="o">.</span><span class="n">origin</span><span class="p">,</span> <span class="n">otworld</span><span class="o">.</span><span class="n">origin</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span>
     <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
 </pre></div>
 
@@ -15774,9 +16359,9 @@ AssertionError (expected)
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hello</span> <span class="o">=</span> <span class="n">ostr</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="n">taint</span><span class="o">=</span><span class="s1">&#39;HIGH&#39;</span><span class="p">)</span>
-<span class="k">assert</span> <span class="p">(</span><span class="n">hello</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">hello</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">==</span> <span class="p">(</span><span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
-<span class="n">hello</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">taint</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ohello</span> <span class="o">=</span> <span class="n">ostr</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="n">taint</span><span class="o">=</span><span class="s1">&#39;HIGH&#39;</span><span class="p">)</span>
+<span class="k">assert</span> <span class="p">(</span><span class="n">ohello</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ohello</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">==</span> <span class="p">(</span><span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">ohello</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">taint</span>
 </pre></div>
 
 </div>
@@ -16004,8 +16589,8 @@ AssertionError (expected)
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">thello</span> <span class="o">=</span> <span class="n">ostr</span><span class="p">(</span><span class="s1">&#39;hello world&#39;</span><span class="p">,</span> <span class="n">taint</span><span class="o">=</span><span class="s1">&#39;LOW&#39;</span><span class="p">)</span>
-<span class="n">thello</span> <span class="o">==</span> <span class="s1">&#39;hello world&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">othello</span> <span class="o">=</span> <span class="n">ostr</span><span class="p">(</span><span class="s1">&#39;hello world&#39;</span><span class="p">,</span> <span class="n">taint</span><span class="o">=</span><span class="s1">&#39;LOW&#39;</span><span class="p">)</span>
+<span class="n">othello</span> <span class="o">==</span> <span class="s1">&#39;hello world&#39;</span>
 </pre></div>
 
 </div>
@@ -16028,7 +16613,7 @@ AssertionError (expected)
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">thello</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">taint</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">othello</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">taint</span>
 </pre></div>
 
 </div>
@@ -16100,10 +16685,10 @@ AssertionError (expected)
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">thello</span> <span class="o">=</span> <span class="n">ostr</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">)</span>
-<span class="n">tworld</span> <span class="o">=</span> <span class="n">ostr</span><span class="p">(</span><span class="s2">&quot;world&quot;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
-<span class="n">thw</span> <span class="o">=</span> <span class="n">thello</span> <span class="o">+</span> <span class="n">tworld</span>
-<span class="k">assert</span> <span class="n">thw</span><span class="o">.</span><span class="n">origin</span> <span class="o">==</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">othello</span> <span class="o">=</span> <span class="n">ostr</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">)</span>
+<span class="n">otworld</span> <span class="o">=</span> <span class="n">ostr</span><span class="p">(</span><span class="s2">&quot;world&quot;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">othw</span> <span class="o">=</span> <span class="n">othello</span> <span class="o">+</span> <span class="n">otworld</span>
+<span class="k">assert</span> <span class="n">othw</span><span class="o">.</span><span class="n">origin</span> <span class="o">==</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
 </pre></div>
 
 </div>
@@ -16127,7 +16712,7 @@ AssertionError (expected)
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">space</span> <span class="o">=</span> <span class="s2">&quot;  &quot;</span>
-<span class="n">th_w</span> <span class="o">=</span> <span class="n">thello</span> <span class="o">+</span> <span class="n">space</span> <span class="o">+</span> <span class="n">tworld</span>
+<span class="n">th_w</span> <span class="o">=</span> <span class="n">othello</span> <span class="o">+</span> <span class="n">space</span> <span class="o">+</span> <span class="n">otworld</span>
 <span class="k">assert</span> <span class="n">th_w</span><span class="o">.</span><span class="n">origin</span> <span class="o">==</span> <span class="p">[</span>
     <span class="mi">0</span><span class="p">,</span>
     <span class="mi">1</span><span class="p">,</span>
@@ -16191,8 +16776,8 @@ AssertionError (expected)
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">shello</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span>
-<span class="n">tworld</span> <span class="o">=</span> <span class="n">ostr</span><span class="p">(</span><span class="s2">&quot;world&quot;</span><span class="p">)</span>
-<span class="n">thw</span> <span class="o">=</span> <span class="n">shello</span> <span class="o">+</span> <span class="n">tworld</span>
+<span class="n">otworld</span> <span class="o">=</span> <span class="n">ostr</span><span class="p">(</span><span class="s2">&quot;world&quot;</span><span class="p">)</span>
+<span class="n">thw</span> <span class="o">=</span> <span class="n">shello</span> <span class="o">+</span> <span class="n">otworld</span>
 <span class="k">assert</span> <span class="n">thw</span><span class="o">.</span><span class="n">origin</span> <span class="o">==</span> <span class="p">[</span><span class="n">ostr</span><span class="o">.</span><span class="n">UNKNOWN_ORIGIN</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">shello</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 </pre></div>
 
@@ -16204,7 +16789,7 @@ AssertionError (expected)
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><p>These methods: <code>slicing</code> and <code>concatenation</code> is sufficient to implement other string methods that result in a string, and does not change the character underneath (i.e no case change). Hence, we look at a helper method next.</p>
+<div class="text_cell_render border-box-sizing rendered_html"><p>These methods: <code>slicing</code> and <code>concatenation</code> is sufficient to implement other string methods that result in a string, and does not change the character underneath (i.e. no case change). Hence, we look at a helper method next.</p>
 </div>
 </div>
 </div>
@@ -16213,7 +16798,7 @@ AssertionError (expected)
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><h4 id="Extract-Origin-String">Extract Origin String<a class="anchor-link" href="#Extract-Origin-String">&#182;</a></h4><p>Given a specific input index, the method <code>x()</code> extracts the corresponding origined portion from a <code>ostr</code>. As a convenience it supports <code>slices</code> along with <code>ints</code>.</p>
+<div class="text_cell_render border-box-sizing rendered_html"><h4 id="Extract-Origin-String">Extract Origin String<a class="anchor-link" href="#Extract-Origin-String">&#182;</a></h4><p>Given a specific input index, the method <code>x()</code> extracts the corresponding originated portion from a <code>ostr</code>. As a convenience it supports <code>slices</code> along with <code>ints</code>.</p>
 </div>
 </div>
 </div>
@@ -16230,6 +16815,7 @@ AssertionError (expected)
         <span class="k">pass</span>
 
     <span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Extract substring at index/slice `i`&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">origin</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">origin</span><span class="o">.</span><span class="n">TaintException</span><span class="p">(</span><span class="s1">&#39;Invalid request idx&#39;</span><span class="p">)</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
@@ -16318,6 +16904,7 @@ AssertionError (expected)
             <span class="n">b</span><span class="p">,</span> <span class="n">ostr</span><span class="p">)</span> <span class="k">else</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">UNKNOWN_ORIGIN</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
         <span class="n">mystr</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+
         <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">n</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="n">n</span><span class="p">:</span>
                 <span class="k">break</span>
@@ -16329,6 +16916,7 @@ AssertionError (expected)
             <span class="n">partA</span><span class="p">,</span> <span class="n">partB</span> <span class="o">=</span> <span class="n">old_origin</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">idx</span><span class="p">],</span> <span class="n">old_origin</span><span class="p">[</span><span class="n">last</span><span class="p">:]</span>
             <span class="n">old_origin</span> <span class="o">=</span> <span class="n">partA</span> <span class="o">+</span> <span class="n">b_origin</span> <span class="o">+</span> <span class="n">partB</span>
             <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">mystr</span><span class="p">,</span> <span class="n">old_origin</span><span class="p">)</span>
 </pre></div>
 
@@ -16346,9 +16934,9 @@ AssertionError (expected)
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_str</span> <span class="o">=</span> <span class="n">ostr</span><span class="p">(</span><span class="s2">&quot;aa cde aa&quot;</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">my_str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;aa&#39;</span><span class="p">,</span> <span class="s1">&#39;bb&#39;</span><span class="p">)</span>
 <span class="k">assert</span> <span class="n">res</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">origin</span> <span class="o">==</span> <span class="p">(</span><span class="s1">&#39;bb&#39;</span><span class="p">,</span> <span class="s1">&#39;cde&#39;</span><span class="p">,</span> <span class="s1">&#39;bb&#39;</span><span class="p">,</span>
-                           <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">UNKNOWN_ORIGIN</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">UNKNOWN_ORIGIN</span><span class="p">,</span>
+                           <span class="p">[</span><span class="n">ostr</span><span class="o">.</span><span class="n">UNKNOWN_ORIGIN</span><span class="p">,</span> <span class="n">ostr</span><span class="o">.</span><span class="n">UNKNOWN_ORIGIN</span><span class="p">,</span>
                             <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span>
-                            <span class="bp">self</span><span class="o">.</span><span class="n">UNKNOWN_ORIGIN</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">UNKNOWN_ORIGIN</span><span class="p">])</span>
+                            <span class="n">ostr</span><span class="o">.</span><span class="n">UNKNOWN_ORIGIN</span><span class="p">,</span> <span class="n">ostr</span><span class="o">.</span><span class="n">UNKNOWN_ORIGIN</span><span class="p">])</span>
 </pre></div>
 
 </div>
@@ -16607,9 +17195,9 @@ AssertionError (expected)
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="s2">&quot;ab</span><span class="se">\t</span><span class="s2">cd&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_s</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="s2">&quot;ab</span><span class="se">\t</span><span class="s2">cd&quot;</span><span class="p">)</span>
 <span class="n">my_ostr</span> <span class="o">=</span> <span class="n">ostr</span><span class="p">(</span><span class="s2">&quot;ab</span><span class="se">\t</span><span class="s2">cd&quot;</span><span class="p">)</span>
-<span class="n">v1</span> <span class="o">=</span> <span class="n">my_str</span><span class="o">.</span><span class="n">expandtabs</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">v1</span> <span class="o">=</span> <span class="n">my_s</span><span class="o">.</span><span class="n">expandtabs</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">v2</span> <span class="o">=</span> <span class="n">my_ostr</span><span class="o">.</span><span class="n">expandtabs</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
 
@@ -17029,7 +17617,7 @@ AssertionError (expected)
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">make_str_wrapper</span><span class="p">(</span><span class="n">fun</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">make_basic_str_wrapper</span><span class="p">(</span><span class="n">fun</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">proxy</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="n">res</span> <span class="o">=</span> <span class="n">fun</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">res</span>
@@ -17076,13 +17664,13 @@ AssertionError (expected)
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">informationflow_init_2</span><span class="p">():</span>
-    <span class="n">ostr_members</span> <span class="o">=</span> <span class="p">[</span><span class="n">name</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">fn</span> <span class="ow">in</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getmembers</span><span class="p">(</span><span class="n">ostr</span><span class="p">,</span> <span class="n">callable</span><span class="p">)</span>
+    <span class="n">ostr_members</span> <span class="o">=</span> <span class="p">[</span><span class="n">name</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">fn</span> <span class="ow">in</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getmembers</span><span class="p">(</span><span class="n">ostr</span><span class="p">,</span> <span class="nb">callable</span><span class="p">)</span>
                     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">types</span><span class="o">.</span><span class="n">FunctionType</span><span class="p">)</span> <span class="ow">and</span> <span class="n">fn</span><span class="o">.</span><span class="vm">__qualname__</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;ostr&#39;</span><span class="p">)]</span>
 
-    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">fn</span> <span class="ow">in</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getmembers</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">callable</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">fn</span> <span class="ow">in</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getmembers</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">callable</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">set</span><span class="p">([</span><span class="s1">&#39;__class__&#39;</span><span class="p">,</span> <span class="s1">&#39;__new__&#39;</span><span class="p">,</span> <span class="s1">&#39;__str__&#39;</span><span class="p">,</span> <span class="s1">&#39;__init__&#39;</span><span class="p">,</span>
                             <span class="s1">&#39;__repr__&#39;</span><span class="p">,</span> <span class="s1">&#39;__getattribute__&#39;</span><span class="p">])</span> <span class="o">|</span> <span class="nb">set</span><span class="p">(</span><span class="n">ostr_members</span><span class="p">):</span>
-            <span class="nb">setattr</span><span class="p">(</span><span class="n">ostr</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">make_str_wrapper</span><span class="p">(</span><span class="n">fn</span><span class="p">))</span>
+            <span class="nb">setattr</span><span class="p">(</span><span class="n">ostr</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">make_basic_str_wrapper</span><span class="p">(</span><span class="n">fn</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -17161,7 +17749,7 @@ AssertionError (expected)
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">informationflow_init_3</span><span class="p">():</span>
-    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">fn</span> <span class="ow">in</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getmembers</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">callable</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">fn</span> <span class="ow">in</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getmembers</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">callable</span><span class="p">):</span>
         <span class="c1"># Omitted &#39;splitlines&#39; as this is needed for formatting output in</span>
         <span class="c1"># IPython/Jupyter</span>
         <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;__format__&#39;</span><span class="p">,</span> <span class="s1">&#39;format_map&#39;</span><span class="p">,</span> <span class="s1">&#39;format&#39;</span><span class="p">,</span>
@@ -17205,11 +17793,13 @@ AssertionError (expected)
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><p>While generating proxy wrappers for string operations can handle most common cases of transmission of information flow, some of the operations involving strings can not be overridden. For example, consider the following.</p>
+<div class="text_cell_render border-box-sizing rendered_html"><p>While generating proxy wrappers for string operations can handle most common cases of transmission of information flow, some operations involving strings can not be overridden. For example, consider the following.</p>
 </div>
 </div>
 </div>
 </div>
+
+</details>
 
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
@@ -17481,8 +18071,8 @@ AssertionError (expected)
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">heartbeat</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">memory</span><span class="o">=</span><span class="n">secret</span><span class="p">)</span>
-<span class="n">s</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hello_s</span> <span class="o">=</span> <span class="n">heartbeat</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">memory</span><span class="o">=</span><span class="n">secret</span><span class="p">)</span>
+<span class="n">hello_s</span>
 </pre></div>
 
 </div>
@@ -17505,7 +18095,21 @@ AssertionError (expected)
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">origin</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">hello_s</span><span class="p">,</span> <span class="n">ostr</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div></div>
+</div>
+</div>
+
+<div class="input_code">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">hello_s</span><span class="o">.</span><span class="n">origin</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -17537,7 +18141,7 @@ AssertionError (expected)
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">s</span><span class="o">.</span><span class="n">origin</span> <span class="o">==</span> <span class="p">[</span><span class="n">ostr</span><span class="o">.</span><span class="n">UNKNOWN_ORIGIN</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">hello_s</span><span class="o">.</span><span class="n">origin</span> <span class="o">==</span> <span class="p">[</span><span class="n">ostr</span><span class="o">.</span><span class="n">UNKNOWN_ORIGIN</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">hello_s</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -17551,7 +18155,7 @@ AssertionError (expected)
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="nb">all</span><span class="p">(</span><span class="n">origin</span> <span class="o">==</span> <span class="n">ostr</span><span class="o">.</span><span class="n">UNKNOWN_ORIGIN</span> <span class="k">for</span> <span class="n">origin</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">origin</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="nb">all</span><span class="p">(</span><span class="n">origin</span> <span class="o">==</span> <span class="n">ostr</span><span class="o">.</span><span class="n">UNKNOWN_ORIGIN</span> <span class="k">for</span> <span class="n">origin</span> <span class="ow">in</span> <span class="n">hello_s</span><span class="o">.</span><span class="n">origin</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -17565,7 +18169,7 @@ AssertionError (expected)
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">origin</span> <span class="o">&gt;=</span> <span class="n">SECRET_ORIGIN</span> <span class="k">for</span> <span class="n">origin</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">origin</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">origin</span> <span class="o">&gt;=</span> <span class="n">SECRET_ORIGIN</span> <span class="k">for</span> <span class="n">origin</span> <span class="ow">in</span> <span class="n">hello_s</span><span class="o">.</span><span class="n">origin</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -17597,8 +18201,8 @@ AssertionError (expected)
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">heartbeat</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="n">memory</span><span class="o">=</span><span class="n">secret</span><span class="p">)</span>
-<span class="n">s</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hello_s</span> <span class="o">=</span> <span class="n">heartbeat</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="n">memory</span><span class="o">=</span><span class="n">secret</span><span class="p">)</span>
+<span class="n">hello_s</span>
 </pre></div>
 
 </div>
@@ -17630,7 +18234,21 @@ AssertionError (expected)
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">origin</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">hello_s</span><span class="p">,</span> <span class="n">ostr</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div></div>
+</div>
+</div>
+
+<div class="input_code">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">hello_s</span><span class="o">.</span><span class="n">origin</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -17654,7 +18272,7 @@ AssertionError (expected)
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="n">ExpectError</span><span class="p">():</span>
-    <span class="k">assert</span> <span class="n">s</span><span class="o">.</span><span class="n">origin</span> <span class="o">==</span> <span class="p">[</span><span class="n">ostr</span><span class="o">.</span><span class="n">UNKNOWN_ORIGIN</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">hello_s</span><span class="o">.</span><span class="n">origin</span> <span class="o">==</span> <span class="p">[</span><span class="n">ostr</span><span class="o">.</span><span class="n">UNKNOWN_ORIGIN</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">hello_s</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -17666,8 +18284,9 @@ AssertionError (expected)
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>Traceback (most recent call last):
-  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_18538/2423716577.py&#34;, line 2, in &lt;module&gt;
-    assert s.origin == [ostr.UNKNOWN_ORIGIN] * len(s)
+  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_34365/2698516187.py&#34;, line 2, in &lt;module&gt;
+    assert hello_s.origin == [ostr.UNKNOWN_ORIGIN] * len(hello_s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 AssertionError (expected)
 </pre>
 </div>
@@ -17681,7 +18300,7 @@ AssertionError (expected)
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="n">ExpectError</span><span class="p">():</span>
-    <span class="k">assert</span> <span class="nb">all</span><span class="p">(</span><span class="n">origin</span> <span class="o">==</span> <span class="n">ostr</span><span class="o">.</span><span class="n">UNKNOWN_ORIGIN</span> <span class="k">for</span> <span class="n">origin</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">origin</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="nb">all</span><span class="p">(</span><span class="n">origin</span> <span class="o">==</span> <span class="n">ostr</span><span class="o">.</span><span class="n">UNKNOWN_ORIGIN</span> <span class="k">for</span> <span class="n">origin</span> <span class="ow">in</span> <span class="n">hello_s</span><span class="o">.</span><span class="n">origin</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -17693,8 +18312,9 @@ AssertionError (expected)
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>Traceback (most recent call last):
-  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_18538/3636974279.py&#34;, line 2, in &lt;module&gt;
-    assert all(origin == ostr.UNKNOWN_ORIGIN for origin in s.origin)
+  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_34365/1358366226.py&#34;, line 2, in &lt;module&gt;
+    assert all(origin == ostr.UNKNOWN_ORIGIN for origin in hello_s.origin)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 AssertionError (expected)
 </pre>
 </div>
@@ -17708,7 +18328,7 @@ AssertionError (expected)
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="n">ExpectError</span><span class="p">():</span>
-    <span class="k">assert</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">origin</span> <span class="o">&gt;=</span> <span class="n">SECRET_ORIGIN</span> <span class="k">for</span> <span class="n">origin</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">origin</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">origin</span> <span class="o">&gt;=</span> <span class="n">SECRET_ORIGIN</span> <span class="k">for</span> <span class="n">origin</span> <span class="ow">in</span> <span class="n">hello_s</span><span class="o">.</span><span class="n">origin</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -17720,8 +18340,9 @@ AssertionError (expected)
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>Traceback (most recent call last):
-  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_18538/4073057292.py&#34;, line 2, in &lt;module&gt;
-    assert not any(origin &gt;= SECRET_ORIGIN for origin in s.origin)
+  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_34365/1577803914.py&#34;, line 2, in &lt;module&gt;
+    assert not any(origin &gt;= SECRET_ORIGIN for origin in hello_s.origin)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 AssertionError (expected)
 </pre>
 </div>
@@ -17802,20 +18423,6 @@ AssertionError (expected)
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn"><a href="https://docs.python.org/3/library/random.html" class="import" target="_blank">random</a></span>
-</pre></div>
-
-</div>
-</div></div>
-</div>
-</div>
-
-<div class="input_code">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn"><a href="Grammars.html" class="import" target="_blank">Grammars</a></span> <span class="kn">import</span> <span class="n">START_SYMBOL</span>
 </pre></div>
 
 </div>
@@ -18454,8 +19061,8 @@ Tainted[_==(7==(9)!=(---5)==1)==-8]
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">thello</span> <span class="o">=</span> <span class="n">ostr</span><span class="p">(</span><span class="s2">&quot;Secret&quot;</span><span class="p">)</span>
-<span class="n">thello</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">othello</span> <span class="o">=</span> <span class="n">ostr</span><span class="p">(</span><span class="s2">&quot;Secret&quot;</span><span class="p">)</span>
+<span class="n">othello</span>
 </pre></div>
 
 </div>
@@ -18478,7 +19085,7 @@ Tainted[_==(7==(9)!=(---5)==1)==-8]
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">thello</span><span class="o">.</span><span class="n">origin</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">othello</span><span class="o">.</span><span class="n">origin</span>
 </pre></div>
 
 </div>
@@ -18522,7 +19129,7 @@ Tainted[_==(7==(9)!=(---5)==1)==-8]
 <div class="output_area">
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;Secret&#39;
+<pre>&#39;hello, world&#39;
 </pre>
 </div>
 
@@ -18547,7 +19154,7 @@ Tainted[_==(7==(9)!=(---5)==1)==-8]
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>Traceback (most recent call last):
-  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_18538/588526133.py&#34;, line 2, in &lt;module&gt;
+  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_34365/588526133.py&#34;, line 2, in &lt;module&gt;
     thello_stripped.origin
 AttributeError: &#39;str&#39; object has no attribute &#39;origin&#39; (expected)
 </pre>
@@ -18634,8 +19241,9 @@ AttributeError: &#39;str&#39; object has no attribute &#39;origin&#39; (expected
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>Traceback (most recent call last):
-  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_18538/741210424.py&#34;, line 2, in &lt;module&gt;
-    &#39;&#39;.join([hello, &#39; &#39;, world]).origin
+  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_34365/2341342688.py&#34;, line 2, in &lt;module&gt;
+    &#39;&#39;.join([hello, &#39; &#39;, world]).origin  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 AttributeError: &#39;str&#39; object has no attribute &#39;origin&#39; (expected)
 </pre>
 </div>
@@ -18693,7 +19301,7 @@ AttributeError: &#39;str&#39; object has no attribute &#39;origin&#39; (expected
 <li><p>As it comes to privacy, an untainted string should be treated as <em>possibly secret</em>, and hence not leaked out.</p>
 </li>
 </ul>
-<p>As a consequence, your program should always have two kinds of taints: one for explicitly trusted (or secret) and one for explicitly untrusted (or non-secret).  If a taint gets lost along the way, you will may have to restore it from its sources – not unlike the string methods discussed above.  The benefit is a trusted application, in which each and every information flow can be checked at runtime, with violations quickly discovered through automated tests.</p>
+<p>As a consequence, your program should always have two kinds of taints: one for explicitly trusted (or secret) and one for explicitly untrusted (or non-secret).  If a taint gets lost along the way, you may have to restore it from its sources – not unlike the string methods discussed above.  The benefit is a trusted application, in which each and every information flow can be checked at runtime, with violations quickly discovered through automated tests.</p>
 </div>
 </div>
 </div>
@@ -18703,9 +19311,9 @@ AttributeError: &#39;str&#39; object has no attribute &#39;origin&#39; (expected
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html"><h2 id="Lessons-Learned">Lessons Learned<a class="anchor-link" href="#Lessons-Learned">&#182;</a></h2><ul>
-<li><p>String-based and character-based taints allow to dynamically track the information flow from input to the internals of a system and back to the output.</p>
+<li><p>String-based and character-based taints allow dynamically tracking the information flow from input to the internals of a system and back to the output.</p>
 </li>
-<li><p>Checking taints allows to discover untrusted inputs and information leakage at runtime.</p>
+<li><p>Checking taints allows discovering untrusted inputs and information leakage at runtime.</p>
 </li>
 <li><p>Data conversions and implicit data flow may strip taint information; the resulting untainted strings should be treated as having the worst possible taint.</p>
 </li>
@@ -18761,7 +19369,7 @@ AttributeError: &#39;str&#39; object has no attribute &#39;origin&#39; (expected
 </pre></div>
 
     
-<p><div class="solution_link"><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/master?filepath=docs/notebooks/InformationFlow.ipynb#Exercises" target=_blank>Use the notebook</a> to work on the exercises and see solutions.</div></p>
+<p><div class="solution_link"><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/HEAD?labpath=docs%2Fnotebooks/InformationFlow.ipynb#Exercises" target=_blank>Use the notebook</a> to work on the exercises and see solutions.</div></p>
 </div>
 </div>
 </div>
@@ -18776,7 +19384,7 @@ AttributeError: &#39;str&#39; object has no attribute &#39;origin&#39; (expected
 </pre></div>
 
     
-<p><div class="solution_link"><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/master?filepath=docs/notebooks/InformationFlow.ipynb#Exercises" target=_blank>Use the notebook</a> to work on the exercises and see solutions.</div></p>
+<p><div class="solution_link"><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/HEAD?labpath=docs%2Fnotebooks/InformationFlow.ipynb#Exercises" target=_blank>Use the notebook</a> to work on the exercises and see solutions.</div></p>
 </div>
 </div>
 </div>
@@ -18786,12 +19394,12 @@ AttributeError: &#39;str&#39; object has no attribute &#39;origin&#39; (expected
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html"><h4 id="Part-3:-Passing-taints-from-integers-to-strings">Part 3: Passing taints from integers to strings<a class="anchor-link" href="#Part-3:-Passing-taints-from-integers-to-strings">&#182;</a></h4><p>Converting a tainted integer into a string (using <code>repr()</code>) should yield a tainted string:</p>
-<div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="nb">repr</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="k">assert</span> <span class="n">s</span><span class="o">.</span><span class="n">taint</span> <span class="o">==</span> <span class="s1">&#39;SECRET&#39;</span>
+<div class="highlight"><pre><span></span><span class="n">x_s</span> <span class="o">=</span> <span class="nb">repr</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">x_s</span><span class="o">.</span><span class="n">taint</span> <span class="o">==</span> <span class="s1">&#39;SECRET&#39;</span>
 </pre></div>
 
     
-<p><div class="solution_link"><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/master?filepath=docs/notebooks/InformationFlow.ipynb#Exercises" target=_blank>Use the notebook</a> to work on the exercises and see solutions.</div></p>
+<p><div class="solution_link"><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/HEAD?labpath=docs%2Fnotebooks/InformationFlow.ipynb#Exercises" target=_blank>Use the notebook</a> to work on the exercises and see solutions.</div></p>
 </div>
 </div>
 </div>
@@ -18808,7 +19416,7 @@ AttributeError: &#39;str&#39; object has no attribute &#39;origin&#39; (expected
 </pre></div>
 
     
-<p><div class="solution_link"><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/master?filepath=docs/notebooks/InformationFlow.ipynb#Exercises" target=_blank>Use the notebook</a> to work on the exercises and see solutions.</div></p>
+<p><div class="solution_link"><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/HEAD?labpath=docs%2Fnotebooks/InformationFlow.ipynb#Exercises" target=_blank>Use the notebook</a> to work on the exercises and see solutions.</div></p>
 </div>
 </div>
 </div>
@@ -18820,7 +19428,7 @@ AttributeError: &#39;str&#39; object has no attribute &#39;origin&#39; (expected
 <div class="text_cell_render border-box-sizing rendered_html"><h3 id="Exercise-2:-Information-Flow-Testing">Exercise 2: Information Flow Testing<a class="anchor-link" href="#Exercise-2:-Information-Flow-Testing">&#182;</a></h3><p>Generate tests that ensure a <em>maximum</em> of information flow, propagating specific taints as much as possible.  Implement an appropriate fitness function for <a href="SearchBasedFuzzer.html">search-based testing</a> and let the search-based fuzzer search for solutions.</p>
 
     
-<p><div class="solution_link"><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/master?filepath=docs/notebooks/InformationFlow.ipynb#Exercises" target=_blank>Use the notebook</a> to work on the exercises and see solutions.</div></p>
+<p><div class="solution_link"><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/HEAD?labpath=docs%2Fnotebooks/InformationFlow.ipynb#Exercises" target=_blank>Use the notebook</a> to work on the exercises and see solutions.</div></p>
 </div>
 </div>
 </div>
@@ -18832,7 +19440,7 @@ AttributeError: &#39;str&#39; object has no attribute &#39;origin&#39; (expected
 The content of this project is licensed under the
 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target=_blank>Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 The source code that is part of the content, as well as the source code used to format and display that content is licensed under the <a href="https://github.com/uds-se/fuzzingbook/blob/master/LICENSE.md#mit-license">MIT License</a>.
-<a href="https://github.com/uds-se/fuzzingbook/commits/master/notebooks/InformationFlow.ipynb" target=_blank)>Last change: 2020-10-13 15:12:21+02:00</a> &bull; 
+<a href="https://github.com/uds-se/fuzzingbook/commits/master/notebooks/InformationFlow.ipynb" target=_blank)>Last change: 2024-11-09 17:07:29+01:00</a> &bull; 
 <a href="#citation" id="cite" onclick="revealCitation()">Cite</a> &bull;
 <a href="https://cispa.de/en/impressum" target=_blank>Imprint</a>
 </p>
@@ -18848,19 +19456,19 @@ function revealCitation() {
 <a name="citation"></a>
 <h2>How to Cite this Work</h2>
 <p>
-Andreas Zeller, Rahul Gopinath, Marcel Böhme, Gordon Fraser, and Christian Holler: "<a href="https://www.fuzzingbook.org/html/InformationFlow.html">Tracking Information Flow</a>".  In Andreas Zeller, Rahul Gopinath, Marcel Böhme, Gordon Fraser, and Christian Holler, "<a href="https://www.fuzzingbook.org/">The Fuzzing Book</a>", <a href="https://www.fuzzingbook.org/html/InformationFlow.html">https://www.fuzzingbook.org/html/InformationFlow.html</a>.  Retrieved 2020-10-13 15:12:21+02:00.
+Andreas Zeller, Rahul Gopinath, Marcel Böhme, Gordon Fraser, and Christian Holler: "<a href="https://www.fuzzingbook.org/html/InformationFlow.html">Tracking Information Flow</a>".  In Andreas Zeller, Rahul Gopinath, Marcel Böhme, Gordon Fraser, and Christian Holler, "<a href="https://www.fuzzingbook.org/">The Fuzzing Book</a>", <a href="https://www.fuzzingbook.org/html/InformationFlow.html">https://www.fuzzingbook.org/html/InformationFlow.html</a>.  Retrieved 2024-11-09 17:07:29+01:00.
 </p>
 <pre>
-@incollection{fuzzingbook2020:InformationFlow,
+@incollection{fuzzingbook2024:InformationFlow,
     author = {Andreas Zeller and Rahul Gopinath and Marcel B{\"o}hme and Gordon Fraser and Christian Holler},
     booktitle = {The Fuzzing Book},
     title = {Tracking Information Flow},
-    year = {2020},
+    year = {2024},
     publisher = {CISPA Helmholtz Center for Information Security},
     howpublished = {\url{https://www.fuzzingbook.org/html/InformationFlow.html}},
-    note = {Retrieved 2020-10-13 15:12:21+02:00},
+    note = {Retrieved 2024-11-09 17:07:29+01:00},
     url = {https://www.fuzzingbook.org/html/InformationFlow.html},
-    urldate = {2020-10-13 15:12:21+02:00}
+    urldate = {2024-11-09 17:07:29+01:00}
 }
 </pre>
 </div>

@@ -3,9 +3,9 @@
 
 # "Timer" - a chapter of "The Fuzzing Book"
 # Web site: https://www.fuzzingbook.org/html/Timer.html
-# Last change: 2021-06-02 17:56:35+02:00
+# Last change: 2025-10-26 19:00:30+01:00
 #
-# Copyright (c) 2021 CISPA Helmholtz Center for Information Security
+# Copyright (c) 2021-2025 CISPA Helmholtz Center for Information Security
 # Copyright (c) 2018-2020 Saarland University, authors, and contributors
 #
 # Permission is hereby granted, free of charge, to any person obtaining a
@@ -37,18 +37,12 @@ This file can be _executed_ as a script, running all experiments:
 or _imported_ as a package, providing classes, functions, and constants:
 
     >>> from fuzzingbook.Timer import <identifier>
-    
+
 but before you do so, _read_ it and _interact_ with it at:
 
     https://www.fuzzingbook.org/html/Timer.html
 
-The `Timer` class allows you to measure elapsed real time (in fractional seconds).  Its typical usage is in conjunction with a `with` clause:
-
->>> with Timer() as t:
->>>     some_long_running_function()
->>> t.elapsed_time()
-0.04725892299757106
-
+**Note**: The examples in this section only work after the rest of the cells have been executed.
 
 For more details, source, and documentation, see
 "The Fuzzing Book - Timer"
@@ -66,14 +60,6 @@ if __name__ == '__main__' and __package__ is None:
 
 if __name__ == '__main__':
     print('# Timer')
-
-
-
-## Synopsis
-## --------
-
-if __name__ == '__main__':
-    print('\n## Synopsis')
 
 
 
@@ -145,6 +131,14 @@ if __name__ == '__main__':
             some_long_running_function()
             print(t.elapsed_time())
 
+## Lessons Learned
+## ---------------
+
+if __name__ == '__main__':
+    print('\n## Lessons Learned')
+
+
+
 ## Synopsis
 ## --------
 
@@ -157,11 +151,3 @@ if __name__ == '__main__':
     with Timer() as t:
         some_long_running_function()
     t.elapsed_time()
-
-## Lessons Learned
-## ---------------
-
-if __name__ == '__main__':
-    print('\n## Lessons Learned')
-
-

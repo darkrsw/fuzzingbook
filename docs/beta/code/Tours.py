@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# "Tours through the Book" - a chapter of "The Fuzzing Book"
+# "Sitemap" - a chapter of "The Fuzzing Book"
 # Web site: https://www.fuzzingbook.org/html/Tours.html
-# Last change: 2021-11-03 12:59:41+01:00
+# Last change: 2025-10-26 19:00:01+01:00
 #
-# Copyright (c) 2021 CISPA Helmholtz Center for Information Security
+# Copyright (c) 2021-2025 CISPA Helmholtz Center for Information Security
 # Copyright (c) 2018-2020 Saarland University, authors, and contributors
 #
 # Permission is hereby granted, free of charge, to any person obtaining a
@@ -28,7 +28,7 @@
 # SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 r'''
-The Fuzzing Book - Tours through the Book
+The Fuzzing Book - Sitemap
 
 This file can be _executed_ as a script, running all experiments:
 
@@ -37,14 +37,14 @@ This file can be _executed_ as a script, running all experiments:
 or _imported_ as a package, providing classes, functions, and constants:
 
     >>> from fuzzingbook.Tours import <identifier>
-    
+
 but before you do so, _read_ it and _interact_ with it at:
 
     https://www.fuzzingbook.org/html/Tours.html
 
 
 For more details, source, and documentation, see
-"The Fuzzing Book - Tours through the Book"
+"The Fuzzing Book - Sitemap"
 at https://www.fuzzingbook.org/html/Tours.html
 '''
 
@@ -54,22 +54,20 @@ if __name__ == '__main__' and __package__ is None:
     __package__ = 'fuzzingbook'
 
 
-# Tours through the Book
-# ======================
+# Sitemap
+# =======
 
 if __name__ == '__main__':
-    print('# Tours through the Book')
+    print('# Sitemap')
 
 
 
-from .bookutils import rich_output
+from .bookutils import rich_output, InteractiveSVG
 
 if __name__ == '__main__':
+    sitemap = None
     if rich_output():
-        from IPython.display import SVG
-        sitemap = SVG(filename='PICS/Sitemap.svg')
-    else:
-        sitemap = None
+        sitemap = InteractiveSVG(filename='PICS/Sitemap.svg')
     sitemap
 
 ## The Pragmatic Programmer Tour
@@ -101,6 +99,22 @@ if __name__ == '__main__':
 
 if __name__ == '__main__':
     print('\n## The Graduate Tour')
+
+
+
+## The Black-Box Tour
+## ------------------
+
+if __name__ == '__main__':
+    print('\n## The Black-Box Tour')
+
+
+
+## The White-Box Tour
+## ------------------
+
+if __name__ == '__main__':
+    print('\n## The White-Box Tour')
 
 
 

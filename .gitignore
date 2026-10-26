@@ -12,10 +12,10 @@ html/*_files/
 beta/html/*.html
 beta/html/*_files/
 
-code/*.py
-code/*.py.out
-beta/code/*.py
-beta/code/*.py.out
+python_code/*.py
+python_code/*.py.out
+beta/python_code/*.py
+beta/python_code/*.py.out
 
 mypy/*.py
 
@@ -27,6 +27,18 @@ beta/slides/*_files/
 pdf/*.pdf
 pdf/*.tex
 pdf/*_files/
+pdf/*.aux
+pdf/*.bbl
+pdf/*.fdb_latexmk
+pdf/*.fls
+pdf/*.frm
+pdf/*.lof
+pdf/*.log
+pdf/*.lot
+pdf/*.out
+pdf/*.toc
+pdf/*.xdv
+
 
 *.blg
 
@@ -93,11 +105,27 @@ papers
 course
 udacity
 videos
-IllustratedCode.*
 
+# Scripts and links
 *.command
 *.webloc
+
+# Course files
 notebooks/CISPACourse.ipynb
 notebooks/BugBoard.ipynb
 notebooks/Todos.ipynb
 notebooks/SimpleGrammarMiner.ipynb
+
+# Jupyter Book
+_build/**
+
+# Pip install
+build/**
+python_code/fuzzingbook.egg-info/
+
+# PyCharm settings
+.idea/
+
+# VS Code settings
+.vscode/
+*.code-workspace

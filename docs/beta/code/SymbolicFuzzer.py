@@ -3,9 +3,9 @@
 
 # "Symbolic Fuzzing" - a chapter of "The Fuzzing Book"
 # Web site: https://www.fuzzingbook.org/html/SymbolicFuzzer.html
-# Last change: 2021-10-14 18:51:07+02:00
+# Last change: 2025-10-26 19:00:30+01:00
 #
-# Copyright (c) 2021 CISPA Helmholtz Center for Information Security
+# Copyright (c) 2021-2025 CISPA Helmholtz Center for Information Security
 # Copyright (c) 2018-2020 Saarland University, authors, and contributors
 #
 # Permission is hereby granted, free of charge, to any person obtaining a
@@ -37,29 +37,12 @@ This file can be _executed_ as a script, running all experiments:
 or _imported_ as a package, providing classes, functions, and constants:
 
     >>> from fuzzingbook.SymbolicFuzzer import <identifier>
-    
+
 but before you do so, _read_ it and _interact_ with it at:
 
     https://www.fuzzingbook.org/html/SymbolicFuzzer.html
 
-This chapter provides an implementation of a symbolic fuzzing engine `AdvancedSymbolicFuzzer`. The fuzzer uses symbolic execution to exhaustively explore paths in the program to a limited depth, and generate inputs that will reach these paths. Given a program to explore (`gcd` here), the fuzzer can be used as follows:
-
->>> gcd_fuzzer = AdvancedSymbolicFuzzer(gcd, max_tries=10, max_iter=10, max_depth=10)
->>> for i in range(10):
->>>     r = gcd_fuzzer.fuzz()
->>>     print(r)
-{'a': 5, 'b': 3}
-{'a': 1, 'b': 4}
-{'a': 4, 'b': 5}
-{'a': 2, 'b': -4}
-{'a': 3, 'b': 4}
-{'a': 6, 'b': 6}
-{'a': 15, 'b': 7}
-{'a': 4, 'b': 8}
-{'a': 16, 'b': 16}
-{'a': 7, 'b': 2}
-
-
+**Note**: The examples in this section only work after the rest of the cells have been executed.
 
 For more details, source, and documentation, see
 "The Fuzzing Book - Symbolic Fuzzing"
@@ -80,13 +63,16 @@ if __name__ == '__main__':
 
 
 
-## Synopsis
-## --------
+if __name__ == '__main__':
+    from .bookutils import YouTubeVideo
+    YouTubeVideo('AJfRBF8NEWU')
+
+import sys
 
 if __name__ == '__main__':
-    print('\n## Synopsis')
-
-
+    if sys.version_info >= (3, 12):
+        print("This code requires Python 3.11 or earlier")
+        sys.exit(0)
 
 ## Obtaining Path Conditions for Coverage
 ## --------------------------------------
@@ -96,7 +82,7 @@ if __name__ == '__main__':
 
 
 
-def check_triangle(a: int, b: int, c: int) -> int:
+def check_triangle(a: int, b: int, c: int) -> str:
     if a == b:
         if a == c:
             if b == c:
@@ -126,14 +112,12 @@ if __name__ == '__main__':
     import random
     random.seed(2001)
 
-from .ControlFlow import PyCFG, to_graph, gen_cfg
-
 import inspect
 
-from graphviz import Source
+from .ControlFlow import PyCFG, to_graph, gen_cfg
 
 def show_cfg(fn, **kwargs):
-    return Source(to_graph(gen_cfg(inspect.getsource(fn)), **kwargs))
+    return to_graph(gen_cfg(inspect.getsource(fn)), **kwargs)
 
 if __name__ == '__main__':
     show_cfg(check_triangle)
@@ -148,7 +132,14 @@ if __name__ == '__main__':
         '<path 6>': ([1, 2, 11, 17], 'Isosceles'),
     }
 
-import z3
+import z3  # type: ignore
+
+if __name__ == '__main__':
+    z3_ver = z3.get_version()
+    print(z3_ver)
+
+if __name__ == '__main__':
+    assert z3_ver >= (4, 8, 6, 0), "Please check z3 version"
 
 def get_annotations(fn):
     sig = inspect.signature(fn)
@@ -265,7 +256,7 @@ if __name__ == '__main__':
 
 
 
-class ArcCoverage(ArcCoverage):
+class VisualizedArcCoverage(ArcCoverage):
     def show_coverage(self, fn):
         src = fn if isinstance(fn, str) else inspect.getsource(fn)
         covered = set([lineno for method, lineno in self._trace])
@@ -273,7 +264,7 @@ class ArcCoverage(ArcCoverage):
             print('%s %2d: %s' % ('#' if i + 1 in covered else ' ', i + 1, s))
 
 if __name__ == '__main__':
-    with ArcCoverage() as cov:
+    with VisualizedArcCoverage() as cov:
         assert check_triangle(0, 0, 0) == 'Equilateral'
         assert check_triangle(1, 1, 0) == 'Isosceles'
         assert check_triangle(1, 2, 1) == 'Isosceles'
@@ -292,9 +283,9 @@ if __name__ == '__main__':
 
 def abs_value(x: float) -> float:
     if x < 0:
-        v: float = -x
+        v: float = -x  # type: ignore
     else:
-        v: float = x
+        v: float = x  # type: ignore
     return v
 
 if __name__ == '__main__':
@@ -304,16 +295,16 @@ if __name__ == '__main__':
     (x,), r = get_symbolicparams(abs_value)
 
 if __name__ == '__main__':
-    l2_F = x < 0
-    l2_T = z3.Not(x < 0)
+    l2_T = x < 0
+    l2_F = z3.Not(x < 0)
 
 if __name__ == '__main__':
     v_0 = z3.Real('v_0')
-    l3 = z3.And(l2_F, v_0 == -x)
+    l3 = z3.And(l2_T, v_0 == -x)
 
 if __name__ == '__main__':
     v_1 = z3.Real('v_1')
-    l5 = z3.And(l2_T, v_1 == x)
+    l5 = z3.And(l2_F, v_1 == x)
 
 if __name__ == '__main__':
     v = z3.Real('v')
@@ -351,6 +342,7 @@ if __name__ == '__main__':
             break
         s.add(z3.Not(x == x_val))
 
+if __name__ == '__main__':
     s
 
 if __name__ == '__main__':
@@ -391,7 +383,29 @@ def prefix_vars(astnode, prefix):
         return astnode
 
 if __name__ == '__main__':
-    ast.parse('x+y')
+    xy_ast = ast.parse('x+y')
+
+from .bookutils import rich_output
+
+if __name__ == '__main__':
+    if rich_output():
+        # Normally, this will do
+        from showast import show_ast
+    else:
+        def show_ast(tree):
+            ast.dump(tree, indent=4)
+
+if __name__ == '__main__':
+    show_ast(xy_ast)
+
+if __name__ == '__main__':
+    xy_ast
+
+if __name__ == '__main__':
+    xy_ast.body[0]
+
+if __name__ == '__main__':
+    xy_ast.body[0].value  # type: ignore
 
 def get_expression(src):
     return ast.parse(src).body[0].value
@@ -496,7 +510,8 @@ def declarations(astnode, hm=None):
         for b in astnode.body:
             declarations(b, hm)
     elif isinstance(astnode, ast.FunctionDef):
-        #hm[astnode.name + '__return__'] = translate_to_z3_name(astnode.returns.id)
+        # hm[astnode.name + '__return__'] = \
+        # translate_to_z3_name(astnode.returns.id)
         for a in astnode.args.args:
             hm[a.arg] = translate_to_z3_name(a.annotation.id)
         for b in astnode.body:
@@ -567,9 +582,9 @@ def abs_max(a: float, b: float):
     a1: float = abs_value(a)
     b1: float = abs_value(b)
     if a1 > b1:
-        c: float = a1
+        c: float = a1  # type: ignore
     else:
-        c: float = b1
+        c: float = b1  # type: ignore
     return c
 
 if __name__ == '__main__':
@@ -592,7 +607,7 @@ if __name__ == '__main__':
     exec(l2_src)
 
 if __name__ == '__main__':
-    l2
+    l2  # type: ignore
 
 if __name__ == '__main__':
     b1 = z3.Real('b1')
@@ -602,10 +617,10 @@ if __name__ == '__main__':
     exec(l3_src)
 
 if __name__ == '__main__':
-    l3_
+    l3_  # type: ignore
 
 if __name__ == '__main__':
-    l3 = z3.And(l2, l3_)
+    l3 = z3.And(l2, l3_)  # type: ignore
 
 if __name__ == '__main__':
     l3
@@ -648,18 +663,29 @@ if __name__ == '__main__':
     sorted([(d, m2[d]) for d in m2.decls() if not d.name(
     ).startswith('abs')], key=lambda x: x[0].name())
 
-## SimpleSymbolicFuzzer
-## --------------------
+## Simple Symbolic Fuzzing
+## -----------------------
 
 if __name__ == '__main__':
-    print('\n## SimpleSymbolicFuzzer')
+    print('\n## Simple Symbolic Fuzzing')
 
 
 
 from .Fuzzer import Fuzzer
 
 class SimpleSymbolicFuzzer(Fuzzer):
+    """Simple symbolic fuzzer"""
+
     def __init__(self, fn, **kwargs):
+        """Constructor.
+        `fn` is the function to be fuzzed.
+        Possible keyword parameters:
+        * `max_depth` - the depth to which one should attempt
+          to trace the execution (default 100) 
+        * `max_tries` - the maximum number of attempts
+          we will try to produce a value before giving up (default 100)
+        * `max_iter` - the number of iterations we will attempt (default 100).
+        """
         self.fn_name = fn.__name__
         py_cfg = PyCFG()
         py_cfg.gen_cfg(inspect.getsource(fn))
@@ -675,7 +701,7 @@ class SimpleSymbolicFuzzer(Fuzzer):
         self.process()
 
     def process(self):
-        pass
+        ...  # to be defined later
 
 MAX_DEPTH = 100
 
@@ -720,9 +746,13 @@ class SimpleSymbolicFuzzer(SimpleSymbolicFuzzer):
 
 if __name__ == '__main__':
     symfz_ct = SimpleSymbolicFuzzer(check_triangle)
-    paths = symfz_ct.get_all_paths(symfz_ct.fnenter)
-    print(len(paths))
-    paths[1]
+    all_paths = symfz_ct.get_all_paths(symfz_ct.fnenter)
+
+if __name__ == '__main__':
+    len(all_paths)
+
+if __name__ == '__main__':
+    all_paths[1]
 
 class SimpleSymbolicFuzzer(SimpleSymbolicFuzzer):
     def process(self):
@@ -760,11 +790,11 @@ class SimpleSymbolicFuzzer(SimpleSymbolicFuzzer):
 
 if __name__ == '__main__':
     symfz_ct = SimpleSymbolicFuzzer(check_triangle)
-    paths = symfz_ct.get_all_paths(symfz_ct.fnenter)
-    symfz_ct.extract_constraints(paths[0])
+    all_paths = symfz_ct.get_all_paths(symfz_ct.fnenter)
+    symfz_ct.extract_constraints(all_paths[0])
 
 if __name__ == '__main__':
-    constraints = symfz_ct.extract_constraints(paths[1])
+    constraints = symfz_ct.extract_constraints(all_paths[1])
     constraints
 
 ### Fuzzing with Simple Symbolic Fuzzer
@@ -813,26 +843,32 @@ class SimpleSymbolicFuzzer(SimpleSymbolicFuzzer):
 
 class SimpleSymbolicFuzzer(SimpleSymbolicFuzzer):
     def fuzz(self):
+        """Produce one solution for each path.
+        Returns a mapping of variable names to (symbolic) Z3 values."""
         for i in range(self.max_tries):
             res = self.solve_path_constraint(self.get_next_path())
             if res:
                 return res
+
         return {}
 
 if __name__ == '__main__':
     a, b, c = None, None, None
     symfz_ct = SimpleSymbolicFuzzer(check_triangle)
     for i in range(1, 10):
-        r = symfz_ct.fuzz()
-        v = check_triangle(r['a'].as_long(), r['b'].as_long(), r['c'].as_long())
-        print(r, "result:", v)
+        args = symfz_ct.fuzz()
+        res = check_triangle(args['a'].as_long(),
+                             args['b'].as_long(),
+                             args['c'].as_long())
+        print(args, "result:", res)
 
 if __name__ == '__main__':
     symfz_av = SimpleSymbolicFuzzer(abs_value)
     for i in range(1, 10):
-        r = symfz_av.fuzz()
-        v = abs_value(r['x'].numerator_as_long() / r['x'].denominator_as_long())
-        print(r, "result:", v)
+        args = symfz_av.fuzz()
+        abs_res = abs_value(args['x'].numerator_as_long() /
+                            args['x'].denominator_as_long())
+        print(args, "result:", abs_res)
 
 ### Problems with the Simple Fuzzer
 
@@ -843,14 +879,15 @@ if __name__ == '__main__':
 
 def gcd(a: int, b: int) -> int:
     if a < b:
-        c: int = a
+        c: int = a  # type: ignore
         a = b
         b = c
 
     while b != 0:
-        c: int = a
+        c: int = a  # type: ignore
         a = b
         b = c % b
+
     return a
 
 if __name__ == '__main__':
@@ -866,22 +903,24 @@ if __name__ == '__main__':
             v = gcd(r['a'].as_long(), r['b'].as_long())
             print(r, v)
 
-## Advanced Symbolic Fuzzer
-## ------------------------
+## Advanced Symbolic Fuzzing
+## -------------------------
 
 if __name__ == '__main__':
-    print('\n## Advanced Symbolic Fuzzer')
+    print('\n## Advanced Symbolic Fuzzing')
 
 
 
-class AdvancedSymbolicFuzzer(SimpleSymbolicFuzzer):
+class SymbolicFuzzer(SimpleSymbolicFuzzer):
+    """Symbolic fuzzing with reassignments and loop unrolling"""
+
     def options(self, kwargs):
         super().options(kwargs)
 
-### Dealing with Reassingments
+### Dealing with Reassignments
 
 if __name__ == '__main__':
-    print('\n### Dealing with Reassingments')
+    print('\n### Dealing with Reassignments')
 
 
 
@@ -1130,7 +1169,7 @@ def identifiers_with_types(identifiers, defined):
             with_types[i] = typ
     return with_types
 
-class AdvancedSymbolicFuzzer(AdvancedSymbolicFuzzer):
+class SymbolicFuzzer(SymbolicFuzzer):
     def extract_constraints(self, path):
         return [to_src(p) for p in to_single_assignment_predicates(path) if p]
 
@@ -1141,7 +1180,7 @@ if __name__ == '__main__':
 
 
 
-class AdvancedSymbolicFuzzer(AdvancedSymbolicFuzzer):
+class SymbolicFuzzer(SymbolicFuzzer):
     def solve_path_constraint(self, path):
         # re-initializing does not seem problematic.
         # a = z3.Int('a').get_id() remains the same.
@@ -1162,9 +1201,11 @@ class AdvancedSymbolicFuzzer(AdvancedSymbolicFuzzer):
             m = self.z3.model()
             solutions = {d.name(): m[d] for d in m.decls()}
             my_args = {k: solutions.get(k, None) for k in self.fn_args}
+
         predicate = 'z3.And(%s)' % ','.join(
             ["%s == %s" % (k, v) for k, v in my_args.items()])
         eval('self.z3.add(z3.Not(%s))' % predicate)
+
         return my_args
 
 ### Generating All Paths
@@ -1174,7 +1215,7 @@ if __name__ == '__main__':
 
 
 
-class AdvancedSymbolicFuzzer(AdvancedSymbolicFuzzer):
+class SymbolicFuzzer(SymbolicFuzzer):
     def get_all_paths(self, fenter):
         path_lst = [PNode(0, fenter)]
         completed = []
@@ -1194,24 +1235,28 @@ class AdvancedSymbolicFuzzer(AdvancedSymbolicFuzzer):
         return completed + path_lst
 
 if __name__ == '__main__':
-    asymfz_gcd = AdvancedSymbolicFuzzer(
+    asymfz_gcd = SymbolicFuzzer(
         gcd, max_iter=10, max_tries=10, max_depth=10)
-    paths = asymfz_gcd.get_all_paths(asymfz_gcd.fnenter)
-    print(len(paths))
-    paths[37].get_path_to_root()
+    all_paths = asymfz_gcd.get_all_paths(asymfz_gcd.fnenter)
 
 if __name__ == '__main__':
-    for s in to_single_assignment_predicates(paths[37].get_path_to_root()):
+    len(all_paths)
+
+if __name__ == '__main__':
+    all_paths[37].get_path_to_root()
+
+if __name__ == '__main__':
+    for s in to_single_assignment_predicates(all_paths[37].get_path_to_root()):
         if s is not None:
             print(to_src(s))
 
 if __name__ == '__main__':
-    constraints = asymfz_gcd.extract_constraints(paths[37].get_path_to_root())
+    constraints = asymfz_gcd.extract_constraints(all_paths[37].get_path_to_root())
 
 if __name__ == '__main__':
     constraints
 
-class AdvancedSymbolicFuzzer(AdvancedSymbolicFuzzer):
+class SymbolicFuzzer(SymbolicFuzzer):
     def get_next_path(self):
         self.last_path -= 1
         if self.last_path == -1:
@@ -1226,7 +1271,7 @@ if __name__ == '__main__':
 
 
 if __name__ == '__main__':
-    asymfz_gcd = AdvancedSymbolicFuzzer(
+    asymfz_gcd = SymbolicFuzzer(
         gcd, max_tries=10, max_iter=10, max_depth=10)
     data = []
     for i in range(10):
@@ -1236,7 +1281,7 @@ if __name__ == '__main__':
         print(r, "result:", repr(v))
 
 if __name__ == '__main__':
-    with ArcCoverage() as cov:
+    with VisualizedArcCoverage() as cov:
         for a, b in data:
             gcd(a, b)
 
@@ -1262,10 +1307,11 @@ def roots(a: float, b: float, c: float) -> Tuple[float, float]:
     while (ax - bx) > 0.1:
         bx = 0.5 * (ax + d / ax)
         ax = bx
-    s: float = bx
 
+    s: float = bx
     a2: float = 2 * a
     ba2: float = b / a2
+
     return -ba2 + s / a2, -ba2 - s / a2
 
 def sym_to_float(v):
@@ -1276,11 +1322,13 @@ def sym_to_float(v):
     return v.numerator_as_long() / v.denominator_as_long()
 
 if __name__ == '__main__':
-    asymfz_roots = AdvancedSymbolicFuzzer(
+    asymfz_roots = SymbolicFuzzer(
         roots,
         max_tries=10,
         max_iter=10,
         max_depth=10)
+
+if __name__ == '__main__':
     with ExpectError():
         for i in range(100):
             r = asymfz_roots.fuzz()
@@ -1304,21 +1352,24 @@ def roots2(a: float, b: float, c: float) -> Tuple[float, float]:
     while (xa - xb) > 0.1:
         xb = 0.5 * (xa + d / xa)
         xa = xb
+
     s: float = xb
 
     if a == 0:
-        return -c / b
+        return -c / b, -c / b  # only one solution
 
     a2: float = 2 * a
     ba2: float = b / a2
     return -ba2 + s / a2, -ba2 - s / a2
 
 if __name__ == '__main__':
-    asymfz_roots = AdvancedSymbolicFuzzer(
+    asymfz_roots = SymbolicFuzzer(
         roots2,
         max_tries=10,
         max_iter=10,
         max_depth=10)
+
+if __name__ == '__main__':
     with ExpectError():
         for i in range(1000):
             r = asymfz_roots.fuzz()
@@ -1347,39 +1398,27 @@ def roots3(a: float, b: float, c: float) -> Tuple[float, float]:
 
     if a == 0:
         if b == 0:
-            return math.inf
-        return -c / b
+            return math.inf, math.inf
+        return -c / b, -c / b  # only one solution
 
     a2: float = 2 * a
     ba2: float = b / a2
     return -ba2 + s / a2, -ba2 - s / a2
 
 if __name__ == '__main__':
-    asymfz_roots = AdvancedSymbolicFuzzer(
+    asymfz_roots = SymbolicFuzzer(
         roots3,
         max_tries=10,
         max_iter=10,
         max_depth=10)
+
+if __name__ == '__main__':
     for i in range(10):
         r = asymfz_roots.fuzz()
         print(r)
         d = [sym_to_float(r[i]) for i in ['a', 'b', 'c']]
         v = roots3(*d)
         print(d, v)
-
-## Synopsis
-## --------
-
-if __name__ == '__main__':
-    print('\n## Synopsis')
-
-
-
-if __name__ == '__main__':
-    gcd_fuzzer = AdvancedSymbolicFuzzer(gcd, max_tries=10, max_iter=10, max_depth=10)
-    for i in range(10):
-        r = gcd_fuzzer.fuzz()
-        print(r)
 
 ## Limitations
 ## -----------
@@ -1421,17 +1460,17 @@ if __name__ == '__main__':
 
 
 
-### Exercise 1: _Extending Symbolic Fuzzer to use function summaries_
+### Exercise 1: Extending Symbolic Fuzzer to use function summaries
 
 if __name__ == '__main__':
-    print('\n### Exercise 1: _Extending Symbolic Fuzzer to use function summaries_')
+    print('\n### Exercise 1: Extending Symbolic Fuzzer to use function summaries')
 
 
 
-### Exercise 2: _Statically checking if a loop should be unrolled further_
+### Exercise 2: Statically checking if a loop should be unrolled further
 
 if __name__ == '__main__':
-    print('\n### Exercise 2: _Statically checking if a loop should be unrolled further_')
+    print('\n### Exercise 2: Statically checking if a loop should be unrolled further')
 
 
 
@@ -1440,7 +1479,7 @@ if __name__ == '__main__':
     while i < 10:
         i += 1
 
-class AdvancedSymbolicFuzzer(AdvancedSymbolicFuzzer):
+class SymbolicFuzzer(SymbolicFuzzer):
     def get_all_paths(self, fenter):
         path_lst = [PNode(0, fenter)]
         completed = []
@@ -1462,7 +1501,7 @@ class AdvancedSymbolicFuzzer(AdvancedSymbolicFuzzer):
             path_lst = new_paths
         return completed + path_lst
 
-class AdvancedSymbolicFuzzer(AdvancedSymbolicFuzzer):
+class SymbolicFuzzer(SymbolicFuzzer):
     def can_be_satisfied(self, p):
         s2 = self.extract_constraints(p.get_path_to_root())
         s = z3.Solver()
@@ -1473,28 +1512,28 @@ class AdvancedSymbolicFuzzer(AdvancedSymbolicFuzzer):
         exec("s.add(z3.And(%s))" % ','.join(s2), globals(), locals())
         return s.check() == z3.sat
 
-### Exercise 3: _Implementing a Concolic Fuzzer_
+### Exercise 3: Implementing a Concolic Fuzzer
 
 if __name__ == '__main__':
-    print('\n### Exercise 3: _Implementing a Concolic Fuzzer_')
+    print('\n### Exercise 3: Implementing a Concolic Fuzzer')
 
 
 
-class ArcCoverage(ArcCoverage):
+class TrackingArcCoverage(ArcCoverage):
     def offsets_from_entry(self, fn):
         zero = self._trace[0][1] - 1
         return [l - zero for (f, l) in self._trace if f == fn]
 
 if __name__ == '__main__':
-    with ArcCoverage() as cov:
+    with TrackingArcCoverage() as cov:
         roots3(1, 1, 1)
 
 if __name__ == '__main__':
     cov.offsets_from_entry('roots3')
 
-class ConcolicTracer(AdvancedSymbolicFuzzer):
+class ConcolicTracer(SymbolicFuzzer):
     def __init__(self, fn, fnargs, **kwargs):
-        with ArcCoverage() as cov:
+        with TrackingArcCoverage() as cov:
             fn(*fnargs)
         self.lines = cov.offsets_from_entry(fn.__name__)
         self.current_line = 0
@@ -1521,10 +1560,10 @@ class ConcolicTracer(ConcolicTracer):
         assert len(self.lines) == self.current_line
         return [last_node]
 
-#### Tracing the Execution Concolicaly
+#### Tracing the Execution Concolically
 
 if __name__ == '__main__':
-    print('\n#### Tracing the Execution Concolicaly')
+    print('\n#### Tracing the Execution Concolically')
 
 
 
@@ -1596,3 +1635,43 @@ if __name__ == '__main__':
     with ArcCoverage() as cov:
         roots3(1, 0, -11 / 20)
     show_cfg(roots3, arcs=cov.arcs())
+
+## Compatibility
+## -------------
+
+if __name__ == '__main__':
+    print('\n## Compatibility')
+
+
+
+AdvancedSymbolicFuzzer = SymbolicFuzzer
+
+## Synopsis
+## --------
+
+if __name__ == '__main__':
+    print('\n## Synopsis')
+
+
+
+from .bookutils import print_content
+
+if __name__ == '__main__':
+    print_content(inspect.getsource(gcd), '.py')
+
+if __name__ == '__main__':
+    gcd_fuzzer = SymbolicFuzzer(gcd, max_tries=10, max_iter=10, max_depth=10)
+    for i in range(10):
+        args = gcd_fuzzer.fuzz()
+        print(args)
+
+if __name__ == '__main__':
+    for i in range(10):
+        args = gcd_fuzzer.fuzz()
+        a = args['a'].as_long()
+        b = args['b'].as_long()
+        d = gcd(a, b)
+        print(f"gcd({a}, {b}) = {d}")
+
+from .ClassDiagram import display_class_hierarchy
+display_class_hierarchy(SymbolicFuzzer)

@@ -3,9 +3,9 @@
 
 # "Fuzzing: Breaking Things with Random Inputs" - a chapter of "The Fuzzing Book"
 # Web site: https://www.fuzzingbook.org/html/Fuzzer.html
-# Last change: 2021-11-03 13:00:07+01:00
+# Last change: 2025-10-26 19:01:03+01:00
 #
-# Copyright (c) 2021 CISPA Helmholtz Center for Information Security
+# Copyright (c) 2021-2025 CISPA Helmholtz Center for Information Security
 # Copyright (c) 2018-2020 Saarland University, authors, and contributors
 #
 # Permission is hereby granted, free of charge, to any person obtaining a
@@ -37,49 +37,12 @@ This file can be _executed_ as a script, running all experiments:
 or _imported_ as a package, providing classes, functions, and constants:
 
     >>> from fuzzingbook.Fuzzer import <identifier>
-    
+
 but before you do so, _read_ it and _interact_ with it at:
 
     https://www.fuzzingbook.org/html/Fuzzer.html
 
-This chapter provides two important classes, introduced in [A Fuzzing Architecture](#A-Fuzzing-Architecture):
-
-* `Fuzzer` as a base class for fuzzers; and
-* `Runner` as a base class for programs under test.
-
-### Fuzzers
-
-`Fuzzer` is a base class for fuzzers, with `RandomFuzzer` as a simple instantiation.  The `fuzz()` method of `Fuzzer` objects returns a string with a generated input.
-
->>> random_fuzzer = RandomFuzzer()
->>> random_fuzzer.fuzz()
-'%$<1&?99$%7!!*#96=>2&-/(5*)=$;0$$+;<12"?30&'
-
-The `RandomFuzzer()` constructor allows to specify a number of keyword arguments:
-
->>> print(RandomFuzzer.__init__.__doc__)
-Produce strings of `min_length` to `max_length` characters
-           in the range [`char_start`, `char_start` + `char_range`]
-
->>> random_fuzzer = RandomFuzzer(min_length=10, max_length=20, char_start=65, char_range=26)
->>> random_fuzzer.fuzz()
-'XGZVDDPZOOW'
-### Runners
-
-A `Fuzzer` can be paired with a `Runner`, which takes the fuzzed strings as input. Its result is a class-specific _status_ and an _outcome_ (`PASS`, `FAIL`, or `UNRESOLVED`). A `PrintRunner` will simply print out the given input and return a `PASS` outcome:
-
->>> print_runner = PrintRunner()
->>> random_fuzzer.run(print_runner)
-EQYGAXPTVPJGTYHXFJ
-
-('EQYGAXPTVPJGTYHXFJ', 'UNRESOLVED')
-
-A `ProgramRunner` will feed the generated input into an external program.  Its result is a pair of the program status (a `CompletedProcess` instance) and an _outcome_ (`PASS`, `FAIL`, or `UNRESOLVED`):
-
->>> cat = ProgramRunner('cat')
->>> random_fuzzer.run(cat)
-(CompletedProcess(args='cat', returncode=0, stdout='BZOQTXFBTEOVYX', stderr=''),
- 'PASS')
+**Note**: The examples in this section only work after the rest of the cells have been executed.
 
 For more details, source, and documentation, see
 "The Fuzzing Book - Fuzzing: Breaking Things with Random Inputs"
@@ -102,22 +65,16 @@ if __name__ == '__main__':
 
 if __name__ == '__main__':
     from .bookutils import YouTubeVideo
-    YouTubeVideo('u833Dtfftmw')
+    YouTubeVideo('YjO1pIx7wS4')
 
 if __name__ == '__main__':
     # We use the same fixed seed as the notebook to ensure consistency
     import random
     random.seed(2001)
 
+from typing import Dict, Tuple, Union, List, Any
+
 from . import Intro_Testing
-
-## Synopsis
-## --------
-
-if __name__ == '__main__':
-    print('\n## Synopsis')
-
-
 
 ## A Testing Assignment
 ## --------------------
@@ -137,9 +94,9 @@ if __name__ == '__main__':
 
 import random
 
-def fuzzer(max_length=100, char_start=32, char_range=32):
+def fuzzer(max_length: int = 100, char_start: int = 32, char_range: int = 32) -> str:
     """A string of up to `max_length` characters
-       in the range [`char_start`, `char_start` + `char_range`]"""
+       in the range [`char_start`, `char_start` + `char_range`)"""
     string_length = random.randrange(0, max_length + 1)
     out = ""
     for i in range(0, string_length):
@@ -242,10 +199,13 @@ if __name__ == '__main__':
          ], "9 ** 0.5")
 
 if __name__ == '__main__':
-    1/100 * 3/32
+    1/101 * 2/32
 
 if __name__ == '__main__':
-    3/32 * 1/32
+    3/94 * 1/94 * 99/101
+
+if __name__ == '__main__':
+    2/32 * 1/32 * 99/101
 
 ### Long-Running Fuzzing
 
@@ -437,7 +397,7 @@ if __name__ == '__main__':
     while len(secrets) < 2048:
         secrets += uninitialized_memory_marker
 
-def heartbeat(reply, length, memory):
+def heartbeat(reply: str, length: int, memory: str) -> str:
     # Store reply in memory
     memory = reply + memory[len(reply):]
 
@@ -473,7 +433,7 @@ if __name__ == '__main__':
 
 
 if __name__ == '__main__':
-    airport_codes = {
+    airport_codes: Dict[str, str] = {
         "YVR": "Vancouver",
         "JFK": "New York-JFK",
         "CDG": "Paris-Charles de Gaulle",
@@ -484,14 +444,13 @@ if __name__ == '__main__':
         "AKL": "Auckland"
     }  # plus many more
 
-
 if __name__ == '__main__':
     airport_codes["YVR"]
 
 if __name__ == '__main__':
     "AKL" in airport_codes
 
-def code_repOK(code):
+def code_repOK(code: str) -> bool:
     assert len(code) == 3, "Airport code must have three characters: " + repr(code)
     for c in code:
         assert c.isalpha(), "Non-letter in airport code: " + repr(code)
@@ -517,7 +476,7 @@ if __name__ == '__main__':
     with ExpectError():
         assert airport_codes_repOK()
 
-def add_new_airport(code, city):
+def add_new_airport(code: str, city: str) -> None:
     assert code_repOK(code)
     airport_codes[code] = city
 
@@ -529,7 +488,7 @@ if __name__ == '__main__':
     with ExpectError():
         add_new_airport("London-Heathrow", "LHR")
 
-def add_new_airport(code, city):
+def add_new_airport_2(code: str, city: str) -> None:
     assert code_repOK(code)
     assert airport_codes_repOK()
     airport_codes[code] = city
@@ -537,7 +496,7 @@ def add_new_airport(code, city):
 
 if __name__ == '__main__':
     with ExpectError():
-        add_new_airport("IST", "Istanbul Yeni Havalimanı")
+        add_new_airport_2("IST", "Istanbul Yeni Havalimanı")
 
 class RedBlackTree:
     def repOK(self):
@@ -555,12 +514,12 @@ class RedBlackTree:
 
     def add_element(self, elem):
         assert self.repOK()
-        # Add the element
+        ...  # Add the element
         assert self.repOK()
 
     def delete_element(self, elem):
         assert self.repOK()
-        # Delete the element
+        ...  # Delete the element
         assert self.repOK()
 
 ### Static Code Checkers
@@ -570,15 +529,13 @@ if __name__ == '__main__':
 
 
 
-from typing import Dict
-
 if __name__ == '__main__':
-    airport_codes: Dict[str, str] = {
+    typed_airport_codes: Dict[str, str] = {
         "YVR": "Vancouver",  # etc
     }
 
 if __name__ == '__main__':
-    airport_codes[1] = "First"
+    typed_airport_codes[1] = "First"  # type: ignore
 
 ## A Fuzzing Architecture
 ## ----------------------
@@ -595,6 +552,8 @@ if __name__ == '__main__':
 
 
 
+Outcome = str
+
 class Runner:
     """Base class for testing inputs."""
 
@@ -603,18 +562,18 @@ class Runner:
     FAIL = "FAIL"
     UNRESOLVED = "UNRESOLVED"
 
-    def __init__(self):
+    def __init__(self) -> None:
         """Initialize"""
         pass
 
-    def run(self, inp):
+    def run(self, inp: str) -> Any:
         """Run the runner with the given input"""
         return (inp, Runner.UNRESOLVED)
 
 class PrintRunner(Runner):
     """Simple runner, printing the input."""
 
-    def run(self, inp):
+    def run(self, inp) -> Any:
         """Print the given input"""
         print(inp)
         return (inp, Runner.UNRESOLVED)
@@ -632,12 +591,12 @@ if __name__ == '__main__':
 class ProgramRunner(Runner):
     """Test a program with inputs."""
 
-    def __init__(self, program):
+    def __init__(self, program: Union[str, List[str]]) -> None:
         """Initialize.
            `program` is a program spec as passed to `subprocess.run()`"""
         self.program = program
 
-    def run_process(self, inp=""):
+    def run_process(self, inp: str = "") -> subprocess.CompletedProcess:
         """Run the program with `inp` as input.
            Return result of `subprocess.run()`."""
         return subprocess.run(self.program,
@@ -646,7 +605,7 @@ class ProgramRunner(Runner):
                               stderr=subprocess.PIPE,
                               universal_newlines=True)
 
-    def run(self, inp=""):
+    def run(self, inp: str = "") -> Tuple[subprocess.CompletedProcess, Outcome]:
         """Run the program with `inp` as input.  
            Return test outcome based on result of `subprocess.run()`."""
         result = self.run_process(inp)
@@ -661,7 +620,7 @@ class ProgramRunner(Runner):
         return (result, outcome)
 
 class BinaryProgramRunner(ProgramRunner):
-    def run_process(self, inp=""):
+    def run_process(self, inp: str = "") -> subprocess.CompletedProcess:
         """Run the program with `inp` as input.  
            Return result of `subprocess.run()`."""
         return subprocess.run(self.program,
@@ -683,39 +642,37 @@ if __name__ == '__main__':
 class Fuzzer:
     """Base class for fuzzers."""
 
-    def __init__(self):
+    def __init__(self) -> None:
+        """Constructor"""
         pass
 
-    def fuzz(self):
+    def fuzz(self) -> str:
         """Return fuzz input"""
         return ""
 
-    def run(self, runner=Runner()):
+    def run(self, runner: Runner = Runner()) \
+            -> Tuple[subprocess.CompletedProcess, Outcome]:
         """Run `runner` with fuzz input"""
         return runner.run(self.fuzz())
 
-    def runs(self, runner=PrintRunner(), trials=10):
+    def runs(self, runner: Runner = PrintRunner(), trials: int = 10) \
+            -> List[Tuple[subprocess.CompletedProcess, Outcome]]:
         """Run `runner` with fuzz input, `trials` times"""
-        # Note: the list comprehension below does not invoke self.run() for subclasses
-        # return [self.run(runner) for i in range(trials)]
-        outcomes = []
-        for i in range(trials):
-            outcomes.append(self.run(runner))
-        return outcomes
+        return [self.run(runner) for i in range(trials)]
 
 class RandomFuzzer(Fuzzer):
     """Produce random inputs."""
 
-    def __init__(self, min_length=10, max_length=100,
-                 char_start=32, char_range=32):
+    def __init__(self, min_length: int = 10, max_length: int = 100,
+                 char_start: int = 32, char_range: int = 32) -> None:
         """Produce strings of `min_length` to `max_length` characters
-           in the range [`char_start`, `char_start` + `char_range`]"""
+           in the range [`char_start`, `char_start` + `char_range`)"""
         self.min_length = min_length
         self.max_length = max_length
         self.char_start = char_start
         self.char_range = char_range
 
-    def fuzz(self):
+    def fuzz(self) -> str:
         string_length = random.randrange(self.min_length, self.max_length + 1)
         out = ""
         for i in range(0, string_length):
@@ -740,72 +697,6 @@ if __name__ == '__main__':
 
 if __name__ == '__main__':
     random_fuzzer.runs(cat, 10)
-
-## Synopsis
-## --------
-
-if __name__ == '__main__':
-    print('\n## Synopsis')
-
-
-
-### Fuzzers
-
-if __name__ == '__main__':
-    print('\n### Fuzzers')
-
-
-
-if __name__ == '__main__':
-    random_fuzzer = RandomFuzzer()
-    random_fuzzer.fuzz()
-
-if __name__ == '__main__':
-    print(RandomFuzzer.__init__.__doc__)
-
-if __name__ == '__main__':
-    random_fuzzer = RandomFuzzer(min_length=10, max_length=20, char_start=65, char_range=26)
-    random_fuzzer.fuzz()
-
-from .ClassDiagram import display_class_hierarchy
-
-if __name__ == '__main__':
-    display_class_hierarchy(RandomFuzzer,
-                            public_methods=[
-                                Fuzzer.__init__,
-                                Fuzzer.fuzz,
-                                Fuzzer.run,
-                                Fuzzer.runs,
-                                RandomFuzzer.fuzz,
-                                RandomFuzzer.__init__,
-                            ],
-        project='fuzzingbook')
-
-### Runners
-
-if __name__ == '__main__':
-    print('\n### Runners')
-
-
-
-if __name__ == '__main__':
-    print_runner = PrintRunner()
-    random_fuzzer.run(print_runner)
-
-if __name__ == '__main__':
-    cat = ProgramRunner('cat')
-    random_fuzzer.run(cat)
-
-if __name__ == '__main__':
-    display_class_hierarchy([ProgramRunner, PrintRunner],
-                            public_methods=[
-                                Runner.__init__,
-                                Runner.run,
-                                ProgramRunner.__init__,
-                                ProgramRunner.run,
-                                PrintRunner.run
-                            ],
-        project='fuzzingbook')
 
 ## Lessons Learned
 ## ---------------
@@ -949,3 +840,69 @@ if __name__ == '__main__':
         result, outcome = random_fuzzer.run(real_troff_runner)
         if outcome == Runner.FAIL:
             print(result)
+
+## Synopsis
+## --------
+
+if __name__ == '__main__':
+    print('\n## Synopsis')
+
+
+
+### Fuzzers
+
+if __name__ == '__main__':
+    print('\n### Fuzzers')
+
+
+
+if __name__ == '__main__':
+    random_fuzzer = RandomFuzzer()
+    random_fuzzer.fuzz()
+
+if __name__ == '__main__':
+    print(RandomFuzzer.__init__.__doc__)
+
+if __name__ == '__main__':
+    random_fuzzer = RandomFuzzer(min_length=10, max_length=20, char_start=65, char_range=26)
+    random_fuzzer.fuzz()
+
+from .ClassDiagram import display_class_hierarchy
+
+if __name__ == '__main__':
+    display_class_hierarchy(RandomFuzzer,
+                            public_methods=[
+                                Fuzzer.__init__,
+                                Fuzzer.fuzz,
+                                Fuzzer.run,
+                                Fuzzer.runs,
+                                RandomFuzzer.fuzz,
+                                RandomFuzzer.__init__,
+                            ],
+        project='fuzzingbook')
+
+### Runners
+
+if __name__ == '__main__':
+    print('\n### Runners')
+
+
+
+if __name__ == '__main__':
+    print_runner = PrintRunner()
+    random_fuzzer.run(print_runner)
+
+if __name__ == '__main__':
+    cat = ProgramRunner('cat')
+    random_fuzzer.run(cat)
+
+if __name__ == '__main__':
+    display_class_hierarchy([ProgramRunner, PrintRunner],
+                            public_methods=[
+                                Runner.__init__,
+                                Runner.run,
+                                ProgramRunner.__init__,
+                                ProgramRunner.run,
+                                PrintRunner.run
+                            ],
+        project='fuzzingbook')

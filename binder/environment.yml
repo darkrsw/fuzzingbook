@@ -6,7 +6,7 @@ channels:
   - bjornfjohansson
   - anaconda-platform
 dependencies:
-  - python=3.9
+  - python=3.10
   - matplotlib
   - numpy
   - scipy
@@ -23,8 +23,8 @@ dependencies:
   - pip:
       - markdown
       - graphviz
+      - isla-solver
       - networkx
-      - pydot
       - yapf
       - autopep8
       - svglib

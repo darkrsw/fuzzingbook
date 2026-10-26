@@ -3,9 +3,9 @@
 
 # "When To Stop Fuzzing" - a chapter of "The Fuzzing Book"
 # Web site: https://www.fuzzingbook.org/html/WhenToStopFuzzing.html
-# Last change: 2021-11-03 13:29:31+01:00
+# Last change: 2025-01-16 11:16:06+01:00
 #
-# Copyright (c) 2021 CISPA Helmholtz Center for Information Security
+# Copyright (c) 2021-2025 CISPA Helmholtz Center for Information Security
 # Copyright (c) 2018-2020 Saarland University, authors, and contributors
 #
 # Permission is hereby granted, free of charge, to any person obtaining a
@@ -37,7 +37,7 @@ This file can be _executed_ as a script, running all experiments:
 or _imported_ as a package, providing classes, functions, and constants:
 
     >>> from fuzzingbook.WhenToStopFuzzing import <identifier>
-    
+
 but before you do so, _read_ it and _interact_ with it at:
 
     https://www.fuzzingbook.org/html/WhenToStopFuzzing.html
@@ -63,12 +63,15 @@ if __name__ == '__main__':
 
 
 if __name__ == '__main__':
+    from .bookutils import YouTubeVideo
+    YouTubeVideo('od3DcJcr0d4')
+
+if __name__ == '__main__':
     # We use the same fixed seed as the notebook to ensure consistency
     import random
     random.seed(2001)
 
-from . import Fuzzer
-from . import Coverage
+from typing import Dict, List
 
 ## The Enigma Machine
 ## ------------------
@@ -136,6 +139,7 @@ class EnigmaMachine(Runner):
     def reset(self):
         """Resets the key register"""
         self.msg2key = {}
+        self.cur_msg = ""
 
     def internal_msg2key(self, message):
         """Internal helper method. 
@@ -171,7 +175,7 @@ if __name__ == '__main__':
     enigma.cur_msg = "BrEaK mE. L0Lzz"
     enigma.run("AAA")
 
-class BletchleyPark(object):
+class BletchleyPark:
     def __init__(self, enigma):
         self.enigma = enigma
         self.enigma.reset()
@@ -180,7 +184,7 @@ class BletchleyPark(object):
             max_length=3,
             char_start=65,
             char_range=26)
-        
+
     def break_message(self, message):
         """Returning the trigram for an encoded message"""
         self.enigma.cur_msg = message
@@ -221,7 +225,7 @@ if __name__ == '__main__':
     n = 100  # messages to crack
 
 if __name__ == '__main__':
-    observed = defaultdict(int)
+    observed: Dict[str, int] = defaultdict(int)
     for msg in range(0, n):
         trigram = bletchley.break_message(msg)
         observed[trigram] += 1
@@ -309,7 +313,7 @@ if __name__ == '__main__':
 # %matplotlib inline
 
 if __name__ == '__main__':
-    import matplotlib.pyplot as plt
+    import matplotlib.pyplot as plt  # type: ignore
 
 if __name__ == '__main__':
     frequencies = [v for k, v in observed.items() if int(v) > 0]
@@ -320,9 +324,9 @@ if __name__ == '__main__':
     # frequency of rare trigrams
     plt.figure(num=None, figsize=(12, 4), dpi=80, facecolor='w', edgecolor='k')
     plt.subplot(1, 2, 1)
-    plt.hist(frequencies, range=[1, 21], bins=numpy.arange(1, 21) - 0.5)
-    plt.xticks(range(1, 21))
-    plt.xlabel('# of occurances (e.g., 1 represents singleton trigrams)')
+    plt.hist(frequencies, range=[1, 21], bins=numpy.arange(1, 21) - 0.5)  # type: ignore
+    plt.xticks(range(1, 21))  # type: ignore
+    plt.xlabel('# of occurrences (e.g., 1 represents singleton trigrams)')
     plt.ylabel('Frequency of occurances')
     plt.title('Figure 1. Frequency of Rare Trigrams')
 
@@ -345,7 +349,7 @@ if __name__ == '__main__':
 
 if __name__ == '__main__':
     print("Trigram : Frequency")
-    for trigram in sorted(observed, key=observed.get, reverse=True):
+    for trigram in sorted(observed, key=observed.get, reverse=True):  # type: ignore
         if observed[trigram] > 10:
             print("    %s : %d" % (trigram, observed[trigram]))
 
@@ -388,6 +392,7 @@ class BletchleyPark(BletchleyPark):
                 self.cur_observed += 1
                 self.timeseries[self.cur_attempts] = self.cur_observed
             cur_msg += 1
+
         return n_messages
 
 if __name__ == '__main__':
@@ -399,6 +404,10 @@ if __name__ == '__main__':
     original
 
 class BoostedBletchleyPark(BletchleyPark):
+    def __init__(self, enigma, prior):
+        super().__init__(enigma)
+        self.prior = prior
+
     def break_message(self, message):
         """Returns the trigram for an encoded message, and
            track #trigrams observed as #attempts increases."""
@@ -416,8 +425,7 @@ class BoostedBletchleyPark(BletchleyPark):
         return super().break_message(message)
 
 if __name__ == '__main__':
-    boostedBletchley = BoostedBletchleyPark(enigma)
-    boostedBletchley.prior = observed
+    boostedBletchley = BoostedBletchleyPark(enigma, prior=observed)
     boosted = boostedBletchley.break_max_attempts(max_attempts)
     boosted
 
@@ -548,7 +556,6 @@ if __name__ == '__main__':
     all_coverage = population_trace_coverage([inp1, inp2, inp3], cgi_decode)[0]
     assert len(all_coverage) == 2
 
-from .Fuzzer import RandomFuzzer
 from .Coverage import population_coverage
 from html.parser import HTMLParser
 
@@ -639,7 +646,7 @@ if __name__ == '__main__':
     line_gt, = plt.semilogy(gt_timeseries, label="Good-Turing")
     plt.legend(handles=[line_emp, line_gt])
     plt.xticks(range(0, measurements + 1, int(measurements / 5)),
-               range(0, trials + 1, int(trials / 5)))
+               range(0, trials + 1, int(trials / 5)))  # type: ignore
     plt.xlabel('# of fuzz inputs')
     plt.ylabel('discovery probability')
     plt.title('Discovery Probability Over Time');
@@ -715,7 +722,7 @@ if __name__ == '__main__':
 
 
 if __name__ == '__main__':
-    prediction_ts = [None] * time
+    prediction_ts: List[float] = [None] * time  # type: ignore
     f0 = hat_S - Sn
 
     for m in range(trials - time):
@@ -736,7 +743,7 @@ if __name__ == '__main__':
     line_pred, = plt.plot(prediction_ts, linestyle='--',
                           color='black', label="Predicted progress")
     plt.legend(handles=[line_cur, line_pred])
-    plt.xticks(range(0, trials + 1, int(time)))
+    plt.xticks(range(0, trials + 1, int(time)))  # type: ignore
     plt.xlabel('# of fuzz inputs')
     plt.ylabel('# of traces exercised')
 
@@ -746,7 +753,7 @@ if __name__ == '__main__':
     line_pred, = plt.plot(prediction_ts, linestyle='--',
                           color='black', label="Predicted progress")
     plt.legend(handles=[line_emp, line_cur, line_pred])
-    plt.xticks(range(0, trials + 1, int(time)))
+    plt.xticks(range(0, trials + 1, int(time)))  # type: ignore
     plt.xlabel('# of fuzz inputs')
     plt.ylabel('# of traces exercised');
 
@@ -796,7 +803,7 @@ if __name__ == '__main__':
 
 
 
-from .Coverage import population_coverage, Coverage
+from .Coverage import population_coverage
 ...
 
 def population_stmt_coverage(population, function):
@@ -838,12 +845,12 @@ if __name__ == '__main__':
 
 from .Fuzzer import RandomFuzzer
 from html.parser import HTMLParser
-...
+...;
 
 if __name__ == '__main__':
     trials = 2000  # increase to 10000 for better convergences. Will take a while..
 
-def my_parser(inp):
+def html_parser(inp):
     parser = HTMLParser()  # resets the HTMLParser object for every fuzz input
     parser.feed(inp)
 
@@ -909,16 +916,15 @@ if __name__ == '__main__':
                 discoveries += 1
         emp_timeseries.append(discoveries / repeats)
 
-# %matplotlib inline
-# import matplotlib.pyplot as plt
-# line_emp, = plt.semilogy(emp_timeseries, label="Empirical")
-# line_gt, = plt.semilogy(gt_timeseries, label="Good-Turing")
-# plt.legend(handles=[line_emp, line_gt])
-# plt.xticks(range(0, measurements + 1, int(measurements / 5)),
-#            range(0, trials + 1, int(trials / 5)))
-# plt.xlabel('# of fuzz inputs')
-# plt.ylabel('discovery probability')
-# plt.title('Discovery Probability Over Time');
+if __name__ == '__main__':
+    line_emp, = plt.semilogy(emp_timeseries, label="Empirical")
+    line_gt, = plt.semilogy(gt_timeseries, label="Good-Turing")
+    plt.legend(handles=[line_emp, line_gt])
+    plt.xticks(range(0, measurements + 1, int(measurements / 5)),
+               range(0, trials + 1, int(trials / 5)))  # type: ignore
+    plt.xlabel('# of fuzz inputs')
+    plt.ylabel('discovery probability')
+    plt.title('Discovery Probability Over Time');
 
 ### Exercise 2: Extrapolate and Evaluate Statement Coverage
 
@@ -974,7 +980,7 @@ if __name__ == '__main__':
 
 
 if __name__ == '__main__':
-    prediction_ts = [None] * time
+    prediction_ts: List[float] = [None] * time  # type: ignore
     Q0 = hat_S - Sn
 
     for m in range(trials - time):

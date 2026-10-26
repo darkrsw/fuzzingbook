@@ -50,6 +50,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .m { color: var(--jp-mirror-editor-number-color) } /* Literal.Number */
 .highlight .s { color: var(--jp-mirror-editor-string-color) } /* Literal.String */
 .highlight .ow { color: var(--jp-mirror-editor-operator-color); font-weight: bold } /* Operator.Word */
+.highlight .pm { color: var(--jp-mirror-editor-punctuation-color) } /* Punctuation.Marker */
 .highlight .w { color: var(--jp-mirror-editor-variable-color) } /* Text.Whitespace */
 .highlight .mb { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Bin */
 .highlight .mf { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Float */
@@ -70,682 +71,6 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .s1 { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Single */
 .highlight .ss { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Symbol */
 .highlight .il { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Integer.Long */
-  </style>
-<style type="text/css">
-    /* 
-    CSS stylesheet for fuzzingbook + debuggingbook
-
-    This is used both for the HTML version 
-    as well as for the Jupyter Notebook version.
-
-    To apply this on local Jupyter notebook sessions, copy it to
-    ~/.jupyter/custom/custom.css
-*/
-
-/* Loading fonts in Jupyter */
-@import url(https://fonts.googleapis.com/css?family=Fira+Mono:400,500,700|Raleway:300|Open+Sans|Source+Code+Pro); /* DebuggingBook */
-
-
-/* Fonts */
-h1, h2, h3, h4, h5 {
-	font-family: 'Raleway', Helvetica, Arial, sans-serif; /* DebuggingBook */
-}
-
-body {
-  font-family: 'Open Sans', sans-serif;
-}
-
-code, kbd, pre, samp {
-  font-family: 'Fira Mono', 'Source Code Pro', monospace;
-}
-
-.CodeMirror pre {
-  font-family: 'Fira Mono', 'Source Code Pro', monospace;
-}
-
-/* Font sizes */
-/* We use somewhat smaller fonts for small devices and print */
-
-p, li, summary {
-	font-size: 16px;
-	line-height: 26px;
-}
-@media only screen and (max-width: 600px) {
-    p, li, summary {
-    	font-size: 14px;
-    	line-height: 24px;
-    }
-}
-@media print {
-    p, li, summary {
-    	font-size: 12px;
-    	line-height: 18px;
-    }
-}
-
-code, kbd, pre, samp {
-  font-size: 14px;
-  line-height: 18px;
-}
-.CodeMirror pre {
-  font-size: 14px;
-  line-height: 18px;
-}
-/* Code size must be extra small to fit on screen */
-@media only screen and (max-width: 600px) {
-    code, kbd, pre, samp {
-      font-size: 12px;
-      line-height: 18px;
-    }
-    .CodeMirror pre {
-      font-size: 12px;
-      line-height: 18px;
-    }
-}
-@media print {
-    code, kbd, pre, samp {
-      font-size: 10px !important;
-      line-height: 14px;
-    }
-    .CodeMirror pre {
-      font-size: 10px !important;
-      line-height: 14px;
-    }
-}
-
-
-/* Titles */
-
-/* Book title */
-/* Patua One looks better in normal weight */
-section > h1 {
-	font-size: 48px!important;
-    font-weight: normal!important;
-}
-
-/* Chapter title */
-h1 {
-	font-size: 38px!important;
-    font-weight: normal!important;
-}
-
-/* Section */
-h2 {
-	font-size: 28px!important;
-    font-weight: normal!important;
-}
-
-/* Subsection */
-h3 {
-	font-size: 24px!important;
-    font-weight: normal!important;
-}
-
-/* More sections */
-h4, h5 {
-	font-size: 20px!important;
-    font-weight: normal!important;
-}
-
-
-/* Small screens */
-@media only screen and (max-width: 600px) {
-    section > h1 { font-size: 36px!important; }
-    h1 { font-size: 32px!important; }
-    h2 { font-size: 26px!important; }
-    h3 { font-size: 22px!important; }
-    h4, h5, h6, summary {
-        { font-size: 18px!important; }
-    };
-}
-/* Print */
-@media print {
-    section > h1 { font-size: 32px!important; }
-    h1 { font-size: 26px!important; }
-    h2 { font-size: 22px!important; }
-    h3 { font-size: 18px!important; }
-    h4, h5, h6, summary {
-        { font-size: 14px!important; }
-    };
-}
-
-
-
-/* Exercises */
-/* Some color tweaks to exercise2 buttons */
-.onoffswitch-label {
-    border: 2px solid #ffffff!important;
-}
-
-/* Show solution */
-.onoffswitch-inner:after {
-    background-color: #B03A2E!important; 
-    color: #ffffff!important;
-}
-
-/* Hide solution */
-.onoffswitch-inner:before {
-    background-color: #F1948A!important; 
-    color: #000000!important;
-}
-
-
-
-
-/* Jupyter Table of Contents */
-/* See https://github.com/ipython-contrib/jupyter_contrib_nbextensions/blob/master/src/jupyter_contrib_nbextensions/nbextensions/toc2/main.css */
-#toc-wrapper .toc-item-num {
-    font-family: 'Raleway', Helvetica, Arial, sans-serif!important; /* DebuggingBook */
-}
-
-#toc-wrapper li > span:hover {
-  background-color: plum!important;  /* DebuggingBook */
-}
-.toc-item li { 
-    font-size: 14px!important; 
-    font-weight: normal!important;
-}
-#toc-wrapper .header {
-  font-size: 20px!important;
-  color: purple; /* DebuggingBook */
-  font-family: 'Raleway', Helvetica, Arial, sans-serif; /* DebuggingBook */
-  font-weight: normal!important;
-}
-
-
-
-/* Colors */
-/* We want white code boxes on a light grey background */
-body {
-    background-color: #F0F0F0;
-}
-/* But not when it's print */
-@media print {
-    background-color: white;
-}
-
-.container {
-    background-color: #F8F8F8!important;    
-}
-@media print {
-    background-color: white!important;
-}
-
-
-.input_area, .output_area {
-    background-color: white!important;    
-}
-
-/* Regular outputs come in blue, errors in red */
-.output_area pre {
-    color: darkblue!important;
-/*  font-weight: bold; */
-}
-
-.output_stderr pre {
-    color: #B03A2E!important;
-}
-
-/* Headers are purple */
-h1, h2, h3 {
-    color: purple!important; /* Debuggingbook */
-}
-
-h4, h5, h6, summary {
-    color: black;
-}
-
-
-/* And links also come in shades of purple */ /* Debuggingbook */
-a:link { /* unvisited link */
-    color: purple;
-    /* text-decoration: none!important; */
-}
-
-a:visited {
-    color: purple;
-    /* text-decoration: none!important; */
-}
-
-a:hover, a:focus {
-    color: fuchsia;
-    /* text-decoration: none!important; */
-    /* font-weight: bolder!important; */
-}
-
-a:active {
-    color: magenta;
-    /* text-decoration: none!important; */
-}
-
-/* Make selections yellow; easier to see in classroom */
-::selection {
-    background: #ffff50;
-}
-::-moz-selection { /* Code for Firefox */
-    background: #ffff50;
-}
-
-
-/* Imprint */
-.imprint {
-	font-size: 12px;
-    line-height: 16px;
-    margin-top: 1cm;
-}
-@media print {
-    .imprint {
-    	font-size: 9px;
-        line-height: 12px;
-    }
-}
-
-/* Synopsis */
-.synopsis {
-    border-style: dotted;
-    padding-top: 0px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 5px;
-}
-
-
-/* Details */
-/* See https://stackoverflow.com/questions/38213329/how-to-add-css3-transition-with-html5-details-summary-tag-reveal?noredirect=1&lq=1 */
-/* TODO: Closing details is not animated yet; not sure whether this is possible in CSS - AZ*/
-
-details[open] summary ~ * {
-  animation: sweep-in .5s ease-in-out;
-}
-details:not([open]) summary ~ * {
-  animation: sweep-out .5s ease-in-out;
-}
-
-@keyframes sweep-in {
-  0%    {opacity: 0; margin-top: -30px}
-  100%  {opacity: 1; margin-top: 0px}
-}
-
-@keyframes sweep-out {
-  0%    {opacity: 1; margin-top: 0px}
-  100%  {opacity: 0; margin-top: -30px}
-}
-
-details {
-    border-style: dashed;
-    border-color: gray;
-    border-width: 1px;
-    padding-top: 0px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 5px;
-    outline: none !important;
-}
-
-summary {
-    outline: none !important;
-}
-
-
-
-/* Solutions */
-.solution_link {
-	/* font-size: 12px; */
-    font-style: italic;
-}
-@media print {
-    .solution_link {
-    	font-size: 9px;
-        line-height: 12px;
-        font-style: italic;
-    }
-}
-
-
-/* Beta warning */
-.beta {
-    background: #ffff50;
-    padding: 3px;
-    font-style: italic;
-    color: #000000;
-    padding: 5px;
-}
-
-/* Current page in menu */
-#cssmenu a.this_page {
-    font-weight: bold;
-    color: #ffffff;
-}
-
-/* Notebook page in menu */
-#cssmenu a.edit_as_notebook {
-    font-weight: bold;
-    color: #ffffff;
-}
-
-/* More coming in menu */
-.more_coming {
-    font-style: italic!important;
-}
-
-/* New chapter indicator in menu */
-.new_chapter {
-    font-weight: bold;
-    font-size: 100%;
-    /* color: aqua; */
-    color: #F1948A;
-}
-
-/* Part number in menu */
-.part_number {
-	float: left;
-    text-align: left;
-    width: 22px;
-}
-
-
-/* Chapters in menu */
-.chapters {
-    /* font-style: italic!important; */
-}
-
-/* Chapter numbers in menu */
-.chnum {
-    /* font-weight: bold; */
-}
-
-
-/* Imports */
-a.import {
-    text-decoration: underline;
-    color: blue;
-}
-
-a.import[href]:after {
-    content: "" !important;  /* Avoid adding links for imports */
-}
-
-a.import:visited {
-    color: darkblue;
-}
-
-a.import:hover, a.import:focus {
-    color: cornflowerblue;
-}
-
-a.import:active {
-    color: red!important;
-}
-
-
-/* Main content */
-article {
-    margin-top: 30px; /* Add a top margin to avoid content overlay */
-}
-
-/* Have links show up at a nice offset */
-/* See https://stackoverflow.com/questions/4086107/fixed-page-header-overlaps-in-page-anchors */
-:target::before {
-  content: "";
-  display: block;
-  height: 60px; /* fixed header height*/
-  margin: -60px 0 0; /* negative fixed header height */
-}
-
-/* On small screens, have menu text disappear, leaving only icons */
-@media screen and (max-width: 900px) { span.menu_5 { display: none;} }
-@media screen and (max-width: 850px) { span.menu_4 { display: none;} }
-@media screen and (max-width: 800px) { span.menu_3 { display: none;} }
-@media screen and (max-width: 750px) { span.menu_2 { display: none;} }
-@media screen and (max-width: 700px) { span.menu_1 { display: none;} }
-
-/* On small screens, use whatever width that is there */
-@media only screen and (max-width: 600px) {
-  .container {
-    width: auto;
-  }
-}
-
-
-/* CSS Menu */
-#cssmenu,
-#cssmenu ul,
-#cssmenu ol,
-#cssmenu li,
-#cssmenu a {
-  border: none;
-  line-height: 1;
-  margin: 0;
-  padding: 0;
-  box-sizing: content-box;
-  cursor: pointer;
-}
-#cssmenu {
-  height: 37px;
-  display: block;
-  border: 1px solid;
-  /* border-radius: 5px; */
-  width: 100%;
-  border-color: purple; /* Debuggingbook */
-  position: fixed;
-  z-index: 5000;
-  transition: opacity 1s;
-  margin: 0;
-  padding: 0;
-}
-
-#cssmenu > ul,
-#cssmenu > ol {
-  list-style: inside none;
-  margin: 0;
-  padding: 0;
-}
-#cssmenu > ul > li,
-#cssmenu > ol > li {
-  list-style: inside none;
-  float: left;
-  display: block;
-  position: relative;
-  margin: 0;
-  padding: 0;
-}
-#cssmenu.align-center > ul,
-#cssmenu.align-center > ol {
-  text-align: center;
-  font-size: 0;
-}
-#cssmenu.align-center > ul > li,
-#cssmenu.align-center > ol > li {
-  float: none;
-  display: inline-block;
-}
-#cssmenu.align-center ul ul,
-#cssmenu.align-center ol ol,
-#cssmenu.align-center ol ul,
-#cssmenu.align-center ul ol {
-  text-align: left;
-}
-#cssmenu.align-center > ul > li:first-child > a,
-#cssmenu.align-center > ol > li:first-child > a {
-  /* border-radius: 0; */
-}
-#cssmenu > ul > li > a,
-#cssmenu > ol > li > a {
-  outline: none;
-  display: block;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
-  font-weight: 700;
-  font-size: 13px;
-  font-family: Arial, Helvetica, sans-serif;
-  border-right: 1px solid purple; /* Debuggingbook */
-  color: #ffffff;
-  padding: 12px 20px;
-}
-#cssmenu > ul > li:first-child > a,
-#cssmenu > ol > li:first-child > a {
-  /* border-radius: 5px 0 0 5px; */
-}
-#cssmenu > ul > li > a:after,
-#cssmenu > ol > li > a:after {
-  content: "";
-  position: absolute;
-  border-right: 1px solid;
-  top: -1px;
-  bottom: -1px;
-  right: -2px;
-  z-index: 5010;
-  border-color: purple; /* Debuggingbook */
-}
-#cssmenu ul li.has-sub:hover > a:after,
-#cssmenu ol li.has-sub:hover > a:after {
-  top: 0;
-  bottom: 0;
-}
-#cssmenu > ul > li.has-sub > a:before,
-#cssmenu > ol > li.has-sub > a:before {
-  content: "";
-  position: absolute;
-  top: 18px;
-  right: 6px;
-  border: 5px solid transparent;
-  border-top: 5px solid #ffffff;
-}
-#cssmenu > ul > li.has-sub:hover > a:before,
-#cssmenu > ol > li.has-sub:hover > a:before {
-  top: 19px;
-}
-#cssmenu > ul > li.has-sub:hover > a,
-#cssmenu > ol > li.has-sub:hover > a {
-  padding-bottom: 14px;
-  z-index: 5020;
-  border-color: #3f3f3f;
-}
-#cssmenu ul li.has-sub:hover > ul,
-#cssmenu ul li.has-sub:hover > ol,
-#cssmenu ol li.has-sub:hover > ul,
-#cssmenu ol li.has-sub:hover > ol {
-  display: block;
-}
-#cssmenu > ul > li.has-sub > a:hover,
-#cssmenu > ul > li.has-sub:hover > a,
-#cssmenu > ol > li.has-sub > a:hover,
-#cssmenu > ol > li.has-sub:hover > a {
-  background: #3f3f3f;
-  border-color: #3f3f3f;
-}
-#cssmenu ul li.has-sub:focus-within > ul,
-#cssmenu ul li.has-sub:focus-within > ol,
-#cssmenu ol li.has-sub:focus-within > ul,
-#cssmenu ol li.has-sub:focus-within > ol {
-  display: block;
-}
-#cssmenu > ul > li.has-sub > a:focus-within,
-#cssmenu > ul > li.has-sub:focus-within > a,
-#cssmenu > ol > li.has-sub > a:focus-within,
-#cssmenu > ol > li.has-sub:focus-within > a {
-  background: #3f3f3f;
-  border-color: #3f3f3f;
-}
-#cssmenu ul li > ul,
-#cssmenu ul li > ol,
-#cssmenu ol li > ul,
-#cssmenu ol li > ol {
-  display: none;
-  width: auto;
-  position: absolute;
-  top: 38px;
-  background: #3f3f3f;
-  /* border-radius: 0 0 5px 5px; */
-  z-index: 5020;
-  padding: 10px 0;
-  transition: all 0.5s ease;
-  transition-duration: 0.5s;
-}
-#cssmenu ul li > ul,
-#cssmenu ul li > ol {
-  width: 250px;
-}
-#cssmenu ul ul ul,
-#cssmenu ul ul ol,
-#cssmenu ul ol ul,
-#cssmenu ul ol ol {
-  position: absolute;
-}
-#cssmenu ul ul li:hover > ul,
-#cssmenu ul ul li:hover > ol,
-#cssmenu ul ol li:hover > ul,
-#cssmenu ul ol li:hover > ol {
-  left: 100%;
-  top: -10px;
-  /* border-radius: 5px; */
-}
-#cssmenu ul li > ul li,
-#cssmenu ul li > ol li,
-#cssmenu ol li > ul li,
-#cssmenu ol li > ol li {
-  display: block;
-  list-style: inside none;
-  position: relative;
-  margin: 0;
-  padding: 0;
-}
-#cssmenu ul li > ul li a,
-#cssmenu ul li > ol li a,
-#cssmenu ol li > ul li a,
-#cssmenu ol li > ol li a {
-  outline: none;
-  display: block;
-  position: relative;
-  font: 10pt Arial, Helvetica, sans-serif;
-  color: #ffffff;
-  text-decoration: none;
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
-  margin: 0;
-  padding: 8px 20px;
-}
-#cssmenu,
-#cssmenu ul ul > li:hover > a,
-#cssmenu ul ul li a:hover {
-  background: purple; /* DebuggingBook */
-  /*
-  background: -moz-linear-gradient(top, #cc0000 0%, #990000 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #cc0000), color-stop(100%, #990000));
-  background: -webkit-linear-gradient(top, #cc0000 0%, #990000 100%);
-  background: -o-linear-gradient(top, #cc0000 0%, #990000 100%);
-  background: -ms-linear-gradient(top, #cc0000 0%, #990000 100%);
-  background: linear-gradient(top, #cc0000 0%, #990000 100%);
-  */
-}
-#cssmenu > ul > li > a:hover {
-  background: purple; /* DebuggingBook */
-  color: #ffffff;
-}
-#cssmenu ul ul a:hover,
-#cssmenu ul ol a:hover {
-  background: purple; /* DebuggingBook */
-  color: #ffffff;
-}
-#cssmenu > ul > li.has-sub > a:hover:before {
-  border-top: 5px solid #ffffff;
-}
-
-/* On print, do not show the menu */
-@media print {
-    #cssmenu {
-        height: 0px;
-        display: none;
-    }
-    #cssmenu > ul {
-        display: none;
-    }
-    #cssmenu > ol {
-        display: none;
-    }
-}
-
   </style>
 
 
@@ -15171,6 +14496,9 @@ a.anchor-link {
 .reveal {
   font-size: 160%;
 }
+.reveal table {
+  font-size: var(--jp-ui-font-size1);
+}
 .reveal pre {
   width: inherit;
   padding: 0.4em;
@@ -15214,6 +14542,23 @@ div.jp-OutputPrompt {
   margin: 5px 5px 0 0;
 }
 
+.reveal div.highlight {
+  margin: 0;
+}
+
+.reveal div.highlight > pre {
+  margin: 0;
+  width: 100%;
+  font-size: var(--jp-code-font-size);
+}
+
+.reveal div.jp-OutputArea-output > pre {
+  margin: 0;
+  width: 90%;
+  font-size: var(--jp-code-font-size);
+  box-shadow: none;
+}
+
 /* Reveal navigation controls */
 
 .reveal .controls .navigate-left,
@@ -15254,17 +14599,14 @@ div.jp-OutputPrompt {
 
 /* Scrollbars */
 
-::-webkit-scrollbar
-{
+::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
-::-webkit-scrollbar *
-{
-  background:transparent;
+::-webkit-scrollbar * {
+  background: transparent;
 }
-::-webkit-scrollbar-thumb
-{
+::-webkit-scrollbar-thumb {
   background: #727272 !important;
 }
 </style>
@@ -15291,12 +14633,12 @@ div.jp-OutputPrompt {
                 },
                 displayAlign: 'center',
                 CommonHTML: {
-                    linebreaks: { 
-                    automatic: true 
+                    linebreaks: {
+                    automatic: true
                     }
                 }
             });
-        
+
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
     }
@@ -15310,37 +14652,64 @@ div.jp-OutputPrompt {
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 
 <div class="reveal">
-<div class="slides"><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+<div class="slides"><section ><section >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="Prototyping-with-Python">Prototyping with Python<a class="anchor-link" href="#Prototyping-with-Python">&#182;</a></h1><p><em>This is the manuscript of Andreas Zeller's keynote
-"Coding Effective Testing Tools Within Minutes" at the TAIC PART 2020 conference.</em></p>
+&quot;Coding Effective Testing Tools Within Minutes&quot; at the TAIC PART 2020 conference.</em></p>
 
 </div>
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+</div></section><section >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>In our <a href="index.slides.html">Fuzzing Book</a>, we use Python to implement automated testing techniques, and also as the language for most of our test subjects.  Why Python?  The short answer is</p>
-<blockquote><p>Python made us amazingly <em>productive</em>.  Most techniques in this book took <strong>2-3 days</strong> to implement.  This is about <strong>10-20 times faster</strong> than for "classic" languages like C or Java.</p>
+<blockquote>
+<p>Python made us amazingly <em>productive</em>.  Most techniques in this book took <strong>2-3 days</strong> to implement.  This is about <strong>10-20 times faster</strong> than for &quot;classic&quot; languages like C or Java.</p>
 </blockquote>
 <p>A factor of 10–20 in productivity is enormous, almost ridiculous.  Why is that so, and which consequences does this have for research and teaching?</p>
-<p>In this essay, we will explore some of the reasons, prototyping a <em>symbolic test generator</em> from scratch. This normally would be considered a very difficult task, taking months to build. Yet, developing the code in this chapter took less than two hours – and explaining it takes less than 20 minutes.</p>
+<p>In this essay, we will explore some reasons, prototyping a <em>symbolic test generator</em> from scratch. This normally would be considered a very difficult task, taking months to build. Yet, developing the code in this chapter took less than two hours – and explaining it takes less than 20 minutes.</p>
 
 </div>
-</div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+</div></section></section><section ><section >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Python-is-Easy">Python is Easy<a class="anchor-link" href="#Python-is-Easy">&#182;</a></h2><p>Python is a high-level language that allows one to focus on the actual <em>algorithms</em> rather than how individual bits and bytes are passed around in memory.  For this book, this is important: We want to focus on how individual techniques work, and not so much their optimization.  Focusing on algorithms allows you to toy and tinker with them, and quickly develop your own.  Once you have found out how to do things, you can still port your approach to some other language or specialized setting.</p>
 
 </div>
-</div><div class="fragment">
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+</div><div class="fragment" >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>As an example, take the (in)famous <em>triangle</em> program, which classifies a triangle of lengths $a$, $b$, $c$ into one of three categories.  It reads like pseudocode; yet, we can easily execute it.</p>
 
 </div>
-</div></div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div>
+</div>
+</div></div></section><section ><div  class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
@@ -15366,14 +14735,22 @@ div.jp-OutputPrompt {
 </div>
 </div>
 
-</div><div class="fragment">
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="fragment" >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Here's an example of executing the <code>triangle()</code> function:</p>
 
 </div>
-</div></div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div>
+</div>
+</div></div></section><section ><div  class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
@@ -15387,12 +14764,12 @@ div.jp-OutputPrompt {
 </div>
 
 <div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
 
@@ -15409,25 +14786,45 @@ div.jp-OutputPrompt {
 
 </div>
 
-</div><div class="fragment">
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="fragment" >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>For the remainder of this chapter, we will use the <code>triangle()</code> function as ongoing example for a program to be tested.  Of course, the complexity of <code>triangle()</code> is a far cry from large systems, and what we show in this chapter will not apply to, say, an ecosystem of thousands of intertwined microservices.  Its point, however, is to show how easy certain techniques can be – if you have the right language and environment.</p>
 
 </div>
-</div></div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+</div></div></section></section><section ><section >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Fuzzing-is-as-Easy-as-Always">Fuzzing is as Easy as Always<a class="anchor-link" href="#Fuzzing-is-as-Easy-as-Always">&#182;</a></h2>
 </div>
-</div><div class="fragment">
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+</div><div class="fragment" >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>If you want to test <code>triangle()</code> with random values, that's fairly easy to do. Just bring along one of the Python random number generators and throw them into <code>triangle()</code>.</p>
 
 </div>
-</div></div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div>
+</div>
+</div></div></section><section ><div  class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
@@ -15447,27 +14844,27 @@ div.jp-OutputPrompt {
 </div>
 
 <div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>triangle(1, 6, 1) = &#39;isosceles #3&#39;
-triangle(2, 1, 3) = &#39;scalene&#39;
-triangle(1, 5, 8) = &#39;scalene&#39;
-triangle(3, 2, 7) = &#39;scalene&#39;
-triangle(2, 6, 3) = &#39;scalene&#39;
-triangle(7, 8, 6) = &#39;scalene&#39;
-triangle(5, 7, 7) = &#39;isosceles #2&#39;
-triangle(3, 8, 7) = &#39;scalene&#39;
-triangle(5, 1, 8) = &#39;scalene&#39;
-triangle(8, 4, 8) = &#39;isosceles #3&#39;
+<pre>triangle(4, 4, 8) = &#39;isosceles #1&#39;
+triangle(8, 8, 6) = &#39;isosceles #1&#39;
+triangle(5, 9, 6) = &#39;scalene&#39;
+triangle(7, 5, 2) = &#39;scalene&#39;
+triangle(8, 6, 1) = &#39;scalene&#39;
+triangle(1, 2, 1) = &#39;isosceles #3&#39;
+triangle(8, 9, 2) = &#39;scalene&#39;
+triangle(7, 6, 6) = &#39;isosceles #2&#39;
+triangle(1, 6, 5) = &#39;scalene&#39;
+triangle(9, 1, 2) = &#39;scalene&#39;
 </pre>
 </div>
 </div>
@@ -15476,26 +14873,46 @@ triangle(8, 4, 8) = &#39;isosceles #3&#39;
 
 </div>
 
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div></section><section >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>So far, so good – but that's something you can do in pretty much any programming language. What is it that makes Python special?</p>
 
 </div>
-</div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+</div></section></section><section ><section >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Dynamic-Analysis-in-Python:-So-Easy-it-Hurts">Dynamic Analysis in Python: So Easy it Hurts<a class="anchor-link" href="#Dynamic-Analysis-in-Python:-So-Easy-it-Hurts">&#182;</a></h2><p>Dynamic analysis is the ability to track what is happening during program execution.  The Python <code>settrace()</code> mechanism allows you to track all code lines, all variables, all values, as the program executes – and all this in a handful of lines of code.  Our <code>Coverage</code> class from <a href="Coverage.slides.html">the chapter on coverage</a> shows how to capture a trace of all lines executed in five lines of code; such a trace easily converts into sets of lines or branches executed.  With two more lines, you can easily track all functions, arguments, variable values, too – see for instance our <a href="DynamicInvariants">chapter on dynamic invariants</a>.  And you can even access the source code of individual functions (and print it out, too!)  All this takes 10, maybe 20 minutes to implement.</p>
 
 </div>
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+</div></section><section >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Here is a piece of Python that does it all.  We track lines executed, and for every line, we print its source codes and the current values of all local variables:</p>
 
 </div>
-</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div>
+</div>
+</div></section><section ><div  class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
@@ -15507,7 +14924,7 @@ triangle(8, 4, 8) = &#39;isosceles #3&#39;
     <span class="nb">vars</span> <span class="o">=</span> <span class="n">frame</span><span class="o">.</span><span class="n">f_locals</span>
 
     <span class="n">source_lines</span><span class="p">,</span> <span class="n">starting_line_no</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getsourcelines</span><span class="p">(</span><span class="n">frame</span><span class="o">.</span><span class="n">f_code</span><span class="p">)</span>
-    <span class="n">loc</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">function_name</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">lineno</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">source_lines</span><span class="p">[</span><span class="n">lineno</span> <span class="o">-</span> <span class="n">starting_line_no</span><span class="p">]</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="n">loc</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">function_name</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">lineno</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">source_lines</span><span class="p">[</span><span class="n">lineno</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">starting_line_no</span><span class="p">]</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span>
     <span class="nb">vars</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="nb">vars</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">vars</span><span class="p">)</span>
 
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">loc</span><span class="si">:</span><span class="s2">50</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="nb">vars</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
@@ -15520,14 +14937,22 @@ triangle(8, 4, 8) = &#39;isosceles #3&#39;
 </div>
 </div>
 
-</div><div class="fragment">
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="fragment" >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>The function <code>sys.settrace()</code> registers <code>traceit()</code> as a trace function; it will then trace the given invocation of <code>triangle()</code>:</p>
 
 </div>
-</div></div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div>
+</div>
+</div></div></section><section ><div  class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
@@ -15543,8 +14968,10 @@ triangle(8, 4, 8) = &#39;isosceles #3&#39;
 </div>
 </div>
 
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="fragment" ><div  class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
@@ -15558,12 +14985,12 @@ triangle(8, 4, 8) = &#39;isosceles #3&#39;
 </div>
 
 <div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -15582,27 +15009,47 @@ triangle:6             return &#39;isosceles #1&#39;       (a = 2, b = 2, c = 1)
 
 </div>
 
-</div></div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div></div></section><section >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>In comparison, try to build such a dynamic analysis for, say, C.  You can either <em>instrument</em> the code to track all lines executed and record variable values, storing the resulting info in some database.  This will take you <em>weeks,</em> if not <em>months</em> to implement.  You can also run your code through a debugger (step-print-step-print-step-print); but again, programming the interaction can take days.  And once you have the first results, you'll probably realize you need something else or better, so you go back to the drawing board.  Not fun.</p>
 
 </div>
-</div><div class="fragment">
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+</div><div class="fragment" >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Together with a dynamic analysis such as the one above, you can make fuzzing much smarter. Search-based testing, for instance, evolves a population of inputs towards a particular goal, such as coverage. With a good dynamic analysis, you can quickly implement search-based strategies for arbitrary goals.</p>
 
 </div>
-</div></div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+</div></div></section></section><section ><section >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Static-Analysis-in-Python:-Still-Easy">Static Analysis in Python: Still Easy<a class="anchor-link" href="#Static-Analysis-in-Python:-Still-Easy">&#182;</a></h2><p>Static analysis refers to the ability to analyze <em>program code</em> without actually executing it. Statically analyzing Python code to deduce any property can be a nightmare, because the language is so highly dynamic. (More on that below.)</p>
 <p>If your static analysis does not have to be <em>sound</em>, – for instance, because you only use it to <em>support</em> and <em>guide</em> another technique such as  testing – then a static analysis in Python can be very simple.  The <code>ast</code> module allows you to turn any Python function into an abstract syntax tree (AST), which you then can traverse as you like.  Here's the AST for our <code>triangle()</code> function:</p>
 
 </div>
-</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div>
+</div>
+</div></section><section ><div  class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
@@ -15620,8 +15067,10 @@ triangle:6             return &#39;isosceles #1&#39;       (a = 2, b = 2, c = 1)
 </div>
 </div>
 
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="fragment" ><div  class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
@@ -15637,615 +15086,615 @@ triangle:6             return &#39;isosceles #1&#39;       (a = 2, b = 2, c = 1)
 </div>
 
 <div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
 
 <div class="jp-RenderedSVG jp-OutputArea-output " data-mime-type="image/svg+xml">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1883pt" height="476pt" viewBox="0.00 0.00 1882.50 476.00">
+<svg width="1867pt" height="476pt" viewBox="0.00 0.00 1867.38 476.00">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 472)">
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-472 1878.5,-472 1878.5,4 -4,4"/>
+<polygon fill="white" stroke="none" points="-4,4 -4,-472 1863.38,-472 1863.38,4 -4,4"></polygon>
 <!-- 0 -->
 <g id="node1" class="node">
 <title>0</title>
-<text text-anchor="start" x="119" y="-447.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">FunctionDef</text>
+<text text-anchor="start" x="115.88" y="-445.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">FunctionDef</text>
 </g>
 <!-- 1 -->
 <g id="node2" class="node">
 <title>1</title>
-<text text-anchor="middle" x="50.5" y="-374.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;triangle&quot;</text>
+<text text-anchor="middle" x="49.25" y="-372.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;triangle&quot;</text>
 </g>
-<!-- 0&#45;&#45;1 -->
+<!-- 0&amp;#45;&amp;#45;1 -->
 <g id="edge1" class="edge">
 <title>0--1</title>
-<path fill="none" stroke="black" d="M166.5,-431C166.5,-431 122.31,-411.19 88.48,-396.03"/>
+<path fill="none" stroke="black" d="M162.25,-431C162.25,-431 118.93,-411.07 85.94,-395.88"></path>
 </g>
 <!-- 2 -->
 <g id="node3" class="node">
 <title>2</title>
-<text text-anchor="start" x="127.5" y="-375.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">arguments</text>
+<text text-anchor="start" x="124.12" y="-373.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">arguments</text>
 </g>
-<!-- 0&#45;&#45;2 -->
+<!-- 0&amp;#45;&amp;#45;2 -->
 <g id="edge2" class="edge">
 <title>0--2</title>
-<path fill="none" stroke="black" d="M166.5,-431C166.5,-431 166.12,-411.19 165.83,-396.03"/>
+<path fill="none" stroke="black" d="M162.25,-431C162.25,-431 161.86,-410.94 161.57,-395.74"></path>
 </g>
 <!-- 9 -->
 <g id="node10" class="node">
 <title>9</title>
-<text text-anchor="start" x="481" y="-375.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">If</text>
+<text text-anchor="start" x="495" y="-373.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">If</text>
 </g>
-<!-- 0&#45;&#45;9 -->
+<!-- 0&amp;#45;&amp;#45;9 -->
 <g id="edge9" class="edge">
 <title>0--9</title>
-<path fill="none" stroke="black" d="M166.5,-431C166.5,-431 384.37,-395.93 462.24,-383.39"/>
+<path fill="none" stroke="black" d="M162.25,-431C162.25,-431 396.1,-395.34 476.49,-383.08"></path>
 </g>
 <!-- 3 -->
 <g id="node4" class="node">
 <title>3</title>
-<text text-anchor="start" x="44.5" y="-303.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">arg</text>
+<text text-anchor="start" x="40.88" y="-301.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">arg</text>
 </g>
-<!-- 2&#45;&#45;3 -->
+<!-- 2&amp;#45;&amp;#45;3 -->
 <g id="edge3" class="edge">
 <title>2--3</title>
-<path fill="none" stroke="black" d="M159.5,-359C159.5,-359 114.78,-336.2 84.57,-320.8"/>
+<path fill="none" stroke="black" d="M155.25,-359C155.25,-359 110.27,-336.07 80.05,-320.66"></path>
 </g>
 <!-- 5 -->
 <g id="node6" class="node">
 <title>5</title>
-<text text-anchor="start" x="116.5" y="-303.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">arg</text>
+<text text-anchor="start" x="112.88" y="-301.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">arg</text>
 </g>
-<!-- 2&#45;&#45;5 -->
+<!-- 2&amp;#45;&amp;#45;5 -->
 <g id="edge5" class="edge">
 <title>2--5</title>
-<path fill="none" stroke="black" d="M159.5,-359C159.5,-359 148.07,-339.19 139.32,-324.03"/>
+<path fill="none" stroke="black" d="M155.25,-359C155.25,-359 143.68,-338.94 134.91,-323.74"></path>
 </g>
 <!-- 7 -->
 <g id="node8" class="node">
 <title>7</title>
-<text text-anchor="start" x="188.5" y="-303.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">arg</text>
+<text text-anchor="start" x="184.88" y="-301.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">arg</text>
 </g>
-<!-- 2&#45;&#45;7 -->
+<!-- 2&amp;#45;&amp;#45;7 -->
 <g id="edge7" class="edge">
 <title>2--7</title>
-<path fill="none" stroke="black" d="M159.5,-359C159.5,-359 175.5,-339.19 187.75,-324.03"/>
+<path fill="none" stroke="black" d="M155.25,-359C155.25,-359 171.45,-338.94 183.73,-323.74"></path>
 </g>
 <!-- 4 -->
 <g id="node5" class="node">
 <title>4</title>
-<text text-anchor="middle" x="57.5" y="-230.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;a&quot;</text>
+<text text-anchor="middle" x="53.25" y="-228.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;a&quot;</text>
 </g>
-<!-- 3&#45;&#45;4 -->
+<!-- 3&amp;#45;&amp;#45;4 -->
 <g id="edge4" class="edge">
 <title>3--4</title>
-<path fill="none" stroke="black" d="M57.5,-287.7C57.5,-276.85 57.5,-262.92 57.5,-252.1"/>
+<path fill="none" stroke="black" d="M53.25,-288.05C53.25,-277.05 53.25,-262.76 53.25,-251.79"></path>
 </g>
 <!-- 6 -->
 <g id="node7" class="node">
 <title>6</title>
-<text text-anchor="middle" x="129.5" y="-230.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;b&quot;</text>
+<text text-anchor="middle" x="125.25" y="-228.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;b&quot;</text>
 </g>
-<!-- 5&#45;&#45;6 -->
+<!-- 5&amp;#45;&amp;#45;6 -->
 <g id="edge6" class="edge">
 <title>5--6</title>
-<path fill="none" stroke="black" d="M129.5,-287.7C129.5,-276.85 129.5,-262.92 129.5,-252.1"/>
+<path fill="none" stroke="black" d="M125.25,-288.05C125.25,-277.05 125.25,-262.76 125.25,-251.79"></path>
 </g>
 <!-- 8 -->
 <g id="node9" class="node">
 <title>8</title>
-<text text-anchor="middle" x="201.5" y="-230.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;c&quot;</text>
+<text text-anchor="middle" x="197.25" y="-228.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;c&quot;</text>
 </g>
-<!-- 7&#45;&#45;8 -->
+<!-- 7&amp;#45;&amp;#45;8 -->
 <g id="edge8" class="edge">
 <title>7--8</title>
-<path fill="none" stroke="black" d="M201.5,-287.7C201.5,-276.85 201.5,-262.92 201.5,-252.1"/>
+<path fill="none" stroke="black" d="M197.25,-288.05C197.25,-277.05 197.25,-262.76 197.25,-251.79"></path>
 </g>
 <!-- 10 -->
 <g id="node11" class="node">
 <title>10</title>
-<text text-anchor="start" x="352" y="-303.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Compare</text>
+<text text-anchor="start" x="348.38" y="-301.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Compare</text>
 </g>
-<!-- 9&#45;&#45;10 -->
+<!-- 9&amp;#45;&amp;#45;10 -->
 <g id="edge10" class="edge">
 <title>9--10</title>
-<path fill="none" stroke="black" d="M507.5,-359C507.5,-359 456.42,-337.92 419.3,-322.6"/>
+<path fill="none" stroke="black" d="M522.25,-359C522.25,-359 456.79,-335.53 413.84,-320.12"></path>
 </g>
 <!-- 18 -->
 <g id="node19" class="node">
 <title>18</title>
-<text text-anchor="start" x="643" y="-303.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">If</text>
+<text text-anchor="start" x="656" y="-301.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">If</text>
 </g>
-<!-- 9&#45;&#45;18 -->
+<!-- 9&amp;#45;&amp;#45;18 -->
 <g id="edge18" class="edge">
 <title>9--18</title>
-<path fill="none" stroke="black" d="M507.5,-359C507.5,-359 582.7,-331.84 624.41,-316.78"/>
+<path fill="none" stroke="black" d="M522.25,-359C522.25,-359 596.41,-331.84 637.54,-316.78"></path>
 </g>
 <!-- 33 -->
 <g id="node34" class="node">
 <title>33</title>
-<text text-anchor="start" x="1229" y="-303.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">If</text>
+<text text-anchor="start" x="1220" y="-301.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">If</text>
 </g>
-<!-- 9&#45;&#45;33 -->
+<!-- 9&amp;#45;&amp;#45;33 -->
 <g id="edge33" class="edge">
 <title>9--33</title>
-<path fill="none" stroke="black" d="M507.5,-359C507.5,-359 1077.69,-318.38 1210.22,-308.94"/>
+<path fill="none" stroke="black" d="M522.25,-359C522.25,-359 1072.48,-318.47 1201.44,-308.97"></path>
 </g>
 <!-- 11 -->
 <g id="node12" class="node">
 <title>11</title>
-<text text-anchor="start" x="256.5" y="-231.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Name</text>
+<text text-anchor="start" x="252.75" y="-229.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Name</text>
 </g>
-<!-- 10&#45;&#45;11 -->
+<!-- 10&amp;#45;&amp;#45;11 -->
 <g id="edge11" class="edge">
 <title>10--11</title>
-<path fill="none" stroke="black" d="M375.5,-287C375.5,-287 330.78,-264.2 300.57,-248.8"/>
+<path fill="none" stroke="black" d="M371.25,-287C371.25,-287 326.27,-264.07 296.05,-248.66"></path>
 </g>
 <!-- 14 -->
 <g id="node15" class="node">
 <title>14</title>
-<text text-anchor="middle" x="345.5" y="-230.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">Eq</text>
+<text text-anchor="middle" x="341.25" y="-228.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">Eq</text>
 </g>
-<!-- 10&#45;&#45;14 -->
+<!-- 10&amp;#45;&amp;#45;14 -->
 <g id="edge14" class="edge">
 <title>10--14</title>
-<path fill="none" stroke="black" d="M375.5,-287C375.5,-287 364.07,-267.19 355.32,-252.03"/>
+<path fill="none" stroke="black" d="M371.25,-287C371.25,-287 359.68,-266.94 350.91,-251.74"></path>
 </g>
 <!-- 15 -->
 <g id="node16" class="node">
 <title>15</title>
-<text text-anchor="start" x="400.5" y="-231.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Name</text>
+<text text-anchor="start" x="396.75" y="-229.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Name</text>
 </g>
-<!-- 10&#45;&#45;15 -->
+<!-- 10&amp;#45;&amp;#45;15 -->
 <g id="edge15" class="edge">
 <title>10--15</title>
-<path fill="none" stroke="black" d="M375.5,-287C375.5,-287 391.5,-267.19 403.75,-252.03"/>
+<path fill="none" stroke="black" d="M371.25,-287C371.25,-287 387.45,-266.94 399.73,-251.74"></path>
 </g>
 <!-- 12 -->
 <g id="node13" class="node">
 <title>12</title>
-<text text-anchor="middle" x="201.5" y="-158.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;a&quot;</text>
+<text text-anchor="middle" x="197.25" y="-156.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;a&quot;</text>
 </g>
-<!-- 11&#45;&#45;12 -->
+<!-- 11&amp;#45;&amp;#45;12 -->
 <g id="edge12" class="edge">
 <title>11--12</title>
-<path fill="none" stroke="black" d="M265.5,-215C265.5,-215 241.12,-195.19 222.46,-180.03"/>
+<path fill="none" stroke="black" d="M262.25,-215C262.25,-215 237.18,-194.94 218.17,-179.74"></path>
 </g>
 <!-- 13 -->
 <g id="node14" class="node">
 <title>13</title>
-<text text-anchor="middle" x="273.5" y="-158.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">Load</text>
+<text text-anchor="middle" x="269.25" y="-156.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">Load</text>
 </g>
-<!-- 11&#45;&#45;13 -->
+<!-- 11&amp;#45;&amp;#45;13 -->
 <g id="edge13" class="edge">
 <title>11--13</title>
-<path fill="none" stroke="black" d="M265.5,-215C265.5,-215 268.55,-195.19 270.88,-180.03"/>
+<path fill="none" stroke="black" d="M262.25,-215C262.25,-215 264.95,-194.94 267,-179.74"></path>
 </g>
 <!-- 16 -->
 <g id="node17" class="node">
 <title>16</title>
-<text text-anchor="middle" x="345.5" y="-158.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;b&quot;</text>
+<text text-anchor="middle" x="341.25" y="-156.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;b&quot;</text>
 </g>
-<!-- 15&#45;&#45;16 -->
+<!-- 15&amp;#45;&amp;#45;16 -->
 <g id="edge16" class="edge">
 <title>15--16</title>
-<path fill="none" stroke="black" d="M409.5,-215C409.5,-215 385.12,-195.19 366.46,-180.03"/>
+<path fill="none" stroke="black" d="M406.25,-215C406.25,-215 381.18,-194.94 362.17,-179.74"></path>
 </g>
 <!-- 17 -->
 <g id="node18" class="node">
 <title>17</title>
-<text text-anchor="middle" x="417.5" y="-158.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">Load</text>
+<text text-anchor="middle" x="413.25" y="-156.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">Load</text>
 </g>
-<!-- 15&#45;&#45;17 -->
+<!-- 15&amp;#45;&amp;#45;17 -->
 <g id="edge17" class="edge">
 <title>15--17</title>
-<path fill="none" stroke="black" d="M409.5,-215C409.5,-215 412.55,-195.19 414.88,-180.03"/>
+<path fill="none" stroke="black" d="M406.25,-215C406.25,-215 408.95,-194.94 411,-179.74"></path>
 </g>
 <!-- 19 -->
 <g id="node20" class="node">
 <title>19</title>
-<text text-anchor="start" x="555" y="-231.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Compare</text>
+<text text-anchor="start" x="564.38" y="-229.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Compare</text>
 </g>
-<!-- 18&#45;&#45;19 -->
+<!-- 18&amp;#45;&amp;#45;19 -->
 <g id="edge19" class="edge">
 <title>18--19</title>
-<path fill="none" stroke="black" d="M657.5,-287C657.5,-287 629.69,-267.19 608.4,-252.03"/>
+<path fill="none" stroke="black" d="M670.25,-287C670.25,-287 640.55,-266.94 618.04,-251.74"></path>
 </g>
 <!-- 27 -->
 <g id="node28" class="node">
 <title>27</title>
-<text text-anchor="start" x="661" y="-231.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Return</text>
+<text text-anchor="start" x="674.5" y="-229.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Return</text>
 </g>
-<!-- 18&#45;&#45;27 -->
+<!-- 18&amp;#45;&amp;#45;27 -->
 <g id="edge27" class="edge">
 <title>18--27</title>
-<path fill="none" stroke="black" d="M657.5,-287C657.5,-287 668.55,-267.19 677,-252.03"/>
+<path fill="none" stroke="black" d="M670.25,-287C670.25,-287 681.44,-266.94 689.91,-251.74"></path>
 </g>
 <!-- 30 -->
 <g id="node31" class="node">
 <title>30</title>
-<text text-anchor="start" x="805" y="-231.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Return</text>
+<text text-anchor="start" x="799.5" y="-229.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Return</text>
 </g>
-<!-- 18&#45;&#45;30 -->
+<!-- 18&amp;#45;&amp;#45;30 -->
 <g id="edge30" class="edge">
 <title>18--30</title>
-<path fill="none" stroke="black" d="M657.5,-287C657.5,-287 746.39,-260.28 796.73,-245.15"/>
+<path fill="none" stroke="black" d="M670.25,-287C670.25,-287 746.39,-261.29 791.59,-246.03"></path>
 </g>
 <!-- 20 -->
 <g id="node21" class="node">
 <title>20</title>
-<text text-anchor="start" x="472.5" y="-159.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Name</text>
+<text text-anchor="start" x="468.75" y="-157.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Name</text>
 </g>
-<!-- 19&#45;&#45;20 -->
+<!-- 19&amp;#45;&amp;#45;20 -->
 <g id="edge20" class="edge">
 <title>19--20</title>
-<path fill="none" stroke="black" d="M580.5,-215C580.5,-215 543.61,-193.92 516.8,-178.6"/>
+<path fill="none" stroke="black" d="M587.25,-215C587.25,-215 542.27,-192.07 512.05,-176.66"></path>
 </g>
 <!-- 23 -->
 <g id="node24" class="node">
 <title>23</title>
-<text text-anchor="middle" x="561.5" y="-158.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">Eq</text>
+<text text-anchor="middle" x="557.25" y="-156.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">Eq</text>
 </g>
-<!-- 19&#45;&#45;23 -->
+<!-- 19&amp;#45;&amp;#45;23 -->
 <g id="edge23" class="edge">
 <title>19--23</title>
-<path fill="none" stroke="black" d="M580.5,-215C580.5,-215 573.26,-195.19 567.72,-180.03"/>
+<path fill="none" stroke="black" d="M587.25,-215C587.25,-215 575.68,-194.94 566.91,-179.74"></path>
 </g>
 <!-- 24 -->
 <g id="node25" class="node">
 <title>24</title>
-<text text-anchor="start" x="616.5" y="-159.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Name</text>
+<text text-anchor="start" x="612.75" y="-157.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Name</text>
 </g>
-<!-- 19&#45;&#45;24 -->
+<!-- 19&amp;#45;&amp;#45;24 -->
 <g id="edge24" class="edge">
 <title>19--24</title>
-<path fill="none" stroke="black" d="M580.5,-215C580.5,-215 600.69,-195.19 616.15,-180.03"/>
+<path fill="none" stroke="black" d="M587.25,-215C587.25,-215 603.45,-194.94 615.73,-179.74"></path>
 </g>
 <!-- 21 -->
 <g id="node22" class="node">
 <title>21</title>
-<text text-anchor="middle" x="417.5" y="-86.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;b&quot;</text>
+<text text-anchor="middle" x="413.25" y="-84.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;b&quot;</text>
 </g>
-<!-- 20&#45;&#45;21 -->
+<!-- 20&amp;#45;&amp;#45;21 -->
 <g id="edge21" class="edge">
 <title>20--21</title>
-<path fill="none" stroke="black" d="M481.5,-143C481.5,-143 457.12,-123.19 438.46,-108.03"/>
+<path fill="none" stroke="black" d="M478.25,-143C478.25,-143 453.18,-122.94 434.17,-107.74"></path>
 </g>
 <!-- 22 -->
 <g id="node23" class="node">
 <title>22</title>
-<text text-anchor="middle" x="489.5" y="-86.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">Load</text>
+<text text-anchor="middle" x="485.25" y="-84.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">Load</text>
 </g>
-<!-- 20&#45;&#45;22 -->
+<!-- 20&amp;#45;&amp;#45;22 -->
 <g id="edge22" class="edge">
 <title>20--22</title>
-<path fill="none" stroke="black" d="M481.5,-143C481.5,-143 484.55,-123.19 486.88,-108.03"/>
+<path fill="none" stroke="black" d="M478.25,-143C478.25,-143 480.95,-122.94 483,-107.74"></path>
 </g>
 <!-- 25 -->
 <g id="node26" class="node">
 <title>25</title>
-<text text-anchor="middle" x="561.5" y="-86.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;c&quot;</text>
+<text text-anchor="middle" x="557.25" y="-84.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;c&quot;</text>
 </g>
-<!-- 24&#45;&#45;25 -->
+<!-- 24&amp;#45;&amp;#45;25 -->
 <g id="edge25" class="edge">
 <title>24--25</title>
-<path fill="none" stroke="black" d="M625.5,-143C625.5,-143 601.12,-123.19 582.46,-108.03"/>
+<path fill="none" stroke="black" d="M622.25,-143C622.25,-143 597.18,-122.94 578.17,-107.74"></path>
 </g>
 <!-- 26 -->
 <g id="node27" class="node">
 <title>26</title>
-<text text-anchor="middle" x="633.5" y="-86.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">Load</text>
+<text text-anchor="middle" x="629.25" y="-84.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">Load</text>
 </g>
-<!-- 24&#45;&#45;26 -->
+<!-- 24&amp;#45;&amp;#45;26 -->
 <g id="edge26" class="edge">
 <title>24--26</title>
-<path fill="none" stroke="black" d="M625.5,-143C625.5,-143 628.55,-123.19 630.88,-108.03"/>
+<path fill="none" stroke="black" d="M622.25,-143C622.25,-143 624.95,-122.94 627,-107.74"></path>
 </g>
 <!-- 28 -->
 <g id="node29" class="node">
 <title>28</title>
-<text text-anchor="start" x="697.5" y="-159.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Constant</text>
+<text text-anchor="start" x="693.25" y="-157.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Constant</text>
 </g>
-<!-- 27&#45;&#45;28 -->
+<!-- 27&amp;#45;&amp;#45;28 -->
 <g id="edge28" class="edge">
 <title>27--28</title>
-<path fill="none" stroke="black" d="M697.62,-215.7C704.6,-204.85 713.55,-190.92 720.5,-180.1"/>
+<path fill="none" stroke="black" d="M705.79,-216.05C710.03,-205.05 715.54,-190.76 719.77,-179.79"></path>
 </g>
 <!-- 29 -->
 <g id="node30" class="node">
 <title>29</title>
-<text text-anchor="middle" x="741.5" y="-86.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;equilateral&quot;</text>
+<text text-anchor="middle" x="736.25" y="-84.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;equilateral&quot;</text>
 </g>
-<!-- 28&#45;&#45;29 -->
+<!-- 28&amp;#45;&amp;#45;29 -->
 <g id="edge29" class="edge">
 <title>28--29</title>
-<path fill="none" stroke="black" d="M733.97,-143.7C735.52,-132.85 737.51,-118.92 739.06,-108.1"/>
+<path fill="none" stroke="black" d="M728.67,-144.05C730.24,-133.05 732.28,-118.76 733.85,-107.79"></path>
 </g>
 <!-- 31 -->
 <g id="node32" class="node">
 <title>31</title>
-<text text-anchor="start" x="827.5" y="-159.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Constant</text>
+<text text-anchor="start" x="821.25" y="-157.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Constant</text>
 </g>
-<!-- 30&#45;&#45;31 -->
+<!-- 30&amp;#45;&amp;#45;31 -->
 <g id="edge31" class="edge">
 <title>30--31</title>
-<path fill="none" stroke="black" d="M838.16,-215.7C842.97,-204.85 849.14,-190.92 853.93,-180.1"/>
+<path fill="none" stroke="black" d="M831.51,-216.05C836.23,-205.05 842.35,-190.76 847.05,-179.79"></path>
 </g>
 <!-- 32 -->
 <g id="node33" class="node">
 <title>32</title>
-<text text-anchor="middle" x="889.5" y="-86.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;isosceles #1&quot;</text>
+<text text-anchor="middle" x="881.25" y="-84.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;isosceles #1&quot;</text>
 </g>
-<!-- 31&#45;&#45;32 -->
+<!-- 31&amp;#45;&amp;#45;32 -->
 <g id="edge32" class="edge">
 <title>31--32</title>
-<path fill="none" stroke="black" d="M868.42,-143.7C872.76,-132.85 878.33,-118.92 882.66,-108.1"/>
+<path fill="none" stroke="black" d="M860.79,-144.05C865.03,-133.05 870.54,-118.76 874.77,-107.79"></path>
 </g>
 <!-- 34 -->
 <g id="node35" class="node">
 <title>34</title>
-<text text-anchor="start" x="1140" y="-231.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Compare</text>
+<text text-anchor="start" x="1131.38" y="-229.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Compare</text>
 </g>
-<!-- 33&#45;&#45;34 -->
+<!-- 33&amp;#45;&amp;#45;34 -->
 <g id="edge34" class="edge">
 <title>33--34</title>
-<path fill="none" stroke="black" d="M1244.5,-287C1244.5,-287 1215.93,-267.19 1194.06,-252.03"/>
+<path fill="none" stroke="black" d="M1235.25,-287C1235.25,-287 1206.32,-266.94 1184.39,-251.74"></path>
 </g>
 <!-- 42 -->
 <g id="node43" class="node">
 <title>42</title>
-<text text-anchor="start" x="1245" y="-231.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Return</text>
+<text text-anchor="start" x="1235.5" y="-229.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Return</text>
 </g>
-<!-- 33&#45;&#45;42 -->
+<!-- 33&amp;#45;&amp;#45;42 -->
 <g id="edge42" class="edge">
 <title>33--42</title>
-<path fill="none" stroke="black" d="M1244.5,-287C1244.5,-287 1254.4,-267.19 1261.99,-252.03"/>
+<path fill="none" stroke="black" d="M1235.25,-287C1235.25,-287 1244.89,-266.94 1252.2,-251.74"></path>
 </g>
 <!-- 45 -->
 <g id="node46" class="node">
 <title>45</title>
-<text text-anchor="start" x="1589" y="-231.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">If</text>
+<text text-anchor="start" x="1577" y="-229.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">If</text>
 </g>
-<!-- 33&#45;&#45;45 -->
+<!-- 33&amp;#45;&amp;#45;45 -->
 <g id="edge45" class="edge">
 <title>33--45</title>
-<path fill="none" stroke="black" d="M1244.5,-287C1244.5,-287 1487.73,-251.17 1570.39,-238.99"/>
+<path fill="none" stroke="black" d="M1235.25,-287C1235.25,-287 1476.41,-251.17 1558.37,-238.99"></path>
 </g>
 <!-- 35 -->
 <g id="node36" class="node">
 <title>35</title>
-<text text-anchor="start" x="1056.5" y="-159.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Name</text>
+<text text-anchor="start" x="1047.75" y="-157.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Name</text>
 </g>
-<!-- 34&#45;&#45;35 -->
+<!-- 34&amp;#45;&amp;#45;35 -->
 <g id="edge35" class="edge">
 <title>34--35</title>
-<path fill="none" stroke="black" d="M1165.5,-215C1165.5,-215 1127.74,-193.66 1100.61,-178.32"/>
+<path fill="none" stroke="black" d="M1156.25,-215C1156.25,-215 1118.03,-193.4 1090.86,-178.04"></path>
 </g>
 <!-- 38 -->
 <g id="node39" class="node">
 <title>38</title>
-<text text-anchor="middle" x="1145.5" y="-158.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">Eq</text>
+<text text-anchor="middle" x="1136.25" y="-156.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">Eq</text>
 </g>
-<!-- 34&#45;&#45;38 -->
+<!-- 34&amp;#45;&amp;#45;38 -->
 <g id="edge38" class="edge">
 <title>34--38</title>
-<path fill="none" stroke="black" d="M1165.5,-215C1165.5,-215 1157.88,-195.19 1152.05,-180.03"/>
+<path fill="none" stroke="black" d="M1156.25,-215C1156.25,-215 1148.53,-194.94 1142.69,-179.74"></path>
 </g>
 <!-- 39 -->
 <g id="node40" class="node">
 <title>39</title>
-<text text-anchor="start" x="1200.5" y="-159.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Name</text>
+<text text-anchor="start" x="1191.75" y="-157.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Name</text>
 </g>
-<!-- 34&#45;&#45;39 -->
+<!-- 34&amp;#45;&amp;#45;39 -->
 <g id="edge39" class="edge">
 <title>34--39</title>
-<path fill="none" stroke="black" d="M1165.5,-215C1165.5,-215 1185.31,-195.19 1200.47,-180.03"/>
+<path fill="none" stroke="black" d="M1156.25,-215C1156.25,-215 1176.31,-194.94 1191.51,-179.74"></path>
 </g>
 <!-- 36 -->
 <g id="node37" class="node">
 <title>36</title>
-<text text-anchor="middle" x="1001.5" y="-86.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;b&quot;</text>
+<text text-anchor="middle" x="992.25" y="-84.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;b&quot;</text>
 </g>
-<!-- 35&#45;&#45;36 -->
+<!-- 35&amp;#45;&amp;#45;36 -->
 <g id="edge36" class="edge">
 <title>35--36</title>
-<path fill="none" stroke="black" d="M1065.5,-143C1065.5,-143 1041.12,-123.19 1022.46,-108.03"/>
+<path fill="none" stroke="black" d="M1057.25,-143C1057.25,-143 1032.18,-122.94 1013.17,-107.74"></path>
 </g>
 <!-- 37 -->
 <g id="node38" class="node">
 <title>37</title>
-<text text-anchor="middle" x="1073.5" y="-86.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">Load</text>
+<text text-anchor="middle" x="1064.25" y="-84.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">Load</text>
 </g>
-<!-- 35&#45;&#45;37 -->
+<!-- 35&amp;#45;&amp;#45;37 -->
 <g id="edge37" class="edge">
 <title>35--37</title>
-<path fill="none" stroke="black" d="M1065.5,-143C1065.5,-143 1068.55,-123.19 1070.88,-108.03"/>
+<path fill="none" stroke="black" d="M1057.25,-143C1057.25,-143 1059.95,-122.94 1062,-107.74"></path>
 </g>
 <!-- 40 -->
 <g id="node41" class="node">
 <title>40</title>
-<text text-anchor="middle" x="1145.5" y="-86.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;c&quot;</text>
+<text text-anchor="middle" x="1136.25" y="-84.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;c&quot;</text>
 </g>
-<!-- 39&#45;&#45;40 -->
+<!-- 39&amp;#45;&amp;#45;40 -->
 <g id="edge40" class="edge">
 <title>39--40</title>
-<path fill="none" stroke="black" d="M1209.5,-143C1209.5,-143 1185.12,-123.19 1166.46,-108.03"/>
+<path fill="none" stroke="black" d="M1201.25,-143C1201.25,-143 1176.18,-122.94 1157.17,-107.74"></path>
 </g>
 <!-- 41 -->
 <g id="node42" class="node">
 <title>41</title>
-<text text-anchor="middle" x="1217.5" y="-86.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">Load</text>
+<text text-anchor="middle" x="1208.25" y="-84.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">Load</text>
 </g>
-<!-- 39&#45;&#45;41 -->
+<!-- 39&amp;#45;&amp;#45;41 -->
 <g id="edge41" class="edge">
 <title>39--41</title>
-<path fill="none" stroke="black" d="M1209.5,-143C1209.5,-143 1212.55,-123.19 1214.88,-108.03"/>
+<path fill="none" stroke="black" d="M1201.25,-143C1201.25,-143 1203.95,-122.94 1206,-107.74"></path>
 </g>
 <!-- 43 -->
 <g id="node44" class="node">
 <title>43</title>
-<text text-anchor="start" x="1283.5" y="-159.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Constant</text>
+<text text-anchor="start" x="1274.25" y="-157.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Constant</text>
 </g>
-<!-- 42&#45;&#45;43 -->
+<!-- 42&amp;#45;&amp;#45;43 -->
 <g id="edge43" class="edge">
 <title>42--43</title>
-<path fill="none" stroke="black" d="M1282.12,-215.7C1289.4,-204.85 1298.76,-190.92 1306.02,-180.1"/>
+<path fill="none" stroke="black" d="M1271.63,-216.05C1279.02,-205.05 1288.61,-190.76 1295.98,-179.79"></path>
 </g>
 <!-- 44 -->
 <g id="node45" class="node">
 <title>44</title>
-<text text-anchor="middle" x="1329.5" y="-86.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;isosceles #2&quot;</text>
+<text text-anchor="middle" x="1319.25" y="-84.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;isosceles #2&quot;</text>
 </g>
-<!-- 43&#45;&#45;44 -->
+<!-- 43&amp;#45;&amp;#45;44 -->
 <g id="edge44" class="edge">
 <title>43--44</title>
-<path fill="none" stroke="black" d="M1320.47,-143.7C1322.33,-132.85 1324.71,-118.92 1326.57,-108.1"/>
+<path fill="none" stroke="black" d="M1310.15,-144.05C1312.04,-133.05 1314.49,-118.76 1316.37,-107.79"></path>
 </g>
 <!-- 46 -->
 <g id="node47" class="node">
 <title>46</title>
-<text text-anchor="start" x="1500" y="-159.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Compare</text>
+<text text-anchor="start" x="1489.38" y="-157.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Compare</text>
 </g>
-<!-- 45&#45;&#45;46 -->
+<!-- 45&amp;#45;&amp;#45;46 -->
 <g id="edge46" class="edge">
 <title>45--46</title>
-<path fill="none" stroke="black" d="M1607.5,-215C1607.5,-215 1577.79,-195.19 1555.04,-180.03"/>
+<path fill="none" stroke="black" d="M1594.25,-215C1594.25,-215 1564.93,-194.94 1542.72,-179.74"></path>
 </g>
 <!-- 54 -->
 <g id="node55" class="node">
 <title>54</title>
-<text text-anchor="start" x="1640" y="-159.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Return</text>
+<text text-anchor="start" x="1628.5" y="-157.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Return</text>
 </g>
-<!-- 45&#45;&#45;54 -->
+<!-- 45&amp;#45;&amp;#45;54 -->
 <g id="edge54" class="edge">
 <title>45--54</title>
-<path fill="none" stroke="black" d="M1607.5,-215C1607.5,-215 1629.59,-195.19 1646.51,-180.03"/>
+<path fill="none" stroke="black" d="M1594.25,-215C1594.25,-215 1617.01,-194.94 1634.26,-179.74"></path>
 </g>
 <!-- 57 -->
 <g id="node58" class="node">
 <title>57</title>
-<text text-anchor="start" x="1772" y="-159.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Return</text>
+<text text-anchor="start" x="1758.5" y="-157.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Return</text>
 </g>
-<!-- 45&#45;&#45;57 -->
+<!-- 45&amp;#45;&amp;#45;57 -->
 <g id="edge57" class="edge">
 <title>45--57</title>
-<path fill="none" stroke="black" d="M1607.5,-215C1607.5,-215 1709.42,-187.11 1763.97,-172.18"/>
+<path fill="none" stroke="black" d="M1594.25,-215C1594.25,-215 1696.72,-186.81 1750.76,-171.94"></path>
 </g>
 <!-- 47 -->
 <g id="node48" class="node">
 <title>47</title>
-<text text-anchor="start" x="1424.5" y="-87.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Name</text>
+<text text-anchor="start" x="1413.75" y="-85.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Name</text>
 </g>
-<!-- 46&#45;&#45;47 -->
+<!-- 46&amp;#45;&amp;#45;47 -->
 <g id="edge47" class="edge">
 <title>46--47</title>
-<path fill="none" stroke="black" d="M1526.5,-143C1526.5,-143 1493.71,-122.94 1468.86,-107.74"/>
+<path fill="none" stroke="black" d="M1515.25,-143C1515.25,-143 1482.05,-122.69 1457.14,-107.45"></path>
 </g>
 <!-- 50 -->
 <g id="node51" class="node">
 <title>50</title>
-<text text-anchor="middle" x="1513.5" y="-86.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">Eq</text>
+<text text-anchor="middle" x="1502.25" y="-84.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">Eq</text>
 </g>
-<!-- 46&#45;&#45;50 -->
+<!-- 46&amp;#45;&amp;#45;50 -->
 <g id="edge50" class="edge">
 <title>46--50</title>
-<path fill="none" stroke="black" d="M1526.5,-143C1526.5,-143 1521.55,-123.19 1517.76,-108.03"/>
+<path fill="none" stroke="black" d="M1515.25,-143C1515.25,-143 1510.24,-122.94 1506.43,-107.74"></path>
 </g>
 <!-- 51 -->
 <g id="node52" class="node">
 <title>51</title>
-<text text-anchor="start" x="1568.5" y="-87.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Name</text>
+<text text-anchor="start" x="1557.75" y="-85.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Name</text>
 </g>
-<!-- 46&#45;&#45;51 -->
+<!-- 46&amp;#45;&amp;#45;51 -->
 <g id="edge51" class="edge">
 <title>46--51</title>
-<path fill="none" stroke="black" d="M1526.5,-143C1526.5,-143 1548.97,-123.19 1566.18,-108.03"/>
+<path fill="none" stroke="black" d="M1515.25,-143C1515.25,-143 1538.01,-122.94 1555.26,-107.74"></path>
 </g>
 <!-- 48 -->
 <g id="node49" class="node">
 <title>48</title>
-<text text-anchor="middle" x="1369.5" y="-14.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;a&quot;</text>
+<text text-anchor="middle" x="1358.25" y="-12.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;a&quot;</text>
 </g>
-<!-- 47&#45;&#45;48 -->
+<!-- 47&amp;#45;&amp;#45;48 -->
 <g id="edge48" class="edge">
 <title>47--48</title>
-<path fill="none" stroke="black" d="M1433.5,-71C1433.5,-71 1409.12,-51.19 1390.46,-36.03"/>
+<path fill="none" stroke="black" d="M1423.25,-71C1423.25,-71 1398.18,-50.94 1379.17,-35.74"></path>
 </g>
 <!-- 49 -->
 <g id="node50" class="node">
 <title>49</title>
-<text text-anchor="middle" x="1441.5" y="-14.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">Load</text>
+<text text-anchor="middle" x="1430.25" y="-12.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">Load</text>
 </g>
-<!-- 47&#45;&#45;49 -->
+<!-- 47&amp;#45;&amp;#45;49 -->
 <g id="edge49" class="edge">
 <title>47--49</title>
-<path fill="none" stroke="black" d="M1433.5,-71C1433.5,-71 1436.55,-51.19 1438.88,-36.03"/>
+<path fill="none" stroke="black" d="M1423.25,-71C1423.25,-71 1425.95,-50.94 1428,-35.74"></path>
 </g>
 <!-- 52 -->
 <g id="node53" class="node">
 <title>52</title>
-<text text-anchor="middle" x="1513.5" y="-14.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;c&quot;</text>
+<text text-anchor="middle" x="1502.25" y="-12.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;c&quot;</text>
 </g>
-<!-- 51&#45;&#45;52 -->
+<!-- 51&amp;#45;&amp;#45;52 -->
 <g id="edge52" class="edge">
 <title>51--52</title>
-<path fill="none" stroke="black" d="M1577.5,-71C1577.5,-71 1553.12,-51.19 1534.46,-36.03"/>
+<path fill="none" stroke="black" d="M1567.25,-71C1567.25,-71 1542.18,-50.94 1523.17,-35.74"></path>
 </g>
 <!-- 53 -->
 <g id="node54" class="node">
 <title>53</title>
-<text text-anchor="middle" x="1585.5" y="-14.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">Load</text>
+<text text-anchor="middle" x="1574.25" y="-12.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">Load</text>
 </g>
-<!-- 51&#45;&#45;53 -->
+<!-- 51&amp;#45;&amp;#45;53 -->
 <g id="edge53" class="edge">
 <title>51--53</title>
-<path fill="none" stroke="black" d="M1577.5,-71C1577.5,-71 1580.55,-51.19 1582.88,-36.03"/>
+<path fill="none" stroke="black" d="M1567.25,-71C1567.25,-71 1569.95,-50.94 1572,-35.74"></path>
 </g>
 <!-- 55 -->
 <g id="node56" class="node">
 <title>55</title>
-<text text-anchor="start" x="1651.5" y="-87.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Constant</text>
+<text text-anchor="start" x="1640.25" y="-85.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Constant</text>
 </g>
-<!-- 54&#45;&#45;55 -->
+<!-- 54&amp;#45;&amp;#45;55 -->
 <g id="edge55" class="edge">
 <title>54--55</title>
-<path fill="none" stroke="black" d="M1670.44,-143.7C1673.54,-132.85 1677.52,-118.92 1680.61,-108.1"/>
+<path fill="none" stroke="black" d="M1658.09,-144.05C1661.24,-133.05 1665.32,-118.76 1668.45,-107.79"></path>
 </g>
 <!-- 56 -->
 <g id="node57" class="node">
 <title>56</title>
-<text text-anchor="middle" x="1697.5" y="-14.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;isosceles #3&quot;</text>
+<text text-anchor="middle" x="1685.25" y="-12.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;isosceles #3&quot;</text>
 </g>
-<!-- 55&#45;&#45;56 -->
+<!-- 55&amp;#45;&amp;#45;56 -->
 <g id="edge56" class="edge">
 <title>55--56</title>
-<path fill="none" stroke="black" d="M1688.47,-71.7C1690.33,-60.85 1692.71,-46.92 1694.57,-36.1"/>
+<path fill="none" stroke="black" d="M1676.15,-72.05C1678.04,-61.05 1680.49,-46.76 1682.37,-35.79"></path>
 </g>
 <!-- 58 -->
 <g id="node59" class="node">
 <title>58</title>
-<text text-anchor="start" x="1780.5" y="-87.3" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Constant</text>
+<text text-anchor="start" x="1767.25" y="-85.95" font-family="Courier,monospace" font-weight="bold" font-size="14.00" fill="#004080">Constant</text>
 </g>
-<!-- 57&#45;&#45;58 -->
+<!-- 57&amp;#45;&amp;#45;58 -->
 <g id="edge58" class="edge">
 <title>57--58</title>
-<path fill="none" stroke="black" d="M1801.7,-143.7C1804.34,-132.85 1807.72,-118.92 1810.35,-108.1"/>
+<path fill="none" stroke="black" d="M1787.37,-144.05C1790.04,-133.05 1793.51,-118.76 1796.17,-107.79"></path>
 </g>
 <!-- 59 -->
 <g id="node60" class="node">
 <title>59</title>
-<text text-anchor="middle" x="1828.5" y="-14.3" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;scalene&quot;</text>
+<text text-anchor="middle" x="1814.25" y="-12.95" font-family="Courier,monospace" font-size="14.00" fill="#008040">&quot;scalene&quot;</text>
 </g>
-<!-- 58&#45;&#45;59 -->
+<!-- 58&amp;#45;&amp;#45;59 -->
 <g id="edge59" class="edge">
 <title>58--59</title>
-<path fill="none" stroke="black" d="M1817.96,-71.7C1820.13,-60.85 1822.92,-46.92 1825.08,-36.1"/>
+<path fill="none" stroke="black" d="M1803.64,-72.05C1805.84,-61.05 1808.7,-46.76 1810.89,-35.79"></path>
 </g>
 </g>
 </svg>
@@ -16257,14 +15706,22 @@ triangle:6             return &#39;isosceles #1&#39;       (a = 2, b = 2, c = 1)
 
 </div>
 
-</div></div><div class="fragment">
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div></div><div class="fragment" >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Now suppose one wants to identify all <code>triangle</code> branches and their conditions using static analysis.  You would traverse the AST, searching for <code>If</code> nodes, and take their first child (the condition).  This is easy as well:</p>
 
 </div>
-</div></div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div>
+</div>
+</div></div></section><section ><div  class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
@@ -16289,14 +15746,22 @@ triangle:6             return &#39;isosceles #1&#39;       (a = 2, b = 2, c = 1)
 </div>
 </div>
 
-</div><div class="fragment">
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="fragment" >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Here are the four <code>if</code> conditions occurring in the <code>triangle()</code> code:</p>
 
 </div>
-</div></div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div>
+</div>
+</div></div></section><section ><div  class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
@@ -16310,12 +15775,12 @@ triangle:6             return &#39;isosceles #1&#39;       (a = 2, b = 2, c = 1)
 </div>
 
 <div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[15]:</div>
 
@@ -16332,28 +15797,48 @@ triangle:6             return &#39;isosceles #1&#39;       (a = 2, b = 2, c = 1)
 
 </div>
 
-</div><div class="fragment">
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="fragment" >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Not only can we extract individual program elements, we can also change them at will and convert the tree back into source code.  Program transformations (say, for instrumentation or mutation analysis) are a breeze.  The above code took five minutes to write.  Again, try that in Java or C.</p>
 
 </div>
-</div></div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+</div></div></section></section><section ><section >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Symbolic-Reasoning-in-Python:-There's-a-Package-for-That">Symbolic Reasoning in Python: There's a Package for That<a class="anchor-link" href="#Symbolic-Reasoning-in-Python:-There's-a-Package-for-That">&#182;</a></h2><p>Let's get back to testing.  We have shown how to extract conditions from code.  To reach a particular location in the <code>triangle()</code> function, one needs to find a solution for the <em>path conditions</em> leading to that branch.  To reach the last line in <code>triangle()</code> (the <code>'scalene'</code> branch), we have to find a solution for 
 $$a \ne b \land b \ne c \land a \ne c$$</p>
 <p>We can make use of a <em>constraint</em> solver for this, such as Microsoft's <a href="https://github.com/Z3Prover/z3"><em>Z3</em> solver</a>:</p>
 
 </div>
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+</div></section><section >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Let us use Z3 to find a solution for the <code>'scalene'</code> branch condition:</p>
 
 </div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div>
+</div>
+</div><div class="fragment" ><div  class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
@@ -16368,8 +15853,10 @@ $$a \ne b \land b \ne c \land a \ne c$$</p>
 </div>
 </div>
 
-</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div></div><div class="fragment" ><div  class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
@@ -16386,12 +15873,12 @@ $$a \ne b \land b \ne c \land a \ne c$$</p>
 </div>
 
 <div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
 
@@ -16407,14 +15894,22 @@ $$a \ne b \land b \ne c \land a \ne c$$</p>
 
 </div>
 
-</div></div><div class="fragment">
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div></div><div class="fragment" >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Z3 has shown us that there is a solution ("sat" = "satisfiable"). Let us get one:</p>
+<p>Z3 has shown us that there is a solution (&quot;sat&quot; = &quot;satisfiable&quot;). Let us get one:</p>
 
 </div>
-</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div>
+</div>
+</div></div><div class="fragment" ><div  class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
@@ -16429,12 +15924,12 @@ $$a \ne b \land b \ne c \land a \ne c$$</p>
 </div>
 
 <div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
 
@@ -16450,14 +15945,22 @@ $$a \ne b \land b \ne c \land a \ne c$$</p>
 
 </div>
 
-</div></div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div></div></section><section >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>We can use this solution right away for testing the <code>triangle()</code> function and find that it indeed covers the <code>'scalene'</code> branch. The method <code>as_long()</code> converts the Z3 results into numerical values.</p>
 
 </div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div>
+</div>
+</div><div class="fragment" ><div  class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
@@ -16471,12 +15974,12 @@ $$a \ne b \land b \ne c \land a \ne c$$</p>
 </div>
 
 <div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
 
@@ -16493,14 +15996,22 @@ $$a \ne b \land b \ne c \land a \ne c$$</p>
 
 </div>
 
-</div></div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div></div></section></section><section ><section >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="A-Symbolic-Test-Generator">A Symbolic Test Generator<a class="anchor-link" href="#A-Symbolic-Test-Generator">&#182;</a></h2><p>With what we have seen, we can now build a <em>symbolic test generator</em> – a tool that attempts to systematically create test inputs that cover all paths.  Let us find all conditions we need to solve, by exploring all paths in the tree. We turn these paths to Z3 format right away:</p>
 
 </div>
-</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div>
+</div>
+</div></section><section ><div  class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
@@ -16537,8 +16048,10 @@ $$a \ne b \land b \ne c \land a \ne c$$</p>
 </div>
 </div>
 
-</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div></section><section ><div  class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
@@ -16553,12 +16066,12 @@ $$a \ne b \land b \ne c \land a \ne c$$</p>
 </div>
 
 <div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
 
@@ -16579,14 +16092,22 @@ $$a \ne b \land b \ne c \land a \ne c$$</p>
 
 </div>
 
-</div><div class="fragment">
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="fragment" >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Now all we need to do is to feed these constraints into Z3. We see that we easily cover all branches:</p>
 
 </div>
-</div></div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div>
+</div>
+</div></div></section><section ><div  class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
@@ -16605,21 +16126,21 @@ $$a \ne b \land b \ne c \land a \ne c$$</p>
 </div>
 
 <div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[c = 1, a = 1, b = 1] equilateral
+<pre>[a = 1, c = 1, b = 1] equilateral
 [c = 2, a = 1, b = 1] isosceles #1
 [c = 2, a = 1, b = 2] isosceles #2
-[c = 2, a = 2, b = 1] isosceles #3
+[c = 1, a = 1, b = 2] isosceles #3
 [c = 3, a = 1, b = 2] scalene
 </pre>
 </div>
@@ -16629,14 +16150,24 @@ $$a \ne b \land b \ne c \land a \ne c$$</p>
 
 </div>
 
-</div><div class="fragment">
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="fragment" >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Success! We have covered all branches of the triangle program!</p>
 
 </div>
-</div></div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+</div></div></section><section >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Now, the above is still very limited – and tailored to the capabilities of the <code>triangle()</code> code. A full implementation would actually</p>
 <ul>
@@ -16647,34 +16178,62 @@ $$a \ne b \land b \ne c \land a \ne c$$</p>
 <p>Some of these may not be supported by the Z3 theories.</p>
 
 </div>
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+</div></section><section >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>To make it easier for a constraint solver to find solutions, you could also provide <em>concrete values</em> observed from earlier executions that already are known to reach specific paths in the program.  Such concrete values would be gathered from the tracing mechanisms above, and boom: you would have a pretty powerful and scalable concolic (concrete-symbolic) test generator.</p>
 
 </div>
-</div><div class="fragment">
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+</div><div class="fragment" >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Now, the above might take you a day or two, and as you expand your test generator beyond <code>triangle()</code>, you will add more and more features.  The nice part is that every of these features you will invent might actually be a research contribution – something nobody has thought of before.  Whatever idea you might have: you can quickly implement it and try it out in a prototype.  And again, this will be orders of magnitude faster than for conventional languages.</p>
 
 </div>
-</div></div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+</div></div></section></section><section ><section >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Things-that-will-not-work">Things that will not work<a class="anchor-link" href="#Things-that-will-not-work">&#182;</a></h2><p>Python has a reputation for being hard to analyze statically, and this is true; its dynamic nature makes it hard for traditional static analysis to exclude specific behaviors.</p>
 <p>We see Python as a great language for prototyping automated testing and dynamic analysis techniques, and as a good language to illustrate <em>lightweight</em> static and symbolic analysis techniques that would be used to <em>guide</em> and <em>support</em> other techniques (say, generating software tests).</p>
 <p>But if you want to <em>prove</em> specific properties (or the absence thereof) by static analysis of code only, Python is a challenge, to say the least; and there are areas for which we would definitely <em>warn</em> against using it.</p>
 
 </div>
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+</div></section><section >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="(No)-Type-Checking">(No) Type Checking<a class="anchor-link" href="#(No)-Type-Checking">&#182;</a></h3><p>Using Python to demonstrate <em>static type checking</em> will be suboptimal (to say the least) because, well, Python programs typically do not come with type annotations.  You <em>can</em>, of course, annotate variables with types, as we assume in the <a href="SymbolicFuzzer.slides.html">chapter on Symbolic Fuzzing</a>:</p>
 
 </div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div>
+</div>
+</div><div class="fragment" ><div  class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
@@ -16688,26 +16247,40 @@ $$a \ne b \land b \ne c \land a \ne c$$</p>
 </div>
 </div>
 
-</div></div><div class="fragment">
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div></div><div class="fragment" >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Most real-world Python code will not be annotated with types, though.  While you can also <em>retrofit them</em>, as discussed in <a href="DynamicInvariants.slides.html">our chapter on dynamic invariants</a>, Python simply is not a good domain to illustrate type checking. If you want to show the beauty and usefulness of type checking, use a strongly typed language like Java, ML, or Haskell.</p>
 
 </div>
-</div></div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+</div></div></section><section >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="(No)-Program-Proofs">(No) Program Proofs<a class="anchor-link" href="#(No)-Program-Proofs">&#182;</a></h3><p>Python is a highly dynamic language in which you can change <em>anything</em> at runtime.  It is no problem assigning a variable different types, as in</p>
+<h3 id="(No)-Program-Proofs">(No) Program Proofs<a class="anchor-link" href="#(No)-Program-Proofs">&#182;</a></h3><p>Python is a highly dynamic language in which you can change <em>anything</em> at runtime.  It is no problem assigning different types to a variable, as in</p>
 
 </div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div>
+</div>
+</div><div class="fragment" ><div  class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">42</span>
-<span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;a string&quot;</span>
+<span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;a string&quot;</span>  <span class="c1"># type: ignore</span>
 </pre></div>
 
      </div>
@@ -16715,14 +16288,22 @@ $$a \ne b \land b \ne c \land a \ne c$$</p>
 </div>
 </div>
 
-</div></div><div class="fragment">
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div></div><div class="fragment" >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>or change the existence (and scope) of a variable depending on some runtime condition:</p>
 
 </div>
-</div></div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div>
+</div>
+</div></div></section><section ><div  class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
@@ -16733,7 +16314,7 @@ $$a \ne b \land b \ne c \land a \ne c$$</p>
     <span class="n">x</span> <span class="o">=</span> <span class="mi">42</span>
 <span class="k">if</span> <span class="n">p2</span><span class="p">:</span>
     <span class="k">del</span> <span class="n">x</span>
-    
+
 <span class="c1"># Does x exist at this point?</span>
 </pre></div>
 
@@ -16742,23 +16323,39 @@ $$a \ne b \land b \ne c \land a \ne c$$</p>
 </div>
 </div>
 
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div></section><section >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Such properties make symbolic reasoning on code (including static analysis and type checking) much harder, if not outright impossible.  If you need lightweight static and symbolic analysis techniques to <em>guide</em> other techniques (say, test generation), then imprecision may not hurt much. But if you want to derive <em>guarantees</em> from your code, do not use Python as test subject; again, strongly statically typed languages like Java/ML/Haskell (or some very restricted toy language) are much better grounds for experimentation.</p>
 
 </div>
-</div><div class="fragment">
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+</div><div class="fragment" >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>This does not mean that languages like Python should <em>not</em> be statically checked.  On the contrary, the widespread usage of Python calls loudly for better static checking tools.  But if you want to teach or research static and symbolic techniques, we definitely would not use Python as our language of choice.</p>
 
 </div>
-</div></div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+</div></div></section></section><section ><section >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="The-Virtues-of-Prototyping">The Virtues of Prototyping<a class="anchor-link" href="#The-Virtues-of-Prototyping">&#182;</a></h2><p>One neat thing about prototyping (with Python or whatever) is that it allows you to fully focus on your <em>approach</em>, rather than on the infrastructure. Very obviously, this is useful for <em>teaching</em> – you can use examples as the ones above in a lecture to very quickly communicate essential techniques of program analysis and test generation.</p>
-<p>But prototyping has more advantages. A Jupyter Notebook (like this one) documents how you developed your approach, together with examples, experiments, and rationales – and still focusing on the essentials. If you write a tool the "classical" way, you will eventually deliver thousands of lines of code that do everything under the sun, but only once you have implemented everything will you know whether things actually work. This is a huge risk, and if you still have to change things, you will have to refactor things again and again. Furthermore, for anyone who will work on that code later, it will take days, if not weeks, to re-extract the basic idea of the approach, as it will be buried under loads and loads of infrastructure and refactorings.</p>
+<p>But prototyping has more advantages. A Jupyter Notebook (like this one) documents how you developed your approach, together with examples, experiments, and rationales – and still focusing on the essentials. If you write a tool the &quot;classical&quot; way, you will eventually deliver thousands of lines of code that do everything under the sun, but only once you have implemented everything will you know whether things actually work. This is a huge risk, and if you still have to change things, you will have to refactor things again and again. Furthermore, for anyone who will work on that code later, it will take days, if not weeks, to re-extract the basic idea of the approach, as it will be buried under loads and loads of infrastructure and refactorings.</p>
 <p>Our consequence at this point is that we now implement new ideas <em>twice</em>:</p>
 <ul>
 <li><p>First, we implement things as a notebook (as this one), experimenting with various approaches and parameters until we get them right.</p>
@@ -16769,19 +16366,31 @@ $$a \ne b \land b \ne c \land a \ne c$$</p>
 <p>Incidentally, it may well be that the original notebooks will have a longer life, as they are simpler, better documented, and capture the gist of our novel idea. And this is how several of the notebooks in this book came to be.</p>
 
 </div>
-</div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+</div></section></section><section ><section >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Try-it-out!">Try it out!<a class="anchor-link" href="#Try-it-out!">&#182;</a></h2><p>All the code examples above can be run by you – and changed as you like! From the Web page, the easiest way is to go to "Resources $\rightarrow$ Edit as Notebook", and you can experiment with the original Jupyter Notebook right within your browser. (Use <code>Shift</code> + <code>Return</code> to execute code.)</p>
-<p>From the "Resources" menu, you can also download the Python code (.py) to run it within a Python environment, or download the notebook (.slides.html) to run it within Jupyter – and again, change them as you like. If you want to run this code on your own machine, you will need the following packages:</p>
-
+<h2 id="Try-it-out!">Try it out!<a class="anchor-link" href="#Try-it-out!">&#182;</a></h2><p>All the code examples above can be run by you – and changed as you like! From the Web page, the easiest way is to go to &quot;Resources $\rightarrow$ Edit as Notebook&quot;, and you can experiment with the original Jupyter Notebook right within your browser. (Use <code>Shift</code> + <code>Return</code> to execute code.)</p>
+<p>From the &quot;Resources&quot; menu, you can also download the Python code (<code>.py</code>) to run it within a Python environment, or download the notebook (<code>.ipynb</code>) to run it within Jupyter – and again, change them as you like. If you want to run this code on your own machine, you will need the following packages:</p>
 <pre><code>pip install showast
-pip install z3-solver</code></pre>
+pip install z3-solver
+</code></pre>
 <p>Enjoy!</p>
 
 </div>
-</div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+</div></section></section><section ><section >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Lessons-Learned">Lessons Learned<a class="anchor-link" href="#Lessons-Learned">&#182;</a></h2><p><strong>Python</strong> is a great language for prototyping testing and debugging tools:</p>
 <ul>
@@ -16803,8 +16412,14 @@ pip install z3-solver</code></pre>
 </ul>
 
 </div>
-</div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+</div></section></section><section ><section >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Next-Steps">Next Steps<a class="anchor-link" href="#Next-Steps">&#182;</a></h2><p>If you want to see more examples of us using Python for prototyping – have a look at <a href="index.slides.html">this book</a>! Specifically,</p>
 <ul>
@@ -16815,20 +16430,38 @@ pip install z3-solver</code></pre>
 <p>There's lots to learn – enjoy the read!</p>
 
 </div>
-</div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+</div></section></section><section ><section >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Background">Background<a class="anchor-link" href="#Background">&#182;</a></h2><p>The <em>triangle problem</em> is adapted from "The Art of Software Testing" by Myers and Sandler \cite{Myers2004}. It is a allegedly simple problem but which reveals a surprising depth when you think about all the things that might go wrong.</p>
+<h2 id="Background">Background<a class="anchor-link" href="#Background">&#182;</a></h2><p>The <em>triangle problem</em> is adapted from &quot;The Art of Software Testing&quot; by Myers and Sandler \cite{Myers2004}. It is an allegedly simple problem but which reveals a surprising depth when you think about all the things that might go wrong.</p>
 <p>The <em>Z3 solver</em> we use in this chapter was developed at Microsoft Research under the lead of Leonardo de Moura and Nikolaj Bjørner \cite{z3}. It is one of the most powerful and most popular solvers.</p>
 
 </div>
-</div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+</div></section></section><section ><section >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Exercises">Exercises<a class="anchor-link" href="#Exercises">&#182;</a></h2>
 </div>
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div>
+</div>
+</div></section><section >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Exercise-1:-Features!-Features!">Exercise 1: Features! Features!<a class="anchor-link" href="#Exercise-1:-Features!-Features!">&#182;</a></h3><p>Our path collector is still very limited. Things that do not work include</p>
 <ul>
@@ -16840,6 +16473,8 @@ pip install z3-solver</code></pre>
 </ul>
 <p>The more of these you implement, the closer you will get to a full-fledged symbolic test generator for Python. But at some point, <em>your prototype may not be a prototype anymore</em>, and then, Python may no longer be the best language to use. Find a good moment when it is time to switch from a prototypical to a production tool.</p>
 
+</div>
+</div>
 </div>
 </div></section></section>
 </div>
@@ -16871,6 +16506,7 @@ require(
             progress: true,
             history: true,
             transition: "slide",
+            slideNumber: "",
             plugins: [RevealNotes]
         });
 

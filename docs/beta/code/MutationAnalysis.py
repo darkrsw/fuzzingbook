@@ -3,9 +3,9 @@
 
 # "Mutation Analysis" - a chapter of "The Fuzzing Book"
 # Web site: https://www.fuzzingbook.org/html/MutationAnalysis.html
-# Last change: 2021-10-14 18:45:08+02:00
+# Last change: 2025-10-26 19:00:30+01:00
 #
-# Copyright (c) 2021 CISPA Helmholtz Center for Information Security
+# Copyright (c) 2021-2025 CISPA Helmholtz Center for Information Security
 # Copyright (c) 2018-2020 Saarland University, authors, and contributors
 #
 # Permission is hereby granted, free of charge, to any person obtaining a
@@ -37,127 +37,12 @@ This file can be _executed_ as a script, running all experiments:
 or _imported_ as a package, providing classes, functions, and constants:
 
     >>> from fuzzingbook.MutationAnalysis import <identifier>
-    
+
 but before you do so, _read_ it and _interact_ with it at:
 
     https://www.fuzzingbook.org/html/MutationAnalysis.html
 
-This chapter introduces two methods of running *mutation analysis* on subject programs. The first class `MuFunctionAnalyzer` targets individual functions. Given a function `gcd` and two test cases evaluate, one can run mutation analysis on the test cases as follows:
-
->>> for mutant in MuFunctionAnalyzer(gcd, log=True):
->>>     with mutant:
->>>         assert gcd(1, 0) == 1, "Minimal"
->>>         assert gcd(0, 1) == 1, "Mirror"
->>> mutant.pm.score()
-->	gcd_1
-	gcd_2
-	gcd_3
-	gcd_4
- Minimal
-
-
-0.25
-
-The second class `MuProgramAnalyzer` targets standalone programs with test suites. Given a program `gcd` whose source code is provided in `gcd_src` and the test suite is provided by `TestGCD`, one can evaluate the mutation score of `TestGCD` as follows:
-
->>> class TestGCD(unittest.TestCase):
->>>     def test_simple(self):
->>>         assert cfg.gcd(1, 0) == 1
->>> 
->>>     def test_mirror(self):
->>>         assert cfg.gcd(0, 1) == 1
->>> for mutant in MuProgramAnalyzer('gcd', gcd_src):
->>>     mutant[test_module].runTest('TestGCD')
->>> mutant.pm.score()
-======================================================================
-FAIL: test_simple (__main__.TestGCD)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_51289/2565918356.py", line 3, in test_simple
-    assert cfg.gcd(1, 0) == 1
-AssertionError
-
-----------------------------------------------------------------------
-Ran 1 test in 0.001s
-
-FAILED (failures=1)
-======================================================================
-FAIL: test_simple (__main__.TestGCD)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_51289/2565918356.py", line 3, in test_simple
-    assert cfg.gcd(1, 0) == 1
-AssertionError
-
-----------------------------------------------------------------------
-Ran 1 test in 0.001s
-
-FAILED (failures=1)
-======================================================================
-FAIL: test_simple (__main__.TestGCD)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_51289/2565918356.py", line 3, in test_simple
-    assert cfg.gcd(1, 0) == 1
-AssertionError
-
-----------------------------------------------------------------------
-Ran 1 test in 0.001s
-
-FAILED (failures=1)
-======================================================================
-FAIL: test_simple (__main__.TestGCD)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_51289/2565918356.py", line 3, in test_simple
-    assert cfg.gcd(1, 0) == 1
-AssertionError
-
-----------------------------------------------------------------------
-Ran 1 test in 0.001s
-
-FAILED (failures=1)
-======================================================================
-FAIL: test_simple (__main__.TestGCD)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_51289/2565918356.py", line 3, in test_simple
-    assert cfg.gcd(1, 0) == 1
-AssertionError
-
-----------------------------------------------------------------------
-Ran 1 test in 0.001s
-
-FAILED (failures=1)
-======================================================================
-FAIL: test_simple (__main__.TestGCD)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_51289/2565918356.py", line 3, in test_simple
-    assert cfg.gcd(1, 0) == 1
-AssertionError
-
-----------------------------------------------------------------------
-Ran 1 test in 0.001s
-
-FAILED (failures=1)
-======================================================================
-FAIL: test_simple (__main__.TestGCD)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_51289/2565918356.py", line 3, in test_simple
-    assert cfg.gcd(1, 0) == 1
-AssertionError
-
-----------------------------------------------------------------------
-Ran 1 test in 0.001s
-
-FAILED (failures=1)
-
-1.0
-
-The mutation score thus obtained is a better indicator of the quality of a given test suite than pure coverage.
-
+**Note**: The examples in this section only work after the rest of the cells have been executed.
 
 For more details, source, and documentation, see
 "The Fuzzing Book - Mutation Analysis"
@@ -178,14 +63,6 @@ if __name__ == '__main__':
 
 
 
-## Synopsis
-## --------
-
-if __name__ == '__main__':
-    print('\n## Synopsis')
-
-
-
 ## Why Structural Coverage is Not Enough
 ## -------------------------------------
 
@@ -194,11 +71,11 @@ if __name__ == '__main__':
 
 
 
-def ineffective_test():
+def ineffective_test_1():
     execute_the_program_as_a_whole()
     assert True
 
-def ineffective_test():
+def ineffective_test_2():
     try:
         execute_the_program_as_a_whole()
     except:
@@ -257,7 +134,7 @@ from .Coverage import Coverage
 
 import inspect
 
-class Coverage(Coverage):
+class VisualCoverage(Coverage):
     def show_coverage(self, fn):
         src = inspect.getsource(fn)
         name = fn.__name__
@@ -267,7 +144,7 @@ class Coverage(Coverage):
             print('%s %2d: %s' % ('#' if i + 1 in covered else ' ', i + 1, s))
 
 if __name__ == '__main__':
-    with Coverage() as cov:
+    with VisualCoverage() as cov:
         strong_oracle(triangle)
 
 if __name__ == '__main__':
@@ -283,7 +160,7 @@ def weak_oracle(fn):
     assert fn(1, 2, 3) != 'Equilateral'
 
 if __name__ == '__main__':
-    with Coverage() as cov:
+    with VisualCoverage() as cov:
         weak_oracle(triangle)
 
 if __name__ == '__main__':
@@ -353,8 +230,8 @@ from .bookutils import rich_output
 
 if __name__ == '__main__':
     if rich_output():
-        import showast
-        showast.show_ast(triangle_ast)
+        import showast2
+        showast2.show_ast(triangle_ast)
 
 if __name__ == '__main__':
     print_content(ast.unparse(triangle_ast), '.py')
@@ -570,6 +447,7 @@ def gcd(a, b):
         c = a
         a = b
         b = c % b
+
     return a
 
 if __name__ == '__main__':
@@ -577,6 +455,8 @@ if __name__ == '__main__':
         with mutant:
             assert gcd(1, 0) == 1, "Minimal"
             assert gcd(0, 1) == 1, "Mirror"
+
+if __name__ == '__main__':
     mutant.pm.score()
 
 ## Mutator for Modules and Test Suites
@@ -630,7 +510,7 @@ if __name__ == '__main__':
     runner.run(suite(StrongShapeTest))
 
 if __name__ == '__main__':
-    with Coverage() as cov:
+    with VisualCoverage() as cov:
         suite(StrongShapeTest).run(unittest.TestResult())
 
 if __name__ == '__main__':
@@ -649,7 +529,7 @@ class WeakShapeTest(unittest.TestCase):
         assert shape.triangle(1, 2, 3) != 'Equilateral'
 
 if __name__ == '__main__':
-    with Coverage() as cov:
+    with VisualCoverage() as cov:
         suite(WeakShapeTest).run(unittest.TestResult())
 
 if __name__ == '__main__':
@@ -842,7 +722,7 @@ def new_gcd(a, b):
         a, b = b, a % b
     return a
 
-def gcd(a, b):
+def mutated_gcd(a, b):
     if a < b:
         a, b = b, a
     else:
@@ -869,33 +749,6 @@ if __name__ == '__main__':
     print("\n### Statistical Estimation of the Number of Immortals by Chao's Estimator")
 
 
-
-## Synopsis
-## --------
-
-if __name__ == '__main__':
-    print('\n## Synopsis')
-
-
-
-if __name__ == '__main__':
-    for mutant in MuFunctionAnalyzer(gcd, log=True):
-        with mutant:
-            assert gcd(1, 0) == 1, "Minimal"
-            assert gcd(0, 1) == 1, "Mirror"
-    mutant.pm.score()
-
-class TestGCD(unittest.TestCase):
-    def test_simple(self):
-        assert cfg.gcd(1, 0) == 1
-
-    def test_mirror(self):
-        assert cfg.gcd(0, 1) == 1
-
-if __name__ == '__main__':
-    for mutant in MuProgramAnalyzer('gcd', gcd_src):
-        mutant[test_module].runTest('TestGCD')
-    mutant.pm.score()
 
 ## Lessons Learned
 ## ---------------
@@ -929,10 +782,10 @@ if __name__ == '__main__':
 
 
 
-### Exercise 1:  Arithmetic Expression Mutators
+### Exercise 1: Arithmetic Expression Mutators
 
 if __name__ == '__main__':
-    print('\n### Exercise 1:  Arithmetic Expression Mutators')
+    print('\n### Exercise 1: Arithmetic Expression Mutators')
 
 
 
@@ -992,3 +845,30 @@ if __name__ == '__main__':
     print('\n### Exercise 4: Estimating Residual Defect Density')
 
 
+
+## Synopsis
+## --------
+
+if __name__ == '__main__':
+    print('\n## Synopsis')
+
+
+
+if __name__ == '__main__':
+    for mutant in MuFunctionAnalyzer(gcd, log=True):
+        with mutant:
+            assert gcd(1, 0) == 1, "Minimal"
+            assert gcd(0, 1) == 1, "Mirror"
+    mutant.pm.score()
+
+class TestGCD(unittest.TestCase):
+    def test_simple(self):
+        assert cfg.gcd(1, 0) == 1
+
+    def test_mirror(self):
+        assert cfg.gcd(0, 1) == 1
+
+if __name__ == '__main__':
+    for mutant in MuProgramAnalyzer('gcd', gcd_src):
+        mutant[test_module].runTest('TestGCD')
+    mutant.pm.score()

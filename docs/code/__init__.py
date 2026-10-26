@@ -18,6 +18,7 @@
 # from . import GeneratorGrammarFuzzer
 # from . import GreyboxGrammarFuzzer
 # from . import Reducer
+# from . import FuzzingWithConstraints
 # from . import GrammarMiner
 # from . import InformationFlow
 # from . import ConcolicFuzzer
@@ -26,13 +27,16 @@
 # from . import ConfigurationFuzzer
 # from . import APIFuzzer
 # from . import Carver
+# from . import PythonFuzzer
 # from . import WebFuzzer
 # from . import GUIFuzzer
 # from . import FuzzingInTheLarge
 # from . import WhenToStopFuzzing
+# from . import AcademicPrototyping
 # from . import PrototypingWithPython
 # from . import ExpectError
 # from . import Timer
+# from . import Timeout
 # from . import ClassDiagram
 # from . import RailroadDiagrams
 # from . import ControlFlow

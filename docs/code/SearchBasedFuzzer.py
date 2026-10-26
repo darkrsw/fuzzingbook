@@ -3,9 +3,9 @@
 
 # "Search-Based Fuzzing" - a chapter of "The Fuzzing Book"
 # Web site: https://www.fuzzingbook.org/html/SearchBasedFuzzer.html
-# Last change: 2021-06-02 17:43:48+02:00
+# Last change: 2025-01-16 10:39:55+01:00
 #
-# Copyright (c) 2021 CISPA Helmholtz Center for Information Security
+# Copyright (c) 2021-2025 CISPA Helmholtz Center for Information Security
 # Copyright (c) 2018-2020 Saarland University, authors, and contributors
 #
 # Permission is hereby granted, free of charge, to any person obtaining a
@@ -37,7 +37,7 @@ This file can be _executed_ as a script, running all experiments:
 or _imported_ as a package, providing classes, functions, and constants:
 
     >>> from fuzzingbook.SearchBasedFuzzer import <identifier>
-    
+
 but before you do so, _read_ it and _interact_ with it at:
 
     https://www.fuzzingbook.org/html/SearchBasedFuzzer.html
@@ -75,6 +75,11 @@ Different aspects and challenges require different variations of this algorithm,
 The search can be guided by different optimization goals captured in fitness functions. A fitness function to measure how close we are to reaching locations in the source code uses source code instrumentation. To produce an instrumented version of `cgi_decode`, use:
 
 >>> cgi_decode_instrumented = create_instrumented_function(cgi_decode)
+/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_7394/942233608.py:15: DeprecationWarning: ast.Num is deprecated and will be removed in Python 3.14; use ast.Constant instead
+  args=[ast.Num(self.branch_num),
+/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_7394/942233608.py:16: DeprecationWarning: ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead
+  ast.Str(node.ops[0].__class__.__name__),
+
 
 Fitness values are obtained by executing `cgi_decode_instrumented`, which is done by the `get_fitness_cgi` function:
 
@@ -179,7 +184,7 @@ if __name__ == '__main__':
 MAX = 1000
 MIN = -MAX
 
-def neighbours(x, y):
+def neighbors(x, y):
     return [(x + dx, y + dy) for dx in [-1, 0, 1]
             for dy in [-1, 0, 1]
             if (dx != 0 or dy != 0)
@@ -187,7 +192,7 @@ def neighbours(x, y):
                  and (MIN <= y + dy <= MAX))]
 
 if __name__ == '__main__':
-    print(neighbours(10, 10))
+    print(neighbors(10, 10))
 
 ### Defining a Search Landscape: Fitness functions
 
@@ -208,24 +213,21 @@ if __name__ == '__main__':
     calculate_distance(274, 153)
 
 if __name__ == '__main__':
-    from mpl_toolkits.mplot3d import Axes3D
-
-if __name__ == '__main__':
-    import matplotlib.pyplot as plt
+    import matplotlib.pyplot as plt  # type: ignore
 
 if __name__ == '__main__':
     import numpy as np
 
 # %matplotlib inline
 # 
-# x = np.outer(np.linspace(-10, 10, 30), np.ones(30))
-# y = x.copy().T
-# z = calculate_distance(x, y)
+# xx = np.outer(np.linspace(-10, 10, 30), np.ones(30))
+# yy = xx.copy().T
+# zz = calculate_distance(xx, yy)
 # 
 # fig = plt.figure()
 # ax = plt.axes(projection='3d')
 # 
-# ax.plot_surface(x, y, z, cmap=plt.cm.jet, rstride=1, cstride=1, linewidth=0);
+# ax.plot_surface(xx, yy, zz, cmap=plt.cm.jet, rstride=1, cstride=1, linewidth=0);
 
 ### Instrumentation
 
@@ -254,7 +256,7 @@ if __name__ == '__main__':
 if __name__ == '__main__':
     distance = 0
 
-def test_me_instrumented(x, y):
+def test_me_instrumented(x, y):  # type: ignore
     global distance
     distance = calculate_distance(x, y)
     if x == 2 * (y + 1):
@@ -287,8 +289,8 @@ if __name__ == '__main__':
 if __name__ == '__main__':
     x, y = 274, 153
     print("Origin %d, %d has fitness %d" % (x, y, get_fitness(x, y)))
-    for nx, ny in neighbours(x, y):
-        print("Neighbour %d, %d has fitness %d" % (nx, ny, get_fitness(nx, ny)))
+    for nx, ny in neighbors(x, y):
+        print("neighbor %d, %d has fitness %d" % (nx, ny, get_fitness(nx, ny)))
 
 import random
 
@@ -305,8 +307,8 @@ def hillclimber():
     # Stop once we have found an optimal solution
     while fitness > 0:
         iterations += 1
-        # Move to first neighbour with a better fitness
-        for (nextx, nexty) in neighbours(x, y):
+        # Move to first neighbor with a better fitness
+        for (nextx, nexty) in neighbors(x, y):
             new_fitness = get_fitness(nextx, nexty)
 
             # Smaller fitness values are better
@@ -336,8 +338,8 @@ def steepest_ascent_hillclimber():
     # Stop once we have found an optimal solution
     while fitness > 0:
         iterations += 1
-        # Move to first neighbour with a better fitness
-        for (nextx, nexty) in neighbours(x, y):
+        # Move to first neighbor with a better fitness
+        for (nextx, nexty) in neighbors(x, y):
             new_fitness = get_fitness(nextx, nexty)
             if new_fitness < fitness:
                 x, y = nextx, nexty
@@ -365,8 +367,8 @@ def plotting_hillclimber(fitness_function):
     # Stop once we have found an optimal solution
     while fitness > 0:
         iterations += 1
-        # Move to first neighbour with a better fitness
-        for (nextx, nexty) in neighbours(x, y):
+        # Move to first neighbor with a better fitness
+        for (nextx, nexty) in neighbors(x, y):
             new_fitness = fitness_function(nextx, nexty)
             if new_fitness < fitness:
                 x, y = nextx, nexty
@@ -381,14 +383,11 @@ if __name__ == '__main__':
     data = plotting_hillclimber(get_fitness)
 
 if __name__ == '__main__':
-    import matplotlib.pyplot as plt
-
-if __name__ == '__main__':
     fig = plt.figure()
     ax = plt.axes()
 
-    x = range(len(data))
-    ax.plot(x, data);
+    xs = range(len(data))
+    ax.plot(xs, data);
 
 def test_me2(x, y):
     if(x * x == y * y * (x % 20)):
@@ -411,20 +410,15 @@ def bad_fitness(x, y):
     return fitness
 
 if __name__ == '__main__':
-    from mpl_toolkits.mplot3d import Axes3D
-
-from math import exp, tan
-
-if __name__ == '__main__':
-    x = np.outer(np.linspace(-10, 10, 30), np.ones(30))
-    y = x.copy().T
-    z = abs(x * x - y * y * (x % 20))
+    xx = np.outer(np.linspace(-10, 10, 30), np.ones(30))
+    yy = xx.copy().T
+    zz = abs(xx * xx - yy * yy * (xx % 20))  # type: ignore
 
 if __name__ == '__main__':
     fig = plt.figure()
     ax = plt.axes(projection='3d')
 
-    ax.plot_surface(x, y, z, cmap=plt.cm.jet, rstride=1, cstride=1, linewidth=0);
+    ax.plot_surface(xx, yy, zz, cmap=plt.cm.jet, rstride=1, cstride=1, linewidth=0);  # type: ignore
 
 def restarting_hillclimber(fitness_function):
     data = []
@@ -440,8 +434,8 @@ def restarting_hillclimber(fitness_function):
     while fitness > 0:
         changed = False
         iterations += 1
-        # Move to first neighbour with a better fitness
-        for (nextx, nexty) in neighbours(x, y):
+        # Move to first neighbor with a better fitness
+        for (nextx, nexty) in neighbors(x, y):
             new_fitness = fitness_function(nextx, nexty)
             if new_fitness < fitness:
                 x, y = nextx, nexty
@@ -470,8 +464,8 @@ if __name__ == '__main__':
     fig = plt.figure()
     ax = plt.axes()
 
-    x = range(len(data))
-    ax.plot(x, data);
+    xs = range(len(data))
+    ax.plot(xs, data);
 
 MAX = 100000
 MIN = -MAX
@@ -531,7 +525,7 @@ if __name__ == '__main__':
 
 
 
-def neighbour_strings(x):
+def neighbor_strings(x):
     n = []
     for pos in range(len(x)):
         c = ord(x[pos])
@@ -542,7 +536,7 @@ def neighbour_strings(x):
     return n
 
 if __name__ == '__main__':
-    print(neighbour_strings("Hello"))
+    print(neighbor_strings("Hello"))
 
 ### Branch Distances
 
@@ -621,7 +615,7 @@ def update_maps(condition_num, d_true, d_false):
     else:
         distances_false[condition_num] = d_false
 
-def evaluate_condition(num, op, lhs, rhs):
+def evaluate_condition(num, op, lhs, rhs):  # type: ignore
     distance_true = 0
     distance_false = 0
 
@@ -698,7 +692,6 @@ class BranchTransformer(ast.NodeTransformer):
 
 import inspect
 import ast
-import astor
 
 from .bookutils import print_content
 
@@ -709,7 +702,9 @@ if __name__ == '__main__':
 
     # Make sure the line numbers are ok before printing
     node = ast.fix_missing_locations(node)
-    print_content(astor.to_source(node), '.py')
+    print_content(ast.unparse(node), '.py')
+
+from typing import Dict, cast
 
 def create_instrumented_function(f):
     source = inspect.getsource(f)
@@ -721,12 +716,15 @@ def create_instrumented_function(f):
 
     # Compile and add the instrumented function to the current module
     current_module = sys.modules[__name__]
-    code = compile(node, filename="<ast>", mode="exec")
+    code = compile(cast(ast.Module, node), filename="<ast>", mode="exec")
     exec(code, current_module.__dict__)
 
 if __name__ == '__main__':
-    distances_true = {}
-    distances_false = {}
+    distances_true: Dict[int, int] = {}
+    distances_false: Dict[int, int] = {}
+
+def cgi_decode_instrumented(s: str) -> str:
+    return ""  # make mypy happy
 
 if __name__ == '__main__':
     create_instrumented_function(cgi_decode)
@@ -760,9 +758,9 @@ if __name__ == '__main__':
     fig = plt.figure()
     ax = plt.axes()
 
-    x = range(100)
-    y = [value / (value + 1.0) for value in x]
-    ax.plot(x, y);
+    xs = range(100)
+    ys = [value / (value + 1.0) for value in xs]
+    ax.plot(xs, ys);
 
 def get_fitness_cgi(x):
     # Reset any distance values from previous executions
@@ -828,7 +826,7 @@ def hillclimb_cgi():
 
     while fitness > 0:
         changed = False
-        for (nextx) in neighbour_strings(x):
+        for (nextx) in neighbor_strings(x):
             new_fitness = get_fitness_cgi(nextx)
             if new_fitness < fitness:
                 x = nextx
@@ -863,7 +861,7 @@ def random_unicode_string(l):
         s = s + random_character
     return s
 
-def unicode_string_neighbours(x):
+def unicode_string_neighbors(x):
     n = []
     for pos in range(len(x)):
         c = ord(x[pos])
@@ -887,7 +885,7 @@ def hillclimb_cgi_limited(max_iterations):
     logs = 0
     while fitness > 0 and iteration < max_iterations:
         changed = False
-        for (nextx) in unicode_string_neighbours(x):
+        for (nextx) in unicode_string_neighbors(x):
             new_fitness = get_fitness_cgi(nextx)
             if new_fitness < fitness:
                 x = nextx

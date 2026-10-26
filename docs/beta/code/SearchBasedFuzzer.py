@@ -3,9 +3,9 @@
 
 # "Search-Based Fuzzing" - a chapter of "The Fuzzing Book"
 # Web site: https://www.fuzzingbook.org/html/SearchBasedFuzzer.html
-# Last change: 2021-10-14 18:44:55+02:00
+# Last change: 2025-10-26 19:00:30+01:00
 #
-# Copyright (c) 2021 CISPA Helmholtz Center for Information Security
+# Copyright (c) 2021-2025 CISPA Helmholtz Center for Information Security
 # Copyright (c) 2018-2020 Saarland University, authors, and contributors
 #
 # Permission is hereby granted, free of charge, to any person obtaining a
@@ -37,78 +37,12 @@ This file can be _executed_ as a script, running all experiments:
 or _imported_ as a package, providing classes, functions, and constants:
 
     >>> from fuzzingbook.SearchBasedFuzzer import <identifier>
-    
+
 but before you do so, _read_ it and _interact_ with it at:
 
     https://www.fuzzingbook.org/html/SearchBasedFuzzer.html
 
-This chapter demonstrates how to use meta-heuristic search algorithms to find inputs that reach specific locations in the source code. The simplest search algorithm is hillclimbing, which is applied to the simple `test_me` example as follows:
-
->>> hillclimber()
-Initial value: -67005, 8742 at fitness 84491.0000
-New value: -67006, 8741 at fitness 84490.0000
-New value: -67007, 8740 at fitness 84489.0000
-New value: -67008, 8739 at fitness 84488.0000
-New value: -67009, 8738 at fitness 84487.0000
-New value: -67010, 8737 at fitness 84486.0000
-New value: -67011, 8736 at fitness 84485.0000
-New value: -67012, 8735 at fitness 84484.0000
-New value: -67013, 8734 at fitness 84483.0000
-New value: -67014, 8733 at fitness 84482.0000
-New value: -67015, 8732 at fitness 84481.0000
-New value: -67016, 8731 at fitness 84480.0000
-New value: -67017, 8730 at fitness 84479.0000
-New value: -67018, 8729 at fitness 84478.0000
-New value: -67019, 8728 at fitness 84477.0000
-New value: -67020, 8727 at fitness 84476.0000
-New value: -67021, 8726 at fitness 84475.0000
-New value: -67022, 8725 at fitness 84474.0000
-New value: -67023, 8724 at fitness 84473.0000
-New value: -67024, 8723 at fitness 84472.0000
-New value: -67025, 8722 at fitness 84471.0000
-...
-Found optimum after 58743 iterations at -100000, -50001
-
-
-Different aspects and challenges require different variations of this algorithm, such as a `steepest_ascent_hillclimber` or a `restarting_hillclimber`.
-
-The search can be guided by different optimization goals captured in fitness functions. A fitness function to measure how close we are to reaching locations in the source code uses source code instrumentation. To produce an instrumented version of `cgi_decode`, use:
-
->>> cgi_decode_instrumented = create_instrumented_function(cgi_decode)
-
-Fitness values are obtained by executing `cgi_decode_instrumented`, which is done by the `get_fitness_cgi` function:
-
->>> get_fitness_cgi("Foo")
-5.0
-
-Complex functions like `cgi_decode` result in vastly larger search spaces, which can be explored using evolutionary search algorithms such as genetic algorithms:
-
->>> genetic_algorithm()
-Best fitness of initial population: '䫪Ʝ\uf42b铺뿱ጻ䗷䌮肵篭' - 5.0000000000
-Best fitness at generation 1: '\u19cdꥁ캖蝻ⅹ\uf37f功ᰲ\ued7eᱨ' - 5.00000000
-Best fitness at generation 2: '绑䀕\u20c5֜적\udfaeᇒ툧痮Ꮶ' - 5.00000000
-Best fitness at generation 3: '끍碼ߝ䣅쾜\u0b7b죅ᦜ\uf1fd䈕' - 5.00000000
-Best fitness at generation 4: '甚ᇆꏭ貰꾵訴྿ꙩᏃด' - 5.00000000
-Best fitness at generation 5: '\uf644ᇆꏭ貰虀ꎍ\uf6f9嫛ሎ㺁' - 5.00000000
-Best fitness at generation 6: '빫\uf61a\ud85c熆꾵訴ဍꙩᑓ\ue8e0' - 5.00000000
-Best fitness at generation 7: '닅\uf307Ɗ\uefc5筂鐞嚂ᡥ⃫㺤' - 5.00000000
-Best fitness at generation 8: '漻㺅揝䄩薽턫轼\u0dcc\udb87胮' - 5.00000000
-Best fitness at generation 9: '甚ᇩ護㿦腄ꑗ\uf6f9嫛ም凂' - 5.00000000
-Best fitness at generation 10: '끍ᇆ⁔峤羘䶦Ⓛ巖桿\ue8ac' - 5.00000000
-Best fitness at generation 11: '㞮械ꏭഡ鰴勂ᇒ툧䧱㺡' - 5.00000000
-Best fitness at generation 12: '닅\uf307Ɗ䣅筂鐮\uf697媭ም凂' - 5.00000000
-Best fitness at generation 13: '췵㪈쾟⢥筂鐇勨憣并ꓹ' - 5.00000000
-Best fitness at generation 14: '睾\uf2aaﾒ\uef8b鰴⥢邹坅櫼砳' - 5.00000000
-Best fitness at generation 15: '盾㩭譂䅎웱勂ᇒ텬䧱㺡' - 5.00000000
-Best fitness at generation 16: '끍ᇆ₩豻畕傞ᅢ툧䧱Ａ' - 5.00000000
-Best fitness at generation 17: '뀳硺ߝ\uefdb笧勂ᇒ텬桘．' - 5.00000000
-Best fitness at generation 18: '㴄ᅕ큕谉畕傞ᅢ툧䧱Ａ' - 5.00000000
-Best fitness at generation 19: '滴㪈㹮䣻羘䷴⒲嵟\udc02㺤' - 5.00000000
-Best fitness at generation 20: '矖㪈㺂䢶羘䶦ᇒ䙗뭜탤' - 5.00000000
-...
-Best individual: '쩴篊㬍鍵糄䧱﬩廁\ude21萇', fitness 5.0000000000
-
-
+**Note**: The examples in this section only work after the rest of the cells have been executed.
 
 For more details, source, and documentation, see
 "The Fuzzing Book - Search-Based Fuzzing"
@@ -126,14 +60,6 @@ if __name__ == '__main__' and __package__ is None:
 
 if __name__ == '__main__':
     print('# Search-Based Fuzzing')
-
-
-
-## Synopsis
-## --------
-
-if __name__ == '__main__':
-    print('\n## Synopsis')
 
 
 
@@ -179,7 +105,7 @@ if __name__ == '__main__':
 MAX = 1000
 MIN = -MAX
 
-def neighbours(x, y):
+def neighbors(x, y):
     return [(x + dx, y + dy) for dx in [-1, 0, 1]
             for dy in [-1, 0, 1]
             if (dx != 0 or dy != 0)
@@ -187,7 +113,7 @@ def neighbours(x, y):
                  and (MIN <= y + dy <= MAX))]
 
 if __name__ == '__main__':
-    print(neighbours(10, 10))
+    print(neighbors(10, 10))
 
 ### Defining a Search Landscape: Fitness functions
 
@@ -208,24 +134,21 @@ if __name__ == '__main__':
     calculate_distance(274, 153)
 
 if __name__ == '__main__':
-    from mpl_toolkits.mplot3d import Axes3D
-
-if __name__ == '__main__':
-    import matplotlib.pyplot as plt
+    import matplotlib.pyplot as plt  # type: ignore
 
 if __name__ == '__main__':
     import numpy as np
 
 # %matplotlib inline
 # 
-# x = np.outer(np.linspace(-10, 10, 30), np.ones(30))
-# y = x.copy().T
-# z = calculate_distance(x, y)
+# xx = np.outer(np.linspace(-10, 10, 30), np.ones(30))
+# yy = xx.copy().T
+# zz = calculate_distance(xx, yy)
 # 
 # fig = plt.figure()
 # ax = plt.axes(projection='3d')
 # 
-# ax.plot_surface(x, y, z, cmap=plt.cm.jet, rstride=1, cstride=1, linewidth=0);
+# ax.plot_surface(xx, yy, zz, cmap=plt.cm.jet, rstride=1, cstride=1, linewidth=0);
 
 ### Instrumentation
 
@@ -254,7 +177,7 @@ if __name__ == '__main__':
 if __name__ == '__main__':
     distance = 0
 
-def test_me_instrumented(x, y):
+def test_me_instrumented(x, y):  # type: ignore
     global distance
     distance = calculate_distance(x, y)
     if x == 2 * (y + 1):
@@ -287,8 +210,8 @@ if __name__ == '__main__':
 if __name__ == '__main__':
     x, y = 274, 153
     print("Origin %d, %d has fitness %d" % (x, y, get_fitness(x, y)))
-    for nx, ny in neighbours(x, y):
-        print("Neighbour %d, %d has fitness %d" % (nx, ny, get_fitness(nx, ny)))
+    for nx, ny in neighbors(x, y):
+        print("neighbor %d, %d has fitness %d" % (nx, ny, get_fitness(nx, ny)))
 
 import random
 
@@ -305,8 +228,8 @@ def hillclimber():
     # Stop once we have found an optimal solution
     while fitness > 0:
         iterations += 1
-        # Move to first neighbour with a better fitness
-        for (nextx, nexty) in neighbours(x, y):
+        # Move to first neighbor with a better fitness
+        for (nextx, nexty) in neighbors(x, y):
             new_fitness = get_fitness(nextx, nexty)
 
             # Smaller fitness values are better
@@ -336,8 +259,8 @@ def steepest_ascent_hillclimber():
     # Stop once we have found an optimal solution
     while fitness > 0:
         iterations += 1
-        # Move to first neighbour with a better fitness
-        for (nextx, nexty) in neighbours(x, y):
+        # Move to first neighbor with a better fitness
+        for (nextx, nexty) in neighbors(x, y):
             new_fitness = get_fitness(nextx, nexty)
             if new_fitness < fitness:
                 x, y = nextx, nexty
@@ -365,8 +288,8 @@ def plotting_hillclimber(fitness_function):
     # Stop once we have found an optimal solution
     while fitness > 0:
         iterations += 1
-        # Move to first neighbour with a better fitness
-        for (nextx, nexty) in neighbours(x, y):
+        # Move to first neighbor with a better fitness
+        for (nextx, nexty) in neighbors(x, y):
             new_fitness = fitness_function(nextx, nexty)
             if new_fitness < fitness:
                 x, y = nextx, nexty
@@ -381,14 +304,11 @@ if __name__ == '__main__':
     data = plotting_hillclimber(get_fitness)
 
 if __name__ == '__main__':
-    import matplotlib.pyplot as plt
-
-if __name__ == '__main__':
     fig = plt.figure()
     ax = plt.axes()
 
-    x = range(len(data))
-    ax.plot(x, data);
+    xs = range(len(data))
+    ax.plot(xs, data);
 
 def test_me2(x, y):
     if(x * x == y * y * (x % 20)):
@@ -411,20 +331,15 @@ def bad_fitness(x, y):
     return fitness
 
 if __name__ == '__main__':
-    from mpl_toolkits.mplot3d import Axes3D
-
-from math import exp, tan
-
-if __name__ == '__main__':
-    x = np.outer(np.linspace(-10, 10, 30), np.ones(30))
-    y = x.copy().T
-    z = abs(x * x - y * y * (x % 20))
+    xx = np.outer(np.linspace(-10, 10, 30), np.ones(30))
+    yy = xx.copy().T
+    zz = abs(xx * xx - yy * yy * (xx % 20))  # type: ignore
 
 if __name__ == '__main__':
     fig = plt.figure()
     ax = plt.axes(projection='3d')
 
-    ax.plot_surface(x, y, z, cmap=plt.cm.jet, rstride=1, cstride=1, linewidth=0);
+    ax.plot_surface(xx, yy, zz, cmap=plt.cm.jet, rstride=1, cstride=1, linewidth=0);  # type: ignore
 
 def restarting_hillclimber(fitness_function):
     data = []
@@ -440,8 +355,8 @@ def restarting_hillclimber(fitness_function):
     while fitness > 0:
         changed = False
         iterations += 1
-        # Move to first neighbour with a better fitness
-        for (nextx, nexty) in neighbours(x, y):
+        # Move to first neighbor with a better fitness
+        for (nextx, nexty) in neighbors(x, y):
             new_fitness = fitness_function(nextx, nexty)
             if new_fitness < fitness:
                 x, y = nextx, nexty
@@ -470,8 +385,8 @@ if __name__ == '__main__':
     fig = plt.figure()
     ax = plt.axes()
 
-    x = range(len(data))
-    ax.plot(x, data);
+    xs = range(len(data))
+    ax.plot(xs, data);
 
 MAX = 100000
 MIN = -MAX
@@ -531,7 +446,7 @@ if __name__ == '__main__':
 
 
 
-def neighbour_strings(x):
+def neighbor_strings(x):
     n = []
     for pos in range(len(x)):
         c = ord(x[pos])
@@ -542,7 +457,7 @@ def neighbour_strings(x):
     return n
 
 if __name__ == '__main__':
-    print(neighbour_strings("Hello"))
+    print(neighbor_strings("Hello"))
 
 ### Branch Distances
 
@@ -621,7 +536,7 @@ def update_maps(condition_num, d_true, d_false):
     else:
         distances_false[condition_num] = d_false
 
-def evaluate_condition(num, op, lhs, rhs):
+def evaluate_condition(num, op, lhs, rhs):  # type: ignore
     distance_true = 0
     distance_false = 0
 
@@ -710,6 +625,8 @@ if __name__ == '__main__':
     node = ast.fix_missing_locations(node)
     print_content(ast.unparse(node), '.py')
 
+from typing import Dict, cast
+
 def create_instrumented_function(f):
     source = inspect.getsource(f)
     node = ast.parse(source)
@@ -720,12 +637,15 @@ def create_instrumented_function(f):
 
     # Compile and add the instrumented function to the current module
     current_module = sys.modules[__name__]
-    code = compile(node, filename="<ast>", mode="exec")
+    code = compile(cast(ast.Module, node), filename="<ast>", mode="exec")
     exec(code, current_module.__dict__)
 
 if __name__ == '__main__':
-    distances_true = {}
-    distances_false = {}
+    distances_true: Dict[int, int] = {}
+    distances_false: Dict[int, int] = {}
+
+def cgi_decode_instrumented(s: str) -> str:
+    return ""  # make mypy happy
 
 if __name__ == '__main__':
     create_instrumented_function(cgi_decode)
@@ -759,9 +679,9 @@ if __name__ == '__main__':
     fig = plt.figure()
     ax = plt.axes()
 
-    x = range(100)
-    y = [value / (value + 1.0) for value in x]
-    ax.plot(x, y);
+    xs = range(100)
+    ys = [value / (value + 1.0) for value in xs]
+    ax.plot(xs, ys);
 
 def get_fitness_cgi(x):
     # Reset any distance values from previous executions
@@ -827,7 +747,7 @@ def hillclimb_cgi():
 
     while fitness > 0:
         changed = False
-        for (nextx) in neighbour_strings(x):
+        for (nextx) in neighbor_strings(x):
             new_fitness = get_fitness_cgi(nextx)
             if new_fitness < fitness:
                 x = nextx
@@ -862,7 +782,7 @@ def random_unicode_string(l):
         s = s + random_character
     return s
 
-def unicode_string_neighbours(x):
+def unicode_string_neighbors(x):
     n = []
     for pos in range(len(x)):
         c = ord(x[pos])
@@ -886,7 +806,7 @@ def hillclimb_cgi_limited(max_iterations):
     logs = 0
     while fitness > 0 and iteration < max_iterations:
         changed = False
-        for (nextx) in unicode_string_neighbours(x):
+        for (nextx) in unicode_string_neighbors(x):
             new_fitness = get_fitness_cgi(nextx)
             if new_fitness < fitness:
                 x = nextx
@@ -1068,26 +988,6 @@ def genetic_algorithm():
 if __name__ == '__main__':
     genetic_algorithm()
 
-## Synopsis
-## --------
-
-if __name__ == '__main__':
-    print('\n## Synopsis')
-
-
-
-if __name__ == '__main__':
-    hillclimber()
-
-if __name__ == '__main__':
-    cgi_decode_instrumented = create_instrumented_function(cgi_decode)
-
-if __name__ == '__main__':
-    get_fitness_cgi("Foo")
-
-if __name__ == '__main__':
-    genetic_algorithm()
-
 ## Lessons Learned
 ## ---------------
 
@@ -1119,3 +1019,23 @@ if __name__ == '__main__':
     print('\n## Exercises')
 
 
+
+## Synopsis
+## --------
+
+if __name__ == '__main__':
+    print('\n## Synopsis')
+
+
+
+if __name__ == '__main__':
+    hillclimber()
+
+if __name__ == '__main__':
+    cgi_decode_instrumented = create_instrumented_function(cgi_decode)
+
+if __name__ == '__main__':
+    get_fitness_cgi("Foo")
+
+if __name__ == '__main__':
+    genetic_algorithm()

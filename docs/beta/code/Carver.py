@@ -3,9 +3,9 @@
 
 # "Carving Unit Tests" - a chapter of "The Fuzzing Book"
 # Web site: https://www.fuzzingbook.org/html/Carver.html
-# Last change: 2021-11-03 13:11:32+01:00
+# Last change: 2025-10-26 19:00:30+01:00
 #
-# Copyright (c) 2021 CISPA Helmholtz Center for Information Security
+# Copyright (c) 2021-2025 CISPA Helmholtz Center for Information Security
 # Copyright (c) 2018-2020 Saarland University, authors, and contributors
 #
 # Permission is hereby granted, free of charge, to any person obtaining a
@@ -37,58 +37,12 @@ This file can be _executed_ as a script, running all experiments:
 or _imported_ as a package, providing classes, functions, and constants:
 
     >>> from fuzzingbook.Carver import <identifier>
-    
+
 but before you do so, _read_ it and _interact_ with it at:
 
     https://www.fuzzingbook.org/html/Carver.html
 
-This chapter provides means to _record and replay function calls_ during a system test.  Since individual function calls are much faster than a whole system run, such "carving" mechanisms have the potential to run tests much faster.
-
-### Recording Calls
-
-The `CallCarver` class records all calls occurring while it is active.  It is used in conjunction with a `with` clause:
-
->>> with CallCarver() as carver:
->>>     y = my_sqrt(2)
->>>     y = my_sqrt(4)
-
-After execution, `called_functions()` lists the names of functions encountered:
-
->>> carver.called_functions()
-['my_sqrt', '__exit__']
-
-The `arguments()` method lists the arguments recorded for a function.  This is a mapping of the function name to a list of lists of arguments; each argument is a pair (parameter name, value).
-
->>> carver.arguments('my_sqrt')
-[[('x', 2)], [('x', 4)]]
-
-Complex arguments are properly serialized, such that they can be easily restored.
-
-### Synthesizing Calls
-
-While such recorded arguments already could be turned into arguments and calls, a much nicer alternative is to create a _grammar_ for recorded calls.  This allows to synthesize arbitrary _combinations_ of arguments, and also offers a base for further customization of calls.
-
-The `CallGrammarMiner` class turns a list of carved executions into a grammar.
-
->>> my_sqrt_miner = CallGrammarMiner(carver)
->>> my_sqrt_grammar = my_sqrt_miner.mine_call_grammar()
->>> my_sqrt_grammar
-{'': [''],
- '': [''],
- '': ['4', '2'],
- '': ['my_sqrt()']}
-
-This grammar can be used to synthesize calls.
-
->>> fuzzer = GrammarCoverageFuzzer(my_sqrt_grammar)
->>> fuzzer.fuzz()
-'my_sqrt(2)'
-
-These calls can be executed in isolation, effectively extracting unit tests from system tests:
-
->>> eval(fuzzer.fuzz())
-2.0
-
+**Note**: The examples in this section only work after the rest of the cells have been executed.
 
 For more details, source, and documentation, see
 "The Fuzzing Book - Carving Unit Tests"
@@ -115,14 +69,6 @@ if __name__ == '__main__':
     random.seed(2001)
 
 from . import APIFuzzer
-
-## Synopsis
-## --------
-
-if __name__ == '__main__':
-    print('\n## Synopsis')
-
-
 
 ## System Tests vs Unit Tests
 ## --------------------------
@@ -192,7 +138,7 @@ if __name__ == '__main__':
 
 import sys
 
-class Carver(object):
+class Carver:
     def __init__(self, log=False):
         self._log = log
         self.reset()
@@ -321,7 +267,7 @@ if __name__ == '__main__':
 
 if __name__ == '__main__':
     with CallCarver() as webbrowser_carver:
-        webbrowser("http://www.example.com")
+        webbrowser("https://www.fuzzingbook.org")
 
 if __name__ == '__main__':
     function_list = webbrowser_carver.called_functions(qualified=True)
@@ -486,9 +432,10 @@ if __name__ == '__main__':
 if __name__ == '__main__':
     power_carver.arguments("power")
 
-from .Grammars import START_SYMBOL, is_valid_grammar, new_symbol, extend_grammar
+from .Grammars import START_SYMBOL, is_valid_grammar, new_symbol
+from .Grammars import extend_grammar, Grammar
 
-POWER_GRAMMAR = {
+POWER_GRAMMAR: Grammar = {
     "<start>": ["power(<x>, <y>)"],
     "<x>": ["1", "3"],
     "<y>": ["2", "4"]
@@ -509,7 +456,7 @@ if __name__ == '__main__':
 
 
 
-class CallGrammarMiner(object):
+class CallGrammarMiner:
     def __init__(self, carver, log=False):
         self.carver = carver
         self.log = log
@@ -690,7 +637,6 @@ if __name__ == '__main__':
 if __name__ == '__main__':
     with CallCarver() as webbrowser_carver:
         webbrowser("https://www.fuzzingbook.org")
-        webbrowser("http://www.example.com")
 
 if __name__ == '__main__':
     m = CallGrammarMiner(webbrowser_carver)
@@ -704,19 +650,16 @@ if __name__ == '__main__':
     print(call_list[:20])
 
 if __name__ == '__main__':
-    webbrowser_grammar["<urlsplit>"]
+    webbrowser_grammar["<urlparse>"]
 
 if __name__ == '__main__':
-    webbrowser_grammar["<urlsplit-url>"]
+    webbrowser_grammar["<urlparse-url>"]
 
 if __name__ == '__main__':
-    webbrowser_grammar["<urlsplit-scheme>"]
-
-if __name__ == '__main__':
-    urlsplit_fuzzer = GrammarCoverageFuzzer(
-        webbrowser_grammar, start_symbol="<urlsplit>")
+    urlparse_fuzzer = GrammarCoverageFuzzer(
+        webbrowser_grammar, start_symbol="<urlparse>")
     for i in range(5):
-        print(urlsplit_fuzzer.fuzz())
+        print(urlparse_fuzzer.fuzz())
 
 from urllib.parse import urlsplit
 
@@ -734,51 +677,6 @@ if __name__ == '__main__':
 
 if __name__ == '__main__':
     webbrowser_timer.elapsed_time() / urlsplit_timer.elapsed_time()
-
-## Synopsis
-## --------
-
-if __name__ == '__main__':
-    print('\n## Synopsis')
-
-
-
-### Recording Calls
-
-if __name__ == '__main__':
-    print('\n### Recording Calls')
-
-
-
-if __name__ == '__main__':
-    with CallCarver() as carver:
-        y = my_sqrt(2)
-        y = my_sqrt(4)
-
-if __name__ == '__main__':
-    carver.called_functions()
-
-if __name__ == '__main__':
-    carver.arguments('my_sqrt')
-
-### Synthesizing Calls
-
-if __name__ == '__main__':
-    print('\n### Synthesizing Calls')
-
-
-
-if __name__ == '__main__':
-    my_sqrt_miner = CallGrammarMiner(carver)
-    my_sqrt_grammar = my_sqrt_miner.mine_call_grammar()
-    my_sqrt_grammar
-
-if __name__ == '__main__':
-    fuzzer = GrammarCoverageFuzzer(my_sqrt_grammar)
-    fuzzer.fuzz()
-
-if __name__ == '__main__':
-    eval(fuzzer.fuzz())
 
 ## Lessons Learned
 ## ---------------
@@ -897,42 +795,47 @@ if __name__ == '__main__':
 
 
 
-if __name__ == '__main__':
-    with ResultCarver() as webbrowser_result_carver:
-        webbrowser("http://www.example.com")
+import sys
 
 if __name__ == '__main__':
-    for function_name in ["urllib.parse.urlparse", "urllib.parse.urlsplit"]:
-        for arguments in webbrowser_result_carver.arguments(function_name):
-            try:
-                call = call_string(function_name, arguments)
-                result = webbrowser_result_carver.result(function_name, arguments)
-                print("assert", call, "==", call_value(result))
-            except Exception:
-                continue
+    if sys.version_info >= (3, 11):  # Requires Python 3.11 or later
+        with ResultCarver() as webbrowser_result_carver:
+            webbrowser("https://www.cispa.de")
+
+if __name__ == '__main__':
+    if sys.version_info >= (3, 11):
+        for function_name in ["urllib.parse.urlparse"]:
+            for arguments in webbrowser_result_carver.arguments(function_name):
+                try:
+                    call = call_string(function_name, arguments)
+                    result = webbrowser_result_carver.result(function_name, arguments)
+                    print("assert", call, "==", call_value(result))
+                except Exception:
+                    continue
 
 from urllib.parse import SplitResult, ParseResult, urlparse, urlsplit
 
 if __name__ == '__main__':
-    assert urlparse(
-        url='http://www.example.com',
-        scheme='',
-        allow_fragments=True) == ParseResult(
-            scheme='http',
-            netloc='www.example.com',
-            path='',
-            params='',
-            query='',
-        fragment='')
-    assert urlsplit(
-        url='http://www.example.com',
-        scheme='',
-        allow_fragments=True) == SplitResult(
-            scheme='http',
-            netloc='www.example.com',
-            path='',
-            query='',
-        fragment='')
+    if sys.version_info >= (3, 11):
+        assert urlparse(
+            url='http://www.cispa.de',
+            scheme='',
+            allow_fragments=True) == ParseResult(
+                scheme='http',
+                netloc='www.cispa.de',
+                path='',
+                params='',
+                query='',
+            fragment='')
+        assert urlsplit(
+            url='http://www.cispa.de',
+            scheme='',
+            allow_fragments=True) == SplitResult(
+                scheme='http',
+                netloc='www.cispa.de',
+                path='',
+                query='',
+            fragment='')
 
 ### Exercise 2: Abstracting Arguments
 
@@ -940,3 +843,48 @@ if __name__ == '__main__':
     print('\n### Exercise 2: Abstracting Arguments')
 
 
+
+## Synopsis
+## --------
+
+if __name__ == '__main__':
+    print('\n## Synopsis')
+
+
+
+### Recording Calls
+
+if __name__ == '__main__':
+    print('\n### Recording Calls')
+
+
+
+if __name__ == '__main__':
+    with CallCarver() as carver:
+        y = my_sqrt(2)
+        y = my_sqrt(4)
+
+if __name__ == '__main__':
+    carver.called_functions()
+
+if __name__ == '__main__':
+    carver.arguments('my_sqrt')
+
+### Synthesizing Calls
+
+if __name__ == '__main__':
+    print('\n### Synthesizing Calls')
+
+
+
+if __name__ == '__main__':
+    my_sqrt_miner = CallGrammarMiner(carver)
+    my_sqrt_grammar = my_sqrt_miner.mine_call_grammar()
+    my_sqrt_grammar
+
+if __name__ == '__main__':
+    fuzzer = GrammarCoverageFuzzer(my_sqrt_grammar)
+    fuzzer.fuzz()
+
+if __name__ == '__main__':
+    eval(fuzzer.fuzz())

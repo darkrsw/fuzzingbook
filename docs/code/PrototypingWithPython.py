@@ -3,9 +3,9 @@
 
 # "Prototyping with Python" - a chapter of "The Fuzzing Book"
 # Web site: https://www.fuzzingbook.org/html/PrototypingWithPython.html
-# Last change: 2021-06-02 17:56:07+02:00
+# Last change: 2025-01-16 11:16:23+01:00
 #
-# Copyright (c) 2021 CISPA Helmholtz Center for Information Security
+# Copyright (c) 2021-2025 CISPA Helmholtz Center for Information Security
 # Copyright (c) 2018-2020 Saarland University, authors, and contributors
 #
 # Permission is hereby granted, free of charge, to any person obtaining a
@@ -37,7 +37,7 @@ This file can be _executed_ as a script, running all experiments:
 or _imported_ as a package, providing classes, functions, and constants:
 
     >>> from fuzzingbook.PrototypingWithPython import <identifier>
-    
+
 but before you do so, _read_ it and _interact_ with it at:
 
     https://www.fuzzingbook.org/html/PrototypingWithPython.html
@@ -155,7 +155,6 @@ if __name__ == '__main__':
 from .bookutils import rich_output
 
 import ast
-import astor
 
 if __name__ == '__main__':
     if rich_output():
@@ -163,7 +162,7 @@ if __name__ == '__main__':
         from showast import show_ast
     else:
         def show_ast(tree):
-            ast.dump(tree)
+            ast.dump(tree, indent=4)
 
 if __name__ == '__main__':
     triangle_source = inspect.getsource(triangle)
@@ -175,7 +174,7 @@ def collect_conditions(tree):
 
     def traverse(node):
         if isinstance(node, ast.If):
-            cond = astor.to_source(node.test).strip()
+            cond = ast.unparse(node.test).strip()
             conditions.append(cond)
 
         for child in ast.iter_child_nodes(node):
@@ -195,7 +194,7 @@ if __name__ == '__main__':
 
 
 
-import z3
+import z3  # type: ignore
 
 if __name__ == '__main__':
     a = z3.Int('a')
@@ -235,8 +234,8 @@ def collect_path_conditions(tree):
 
     def traverse(node, context):
         if isinstance(node, ast.If):
-            cond = astor.to_source(node.test).strip()
-            not_cond = "z3.Not" + cond
+            cond = ast.unparse(node.test).strip()
+            not_cond = "z3.Not(" + cond + ")"
 
             traverse_if_children(node.body, context, cond)
             traverse_if_children(node.orelse, context, not_cond)
@@ -246,7 +245,7 @@ def collect_path_conditions(tree):
                 traverse(child, context)
 
     traverse(tree, [])
-    
+
     return ["z3.And(" + ", ".join(path) + ")" for path in paths]
 
 if __name__ == '__main__':
@@ -288,7 +287,7 @@ if __name__ == '__main__':
 
 if __name__ == '__main__':
     x = 42
-    x = "a string"
+    x = "a string"  # type: ignore
 
 if __name__ == '__main__':
     p1, p2 = True, False

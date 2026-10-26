@@ -12,6 +12,7 @@ with fuzzingbook adaptations -->
 <html>
 <head>
 <meta charset="utf-8" /><title>Reducing Failure-Inducing Inputs - The Fuzzing Book</title>
+<link rel="me" href="https://mastodon.social/@TheFuzzingBook">
 
 <style type="text/css">
     /*!
@@ -11621,22 +11622,23 @@ td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5
 span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 .highlight .hll { background-color: #ffffcc }
 .highlight { background: #f8f8f8; }
-.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .c { color: #3D7B7B; font-style: italic } /* Comment */
 .highlight .err { border: 1px solid #FF0000 } /* Error */
 .highlight .k { color: #008000; font-weight: bold } /* Keyword */
 .highlight .o { color: #666666 } /* Operator */
-.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
-.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
-.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
-.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
-.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #9C6500 } /* Comment.Preproc */
+.highlight .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
 .highlight .gd { color: #A00000 } /* Generic.Deleted */
 .highlight .ge { font-style: italic } /* Generic.Emph */
-.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.highlight .gr { color: #E40000 } /* Generic.Error */
 .highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.highlight .gi { color: #00A000 } /* Generic.Inserted */
-.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gi { color: #008400 } /* Generic.Inserted */
+.highlight .go { color: #717171 } /* Generic.Output */
 .highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
 .highlight .gs { font-weight: bold } /* Generic.Strong */
 .highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
@@ -11649,15 +11651,15 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .kt { color: #B00040 } /* Keyword.Type */
 .highlight .m { color: #666666 } /* Literal.Number */
 .highlight .s { color: #BA2121 } /* Literal.String */
-.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .na { color: #687822 } /* Name.Attribute */
 .highlight .nb { color: #008000 } /* Name.Builtin */
 .highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
 .highlight .no { color: #880000 } /* Name.Constant */
 .highlight .nd { color: #AA22FF } /* Name.Decorator */
-.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
-.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .ni { color: #717171; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
 .highlight .nf { color: #0000FF } /* Name.Function */
-.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nl { color: #767600 } /* Name.Label */
 .highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
 .highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
 .highlight .nv { color: #19177C } /* Name.Variable */
@@ -11674,11 +11676,11 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
-.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
 .highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
-.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
 .highlight .sx { color: #008000 } /* Literal.String.Other */
-.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .sr { color: #A45A77 } /* Literal.String.Regex */
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
@@ -11795,6 +11797,9 @@ MathJax.Hub.Config({
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
+<meta name="theme-color" content="#bb0000" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#cc0000" media="(prefers-color-scheme: dark)">
+
 <meta property="og:url" content="https://www.fuzzingbook.org/html/Reducer.html" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Reducing Failure-Inducing Inputs - The Fuzzing Book" />
@@ -11886,7 +11891,7 @@ MathJax.Hub.Config({
 <li><a href="GreyboxFuzzer.html">Greybox Fuzzing</a></li>
 <li><a href="SearchBasedFuzzer.html">Search-Based Fuzzing</a></li>
 <li><a href="MutationAnalysis.html">Mutation Analysis</a></li>
-</ul><li class="has-sub"><a href="03_Syntactical_Fuzzing.html" class="chapters"><span class="part_number">III</span> Syntactical Fuzzing <i class="fa fa-fw fa-caret-right"></i></a>
+</ul><li class="has-sub"><a href="03_Syntactical_Fuzzing.html" class="chapters"><span class="part_number">III</span> Syntactic Fuzzing <i class="fa fa-fw fa-caret-right"></i></a>
 <ul>
 <li><a href="Grammars.html">Fuzzing with Grammars</a></li>
 <li><a href="GrammarFuzzer.html">Efficient Grammar Fuzzing</a></li>
@@ -11896,8 +11901,9 @@ MathJax.Hub.Config({
 <li><a href="GeneratorGrammarFuzzer.html">Fuzzing with Generators</a></li>
 <li><a href="GreyboxGrammarFuzzer.html">Greybox Fuzzing with Grammars</a></li>
 <li><a href="Reducer.html" class="this_page">Reducing Failure-Inducing Inputs</a></li>
-</ul><li class="has-sub"><a href="04_Semantical_Fuzzing.html" class="chapters"><span class="part_number">IV</span> Semantical Fuzzing <i class="fa fa-fw fa-caret-right"></i></a>
+</ul><li class="has-sub"><a href="04_Semantical_Fuzzing.html" class="chapters"><span class="part_number">IV</span> Semantic Fuzzing <i class="fa fa-fw fa-caret-right"></i></a>
 <ul>
+<li><a href="FuzzingWithConstraints.html">Fuzzing with Constraints</a></li>
 <li><a href="GrammarMiner.html">Mining Input Grammars</a></li>
 <li><a href="InformationFlow.html">Tracking Information Flow</a></li>
 <li><a href="ConcolicFuzzer.html">Concolic Fuzzing</a></li>
@@ -11908,6 +11914,7 @@ MathJax.Hub.Config({
 <li><a href="ConfigurationFuzzer.html">Testing Configurations</a></li>
 <li><a href="APIFuzzer.html">Fuzzing APIs</a></li>
 <li><a href="Carver.html">Carving Unit Tests</a></li>
+<li><a href="PythonFuzzer.html">Testing Compilers <strong class="new_chapter">&bull;</strong></a></li>
 <li><a href="WebFuzzer.html">Testing Web Applications</a></li>
 <li><a href="GUIFuzzer.html">Testing Graphical User Interfaces</a></li>
 </ul><li class="has-sub"><a href="06_Managing_Fuzzing.html" class="chapters"><span class="part_number">VI</span> Managing Fuzzing <i class="fa fa-fw fa-caret-right"></i></a>
@@ -11916,9 +11923,11 @@ MathJax.Hub.Config({
 <li><a href="WhenToStopFuzzing.html">When To Stop Fuzzing</a></li>
 </ul><li class="has-sub"><a href="99_Appendices.html" class="chapters">Appendices <i class="fa fa-fw fa-caret-right"></i></a>
 <ul>
+<li><a href="AcademicPrototyping.html">Academic Prototyping</a></li>
 <li><a href="PrototypingWithPython.html">Prototyping with Python</a></li>
 <li><a href="ExpectError.html">Error Handling</a></li>
 <li><a href="Timer.html">Timer</a></li>
+<li><a href="Timeout.html">Timeout</a></li>
 <li><a href="ClassDiagram.html">Class Diagrams</a></li>
 <li><a href="RailroadDiagrams.html">Railroad Diagrams</a></li>
 <li><a href="ControlFlow.html">Control Flow Graph</a></li>
@@ -11933,13 +11942,10 @@ MathJax.Hub.Config({
 </li><li class="has-sub"><a href="#Delta-Debugging">&nbsp;&bull;&nbsp;&nbsp; Delta Debugging</a>
 </li><li class="has-sub"><a href="#Grammar-Based-Input-Reduction">&nbsp;&bull;&nbsp;&nbsp; Grammar-Based Input Reduction</a>
 <ul><li class="has-sub"><a href="#Lexical-Reduction-vs.-Syntactic-Rules">Lexical Reduction vs. Syntactic Rules</a>
-</li><li class="has-sub"><a href="#A-Grammmar-Based-Reduction-Approach">A Grammmar-Based Reduction Approach</a>
+</li><li class="has-sub"><a href="#A-Grammar-Based-Reduction-Approach">A Grammar-Based Reduction Approach</a>
 </li><li class="has-sub"><a href="#Simplifying-by-Replacing-Subtrees">Simplifying by Replacing Subtrees</a>
 </li><li class="has-sub"><a href="#Simplifying-by-Alternative-Expansions">Simplifying by Alternative Expansions</a>
-</li><li class="has-sub"><a href="#A-Class-for-Reducing-with-Grammars">A Class for Reducing with Grammars</a>
-</li><li class="has-sub"><a href="#A-Few-Helpers">A Few Helpers</a>
-</li><li class="has-sub"><a href="#Simplification-Strategies">Simplification Strategies</a>
-</li><li class="has-sub"><a href="#The-Reduction-Strategy">The Reduction Strategy</a>
+</li><li class="has-sub"><a href="#Excursion:-A-Class-for-Reducing-with-Grammars">Excursion: A Class for Reducing with Grammars</a>
 </li><li class="has-sub"><a href="#A-Depth-Oriented-Strategy">A Depth-Oriented Strategy</a>
 </li><li class="has-sub"><a href="#Comparing-Strategies">Comparing Strategies</a>
 </ul></li><li class="has-sub"><a href="#Lessons-Learned"><i class="fa fa-fw fa-trophy"></i> Lessons Learned</a>
@@ -11954,7 +11960,7 @@ MathJax.Hub.Config({
      
      <li class="has-sub"><a href="#"><span title="Resources"><i class="fa fa-fw fa-cube"></i> </span><span class="menu_3">Resources</span></a>
      <ul>
-     <li><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/master?filepath=docs/notebooks/Reducer.ipynb" target="_blank" class="edit_as_notebook"><i class="fa fa-fw fa-edit"></i> Edit as Notebook</a></li>
+     <li><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/HEAD?labpath=docs%2Fnotebooks/Reducer.ipynb" target="_blank" class="edit_as_notebook"><i class="fa fa-fw fa-edit"></i> Edit as Notebook</a></li>
      <li><a href="https://www.fuzzingbook.org/slides/Reducer.slides.html" target="_blank"><i class="fa fa-fw fa-video-camera"></i> View Slides</a></li>
      <li><a href="https://www.fuzzingbook.org/code/Reducer.py"><i class="fa fa-fw fa-download"></i> Download Code (.py)</a></li>
      <li><a href="https://www.fuzzingbook.org/notebooks/Reducer.ipynb"><i class="fa fa-fw fa-download"></i> Download Notebook (.ipynb)</a></li>
@@ -11967,12 +11973,14 @@ MathJax.Hub.Config({
      
      <li class="has-sub"><a href="#"><span title="Share"><i class="fa fa-fw fa-comments"></i> </span> <span class="menu_4">Share</span></a>
         <ul>
+<!--
             <li><a href="https://twitter.com/intent/tweet?text=I%20just%20read%20%22Reducing%20Failure-Inducing%20Inputs%22%20(part%20of%20@FuzzingBook)%20at%20https%3a%2f%2fwww.fuzzingbook.org%2fhtml%2fReducer.html" target="popup" 
 onclick="window.open('https://twitter.com/intent/tweet?text=I%20just%20read%20%22Reducing%20Failure-Inducing%20Inputs%22%20(part%20of%20@FuzzingBook)%20at%20https%3a%2f%2fwww.fuzzingbook.org%2fhtml%2fReducer.html','popup','width=600,height=600'); return false;"
-><i class="fa fa-fw fa-twitter"></i> Share on Twitter</a>
+><i class="fa fa-fw fa-twitter"></i> Share on X</a>
             <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.fuzzingbook.org%2fhtml%2fReducer.html" target="popup" 
 onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.fuzzingbook.org%2fhtml%2fReducer.html','popup','width=600,height=600'); return false;"
 ><i class="fa fa-fw fa-facebook"></i> Share on Facebook</a>
+-->
             <li><a href="mailto:?subject=Reducing%20Failure-Inducing%20Inputs&body=I%20just%20read%20%22Reducing%20Failure-Inducing%20Inputs%22%20(part%20of%20@FuzzingBook)%20at%20https%3a%2f%2fwww.fuzzingbook.org%2fhtml%2fReducer.html"><i class="fa fa-fw fa-envelope"></i> Share by Email</a>
             <li><a href="#citation" id="cite" onclick="revealCitation()"><i class="fa fa-fw fa-mortar-board"></i> Cite</a>
         </ul>
@@ -12000,6 +12008,38 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 </div>
 </div>
 </div>
+</div>
+
+<div class="input_code">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn"><a href="https://github.com/uds-se/fuzzingbook//tree/master/notebooks/shared/bookutils" class="import" target="_blank">bookutils</a></span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;JOv1xGVdXAU&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div></div>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+        <iframe
+            width="640"
+            height="360"
+            src="https://www.youtube-nocookie.com/embed/JOv1xGVdXAU"
+            frameborder="0"
+            allowfullscreen
+
+        ></iframe>
+
+</div>
+
 </div>
 
 <div class="input_markdown">
@@ -12034,18 +12074,20 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 </pre></div>
 <p>Can we reduce this input to a minimum?  To use a <code>Reducer</code>, one first has to build a <code>Runner</code> whose outcome is <code>FAIL</code> if the precise error occurs.  We therefore build a <code>ZeroDivisionRunner</code> whose <code>run()</code> method will specifically return a <code>FAIL</code> outcome if a <code>ZeroDivisionError</code> occurs.</p>
 <div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn"><a href="Fuzzer.html" class="import" target="_blank">Fuzzer</a></span> <span class="kn">import</span> <span class="n">ProgramRunner</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn"><a href="https://docs.python.org/3/library/subprocess.html" class="import" target="_blank">subprocess</a></span>
 <span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">ZeroDivisionRunner</span><span class="p">(</span><span class="n">ProgramRunner</span><span class="p">):</span>
 <span class="o">&gt;&gt;&gt;</span>     <span class="s2">&quot;&quot;&quot;Make outcome &#39;FAIL&#39; if ZeroDivisionError occurs&quot;&quot;&quot;</span>
-<span class="o">&gt;&gt;&gt;</span>     <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inp</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
-<span class="o">&gt;&gt;&gt;</span>         <span class="n">result</span><span class="p">,</span> <span class="n">outcome</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">inp</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span>         <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;ZeroDivisionError&#39;</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="o">&gt;&gt;&gt;</span> 
+<span class="o">&gt;&gt;&gt;</span>     <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inp</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">subprocess</span><span class="o">.</span><span class="n">CompletedProcess</span><span class="p">,</span> <span class="n">Outcome</span><span class="p">]:</span>
+<span class="o">&gt;&gt;&gt;</span>         <span class="n">process</span><span class="p">,</span> <span class="n">outcome</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">inp</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span>         <span class="k">if</span> <span class="n">process</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;ZeroDivisionError&#39;</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
 <span class="o">&gt;&gt;&gt;</span>             <span class="n">outcome</span> <span class="o">=</span> <span class="s1">&#39;FAIL&#39;</span>
-<span class="o">&gt;&gt;&gt;</span>         <span class="k">return</span> <span class="n">result</span><span class="p">,</span> <span class="n">outcome</span>
+<span class="o">&gt;&gt;&gt;</span>         <span class="k">return</span> <span class="n">process</span><span class="p">,</span> <span class="n">outcome</span>
 </pre></div>
 <p>If we feed this expression into a <code>ZeroDivisionRunner</code>, it will produce an outcome of <code>FAIL</code> as designed.</p>
 <div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">python_input</span> <span class="o">=</span> <span class="s2">&quot;x = 1 + 2 * 3 / 0&quot;</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">python_runner</span> <span class="o">=</span> <span class="n">ZeroDivisionRunner</span><span class="p">(</span><span class="s2">&quot;python&quot;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span><span class="p">,</span> <span class="n">outcome</span> <span class="o">=</span> <span class="n">python_runner</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">python_input</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">process</span><span class="p">,</span> <span class="n">outcome</span> <span class="o">=</span> <span class="n">python_runner</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">python_input</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">outcome</span>
 <span class="s1">&#39;FAIL&#39;</span>
 </pre></div>
@@ -12054,7 +12096,165 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <span class="o">&gt;&gt;&gt;</span> <span class="n">dd</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="n">python_input</span><span class="p">)</span>
 <span class="s1">&#39;3/0&#39;</span>
 </pre></div>
-<p>The input is reduced to the maximum: We get the essence of the division by zero.</p>
+<p>The input is reduced to the minimum: We get the essence of the division by zero.</p>
+<p><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 12.2.1 (20241206.2353)
+ -->
+<!-- Pages: 1 -->
+<svg width="476pt" height="364pt"
+ viewBox="0.00 0.00 475.50 363.50" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 359.5)">
+<g id="a_graph0"><a xlink:title="DeltaDebuggingReducer class hierarchy">
+<polygon fill="white" stroke="none" points="-4,4 -4,-359.5 471.5,-359.5 471.5,4 -4,4"/>
+</a>
+</g>
+<!-- DeltaDebuggingReducer -->
+<g id="node1" class="node">
+<title>DeltaDebuggingReducer</title>
+<g id="a_node1"><a xlink:href="#" xlink:title="class DeltaDebuggingReducer:&#10;Reduce inputs using delta debugging.">
+<polygon fill="none" stroke="black" points="0,-45.12 0,-91.88 163.75,-91.88 163.75,-45.12 0,-45.12"/>
+<text text-anchor="start" x="8" y="-75.58" font-family="Patua One, Helvetica, sans-serif" font-weight="bold" font-size="14.00" fill="#b03a2e">DeltaDebuggingReducer</text>
+<polyline fill="none" stroke="black" points="0,-65.88 163.75,-65.88"/>
+<g id="a_node1_0"><a xlink:href="#" xlink:title="DeltaDebuggingReducer">
+<g id="a_node1_1"><a xlink:href="#" xlink:title="reduce(self, inp: str) &#45;&gt; str:&#10;Reduce input `inp` using delta debugging. Return reduced input.">
+<text text-anchor="start" x="57.88" y="-53.38" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-style="italic" font-size="10.00">reduce()</text>
+</a>
+</g>
+</a>
+</g>
+</a>
+</g>
+</g>
+<!-- CachingReducer -->
+<g id="node2" class="node">
+<title>CachingReducer</title>
+<g id="a_node2"><a xlink:href="#" xlink:title="class CachingReducer:&#10;A reducer that also caches test outcomes">
+<polygon fill="none" stroke="black" points="111.38,-173.5 111.38,-233 226.38,-233 226.38,-173.5 111.38,-173.5"/>
+<text text-anchor="start" x="119.38" y="-216.7" font-family="Patua One, Helvetica, sans-serif" font-weight="bold" font-size="14.00" fill="#b03a2e">CachingReducer</text>
+<polyline fill="none" stroke="black" points="111.38,-207 226.38,-207"/>
+<g id="a_node2_2"><a xlink:href="#" xlink:title="CachingReducer">
+<g id="a_node2_3"><a xlink:href="#" xlink:title="reset(self):&#10;Reset the test counter to zero. To be extended in subclasses.">
+<text text-anchor="start" x="147.88" y="-194.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-style="italic" font-size="10.00">reset()</text>
+</a>
+</g>
+<g id="a_node2_4"><a xlink:href="#" xlink:title="test(self, inp):&#10;Test with input `inp`. Return outcome.&#10;To be extended in subclasses.">
+<text text-anchor="start" x="147.88" y="-181.75" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-style="italic" font-size="10.00">test()</text>
+</a>
+</g>
+</a>
+</g>
+</a>
+</g>
+</g>
+<!-- DeltaDebuggingReducer&#45;&gt;CachingReducer -->
+<g id="edge1" class="edge">
+<title>DeltaDebuggingReducer&#45;&gt;CachingReducer</title>
+<path fill="none" stroke="black" d="M96.83,-92.32C109.67,-111.91 128.45,-140.56 143.61,-163.7"/>
+<polygon fill="none" stroke="black" points="140.62,-165.53 149.03,-171.97 146.48,-161.69 140.62,-165.53"/>
+</g>
+<!-- Reducer -->
+<g id="node3" class="node">
+<title>Reducer</title>
+<g id="a_node3"><a xlink:href="#" xlink:title="class Reducer:&#10;Base class for reducers.">
+<polygon fill="none" stroke="black" points="130.88,-270 130.88,-355 206.88,-355 206.88,-270 130.88,-270"/>
+<text text-anchor="start" x="144.12" y="-338.7" font-family="Patua One, Helvetica, sans-serif" font-weight="bold" font-size="14.00" fill="#b03a2e">Reducer</text>
+<polyline fill="none" stroke="black" points="130.88,-329 206.88,-329"/>
+<g id="a_node3_5"><a xlink:href="#" xlink:title="Reducer">
+<g id="a_node3_6"><a xlink:href="#" xlink:title="__init__(self, runner: Fuzzer.Runner, log_test: bool = False) &#45;&gt; None:&#10;Attach reducer to the given `runner`">
+<text text-anchor="start" x="138.88" y="-316.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="10.00">__init__()</text>
+</a>
+</g>
+<g id="a_node3_7"><a xlink:href="#" xlink:title="reduce(self, inp: str) &#45;&gt; str:&#10;Reduce input `inp`. Return reduced input.&#10;To be defined in subclasses.">
+<text text-anchor="start" x="138.88" y="-303.75" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-style="italic" font-size="10.00">reduce()</text>
+</a>
+</g>
+<g id="a_node3_8"><a xlink:href="#" xlink:title="reset(self) &#45;&gt; None:&#10;Reset the test counter to zero. To be extended in subclasses.">
+<text text-anchor="start" x="138.88" y="-291" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-style="italic" font-size="10.00">reset()</text>
+</a>
+</g>
+<g id="a_node3_9"><a xlink:href="#" xlink:title="test(self, inp: str) &#45;&gt; str:&#10;Test with input `inp`. Return outcome.&#10;To be extended in subclasses.">
+<text text-anchor="start" x="138.88" y="-278.25" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-style="italic" font-size="10.00">test()</text>
+</a>
+</g>
+</a>
+</g>
+</a>
+</g>
+</g>
+<!-- CachingReducer&#45;&gt;Reducer -->
+<g id="edge2" class="edge">
+<title>CachingReducer&#45;&gt;Reducer</title>
+<path fill="none" stroke="black" d="M168.88,-233.27C168.88,-241.04 168.88,-249.68 168.88,-258.31"/>
+<polygon fill="none" stroke="black" points="165.38,-258.05 168.88,-268.05 172.38,-258.05 165.38,-258.05"/>
+</g>
+<!-- GrammarReducer -->
+<g id="node4" class="node">
+<title>GrammarReducer</title>
+<g id="a_node4"><a xlink:href="#" xlink:title="class GrammarReducer:&#10;Reduce inputs using grammars">
+<polygon fill="none" stroke="black" points="181.88,-0.5 181.88,-136.5 329.88,-136.5 329.88,-0.5 181.88,-0.5"/>
+<text text-anchor="start" x="201.88" y="-120.2" font-family="Patua One, Helvetica, sans-serif" font-weight="bold" font-size="14.00" fill="#b03a2e">GrammarReducer</text>
+<polyline fill="none" stroke="black" points="181.88,-110.5 329.88,-110.5"/>
+<g id="a_node4_10"><a xlink:href="#" xlink:title="GrammarReducer">
+<g id="a_node4_11"><a xlink:href="#" xlink:title="__init__(self, runner: Fuzzer.Runner, parser: Parser.Parser, *, log_test: bool = False, log_reduce: bool = False):&#10;Constructor.&#10;`runner` is the runner to be used.&#10;`parser` is the parser to be used.&#10;`log_test` &#45; if set, show tests and results.&#10;`log_reduce` &#45; if set, show reduction steps.">
+<text text-anchor="start" x="189.88" y="-98" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-style="italic" font-size="10.00">__init__()</text>
+</a>
+</g>
+<g id="a_node4_12"><a xlink:href="#" xlink:title="reduce(self, inp):&#10;Reduce input `inp`. Return reduced input.&#10;To be defined in subclasses.">
+<text text-anchor="start" x="189.88" y="-85.25" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-style="italic" font-size="10.00">reduce()</text>
+</a>
+</g>
+<g id="a_node4_13"><a xlink:href="#" xlink:title="alternate_reductions(self, tree: DerivationTree, symbol: str, depth: int = &#45;1)">
+<text text-anchor="start" x="189.88" y="-71.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-size="10.00">alternate_reductions()</text>
+</a>
+</g>
+<g id="a_node4_14"><a xlink:href="#" xlink:title="parse(self, inp)">
+<text text-anchor="start" x="189.88" y="-58.75" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-size="10.00">parse()</text>
+</a>
+</g>
+<g id="a_node4_15"><a xlink:href="#" xlink:title="reduce_subtree(self, tree: DerivationTree, subtree: DerivationTree, depth: int = &#45;1)">
+<text text-anchor="start" x="189.88" y="-46" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-size="10.00">reduce_subtree()</text>
+</a>
+</g>
+<g id="a_node4_16"><a xlink:href="#" xlink:title="reduce_tree(self, tree)">
+<text text-anchor="start" x="189.88" y="-33.25" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-size="10.00">reduce_tree()</text>
+</a>
+</g>
+<g id="a_node4_17"><a xlink:href="#" xlink:title="subtrees_with_symbol(self, tree: DerivationTree, symbol: str, depth: int = &#45;1, ignore_root: bool = True) &#45;&gt; List[DerivationTree]:&#10;Find all subtrees in `tree` whose root is `symbol`.&#10;If `ignore_root` is true, ignore the root note of `tree`.">
+<text text-anchor="start" x="189.88" y="-20.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-size="10.00">subtrees_with_symbol()</text>
+</a>
+</g>
+<g id="a_node4_18"><a xlink:href="#" xlink:title="symbol_reductions(self, tree: DerivationTree, symbol: str, depth: int = &#45;1):&#10;Find all expansion alternatives for the given symbol">
+<text text-anchor="start" x="189.88" y="-7.75" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-size="10.00">symbol_reductions()</text>
+</a>
+</g>
+</a>
+</g>
+</a>
+</g>
+</g>
+<!-- GrammarReducer&#45;&gt;CachingReducer -->
+<g id="edge3" class="edge">
+<title>GrammarReducer&#45;&gt;CachingReducer</title>
+<path fill="none" stroke="black" d="M211.87,-136.65C205.81,-145.9 199.76,-155.12 194.2,-163.61"/>
+<polygon fill="none" stroke="black" points="191.3,-161.64 188.75,-171.92 197.16,-165.48 191.3,-161.64"/>
+</g>
+<!-- Legend -->
+<g id="node5" class="node">
+<title>Legend</title>
+<text text-anchor="start" x="348.25" y="-84.5" font-family="Patua One, Helvetica, sans-serif" font-weight="bold" font-size="10.00" fill="#b03a2e">Legend</text>
+<text text-anchor="start" x="348.25" y="-74.5" font-family="Patua One, Helvetica, sans-serif" font-size="10.00">• </text>
+<text text-anchor="start" x="354.25" y="-74.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-weight="bold" font-size="8.00">public_method()</text>
+<text text-anchor="start" x="348.25" y="-64.5" font-family="Patua One, Helvetica, sans-serif" font-size="10.00">• </text>
+<text text-anchor="start" x="354.25" y="-64.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-size="8.00">private_method()</text>
+<text text-anchor="start" x="348.25" y="-54.5" font-family="Patua One, Helvetica, sans-serif" font-size="10.00">• </text>
+<text text-anchor="start" x="354.25" y="-54.5" font-family="'Fira Mono', 'Source Code Pro', 'Courier', monospace" font-style="italic" font-size="8.00">overloaded_method()</text>
+<text text-anchor="start" x="348.25" y="-45.45" font-family="Helvetica,sans-Serif" font-size="9.00">Hover over names to see doc</text>
+</g>
+</g>
+</svg>
+</p>
 </div>
 </div>
 </div>
@@ -12086,7 +12286,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn"><a href="https://github.com/uds-se/fuzzingbook//tree/master/notebooks/shared/bookutils" class="import" target="_blank">bookutils</a></span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn"><a href="https://github.com/uds-se/fuzzingbook//tree/master/notebooks/shared/bookutils" class="import" target="_blank">bookutils.setup</a></span>
 </pre></div>
 
 </div>
@@ -12100,7 +12300,49 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn"><a href="Fuzzer.html" class="import" target="_blank">Fuzzer</a></span> <span class="kn">import</span> <span class="n">RandomFuzzer</span><span class="p">,</span> <span class="n">Runner</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn"><a href="https://github.com/uds-se/fuzzingbook//tree/master/notebooks/shared/bookutils" class="import" target="_blank">bookutils</a></span> <span class="kn">import</span> <span class="n">quiz</span>
+</pre></div>
+
+</div>
+</div></div>
+</div>
+</div>
+
+<div class="input_code">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn"><a href="https://docs.python.org/3/library/typing.html" class="import" target="_blank">typing</a></span> <span class="kn">import</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Optional</span>
+</pre></div>
+
+</div>
+</div></div>
+</div>
+</div>
+
+<div class="input_code">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn"><a href="ExpectError.html" class="import" target="_blank">ExpectError</a></span> <span class="kn">import</span> <span class="n">ExpectError</span>
+</pre></div>
+
+</div>
+</div></div>
+</div>
+</div>
+
+<div class="input_code">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn"><a href="Fuzzer.html" class="import" target="_blank">Fuzzer</a></span> <span class="kn">import</span> <span class="n">RandomFuzzer</span><span class="p">,</span> <span class="n">Runner</span><span class="p">,</span> <span class="n">Outcome</span>
 </pre></div>
 
 </div>
@@ -12129,7 +12371,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">MysteryRunner</span><span class="p">(</span><span class="n">Runner</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inp</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inp</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Outcome</span><span class="p">]:</span>
         <span class="n">x</span> <span class="o">=</span> <span class="n">inp</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="mo">0o17</span> <span class="o">+</span> <span class="mo">0o31</span><span class="p">))</span>
         <span class="n">y</span> <span class="o">=</span> <span class="n">inp</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="mo">0o27</span> <span class="o">+</span> <span class="mo">0o22</span><span class="p">))</span>
         <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">y</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">:</span>
@@ -12568,24 +12810,33 @@ the first quarter, the second quarter, and so on.</p>
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Reducer</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">,</span> <span class="n">log_test</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Attach reducer to the given `runner`&quot;&quot;&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Reducer</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Base class for reducers.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="n">Runner</span><span class="p">,</span> <span class="n">log_test</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Attach reducer to the given `runner`&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">runner</span> <span class="o">=</span> <span class="n">runner</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">log_test</span> <span class="o">=</span> <span class="n">log_test</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Reset the test counter to zero. To be extended in subclasses.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">tests</span> <span class="o">=</span> <span class="mi">0</span>
 
-    <span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inp</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inp</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Outcome</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Test with input `inp`. Return outcome.</span>
+<span class="sd">        To be extended in subclasses.&quot;&quot;&quot;</span>
+
         <span class="n">result</span><span class="p">,</span> <span class="n">outcome</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">runner</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">inp</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">tests</span> <span class="o">+=</span> <span class="mi">1</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">log_test</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Test #</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">tests</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">inp</span><span class="p">),</span> <span class="nb">repr</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">inp</span><span class="p">)),</span> <span class="n">outcome</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">outcome</span>
 
-    <span class="k">def</span> <span class="nf">reduce</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inp</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">reduce</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inp</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Reduce input `inp`. Return reduced input.</span>
+<span class="sd">        To be defined in subclasses.&quot;&quot;&quot;</span>
+
         <span class="bp">self</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
         <span class="c1"># Default: Don&#39;t reduce</span>
         <span class="k">return</span> <span class="n">inp</span>
@@ -12612,6 +12863,8 @@ the first quarter, the second quarter, and so on.</p>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">CachingReducer</span><span class="p">(</span><span class="n">Reducer</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A reducer that also caches test outcomes&quot;&quot;&quot;</span>
+
     <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cache</span> <span class="o">=</span> <span class="p">{}</span>
@@ -12642,7 +12895,7 @@ the first quarter, the second quarter, and so on.</p>
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><p>Our implementation uses almost the same Python code as Zeller in [<a href="https://doi.org/10.1109/32.988498">Zeller <em>et al</em>, 2002</a>]; the only difference is that it has been adapted to work on Python 3 and our <code>Runner</code> framework.    The variable <code>n</code> (initially 2) indicates the granularity – in each step, chunks of size $\frac{1}{n}$ are cut away.  If none of the test fails (<code>some_complement_is_failing</code> is False), then <code>n</code> is doubled – until it reaches the length of the input.</p>
+<div class="text_cell_render border-box-sizing rendered_html"><p>Our implementation uses almost the same Python code as Zeller in [<a href="https://doi.org/10.1109/32.988498">Zeller <em>et al</em>, 2002</a>]; the only difference is that it has been adapted to work on Python 3 and our <code>Runner</code> framework.  The variable <code>n</code> (initially 2) indicates the granularity – in each step, chunks of size $\frac{1}{n}$ are cut away.  If none of the test fails (<code>some_complement_is_failing</code> is False), then <code>n</code> is doubled – until it reaches the length of the input.</p>
 </div>
 </div>
 </div>
@@ -12655,13 +12908,17 @@ the first quarter, the second quarter, and so on.</p>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">DeltaDebuggingReducer</span><span class="p">(</span><span class="n">CachingReducer</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">reduce</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inp</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Reduce inputs using delta debugging.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">reduce</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inp</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Reduce input `inp` using delta debugging. Return reduced input.&quot;&quot;&quot;</span>
+
         <span class="bp">self</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="n">inp</span><span class="p">)</span> <span class="o">!=</span> <span class="n">Runner</span><span class="o">.</span><span class="n">PASS</span>
 
         <span class="n">n</span> <span class="o">=</span> <span class="mi">2</span>     <span class="c1"># Initial granularity</span>
         <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">inp</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
-            <span class="n">start</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">start</span> <span class="o">=</span> <span class="mf">0.0</span>
             <span class="n">subset_length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">inp</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span>
             <span class="n">some_complement_is_failing</span> <span class="o">=</span> <span class="kc">False</span>
 
@@ -12789,7 +13046,7 @@ Test #29 &#39;)&#39; 1 PASS
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><p>How effective is delta debugging?  In the best case (when the left half or the right half fails), the number of tests is logarithmic proportional to the length $n$ of an input (i.e., $O(\log_2 n)$); this is the same complexity as binary search.  In the worst case, though, delta debugging can require a number of tests proportional to $n^2$  (i.e., $O(n^2)$) – this happens in the case when we are down to character granularity, and we have to repeatedly tried to delete all characters, only to find that deleting the last character results in a failure [<a href="https://doi.org/10.1109/32.988498">Zeller <em>et al</em>, 2002</a>].  (This is a pretty pathological situation, though.)</p>
+<div class="text_cell_render border-box-sizing rendered_html"><p>How effective is delta debugging?  In the best case (when the left half or the right half fails), the number of tests is logarithmic proportional to the length $n$ of an input (i.e., $O(\log_2 n)$); this is the same complexity as binary search.  In the worst case, though, delta debugging can require a number of tests proportional to $n^2$ (i.e., $O(n^2)$) – this happens in the case when we are down to character granularity, and we have to repeatedly tried to delete all characters, only to find that deleting the last character results in a failure [<a href="https://doi.org/10.1109/32.988498">Zeller <em>et al</em>, 2002</a>].  (This is a pretty pathological situation, though.)</p>
 </div>
 </div>
 </div>
@@ -12802,6 +13059,159 @@ Test #29 &#39;)&#39; 1 PASS
 </div>
 </div>
 </div>
+</div>
+
+<div class="output_area">
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+    <script>
+    var bad_answers = new Map();
+
+    function answer(quiz_id) {
+        ans = 0;
+        for (i = 1;; i++) {
+            checkbox = document.getElementById(quiz_id + "-" + i.toString());
+            if (!checkbox)
+                break;
+            if (checkbox.checked)
+                ans |= (1 << i);
+        }
+        return ans;
+    }
+    function check_selection(quiz_id, correct_answer, multiple_choice, hint) {
+        given_answer = answer(quiz_id);
+        if (given_answer == correct_answer)
+        {
+            document.getElementById(quiz_id + "-submit").value = "Correct!";
+            document.getElementById(quiz_id + "-hint").innerHTML = "";
+
+            for (i = 1;; i++) {
+                checkbox = document.getElementById(quiz_id + "-" + i.toString());
+                label = document.getElementById(quiz_id + "-" + i.toString() + "-label")
+                if (!checkbox)
+                    break;
+
+                if (checkbox.checked) {
+                    label.style.fontWeight = "bold";
+                }
+                else {
+                    label.style.textDecoration = "line-through";
+                }
+            }
+        }
+        else 
+        {
+            document.getElementById(quiz_id + "-submit").value = "Try again";
+
+            if (!bad_answers.has(quiz_id)) {
+                bad_answers.set(quiz_id, 1);
+            }
+            else {
+                bad_answers.set(quiz_id, bad_answers.get(quiz_id) + 1);
+            }
+
+            if (bad_answers.get(quiz_id) >= 2 && hint.length > 0) {
+                document.getElementById(quiz_id + "-hint").innerHTML = 
+                    "&nbsp;&nbsp;(Hint: <code>" + hint + "</code>)";
+            }
+
+            if (!multiple_choice) {
+                for (i = 1;; i++) {
+                    checkbox = document.getElementById(quiz_id + "-" + i.toString());
+                    label = document.getElementById(quiz_id + "-" + i.toString() + "-label")
+
+                    if (!checkbox)
+                        break;
+                    if (checkbox.checked) {
+                        label.style.textDecoration = "line-through";
+                    }
+                }
+            }
+        }
+    }
+    function clear_selection(quiz_id) {
+        document.getElementById(quiz_id + "-submit").value = "Submit";
+        document.getElementById(quiz_id + "-hint").innerHTML = "";
+    }
+    </script>
+
+    <div class="quiz">
+    <h3 class="quiz_title">Quiz</h3>
+    <p>
+    <div class="quiz_question">What happens if the function under test does not fail?</div>
+    </p>
+    <p>
+    <div class="quiz_options" title="Pick a choice.">
+
+        <input type="radio" name="f10c350e-d3ef-11ef-83cb-6298cf1a5790" id="f10c350e-d3ef-11ef-83cb-6298cf1a5790-1" onclick="clear_selection('f10c350e-d3ef-11ef-83cb-6298cf1a5790')">
+        <label id="f10c350e-d3ef-11ef-83cb-6298cf1a5790-1-label" for="f10c350e-d3ef-11ef-83cb-6298cf1a5790-1">Delta debugging searches for the minimal input that produces the same result</label><br>
+
+        <input type="radio" name="f10c350e-d3ef-11ef-83cb-6298cf1a5790" id="f10c350e-d3ef-11ef-83cb-6298cf1a5790-2" onclick="clear_selection('f10c350e-d3ef-11ef-83cb-6298cf1a5790')">
+        <label id="f10c350e-d3ef-11ef-83cb-6298cf1a5790-2-label" for="f10c350e-d3ef-11ef-83cb-6298cf1a5790-2">Delta debugging starts a fuzzer to find a failure</label><br>
+
+        <input type="radio" name="f10c350e-d3ef-11ef-83cb-6298cf1a5790" id="f10c350e-d3ef-11ef-83cb-6298cf1a5790-3" onclick="clear_selection('f10c350e-d3ef-11ef-83cb-6298cf1a5790')">
+        <label id="f10c350e-d3ef-11ef-83cb-6298cf1a5790-3-label" for="f10c350e-d3ef-11ef-83cb-6298cf1a5790-3">Delta debugging raises an AssertionError</label><br>
+
+        <input type="radio" name="f10c350e-d3ef-11ef-83cb-6298cf1a5790" id="f10c350e-d3ef-11ef-83cb-6298cf1a5790-4" onclick="clear_selection('f10c350e-d3ef-11ef-83cb-6298cf1a5790')">
+        <label id="f10c350e-d3ef-11ef-83cb-6298cf1a5790-4-label" for="f10c350e-d3ef-11ef-83cb-6298cf1a5790-4">Delta debugging runs forever in a loop</label><br>
+
+    </div>
+    </p>
+    <input id="f10c350e-d3ef-11ef-83cb-6298cf1a5790-submit" type="submit" value="Submit" onclick="check_selection('f10c350e-d3ef-11ef-83cb-6298cf1a5790', 8, 0, '0 ** 0 + 1 ** 0 + 0 ** 1 + 1 ** 1')">
+    <span class="quiz_hint" id="f10c350e-d3ef-11ef-83cb-6298cf1a5790-hint"></span>
+    </div>
+
+</div>
+
+</div>
+
+<div class="input_markdown">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html"><p>Indeed, <code>DeltaDebugger</code> checks if its assumptions hold. If not, an assertion fails.</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="input_code">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="n">ExpectError</span><span class="p">():</span>
+    <span class="n">dd_reducer</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="s2">&quot;I am a passing input&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div></div>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Test #1 &#39;I am a passing input&#39; 20 PASS
+</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>Traceback (most recent call last):
+  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_29923/3080932113.py&#34;, line 2, in &lt;module&gt;
+    dd_reducer.reduce(&#34;I am a passing input&#34;)
+  File &#34;/var/folders/n2/xd9445p97rb3xh7m1dfx8_4h0006ts/T/ipykernel_29923/2870451724.py&#34;, line 8, in reduce
+    assert self.test(inp) != Runner.PASS
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError (expected)
+</pre>
+</div>
+
 </div>
 
 <div class="input_markdown">
@@ -12899,7 +13309,7 @@ Test #15 &#39;(&#39; 1 PASS
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn"><a href="Parser.html" class="import" target="_blank">Parser</a></span> <span class="kn">import</span> <span class="n">EarleyParser</span>  <span class="c1"># minor dependency</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn"><a href="Parser.html" class="import" target="_blank">Parser</a></span> <span class="kn">import</span> <span class="n">EarleyParser</span><span class="p">,</span> <span class="n">Parser</span>  <span class="c1"># minor dependency</span>
 </pre></div>
 
 </div>
@@ -12914,13 +13324,13 @@ Test #15 &#39;(&#39; 1 PASS
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">EvalMysteryRunner</span><span class="p">(</span><span class="n">MysteryRunner</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">parser</span> <span class="o">=</span> <span class="n">EarleyParser</span><span class="p">(</span><span class="n">EXPR_GRAMMAR</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inp</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inp</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Outcome</span><span class="p">]:</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">tree</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">inp</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">SyntaxError</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+        <span class="k">except</span> <span class="ne">SyntaxError</span><span class="p">:</span>
             <span class="k">return</span> <span class="p">(</span><span class="n">inp</span><span class="p">,</span> <span class="n">Runner</span><span class="o">.</span><span class="n">UNRESOLVED</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">inp</span><span class="p">)</span>
@@ -13019,7 +13429,7 @@ Test #21 &#39;1 + (2 * 3&#39; 10 UNRESOLVED
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><h3 id="A-Grammmar-Based-Reduction-Approach">A Grammmar-Based Reduction Approach<a class="anchor-link" href="#A-Grammmar-Based-Reduction-Approach">&#182;</a></h3><p>To reduce inputs with high syntactical complexity, we use another approach: Rather than reducing the input string, we reduce the <em>tree</em> representing its structure.  The general idea is to start with a <em>derivation tree</em> coming from parsing the input, and then <em>substitute subtrees by smaller subtrees of the same type</em>.  These alternate subtrees can either come</p>
+<div class="text_cell_render border-box-sizing rendered_html"><h3 id="A-Grammar-Based-Reduction-Approach">A Grammar-Based Reduction Approach<a class="anchor-link" href="#A-Grammar-Based-Reduction-Approach">&#182;</a></h3><p>To reduce inputs with high syntactical complexity, we use another approach: Rather than reducing the input string, we reduce the <em>tree</em> representing its structure.  The general idea is to start with a <em>derivation tree</em> coming from parsing the input, and then <em>substitute subtrees by smaller subtrees of the same type</em>.  These alternate subtrees can either come</p>
 <ol>
 <li>From the tree itself, or</li>
 <li>By applying an alternate grammar expansion using elements from the tree.</li>
@@ -13044,7 +13454,8 @@ Test #21 &#39;1 + (2 * 3&#39; 10 UNRESOLVED
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn"><a href="GrammarFuzzer.html" class="import" target="_blank">GrammarFuzzer</a></span> <span class="kn">import</span> <span class="n">all_terminals</span><span class="p">,</span> <span class="n">expansion_to_children</span><span class="p">,</span> <span class="n">display_tree</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn"><a href="Grammars.html" class="import" target="_blank">Grammars</a></span> <span class="kn">import</span> <span class="n">Grammar</span>
+<span class="kn">from</span> <span class="nn"><a href="GrammarFuzzer.html" class="import" target="_blank">GrammarFuzzer</a></span> <span class="kn">import</span> <span class="n">all_terminals</span><span class="p">,</span> <span class="n">expansion_to_children</span><span class="p">,</span> <span class="n">display_tree</span>
 </pre></div>
 
 </div>
@@ -13073,281 +13484,281 @@ Test #21 &#39;1 + (2 * 3&#39; 10 UNRESOLVED
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 2.49.1 (20210923.0004)
+<!-- Generated by graphviz version 12.2.1 (20241206.2353)
  -->
 <!-- Pages: 1 -->
-<svg width="202pt" height="584pt"
- viewBox="0.00 0.00 202.00 584.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 580)">
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-580 198,-580 198,4 -4,4"/>
+<svg width="210pt" height="575pt"
+ viewBox="0.00 0.00 209.62 575.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 571)">
+<polygon fill="white" stroke="none" points="-4,4 -4,-571 205.62,-571 205.62,4 -4,4"/>
 <!-- 0 -->
 <g id="node1" class="node">
 <title>0</title>
-<text text-anchor="middle" x="74.5" y="-564.8" font-family="Times,serif" font-size="14.00">&lt;start&gt;</text>
+<text text-anchor="middle" x="81.62" y="-553.7" font-family="Times,serif" font-size="14.00">&lt;start&gt;</text>
 </g>
 <!-- 1 -->
 <g id="node2" class="node">
 <title>1</title>
-<text text-anchor="middle" x="74.5" y="-513.8" font-family="Times,serif" font-size="14.00">&lt;expr&gt;</text>
+<text text-anchor="middle" x="81.62" y="-503.45" font-family="Times,serif" font-size="14.00">&lt;expr&gt;</text>
 </g>
 <!-- 0&#45;&gt;1 -->
 <g id="edge1" class="edge">
 <title>0&#45;&gt;1</title>
-<path fill="none" stroke="black" d="M74.5,-560.69C74.5,-554.18 74.5,-544.1 74.5,-535.43"/>
-<polygon fill="black" stroke="black" points="78,-535.26 74.5,-525.26 71,-535.26 78,-535.26"/>
+<path fill="none" stroke="black" d="M81.62,-552.96C81.62,-546.74 81.62,-536.65 81.62,-527.89"/>
+<polygon fill="black" stroke="black" points="85.13,-528.1 81.63,-518.1 78.13,-528.1 85.13,-528.1"/>
 </g>
 <!-- 2 -->
 <g id="node3" class="node">
 <title>2</title>
-<text text-anchor="middle" x="27.5" y="-462.8" font-family="Times,serif" font-size="14.00">&lt;term&gt;</text>
+<text text-anchor="middle" x="33.62" y="-453.2" font-family="Times,serif" font-size="14.00">&lt;term&gt;</text>
 </g>
 <!-- 1&#45;&gt;2 -->
 <g id="edge2" class="edge">
 <title>1&#45;&gt;2</title>
-<path fill="none" stroke="black" d="M67.96,-509.69C61.02,-502.45 49.84,-490.79 40.99,-481.57"/>
-<polygon fill="black" stroke="black" points="43.43,-479.05 33.98,-474.26 38.38,-483.9 43.43,-479.05"/>
+<path fill="none" stroke="black" d="M75.74,-502.71C68.76,-495.69 56.89,-483.76 47.53,-474.35"/>
+<polygon fill="black" stroke="black" points="50.16,-472.03 40.63,-467.41 45.2,-476.97 50.16,-472.03"/>
 </g>
 <!-- 7 -->
 <g id="node8" class="node">
 <title>7</title>
-<text text-anchor="middle" x="74.5" y="-462.8" font-family="Times,serif" font-size="14.00"> + </text>
+<text text-anchor="middle" x="81.62" y="-453.2" font-family="Times,serif" font-size="14.00"> + </text>
 </g>
 <!-- 1&#45;&gt;7 -->
 <g id="edge7" class="edge">
 <title>1&#45;&gt;7</title>
-<path fill="none" stroke="black" d="M74.5,-509.69C74.5,-503.18 74.5,-493.1 74.5,-484.43"/>
-<polygon fill="black" stroke="black" points="78,-484.26 74.5,-474.26 71,-484.26 78,-484.26"/>
+<path fill="none" stroke="black" d="M81.62,-502.71C81.62,-496.49 81.62,-486.4 81.62,-477.64"/>
+<polygon fill="black" stroke="black" points="85.13,-477.85 81.63,-467.85 78.13,-477.85 85.13,-477.85"/>
 </g>
 <!-- 8 -->
 <g id="node9" class="node">
 <title>8</title>
-<text text-anchor="middle" x="120.5" y="-462.8" font-family="Times,serif" font-size="14.00">&lt;expr&gt;</text>
+<text text-anchor="middle" x="127.62" y="-453.2" font-family="Times,serif" font-size="14.00">&lt;expr&gt;</text>
 </g>
 <!-- 1&#45;&gt;8 -->
 <g id="edge8" class="edge">
 <title>1&#45;&gt;8</title>
-<path fill="none" stroke="black" d="M80.9,-509.69C87.69,-502.45 98.63,-490.79 107.29,-481.57"/>
-<polygon fill="black" stroke="black" points="109.87,-483.94 114.16,-474.26 104.76,-479.15 109.87,-483.94"/>
+<path fill="none" stroke="black" d="M87.27,-502.71C93.89,-495.76 105.1,-484 114.03,-474.64"/>
+<polygon fill="black" stroke="black" points="116.53,-477.09 120.89,-467.44 111.46,-472.26 116.53,-477.09"/>
 </g>
 <!-- 3 -->
 <g id="node4" class="node">
 <title>3</title>
-<text text-anchor="middle" x="27.5" y="-411.8" font-family="Times,serif" font-size="14.00">&lt;factor&gt;</text>
+<text text-anchor="middle" x="31.62" y="-402.95" font-family="Times,serif" font-size="14.00">&lt;factor&gt;</text>
 </g>
 <!-- 2&#45;&gt;3 -->
 <g id="edge3" class="edge">
 <title>2&#45;&gt;3</title>
-<path fill="none" stroke="black" d="M27.5,-458.69C27.5,-452.18 27.5,-442.1 27.5,-433.43"/>
-<polygon fill="black" stroke="black" points="31,-433.26 27.5,-423.26 24,-433.26 31,-433.26"/>
+<path fill="none" stroke="black" d="M33.38,-452.46C33.12,-446.24 32.7,-436.15 32.34,-427.39"/>
+<polygon fill="black" stroke="black" points="35.85,-427.45 31.93,-417.6 28.85,-427.74 35.85,-427.45"/>
 </g>
 <!-- 4 -->
 <g id="node5" class="node">
 <title>4</title>
-<text text-anchor="middle" x="27.5" y="-360.8" font-family="Times,serif" font-size="14.00">&lt;integer&gt;</text>
+<text text-anchor="middle" x="27.62" y="-352.7" font-family="Times,serif" font-size="14.00">&lt;integer&gt;</text>
 </g>
 <!-- 3&#45;&gt;4 -->
 <g id="edge4" class="edge">
 <title>3&#45;&gt;4</title>
-<path fill="none" stroke="black" d="M27.5,-407.69C27.5,-401.18 27.5,-391.1 27.5,-382.43"/>
-<polygon fill="black" stroke="black" points="31,-382.26 27.5,-372.26 24,-382.26 31,-382.26"/>
+<path fill="none" stroke="black" d="M31.13,-402.21C30.62,-395.99 29.78,-385.9 29.06,-377.14"/>
+<polygon fill="black" stroke="black" points="32.56,-377.02 28.24,-367.35 25.58,-377.6 32.56,-377.02"/>
 </g>
 <!-- 5 -->
 <g id="node6" class="node">
 <title>5</title>
-<text text-anchor="middle" x="27.5" y="-309.8" font-family="Times,serif" font-size="14.00">&lt;digit&gt;</text>
+<text text-anchor="middle" x="20.62" y="-302.45" font-family="Times,serif" font-size="14.00">&lt;digit&gt;</text>
 </g>
 <!-- 4&#45;&gt;5 -->
 <g id="edge5" class="edge">
 <title>4&#45;&gt;5</title>
-<path fill="none" stroke="black" d="M27.5,-356.69C27.5,-350.18 27.5,-340.1 27.5,-331.43"/>
-<polygon fill="black" stroke="black" points="31,-331.26 27.5,-321.26 24,-331.26 31,-331.26"/>
+<path fill="none" stroke="black" d="M26.77,-351.96C25.86,-345.74 24.4,-335.65 23.13,-326.89"/>
+<polygon fill="black" stroke="black" points="26.61,-326.48 21.71,-317.09 19.68,-327.49 26.61,-326.48"/>
 </g>
 <!-- 6 -->
 <g id="node7" class="node">
 <title>6</title>
-<text text-anchor="middle" x="27.5" y="-258.8" font-family="Times,serif" font-size="14.00">1</text>
+<text text-anchor="middle" x="20.62" y="-252.2" font-family="Times,serif" font-size="14.00">1 (49)</text>
 </g>
 <!-- 5&#45;&gt;6 -->
 <g id="edge6" class="edge">
 <title>5&#45;&gt;6</title>
-<path fill="none" stroke="black" d="M27.5,-305.69C27.5,-299.18 27.5,-289.1 27.5,-280.43"/>
-<polygon fill="black" stroke="black" points="31,-280.26 27.5,-270.26 24,-280.26 31,-280.26"/>
+<path fill="none" stroke="black" d="M20.62,-301.71C20.62,-295.49 20.62,-285.4 20.62,-276.64"/>
+<polygon fill="black" stroke="black" points="24.13,-276.85 20.63,-266.85 17.13,-276.85 24.13,-276.85"/>
 </g>
 <!-- 9 -->
 <g id="node10" class="node">
 <title>9</title>
-<text text-anchor="middle" x="120.5" y="-411.8" font-family="Times,serif" font-size="14.00">&lt;term&gt;</text>
+<text text-anchor="middle" x="127.62" y="-402.95" font-family="Times,serif" font-size="14.00">&lt;term&gt;</text>
 </g>
 <!-- 8&#45;&gt;9 -->
 <g id="edge9" class="edge">
 <title>8&#45;&gt;9</title>
-<path fill="none" stroke="black" d="M120.5,-458.69C120.5,-452.18 120.5,-442.1 120.5,-433.43"/>
-<polygon fill="black" stroke="black" points="124,-433.26 120.5,-423.26 117,-433.26 124,-433.26"/>
+<path fill="none" stroke="black" d="M127.62,-452.46C127.62,-446.24 127.62,-436.15 127.62,-427.39"/>
+<polygon fill="black" stroke="black" points="131.13,-427.6 127.63,-417.6 124.13,-427.6 131.13,-427.6"/>
 </g>
 <!-- 10 -->
 <g id="node11" class="node">
 <title>10</title>
-<text text-anchor="middle" x="120.5" y="-360.8" font-family="Times,serif" font-size="14.00">&lt;factor&gt;</text>
+<text text-anchor="middle" x="127.62" y="-352.7" font-family="Times,serif" font-size="14.00">&lt;factor&gt;</text>
 </g>
 <!-- 9&#45;&gt;10 -->
 <g id="edge10" class="edge">
 <title>9&#45;&gt;10</title>
-<path fill="none" stroke="black" d="M120.5,-407.69C120.5,-401.18 120.5,-391.1 120.5,-382.43"/>
-<polygon fill="black" stroke="black" points="124,-382.26 120.5,-372.26 117,-382.26 124,-382.26"/>
+<path fill="none" stroke="black" d="M127.62,-402.21C127.62,-395.99 127.62,-385.9 127.62,-377.14"/>
+<polygon fill="black" stroke="black" points="131.13,-377.35 127.63,-367.35 124.13,-377.35 131.13,-377.35"/>
 </g>
 <!-- 11 -->
 <g id="node12" class="node">
 <title>11</title>
-<text text-anchor="middle" x="79.5" y="-309.8" font-family="Times,serif" font-size="14.00">(</text>
+<text text-anchor="middle" x="74.62" y="-302.45" font-family="Times,serif" font-size="14.00">( (40)</text>
 </g>
 <!-- 10&#45;&gt;11 -->
 <g id="edge11" class="edge">
 <title>10&#45;&gt;11</title>
-<path fill="none" stroke="black" d="M114.8,-356.69C108.07,-348.64 96.77,-335.14 88.77,-325.58"/>
-<polygon fill="black" stroke="black" points="91.27,-323.11 82.17,-317.69 85.9,-327.6 91.27,-323.11"/>
+<path fill="none" stroke="black" d="M121.13,-351.96C113.34,-344.87 100.04,-332.76 89.65,-323.31"/>
+<polygon fill="black" stroke="black" points="92.05,-320.75 82.3,-316.61 87.33,-325.93 92.05,-320.75"/>
 </g>
 <!-- 12 -->
 <g id="node13" class="node">
 <title>12</title>
-<text text-anchor="middle" x="120.5" y="-309.8" font-family="Times,serif" font-size="14.00">&lt;expr&gt;</text>
+<text text-anchor="middle" x="128.62" y="-302.45" font-family="Times,serif" font-size="14.00">&lt;expr&gt;</text>
 </g>
 <!-- 10&#45;&gt;12 -->
 <g id="edge12" class="edge">
 <title>10&#45;&gt;12</title>
-<path fill="none" stroke="black" d="M120.5,-356.69C120.5,-350.18 120.5,-340.1 120.5,-331.43"/>
-<polygon fill="black" stroke="black" points="124,-331.26 120.5,-321.26 117,-331.26 124,-331.26"/>
+<path fill="none" stroke="black" d="M127.75,-351.96C127.88,-345.74 128.09,-335.65 128.27,-326.89"/>
+<polygon fill="black" stroke="black" points="131.76,-327.17 128.47,-317.1 124.76,-327.03 131.76,-327.17"/>
 </g>
 <!-- 24 -->
 <g id="node25" class="node">
 <title>24</title>
-<text text-anchor="middle" x="161.5" y="-309.8" font-family="Times,serif" font-size="14.00">)</text>
+<text text-anchor="middle" x="182.62" y="-302.45" font-family="Times,serif" font-size="14.00">) (41)</text>
 </g>
 <!-- 10&#45;&gt;24 -->
 <g id="edge24" class="edge">
 <title>10&#45;&gt;24</title>
-<path fill="none" stroke="black" d="M126.2,-356.69C132.93,-348.64 144.23,-335.14 152.23,-325.58"/>
-<polygon fill="black" stroke="black" points="155.1,-327.6 158.83,-317.69 149.73,-323.11 155.1,-327.6"/>
+<path fill="none" stroke="black" d="M134.37,-351.96C142.53,-344.8 156.53,-332.51 167.36,-323.02"/>
+<polygon fill="black" stroke="black" points="169.48,-325.81 174.69,-316.59 164.86,-320.55 169.48,-325.81"/>
 </g>
 <!-- 13 -->
 <g id="node14" class="node">
 <title>13</title>
-<text text-anchor="middle" x="120.5" y="-258.8" font-family="Times,serif" font-size="14.00">&lt;term&gt;</text>
+<text text-anchor="middle" x="128.62" y="-252.2" font-family="Times,serif" font-size="14.00">&lt;term&gt;</text>
 </g>
 <!-- 12&#45;&gt;13 -->
 <g id="edge13" class="edge">
 <title>12&#45;&gt;13</title>
-<path fill="none" stroke="black" d="M120.5,-305.69C120.5,-299.18 120.5,-289.1 120.5,-280.43"/>
-<polygon fill="black" stroke="black" points="124,-280.26 120.5,-270.26 117,-280.26 124,-280.26"/>
+<path fill="none" stroke="black" d="M128.62,-301.71C128.62,-295.49 128.62,-285.4 128.62,-276.64"/>
+<polygon fill="black" stroke="black" points="132.13,-276.85 128.63,-266.85 125.13,-276.85 132.13,-276.85"/>
 </g>
 <!-- 14 -->
 <g id="node15" class="node">
 <title>14</title>
-<text text-anchor="middle" x="70.5" y="-207.8" font-family="Times,serif" font-size="14.00">&lt;factor&gt;</text>
+<text text-anchor="middle" x="79.62" y="-201.95" font-family="Times,serif" font-size="14.00">&lt;factor&gt;</text>
 </g>
 <!-- 13&#45;&gt;14 -->
 <g id="edge14" class="edge">
 <title>13&#45;&gt;14</title>
-<path fill="none" stroke="black" d="M113.55,-254.69C106.08,-247.37 94.03,-235.56 84.57,-226.29"/>
-<polygon fill="black" stroke="black" points="86.99,-223.75 77.39,-219.26 82.09,-228.75 86.99,-223.75"/>
+<path fill="none" stroke="black" d="M122.62,-251.46C115.49,-244.44 103.37,-232.51 93.81,-223.1"/>
+<polygon fill="black" stroke="black" points="96.34,-220.67 86.76,-216.15 91.43,-225.66 96.34,-220.67"/>
 </g>
 <!-- 18 -->
 <g id="node19" class="node">
 <title>18</title>
-<text text-anchor="middle" x="120.5" y="-207.8" font-family="Times,serif" font-size="14.00"> * </text>
+<text text-anchor="middle" x="128.62" y="-201.95" font-family="Times,serif" font-size="14.00"> * </text>
 </g>
 <!-- 13&#45;&gt;18 -->
 <g id="edge18" class="edge">
 <title>13&#45;&gt;18</title>
-<path fill="none" stroke="black" d="M120.5,-254.69C120.5,-248.18 120.5,-238.1 120.5,-229.43"/>
-<polygon fill="black" stroke="black" points="124,-229.26 120.5,-219.26 117,-229.26 124,-229.26"/>
+<path fill="none" stroke="black" d="M128.62,-251.46C128.62,-245.24 128.62,-235.15 128.62,-226.39"/>
+<polygon fill="black" stroke="black" points="132.13,-226.6 128.63,-216.6 125.13,-226.6 132.13,-226.6"/>
 </g>
 <!-- 19 -->
 <g id="node20" class="node">
 <title>19</title>
-<text text-anchor="middle" x="166.5" y="-207.8" font-family="Times,serif" font-size="14.00">&lt;term&gt;</text>
+<text text-anchor="middle" x="174.62" y="-201.95" font-family="Times,serif" font-size="14.00">&lt;term&gt;</text>
 </g>
 <!-- 13&#45;&gt;19 -->
 <g id="edge19" class="edge">
 <title>13&#45;&gt;19</title>
-<path fill="none" stroke="black" d="M126.9,-254.69C133.69,-247.45 144.63,-235.79 153.29,-226.57"/>
-<polygon fill="black" stroke="black" points="155.87,-228.94 160.16,-219.26 150.76,-224.15 155.87,-228.94"/>
+<path fill="none" stroke="black" d="M134.27,-251.46C140.89,-244.51 152.1,-232.75 161.03,-223.39"/>
+<polygon fill="black" stroke="black" points="163.53,-225.84 167.89,-216.19 158.46,-221.01 163.53,-225.84"/>
 </g>
 <!-- 15 -->
 <g id="node16" class="node">
 <title>15</title>
-<text text-anchor="middle" x="70.5" y="-156.8" font-family="Times,serif" font-size="14.00">&lt;integer&gt;</text>
+<text text-anchor="middle" x="79.62" y="-151.7" font-family="Times,serif" font-size="14.00">&lt;integer&gt;</text>
 </g>
 <!-- 14&#45;&gt;15 -->
 <g id="edge15" class="edge">
 <title>14&#45;&gt;15</title>
-<path fill="none" stroke="black" d="M70.5,-203.69C70.5,-197.18 70.5,-187.1 70.5,-178.43"/>
-<polygon fill="black" stroke="black" points="74,-178.26 70.5,-168.26 67,-178.26 74,-178.26"/>
+<path fill="none" stroke="black" d="M79.62,-201.21C79.62,-194.99 79.62,-184.9 79.62,-176.14"/>
+<polygon fill="black" stroke="black" points="83.13,-176.35 79.63,-166.35 76.13,-176.35 83.13,-176.35"/>
 </g>
 <!-- 16 -->
 <g id="node17" class="node">
 <title>16</title>
-<text text-anchor="middle" x="70.5" y="-105.8" font-family="Times,serif" font-size="14.00">&lt;digit&gt;</text>
+<text text-anchor="middle" x="79.62" y="-101.45" font-family="Times,serif" font-size="14.00">&lt;digit&gt;</text>
 </g>
 <!-- 15&#45;&gt;16 -->
 <g id="edge16" class="edge">
 <title>15&#45;&gt;16</title>
-<path fill="none" stroke="black" d="M70.5,-152.69C70.5,-146.18 70.5,-136.1 70.5,-127.43"/>
-<polygon fill="black" stroke="black" points="74,-127.26 70.5,-117.26 67,-127.26 74,-127.26"/>
+<path fill="none" stroke="black" d="M79.62,-150.96C79.62,-144.74 79.62,-134.65 79.62,-125.89"/>
+<polygon fill="black" stroke="black" points="83.13,-126.1 79.63,-116.1 76.13,-126.1 83.13,-126.1"/>
 </g>
 <!-- 17 -->
 <g id="node18" class="node">
 <title>17</title>
-<text text-anchor="middle" x="70.5" y="-54.8" font-family="Times,serif" font-size="14.00">2</text>
+<text text-anchor="middle" x="79.62" y="-51.2" font-family="Times,serif" font-size="14.00">2 (50)</text>
 </g>
 <!-- 16&#45;&gt;17 -->
 <g id="edge17" class="edge">
 <title>16&#45;&gt;17</title>
-<path fill="none" stroke="black" d="M70.5,-101.69C70.5,-95.18 70.5,-85.1 70.5,-76.43"/>
-<polygon fill="black" stroke="black" points="74,-76.26 70.5,-66.26 67,-76.26 74,-76.26"/>
+<path fill="none" stroke="black" d="M79.62,-100.71C79.62,-94.49 79.62,-84.4 79.62,-75.64"/>
+<polygon fill="black" stroke="black" points="83.13,-75.85 79.63,-65.85 76.13,-75.85 83.13,-75.85"/>
 </g>
 <!-- 20 -->
 <g id="node21" class="node">
 <title>20</title>
-<text text-anchor="middle" x="166.5" y="-156.8" font-family="Times,serif" font-size="14.00">&lt;factor&gt;</text>
+<text text-anchor="middle" x="174.62" y="-151.7" font-family="Times,serif" font-size="14.00">&lt;factor&gt;</text>
 </g>
 <!-- 19&#45;&gt;20 -->
 <g id="edge20" class="edge">
 <title>19&#45;&gt;20</title>
-<path fill="none" stroke="black" d="M166.5,-203.69C166.5,-197.18 166.5,-187.1 166.5,-178.43"/>
-<polygon fill="black" stroke="black" points="170,-178.26 166.5,-168.26 163,-178.26 170,-178.26"/>
+<path fill="none" stroke="black" d="M174.62,-201.21C174.62,-194.99 174.62,-184.9 174.62,-176.14"/>
+<polygon fill="black" stroke="black" points="178.13,-176.35 174.63,-166.35 171.13,-176.35 178.13,-176.35"/>
 </g>
 <!-- 21 -->
 <g id="node22" class="node">
 <title>21</title>
-<text text-anchor="middle" x="166.5" y="-105.8" font-family="Times,serif" font-size="14.00">&lt;integer&gt;</text>
+<text text-anchor="middle" x="174.62" y="-101.45" font-family="Times,serif" font-size="14.00">&lt;integer&gt;</text>
 </g>
 <!-- 20&#45;&gt;21 -->
 <g id="edge21" class="edge">
 <title>20&#45;&gt;21</title>
-<path fill="none" stroke="black" d="M166.5,-152.69C166.5,-146.18 166.5,-136.1 166.5,-127.43"/>
-<polygon fill="black" stroke="black" points="170,-127.26 166.5,-117.26 163,-127.26 170,-127.26"/>
+<path fill="none" stroke="black" d="M174.62,-150.96C174.62,-144.74 174.62,-134.65 174.62,-125.89"/>
+<polygon fill="black" stroke="black" points="178.13,-126.1 174.63,-116.1 171.13,-126.1 178.13,-126.1"/>
 </g>
 <!-- 22 -->
 <g id="node23" class="node">
 <title>22</title>
-<text text-anchor="middle" x="166.5" y="-54.8" font-family="Times,serif" font-size="14.00">&lt;digit&gt;</text>
+<text text-anchor="middle" x="174.62" y="-51.2" font-family="Times,serif" font-size="14.00">&lt;digit&gt;</text>
 </g>
 <!-- 21&#45;&gt;22 -->
 <g id="edge22" class="edge">
 <title>21&#45;&gt;22</title>
-<path fill="none" stroke="black" d="M166.5,-101.69C166.5,-95.18 166.5,-85.1 166.5,-76.43"/>
-<polygon fill="black" stroke="black" points="170,-76.26 166.5,-66.26 163,-76.26 170,-76.26"/>
+<path fill="none" stroke="black" d="M174.62,-100.71C174.62,-94.49 174.62,-84.4 174.62,-75.64"/>
+<polygon fill="black" stroke="black" points="178.13,-75.85 174.63,-65.85 171.13,-75.85 178.13,-75.85"/>
 </g>
 <!-- 23 -->
 <g id="node24" class="node">
 <title>23</title>
-<text text-anchor="middle" x="166.5" y="-3.8" font-family="Times,serif" font-size="14.00">3</text>
+<text text-anchor="middle" x="174.62" y="-0.95" font-family="Times,serif" font-size="14.00">3 (51)</text>
 </g>
 <!-- 22&#45;&gt;23 -->
 <g id="edge23" class="edge">
 <title>22&#45;&gt;23</title>
-<path fill="none" stroke="black" d="M166.5,-50.69C166.5,-44.18 166.5,-34.1 166.5,-25.43"/>
-<polygon fill="black" stroke="black" points="170,-25.26 166.5,-15.26 163,-25.26 170,-25.26"/>
+<path fill="none" stroke="black" d="M174.62,-50.46C174.62,-44.24 174.62,-34.15 174.62,-25.39"/>
+<polygon fill="black" stroke="black" points="178.13,-25.6 174.63,-15.6 171.13,-25.6 178.13,-25.6"/>
 </g>
 </g>
 </svg>
@@ -13410,193 +13821,193 @@ Test #21 &#39;1 + (2 * 3&#39; 10 UNRESOLVED
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 2.49.1 (20210923.0004)
+<!-- Generated by graphviz version 12.2.1 (20241206.2353)
  -->
 <!-- Pages: 1 -->
-<svg width="159pt" height="482pt"
- viewBox="0.00 0.00 159.00 482.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 478)">
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-478 155,-478 155,4 -4,4"/>
+<svg width="157pt" height="475pt"
+ viewBox="0.00 0.00 157.00 474.50" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 470.5)">
+<polygon fill="white" stroke="none" points="-4,4 -4,-470.5 153,-470.5 153,4 -4,4"/>
 <!-- 0 -->
 <g id="node1" class="node">
 <title>0</title>
-<text text-anchor="middle" x="77.5" y="-462.8" font-family="Times,serif" font-size="14.00">&lt;expr&gt;</text>
+<text text-anchor="middle" x="76" y="-453.2" font-family="Times,serif" font-size="14.00">&lt;expr&gt;</text>
 </g>
 <!-- 1 -->
 <g id="node2" class="node">
 <title>1</title>
-<text text-anchor="middle" x="77.5" y="-411.8" font-family="Times,serif" font-size="14.00">&lt;term&gt;</text>
+<text text-anchor="middle" x="76" y="-402.95" font-family="Times,serif" font-size="14.00">&lt;term&gt;</text>
 </g>
 <!-- 0&#45;&gt;1 -->
 <g id="edge1" class="edge">
 <title>0&#45;&gt;1</title>
-<path fill="none" stroke="black" d="M77.5,-458.69C77.5,-452.18 77.5,-442.1 77.5,-433.43"/>
-<polygon fill="black" stroke="black" points="81,-433.26 77.5,-423.26 74,-433.26 81,-433.26"/>
+<path fill="none" stroke="black" d="M76,-452.46C76,-446.24 76,-436.15 76,-427.39"/>
+<polygon fill="black" stroke="black" points="79.5,-427.6 76,-417.6 72.5,-427.6 79.5,-427.6"/>
 </g>
 <!-- 2 -->
 <g id="node3" class="node">
 <title>2</title>
-<text text-anchor="middle" x="77.5" y="-360.8" font-family="Times,serif" font-size="14.00">&lt;factor&gt;</text>
+<text text-anchor="middle" x="76" y="-352.7" font-family="Times,serif" font-size="14.00">&lt;factor&gt;</text>
 </g>
 <!-- 1&#45;&gt;2 -->
 <g id="edge2" class="edge">
 <title>1&#45;&gt;2</title>
-<path fill="none" stroke="black" d="M77.5,-407.69C77.5,-401.18 77.5,-391.1 77.5,-382.43"/>
-<polygon fill="black" stroke="black" points="81,-382.26 77.5,-372.26 74,-382.26 81,-382.26"/>
+<path fill="none" stroke="black" d="M76,-402.21C76,-395.99 76,-385.9 76,-377.14"/>
+<polygon fill="black" stroke="black" points="79.5,-377.35 76,-367.35 72.5,-377.35 79.5,-377.35"/>
 </g>
 <!-- 3 -->
 <g id="node4" class="node">
 <title>3</title>
-<text text-anchor="middle" x="36.5" y="-309.8" font-family="Times,serif" font-size="14.00">(</text>
+<text text-anchor="middle" x="22" y="-302.45" font-family="Times,serif" font-size="14.00">( (40)</text>
 </g>
 <!-- 2&#45;&gt;3 -->
 <g id="edge3" class="edge">
 <title>2&#45;&gt;3</title>
-<path fill="none" stroke="black" d="M71.8,-356.69C65.07,-348.64 53.77,-335.14 45.77,-325.58"/>
-<polygon fill="black" stroke="black" points="48.27,-323.11 39.17,-317.69 42.9,-327.6 48.27,-323.11"/>
+<path fill="none" stroke="black" d="M69.38,-351.96C61.36,-344.8 47.62,-332.51 36.99,-323.02"/>
+<polygon fill="black" stroke="black" points="39.59,-320.65 29.8,-316.6 34.93,-325.87 39.59,-320.65"/>
 </g>
 <!-- 4 -->
 <g id="node5" class="node">
 <title>4</title>
-<text text-anchor="middle" x="77.5" y="-309.8" font-family="Times,serif" font-size="14.00">&lt;expr&gt;</text>
+<text text-anchor="middle" x="76" y="-302.45" font-family="Times,serif" font-size="14.00">&lt;expr&gt;</text>
 </g>
 <!-- 2&#45;&gt;4 -->
 <g id="edge4" class="edge">
 <title>2&#45;&gt;4</title>
-<path fill="none" stroke="black" d="M77.5,-356.69C77.5,-350.18 77.5,-340.1 77.5,-331.43"/>
-<polygon fill="black" stroke="black" points="81,-331.26 77.5,-321.26 74,-331.26 81,-331.26"/>
+<path fill="none" stroke="black" d="M76,-351.96C76,-345.74 76,-335.65 76,-326.89"/>
+<polygon fill="black" stroke="black" points="79.5,-327.1 76,-317.1 72.5,-327.1 79.5,-327.1"/>
 </g>
 <!-- 16 -->
 <g id="node17" class="node">
 <title>16</title>
-<text text-anchor="middle" x="118.5" y="-309.8" font-family="Times,serif" font-size="14.00">)</text>
+<text text-anchor="middle" x="130" y="-302.45" font-family="Times,serif" font-size="14.00">) (41)</text>
 </g>
 <!-- 2&#45;&gt;16 -->
 <g id="edge16" class="edge">
 <title>2&#45;&gt;16</title>
-<path fill="none" stroke="black" d="M83.2,-356.69C89.93,-348.64 101.23,-335.14 109.23,-325.58"/>
-<polygon fill="black" stroke="black" points="112.1,-327.6 115.83,-317.69 106.73,-323.11 112.1,-327.6"/>
+<path fill="none" stroke="black" d="M82.62,-351.96C90.64,-344.8 104.38,-332.51 115.01,-323.02"/>
+<polygon fill="black" stroke="black" points="117.07,-325.87 122.2,-316.6 112.41,-320.65 117.07,-325.87"/>
 </g>
 <!-- 5 -->
 <g id="node6" class="node">
 <title>5</title>
-<text text-anchor="middle" x="77.5" y="-258.8" font-family="Times,serif" font-size="14.00">&lt;term&gt;</text>
+<text text-anchor="middle" x="76" y="-252.2" font-family="Times,serif" font-size="14.00">&lt;term&gt;</text>
 </g>
 <!-- 4&#45;&gt;5 -->
 <g id="edge5" class="edge">
 <title>4&#45;&gt;5</title>
-<path fill="none" stroke="black" d="M77.5,-305.69C77.5,-299.18 77.5,-289.1 77.5,-280.43"/>
-<polygon fill="black" stroke="black" points="81,-280.26 77.5,-270.26 74,-280.26 81,-280.26"/>
+<path fill="none" stroke="black" d="M76,-301.71C76,-295.49 76,-285.4 76,-276.64"/>
+<polygon fill="black" stroke="black" points="79.5,-276.85 76,-266.85 72.5,-276.85 79.5,-276.85"/>
 </g>
 <!-- 6 -->
 <g id="node7" class="node">
 <title>6</title>
-<text text-anchor="middle" x="27.5" y="-207.8" font-family="Times,serif" font-size="14.00">&lt;factor&gt;</text>
+<text text-anchor="middle" x="27" y="-201.95" font-family="Times,serif" font-size="14.00">&lt;factor&gt;</text>
 </g>
 <!-- 5&#45;&gt;6 -->
 <g id="edge6" class="edge">
 <title>5&#45;&gt;6</title>
-<path fill="none" stroke="black" d="M70.55,-254.69C63.08,-247.37 51.03,-235.56 41.57,-226.29"/>
-<polygon fill="black" stroke="black" points="43.99,-223.75 34.39,-219.26 39.09,-228.75 43.99,-223.75"/>
+<path fill="none" stroke="black" d="M69.99,-251.46C62.86,-244.44 50.75,-232.51 41.19,-223.1"/>
+<polygon fill="black" stroke="black" points="43.72,-220.67 34.14,-216.15 38.81,-225.66 43.72,-220.67"/>
 </g>
 <!-- 10 -->
 <g id="node11" class="node">
 <title>10</title>
-<text text-anchor="middle" x="77.5" y="-207.8" font-family="Times,serif" font-size="14.00"> * </text>
+<text text-anchor="middle" x="76" y="-201.95" font-family="Times,serif" font-size="14.00"> * </text>
 </g>
 <!-- 5&#45;&gt;10 -->
 <g id="edge10" class="edge">
 <title>5&#45;&gt;10</title>
-<path fill="none" stroke="black" d="M77.5,-254.69C77.5,-248.18 77.5,-238.1 77.5,-229.43"/>
-<polygon fill="black" stroke="black" points="81,-229.26 77.5,-219.26 74,-229.26 81,-229.26"/>
+<path fill="none" stroke="black" d="M76,-251.46C76,-245.24 76,-235.15 76,-226.39"/>
+<polygon fill="black" stroke="black" points="79.5,-226.6 76,-216.6 72.5,-226.6 79.5,-226.6"/>
 </g>
 <!-- 11 -->
 <g id="node12" class="node">
 <title>11</title>
-<text text-anchor="middle" x="123.5" y="-207.8" font-family="Times,serif" font-size="14.00">&lt;term&gt;</text>
+<text text-anchor="middle" x="122" y="-201.95" font-family="Times,serif" font-size="14.00">&lt;term&gt;</text>
 </g>
 <!-- 5&#45;&gt;11 -->
 <g id="edge11" class="edge">
 <title>5&#45;&gt;11</title>
-<path fill="none" stroke="black" d="M83.9,-254.69C90.69,-247.45 101.63,-235.79 110.29,-226.57"/>
-<polygon fill="black" stroke="black" points="112.87,-228.94 117.16,-219.26 107.76,-224.15 112.87,-228.94"/>
+<path fill="none" stroke="black" d="M81.64,-251.46C88.26,-244.51 99.47,-232.75 108.4,-223.39"/>
+<polygon fill="black" stroke="black" points="110.9,-225.84 115.27,-216.19 105.84,-221.01 110.9,-225.84"/>
 </g>
 <!-- 7 -->
 <g id="node8" class="node">
 <title>7</title>
-<text text-anchor="middle" x="27.5" y="-156.8" font-family="Times,serif" font-size="14.00">&lt;integer&gt;</text>
+<text text-anchor="middle" x="27" y="-151.7" font-family="Times,serif" font-size="14.00">&lt;integer&gt;</text>
 </g>
 <!-- 6&#45;&gt;7 -->
 <g id="edge7" class="edge">
 <title>6&#45;&gt;7</title>
-<path fill="none" stroke="black" d="M27.5,-203.69C27.5,-197.18 27.5,-187.1 27.5,-178.43"/>
-<polygon fill="black" stroke="black" points="31,-178.26 27.5,-168.26 24,-178.26 31,-178.26"/>
+<path fill="none" stroke="black" d="M27,-201.21C27,-194.99 27,-184.9 27,-176.14"/>
+<polygon fill="black" stroke="black" points="30.5,-176.35 27,-166.35 23.5,-176.35 30.5,-176.35"/>
 </g>
 <!-- 8 -->
 <g id="node9" class="node">
 <title>8</title>
-<text text-anchor="middle" x="27.5" y="-105.8" font-family="Times,serif" font-size="14.00">&lt;digit&gt;</text>
+<text text-anchor="middle" x="27" y="-101.45" font-family="Times,serif" font-size="14.00">&lt;digit&gt;</text>
 </g>
 <!-- 7&#45;&gt;8 -->
 <g id="edge8" class="edge">
 <title>7&#45;&gt;8</title>
-<path fill="none" stroke="black" d="M27.5,-152.69C27.5,-146.18 27.5,-136.1 27.5,-127.43"/>
-<polygon fill="black" stroke="black" points="31,-127.26 27.5,-117.26 24,-127.26 31,-127.26"/>
+<path fill="none" stroke="black" d="M27,-150.96C27,-144.74 27,-134.65 27,-125.89"/>
+<polygon fill="black" stroke="black" points="30.5,-126.1 27,-116.1 23.5,-126.1 30.5,-126.1"/>
 </g>
 <!-- 9 -->
 <g id="node10" class="node">
 <title>9</title>
-<text text-anchor="middle" x="27.5" y="-54.8" font-family="Times,serif" font-size="14.00">2</text>
+<text text-anchor="middle" x="27" y="-51.2" font-family="Times,serif" font-size="14.00">2 (50)</text>
 </g>
 <!-- 8&#45;&gt;9 -->
 <g id="edge9" class="edge">
 <title>8&#45;&gt;9</title>
-<path fill="none" stroke="black" d="M27.5,-101.69C27.5,-95.18 27.5,-85.1 27.5,-76.43"/>
-<polygon fill="black" stroke="black" points="31,-76.26 27.5,-66.26 24,-76.26 31,-76.26"/>
+<path fill="none" stroke="black" d="M27,-100.71C27,-94.49 27,-84.4 27,-75.64"/>
+<polygon fill="black" stroke="black" points="30.5,-75.85 27,-65.85 23.5,-75.85 30.5,-75.85"/>
 </g>
 <!-- 12 -->
 <g id="node13" class="node">
 <title>12</title>
-<text text-anchor="middle" x="123.5" y="-156.8" font-family="Times,serif" font-size="14.00">&lt;factor&gt;</text>
+<text text-anchor="middle" x="122" y="-151.7" font-family="Times,serif" font-size="14.00">&lt;factor&gt;</text>
 </g>
 <!-- 11&#45;&gt;12 -->
 <g id="edge12" class="edge">
 <title>11&#45;&gt;12</title>
-<path fill="none" stroke="black" d="M123.5,-203.69C123.5,-197.18 123.5,-187.1 123.5,-178.43"/>
-<polygon fill="black" stroke="black" points="127,-178.26 123.5,-168.26 120,-178.26 127,-178.26"/>
+<path fill="none" stroke="black" d="M122,-201.21C122,-194.99 122,-184.9 122,-176.14"/>
+<polygon fill="black" stroke="black" points="125.5,-176.35 122,-166.35 118.5,-176.35 125.5,-176.35"/>
 </g>
 <!-- 13 -->
 <g id="node14" class="node">
 <title>13</title>
-<text text-anchor="middle" x="123.5" y="-105.8" font-family="Times,serif" font-size="14.00">&lt;integer&gt;</text>
+<text text-anchor="middle" x="122" y="-101.45" font-family="Times,serif" font-size="14.00">&lt;integer&gt;</text>
 </g>
 <!-- 12&#45;&gt;13 -->
 <g id="edge13" class="edge">
 <title>12&#45;&gt;13</title>
-<path fill="none" stroke="black" d="M123.5,-152.69C123.5,-146.18 123.5,-136.1 123.5,-127.43"/>
-<polygon fill="black" stroke="black" points="127,-127.26 123.5,-117.26 120,-127.26 127,-127.26"/>
+<path fill="none" stroke="black" d="M122,-150.96C122,-144.74 122,-134.65 122,-125.89"/>
+<polygon fill="black" stroke="black" points="125.5,-126.1 122,-116.1 118.5,-126.1 125.5,-126.1"/>
 </g>
 <!-- 14 -->
 <g id="node15" class="node">
 <title>14</title>
-<text text-anchor="middle" x="123.5" y="-54.8" font-family="Times,serif" font-size="14.00">&lt;digit&gt;</text>
+<text text-anchor="middle" x="122" y="-51.2" font-family="Times,serif" font-size="14.00">&lt;digit&gt;</text>
 </g>
 <!-- 13&#45;&gt;14 -->
 <g id="edge14" class="edge">
 <title>13&#45;&gt;14</title>
-<path fill="none" stroke="black" d="M123.5,-101.69C123.5,-95.18 123.5,-85.1 123.5,-76.43"/>
-<polygon fill="black" stroke="black" points="127,-76.26 123.5,-66.26 120,-76.26 127,-76.26"/>
+<path fill="none" stroke="black" d="M122,-100.71C122,-94.49 122,-84.4 122,-75.64"/>
+<polygon fill="black" stroke="black" points="125.5,-75.85 122,-65.85 118.5,-75.85 125.5,-75.85"/>
 </g>
 <!-- 15 -->
 <g id="node16" class="node">
 <title>15</title>
-<text text-anchor="middle" x="123.5" y="-3.8" font-family="Times,serif" font-size="14.00">3</text>
+<text text-anchor="middle" x="122" y="-0.95" font-family="Times,serif" font-size="14.00">3 (51)</text>
 </g>
 <!-- 14&#45;&gt;15 -->
 <g id="edge15" class="edge">
 <title>14&#45;&gt;15</title>
-<path fill="none" stroke="black" d="M123.5,-50.69C123.5,-44.18 123.5,-34.1 123.5,-25.43"/>
-<polygon fill="black" stroke="black" points="127,-25.26 123.5,-15.26 120,-25.26 127,-25.26"/>
+<path fill="none" stroke="black" d="M122,-50.46C122,-44.24 122,-34.15 122,-25.39"/>
+<polygon fill="black" stroke="black" points="125.5,-25.6 122,-15.6 118.5,-25.6 125.5,-25.6"/>
 </g>
 </g>
 </svg>
@@ -13626,204 +14037,204 @@ Test #21 &#39;1 + (2 * 3&#39; 10 UNRESOLVED
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 2.49.1 (20210923.0004)
+<!-- Generated by graphviz version 12.2.1 (20241206.2353)
  -->
 <!-- Pages: 1 -->
-<svg width="159pt" height="533pt"
- viewBox="0.00 0.00 159.00 533.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 529)">
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-529 155,-529 155,4 -4,4"/>
+<svg width="157pt" height="525pt"
+ viewBox="0.00 0.00 157.00 524.75" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 520.75)">
+<polygon fill="white" stroke="none" points="-4,4 -4,-520.75 153,-520.75 153,4 -4,4"/>
 <!-- 0 -->
 <g id="node1" class="node">
 <title>0</title>
-<text text-anchor="middle" x="77.5" y="-513.8" font-family="Times,serif" font-size="14.00">&lt;start&gt;</text>
+<text text-anchor="middle" x="76" y="-503.45" font-family="Times,serif" font-size="14.00">&lt;start&gt;</text>
 </g>
 <!-- 1 -->
 <g id="node2" class="node">
 <title>1</title>
-<text text-anchor="middle" x="77.5" y="-462.8" font-family="Times,serif" font-size="14.00">&lt;expr&gt;</text>
+<text text-anchor="middle" x="76" y="-453.2" font-family="Times,serif" font-size="14.00">&lt;expr&gt;</text>
 </g>
 <!-- 0&#45;&gt;1 -->
 <g id="edge1" class="edge">
 <title>0&#45;&gt;1</title>
-<path fill="none" stroke="black" d="M77.5,-509.69C77.5,-503.18 77.5,-493.1 77.5,-484.43"/>
-<polygon fill="black" stroke="black" points="81,-484.26 77.5,-474.26 74,-484.26 81,-484.26"/>
+<path fill="none" stroke="black" d="M76,-502.71C76,-496.49 76,-486.4 76,-477.64"/>
+<polygon fill="black" stroke="black" points="79.5,-477.85 76,-467.85 72.5,-477.85 79.5,-477.85"/>
 </g>
 <!-- 2 -->
 <g id="node3" class="node">
 <title>2</title>
-<text text-anchor="middle" x="77.5" y="-411.8" font-family="Times,serif" font-size="14.00">&lt;term&gt;</text>
+<text text-anchor="middle" x="76" y="-402.95" font-family="Times,serif" font-size="14.00">&lt;term&gt;</text>
 </g>
 <!-- 1&#45;&gt;2 -->
 <g id="edge2" class="edge">
 <title>1&#45;&gt;2</title>
-<path fill="none" stroke="black" d="M77.5,-458.69C77.5,-452.18 77.5,-442.1 77.5,-433.43"/>
-<polygon fill="black" stroke="black" points="81,-433.26 77.5,-423.26 74,-433.26 81,-433.26"/>
+<path fill="none" stroke="black" d="M76,-452.46C76,-446.24 76,-436.15 76,-427.39"/>
+<polygon fill="black" stroke="black" points="79.5,-427.6 76,-417.6 72.5,-427.6 79.5,-427.6"/>
 </g>
 <!-- 3 -->
 <g id="node4" class="node">
 <title>3</title>
-<text text-anchor="middle" x="77.5" y="-360.8" font-family="Times,serif" font-size="14.00">&lt;factor&gt;</text>
+<text text-anchor="middle" x="76" y="-352.7" font-family="Times,serif" font-size="14.00">&lt;factor&gt;</text>
 </g>
 <!-- 2&#45;&gt;3 -->
 <g id="edge3" class="edge">
 <title>2&#45;&gt;3</title>
-<path fill="none" stroke="black" d="M77.5,-407.69C77.5,-401.18 77.5,-391.1 77.5,-382.43"/>
-<polygon fill="black" stroke="black" points="81,-382.26 77.5,-372.26 74,-382.26 81,-382.26"/>
+<path fill="none" stroke="black" d="M76,-402.21C76,-395.99 76,-385.9 76,-377.14"/>
+<polygon fill="black" stroke="black" points="79.5,-377.35 76,-367.35 72.5,-377.35 79.5,-377.35"/>
 </g>
 <!-- 4 -->
 <g id="node5" class="node">
 <title>4</title>
-<text text-anchor="middle" x="36.5" y="-309.8" font-family="Times,serif" font-size="14.00">(</text>
+<text text-anchor="middle" x="22" y="-302.45" font-family="Times,serif" font-size="14.00">( (40)</text>
 </g>
 <!-- 3&#45;&gt;4 -->
 <g id="edge4" class="edge">
 <title>3&#45;&gt;4</title>
-<path fill="none" stroke="black" d="M71.8,-356.69C65.07,-348.64 53.77,-335.14 45.77,-325.58"/>
-<polygon fill="black" stroke="black" points="48.27,-323.11 39.17,-317.69 42.9,-327.6 48.27,-323.11"/>
+<path fill="none" stroke="black" d="M69.38,-351.96C61.36,-344.8 47.62,-332.51 36.99,-323.02"/>
+<polygon fill="black" stroke="black" points="39.59,-320.65 29.8,-316.6 34.93,-325.87 39.59,-320.65"/>
 </g>
 <!-- 5 -->
 <g id="node6" class="node">
 <title>5</title>
-<text text-anchor="middle" x="77.5" y="-309.8" font-family="Times,serif" font-size="14.00">&lt;expr&gt;</text>
+<text text-anchor="middle" x="76" y="-302.45" font-family="Times,serif" font-size="14.00">&lt;expr&gt;</text>
 </g>
 <!-- 3&#45;&gt;5 -->
 <g id="edge5" class="edge">
 <title>3&#45;&gt;5</title>
-<path fill="none" stroke="black" d="M77.5,-356.69C77.5,-350.18 77.5,-340.1 77.5,-331.43"/>
-<polygon fill="black" stroke="black" points="81,-331.26 77.5,-321.26 74,-331.26 81,-331.26"/>
+<path fill="none" stroke="black" d="M76,-351.96C76,-345.74 76,-335.65 76,-326.89"/>
+<polygon fill="black" stroke="black" points="79.5,-327.1 76,-317.1 72.5,-327.1 79.5,-327.1"/>
 </g>
 <!-- 17 -->
 <g id="node18" class="node">
 <title>17</title>
-<text text-anchor="middle" x="118.5" y="-309.8" font-family="Times,serif" font-size="14.00">)</text>
+<text text-anchor="middle" x="130" y="-302.45" font-family="Times,serif" font-size="14.00">) (41)</text>
 </g>
 <!-- 3&#45;&gt;17 -->
 <g id="edge17" class="edge">
 <title>3&#45;&gt;17</title>
-<path fill="none" stroke="black" d="M83.2,-356.69C89.93,-348.64 101.23,-335.14 109.23,-325.58"/>
-<polygon fill="black" stroke="black" points="112.1,-327.6 115.83,-317.69 106.73,-323.11 112.1,-327.6"/>
+<path fill="none" stroke="black" d="M82.62,-351.96C90.64,-344.8 104.38,-332.51 115.01,-323.02"/>
+<polygon fill="black" stroke="black" points="117.07,-325.87 122.2,-316.6 112.41,-320.65 117.07,-325.87"/>
 </g>
 <!-- 6 -->
 <g id="node7" class="node">
 <title>6</title>
-<text text-anchor="middle" x="77.5" y="-258.8" font-family="Times,serif" font-size="14.00">&lt;term&gt;</text>
+<text text-anchor="middle" x="76" y="-252.2" font-family="Times,serif" font-size="14.00">&lt;term&gt;</text>
 </g>
 <!-- 5&#45;&gt;6 -->
 <g id="edge6" class="edge">
 <title>5&#45;&gt;6</title>
-<path fill="none" stroke="black" d="M77.5,-305.69C77.5,-299.18 77.5,-289.1 77.5,-280.43"/>
-<polygon fill="black" stroke="black" points="81,-280.26 77.5,-270.26 74,-280.26 81,-280.26"/>
+<path fill="none" stroke="black" d="M76,-301.71C76,-295.49 76,-285.4 76,-276.64"/>
+<polygon fill="black" stroke="black" points="79.5,-276.85 76,-266.85 72.5,-276.85 79.5,-276.85"/>
 </g>
 <!-- 7 -->
 <g id="node8" class="node">
 <title>7</title>
-<text text-anchor="middle" x="27.5" y="-207.8" font-family="Times,serif" font-size="14.00">&lt;factor&gt;</text>
+<text text-anchor="middle" x="27" y="-201.95" font-family="Times,serif" font-size="14.00">&lt;factor&gt;</text>
 </g>
 <!-- 6&#45;&gt;7 -->
 <g id="edge7" class="edge">
 <title>6&#45;&gt;7</title>
-<path fill="none" stroke="black" d="M70.55,-254.69C63.08,-247.37 51.03,-235.56 41.57,-226.29"/>
-<polygon fill="black" stroke="black" points="43.99,-223.75 34.39,-219.26 39.09,-228.75 43.99,-223.75"/>
+<path fill="none" stroke="black" d="M69.99,-251.46C62.86,-244.44 50.75,-232.51 41.19,-223.1"/>
+<polygon fill="black" stroke="black" points="43.72,-220.67 34.14,-216.15 38.81,-225.66 43.72,-220.67"/>
 </g>
 <!-- 11 -->
 <g id="node12" class="node">
 <title>11</title>
-<text text-anchor="middle" x="77.5" y="-207.8" font-family="Times,serif" font-size="14.00"> * </text>
+<text text-anchor="middle" x="76" y="-201.95" font-family="Times,serif" font-size="14.00"> * </text>
 </g>
 <!-- 6&#45;&gt;11 -->
 <g id="edge11" class="edge">
 <title>6&#45;&gt;11</title>
-<path fill="none" stroke="black" d="M77.5,-254.69C77.5,-248.18 77.5,-238.1 77.5,-229.43"/>
-<polygon fill="black" stroke="black" points="81,-229.26 77.5,-219.26 74,-229.26 81,-229.26"/>
+<path fill="none" stroke="black" d="M76,-251.46C76,-245.24 76,-235.15 76,-226.39"/>
+<polygon fill="black" stroke="black" points="79.5,-226.6 76,-216.6 72.5,-226.6 79.5,-226.6"/>
 </g>
 <!-- 12 -->
 <g id="node13" class="node">
 <title>12</title>
-<text text-anchor="middle" x="123.5" y="-207.8" font-family="Times,serif" font-size="14.00">&lt;term&gt;</text>
+<text text-anchor="middle" x="122" y="-201.95" font-family="Times,serif" font-size="14.00">&lt;term&gt;</text>
 </g>
 <!-- 6&#45;&gt;12 -->
 <g id="edge12" class="edge">
 <title>6&#45;&gt;12</title>
-<path fill="none" stroke="black" d="M83.9,-254.69C90.69,-247.45 101.63,-235.79 110.29,-226.57"/>
-<polygon fill="black" stroke="black" points="112.87,-228.94 117.16,-219.26 107.76,-224.15 112.87,-228.94"/>
+<path fill="none" stroke="black" d="M81.64,-251.46C88.26,-244.51 99.47,-232.75 108.4,-223.39"/>
+<polygon fill="black" stroke="black" points="110.9,-225.84 115.27,-216.19 105.84,-221.01 110.9,-225.84"/>
 </g>
 <!-- 8 -->
 <g id="node9" class="node">
 <title>8</title>
-<text text-anchor="middle" x="27.5" y="-156.8" font-family="Times,serif" font-size="14.00">&lt;integer&gt;</text>
+<text text-anchor="middle" x="27" y="-151.7" font-family="Times,serif" font-size="14.00">&lt;integer&gt;</text>
 </g>
 <!-- 7&#45;&gt;8 -->
 <g id="edge8" class="edge">
 <title>7&#45;&gt;8</title>
-<path fill="none" stroke="black" d="M27.5,-203.69C27.5,-197.18 27.5,-187.1 27.5,-178.43"/>
-<polygon fill="black" stroke="black" points="31,-178.26 27.5,-168.26 24,-178.26 31,-178.26"/>
+<path fill="none" stroke="black" d="M27,-201.21C27,-194.99 27,-184.9 27,-176.14"/>
+<polygon fill="black" stroke="black" points="30.5,-176.35 27,-166.35 23.5,-176.35 30.5,-176.35"/>
 </g>
 <!-- 9 -->
 <g id="node10" class="node">
 <title>9</title>
-<text text-anchor="middle" x="27.5" y="-105.8" font-family="Times,serif" font-size="14.00">&lt;digit&gt;</text>
+<text text-anchor="middle" x="27" y="-101.45" font-family="Times,serif" font-size="14.00">&lt;digit&gt;</text>
 </g>
 <!-- 8&#45;&gt;9 -->
 <g id="edge9" class="edge">
 <title>8&#45;&gt;9</title>
-<path fill="none" stroke="black" d="M27.5,-152.69C27.5,-146.18 27.5,-136.1 27.5,-127.43"/>
-<polygon fill="black" stroke="black" points="31,-127.26 27.5,-117.26 24,-127.26 31,-127.26"/>
+<path fill="none" stroke="black" d="M27,-150.96C27,-144.74 27,-134.65 27,-125.89"/>
+<polygon fill="black" stroke="black" points="30.5,-126.1 27,-116.1 23.5,-126.1 30.5,-126.1"/>
 </g>
 <!-- 10 -->
 <g id="node11" class="node">
 <title>10</title>
-<text text-anchor="middle" x="27.5" y="-54.8" font-family="Times,serif" font-size="14.00">2</text>
+<text text-anchor="middle" x="27" y="-51.2" font-family="Times,serif" font-size="14.00">2 (50)</text>
 </g>
 <!-- 9&#45;&gt;10 -->
 <g id="edge10" class="edge">
 <title>9&#45;&gt;10</title>
-<path fill="none" stroke="black" d="M27.5,-101.69C27.5,-95.18 27.5,-85.1 27.5,-76.43"/>
-<polygon fill="black" stroke="black" points="31,-76.26 27.5,-66.26 24,-76.26 31,-76.26"/>
+<path fill="none" stroke="black" d="M27,-100.71C27,-94.49 27,-84.4 27,-75.64"/>
+<polygon fill="black" stroke="black" points="30.5,-75.85 27,-65.85 23.5,-75.85 30.5,-75.85"/>
 </g>
 <!-- 13 -->
 <g id="node14" class="node">
 <title>13</title>
-<text text-anchor="middle" x="123.5" y="-156.8" font-family="Times,serif" font-size="14.00">&lt;factor&gt;</text>
+<text text-anchor="middle" x="122" y="-151.7" font-family="Times,serif" font-size="14.00">&lt;factor&gt;</text>
 </g>
 <!-- 12&#45;&gt;13 -->
 <g id="edge13" class="edge">
 <title>12&#45;&gt;13</title>
-<path fill="none" stroke="black" d="M123.5,-203.69C123.5,-197.18 123.5,-187.1 123.5,-178.43"/>
-<polygon fill="black" stroke="black" points="127,-178.26 123.5,-168.26 120,-178.26 127,-178.26"/>
+<path fill="none" stroke="black" d="M122,-201.21C122,-194.99 122,-184.9 122,-176.14"/>
+<polygon fill="black" stroke="black" points="125.5,-176.35 122,-166.35 118.5,-176.35 125.5,-176.35"/>
 </g>
 <!-- 14 -->
 <g id="node15" class="node">
 <title>14</title>
-<text text-anchor="middle" x="123.5" y="-105.8" font-family="Times,serif" font-size="14.00">&lt;integer&gt;</text>
+<text text-anchor="middle" x="122" y="-101.45" font-family="Times,serif" font-size="14.00">&lt;integer&gt;</text>
 </g>
 <!-- 13&#45;&gt;14 -->
 <g id="edge14" class="edge">
 <title>13&#45;&gt;14</title>
-<path fill="none" stroke="black" d="M123.5,-152.69C123.5,-146.18 123.5,-136.1 123.5,-127.43"/>
-<polygon fill="black" stroke="black" points="127,-127.26 123.5,-117.26 120,-127.26 127,-127.26"/>
+<path fill="none" stroke="black" d="M122,-150.96C122,-144.74 122,-134.65 122,-125.89"/>
+<polygon fill="black" stroke="black" points="125.5,-126.1 122,-116.1 118.5,-126.1 125.5,-126.1"/>
 </g>
 <!-- 15 -->
 <g id="node16" class="node">
 <title>15</title>
-<text text-anchor="middle" x="123.5" y="-54.8" font-family="Times,serif" font-size="14.00">&lt;digit&gt;</text>
+<text text-anchor="middle" x="122" y="-51.2" font-family="Times,serif" font-size="14.00">&lt;digit&gt;</text>
 </g>
 <!-- 14&#45;&gt;15 -->
 <g id="edge15" class="edge">
 <title>14&#45;&gt;15</title>
-<path fill="none" stroke="black" d="M123.5,-101.69C123.5,-95.18 123.5,-85.1 123.5,-76.43"/>
-<polygon fill="black" stroke="black" points="127,-76.26 123.5,-66.26 120,-76.26 127,-76.26"/>
+<path fill="none" stroke="black" d="M122,-100.71C122,-94.49 122,-84.4 122,-75.64"/>
+<polygon fill="black" stroke="black" points="125.5,-75.85 122,-65.85 118.5,-75.85 125.5,-75.85"/>
 </g>
 <!-- 16 -->
 <g id="node17" class="node">
 <title>16</title>
-<text text-anchor="middle" x="123.5" y="-3.8" font-family="Times,serif" font-size="14.00">3</text>
+<text text-anchor="middle" x="122" y="-0.95" font-family="Times,serif" font-size="14.00">3 (51)</text>
 </g>
 <!-- 15&#45;&gt;16 -->
 <g id="edge16" class="edge">
 <title>15&#45;&gt;16</title>
-<path fill="none" stroke="black" d="M123.5,-50.69C123.5,-44.18 123.5,-34.1 123.5,-25.43"/>
-<polygon fill="black" stroke="black" points="127,-25.26 123.5,-15.26 120,-25.26 127,-25.26"/>
+<path fill="none" stroke="black" d="M122,-50.46C122,-44.24 122,-34.15 122,-25.39"/>
+<polygon fill="black" stroke="black" points="125.5,-25.6 122,-15.6 118.5,-25.6 125.5,-25.6"/>
 </g>
 </g>
 </svg>
@@ -13918,127 +14329,127 @@ Test #21 &#39;1 + (2 * 3&#39; 10 UNRESOLVED
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 2.49.1 (20210923.0004)
+<!-- Generated by graphviz version 12.2.1 (20241206.2353)
  -->
 <!-- Pages: 1 -->
-<svg width="159pt" height="278pt"
- viewBox="0.00 0.00 159.00 278.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 274)">
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-274 155,-274 155,4 -4,4"/>
+<svg width="157pt" height="274pt"
+ viewBox="0.00 0.00 157.00 273.50" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 269.5)">
+<polygon fill="white" stroke="none" points="-4,4 -4,-269.5 153,-269.5 153,4 -4,4"/>
 <!-- 0 -->
 <g id="node1" class="node">
 <title>0</title>
-<text text-anchor="middle" x="77.5" y="-258.8" font-family="Times,serif" font-size="14.00">&lt;term&gt;</text>
+<text text-anchor="middle" x="76" y="-252.2" font-family="Times,serif" font-size="14.00">&lt;term&gt;</text>
 </g>
 <!-- 1 -->
 <g id="node2" class="node">
 <title>1</title>
-<text text-anchor="middle" x="27.5" y="-207.8" font-family="Times,serif" font-size="14.00">&lt;factor&gt;</text>
+<text text-anchor="middle" x="27" y="-201.95" font-family="Times,serif" font-size="14.00">&lt;factor&gt;</text>
 </g>
 <!-- 0&#45;&gt;1 -->
 <g id="edge1" class="edge">
 <title>0&#45;&gt;1</title>
-<path fill="none" stroke="black" d="M70.55,-254.69C63.08,-247.37 51.03,-235.56 41.57,-226.29"/>
-<polygon fill="black" stroke="black" points="43.99,-223.75 34.39,-219.26 39.09,-228.75 43.99,-223.75"/>
+<path fill="none" stroke="black" d="M69.99,-251.46C62.86,-244.44 50.75,-232.51 41.19,-223.1"/>
+<polygon fill="black" stroke="black" points="43.72,-220.67 34.14,-216.15 38.81,-225.66 43.72,-220.67"/>
 </g>
 <!-- 5 -->
 <g id="node6" class="node">
 <title>5</title>
-<text text-anchor="middle" x="77.5" y="-207.8" font-family="Times,serif" font-size="14.00"> * </text>
+<text text-anchor="middle" x="76" y="-201.95" font-family="Times,serif" font-size="14.00"> * </text>
 </g>
 <!-- 0&#45;&gt;5 -->
 <g id="edge5" class="edge">
 <title>0&#45;&gt;5</title>
-<path fill="none" stroke="black" d="M77.5,-254.69C77.5,-248.18 77.5,-238.1 77.5,-229.43"/>
-<polygon fill="black" stroke="black" points="81,-229.26 77.5,-219.26 74,-229.26 81,-229.26"/>
+<path fill="none" stroke="black" d="M76,-251.46C76,-245.24 76,-235.15 76,-226.39"/>
+<polygon fill="black" stroke="black" points="79.5,-226.6 76,-216.6 72.5,-226.6 79.5,-226.6"/>
 </g>
 <!-- 6 -->
 <g id="node7" class="node">
 <title>6</title>
-<text text-anchor="middle" x="123.5" y="-207.8" font-family="Times,serif" font-size="14.00">&lt;term&gt;</text>
+<text text-anchor="middle" x="122" y="-201.95" font-family="Times,serif" font-size="14.00">&lt;term&gt;</text>
 </g>
 <!-- 0&#45;&gt;6 -->
 <g id="edge6" class="edge">
 <title>0&#45;&gt;6</title>
-<path fill="none" stroke="black" d="M83.9,-254.69C90.69,-247.45 101.63,-235.79 110.29,-226.57"/>
-<polygon fill="black" stroke="black" points="112.87,-228.94 117.16,-219.26 107.76,-224.15 112.87,-228.94"/>
+<path fill="none" stroke="black" d="M81.64,-251.46C88.26,-244.51 99.47,-232.75 108.4,-223.39"/>
+<polygon fill="black" stroke="black" points="110.9,-225.84 115.27,-216.19 105.84,-221.01 110.9,-225.84"/>
 </g>
 <!-- 2 -->
 <g id="node3" class="node">
 <title>2</title>
-<text text-anchor="middle" x="27.5" y="-156.8" font-family="Times,serif" font-size="14.00">&lt;integer&gt;</text>
+<text text-anchor="middle" x="27" y="-151.7" font-family="Times,serif" font-size="14.00">&lt;integer&gt;</text>
 </g>
 <!-- 1&#45;&gt;2 -->
 <g id="edge2" class="edge">
 <title>1&#45;&gt;2</title>
-<path fill="none" stroke="black" d="M27.5,-203.69C27.5,-197.18 27.5,-187.1 27.5,-178.43"/>
-<polygon fill="black" stroke="black" points="31,-178.26 27.5,-168.26 24,-178.26 31,-178.26"/>
+<path fill="none" stroke="black" d="M27,-201.21C27,-194.99 27,-184.9 27,-176.14"/>
+<polygon fill="black" stroke="black" points="30.5,-176.35 27,-166.35 23.5,-176.35 30.5,-176.35"/>
 </g>
 <!-- 3 -->
 <g id="node4" class="node">
 <title>3</title>
-<text text-anchor="middle" x="27.5" y="-105.8" font-family="Times,serif" font-size="14.00">&lt;digit&gt;</text>
+<text text-anchor="middle" x="27" y="-101.45" font-family="Times,serif" font-size="14.00">&lt;digit&gt;</text>
 </g>
 <!-- 2&#45;&gt;3 -->
 <g id="edge3" class="edge">
 <title>2&#45;&gt;3</title>
-<path fill="none" stroke="black" d="M27.5,-152.69C27.5,-146.18 27.5,-136.1 27.5,-127.43"/>
-<polygon fill="black" stroke="black" points="31,-127.26 27.5,-117.26 24,-127.26 31,-127.26"/>
+<path fill="none" stroke="black" d="M27,-150.96C27,-144.74 27,-134.65 27,-125.89"/>
+<polygon fill="black" stroke="black" points="30.5,-126.1 27,-116.1 23.5,-126.1 30.5,-126.1"/>
 </g>
 <!-- 4 -->
 <g id="node5" class="node">
 <title>4</title>
-<text text-anchor="middle" x="27.5" y="-54.8" font-family="Times,serif" font-size="14.00">2</text>
+<text text-anchor="middle" x="27" y="-51.2" font-family="Times,serif" font-size="14.00">2 (50)</text>
 </g>
 <!-- 3&#45;&gt;4 -->
 <g id="edge4" class="edge">
 <title>3&#45;&gt;4</title>
-<path fill="none" stroke="black" d="M27.5,-101.69C27.5,-95.18 27.5,-85.1 27.5,-76.43"/>
-<polygon fill="black" stroke="black" points="31,-76.26 27.5,-66.26 24,-76.26 31,-76.26"/>
+<path fill="none" stroke="black" d="M27,-100.71C27,-94.49 27,-84.4 27,-75.64"/>
+<polygon fill="black" stroke="black" points="30.5,-75.85 27,-65.85 23.5,-75.85 30.5,-75.85"/>
 </g>
 <!-- 7 -->
 <g id="node8" class="node">
 <title>7</title>
-<text text-anchor="middle" x="123.5" y="-156.8" font-family="Times,serif" font-size="14.00">&lt;factor&gt;</text>
+<text text-anchor="middle" x="122" y="-151.7" font-family="Times,serif" font-size="14.00">&lt;factor&gt;</text>
 </g>
 <!-- 6&#45;&gt;7 -->
 <g id="edge7" class="edge">
 <title>6&#45;&gt;7</title>
-<path fill="none" stroke="black" d="M123.5,-203.69C123.5,-197.18 123.5,-187.1 123.5,-178.43"/>
-<polygon fill="black" stroke="black" points="127,-178.26 123.5,-168.26 120,-178.26 127,-178.26"/>
+<path fill="none" stroke="black" d="M122,-201.21C122,-194.99 122,-184.9 122,-176.14"/>
+<polygon fill="black" stroke="black" points="125.5,-176.35 122,-166.35 118.5,-176.35 125.5,-176.35"/>
 </g>
 <!-- 8 -->
 <g id="node9" class="node">
 <title>8</title>
-<text text-anchor="middle" x="123.5" y="-105.8" font-family="Times,serif" font-size="14.00">&lt;integer&gt;</text>
+<text text-anchor="middle" x="122" y="-101.45" font-family="Times,serif" font-size="14.00">&lt;integer&gt;</text>
 </g>
 <!-- 7&#45;&gt;8 -->
 <g id="edge8" class="edge">
 <title>7&#45;&gt;8</title>
-<path fill="none" stroke="black" d="M123.5,-152.69C123.5,-146.18 123.5,-136.1 123.5,-127.43"/>
-<polygon fill="black" stroke="black" points="127,-127.26 123.5,-117.26 120,-127.26 127,-127.26"/>
+<path fill="none" stroke="black" d="M122,-150.96C122,-144.74 122,-134.65 122,-125.89"/>
+<polygon fill="black" stroke="black" points="125.5,-126.1 122,-116.1 118.5,-126.1 125.5,-126.1"/>
 </g>
 <!-- 9 -->
 <g id="node10" class="node">
 <title>9</title>
-<text text-anchor="middle" x="123.5" y="-54.8" font-family="Times,serif" font-size="14.00">&lt;digit&gt;</text>
+<text text-anchor="middle" x="122" y="-51.2" font-family="Times,serif" font-size="14.00">&lt;digit&gt;</text>
 </g>
 <!-- 8&#45;&gt;9 -->
 <g id="edge9" class="edge">
 <title>8&#45;&gt;9</title>
-<path fill="none" stroke="black" d="M123.5,-101.69C123.5,-95.18 123.5,-85.1 123.5,-76.43"/>
-<polygon fill="black" stroke="black" points="127,-76.26 123.5,-66.26 120,-76.26 127,-76.26"/>
+<path fill="none" stroke="black" d="M122,-100.71C122,-94.49 122,-84.4 122,-75.64"/>
+<polygon fill="black" stroke="black" points="125.5,-75.85 122,-65.85 118.5,-75.85 125.5,-75.85"/>
 </g>
 <!-- 10 -->
 <g id="node11" class="node">
 <title>10</title>
-<text text-anchor="middle" x="123.5" y="-3.8" font-family="Times,serif" font-size="14.00">3</text>
+<text text-anchor="middle" x="122" y="-0.95" font-family="Times,serif" font-size="14.00">3 (51)</text>
 </g>
 <!-- 9&#45;&gt;10 -->
 <g id="edge10" class="edge">
 <title>9&#45;&gt;10</title>
-<path fill="none" stroke="black" d="M123.5,-50.69C123.5,-44.18 123.5,-34.1 123.5,-25.43"/>
-<polygon fill="black" stroke="black" points="127,-25.26 123.5,-15.26 120,-25.26 127,-25.26"/>
+<path fill="none" stroke="black" d="M122,-50.46C122,-44.24 122,-34.15 122,-25.39"/>
+<polygon fill="black" stroke="black" points="125.5,-25.6 122,-15.6 118.5,-25.6 125.5,-25.6"/>
 </g>
 </g>
 </svg>
@@ -14068,61 +14479,61 @@ Test #21 &#39;1 + (2 * 3&#39; 10 UNRESOLVED
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 2.49.1 (20210923.0004)
+<!-- Generated by graphviz version 12.2.1 (20241206.2353)
  -->
 <!-- Pages: 1 -->
-<svg width="63pt" height="227pt"
- viewBox="0.00 0.00 63.00 227.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 223)">
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-223 59,-223 59,4 -4,4"/>
+<svg width="62pt" height="223pt"
+ viewBox="0.00 0.00 62.00 223.25" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 219.25)">
+<polygon fill="white" stroke="none" points="-4,4 -4,-219.25 58,-219.25 58,4 -4,4"/>
 <!-- 0 -->
 <g id="node1" class="node">
 <title>0</title>
-<text text-anchor="middle" x="27.5" y="-207.8" font-family="Times,serif" font-size="14.00">&lt;term&gt;</text>
+<text text-anchor="middle" x="27" y="-201.95" font-family="Times,serif" font-size="14.00">&lt;term&gt;</text>
 </g>
 <!-- 1 -->
 <g id="node2" class="node">
 <title>1</title>
-<text text-anchor="middle" x="27.5" y="-156.8" font-family="Times,serif" font-size="14.00">&lt;factor&gt;</text>
+<text text-anchor="middle" x="27" y="-151.7" font-family="Times,serif" font-size="14.00">&lt;factor&gt;</text>
 </g>
 <!-- 0&#45;&gt;1 -->
 <g id="edge1" class="edge">
 <title>0&#45;&gt;1</title>
-<path fill="none" stroke="black" d="M27.5,-203.69C27.5,-197.18 27.5,-187.1 27.5,-178.43"/>
-<polygon fill="black" stroke="black" points="31,-178.26 27.5,-168.26 24,-178.26 31,-178.26"/>
+<path fill="none" stroke="black" d="M27,-201.21C27,-194.99 27,-184.9 27,-176.14"/>
+<polygon fill="black" stroke="black" points="30.5,-176.35 27,-166.35 23.5,-176.35 30.5,-176.35"/>
 </g>
 <!-- 2 -->
 <g id="node3" class="node">
 <title>2</title>
-<text text-anchor="middle" x="27.5" y="-105.8" font-family="Times,serif" font-size="14.00">&lt;integer&gt;</text>
+<text text-anchor="middle" x="27" y="-101.45" font-family="Times,serif" font-size="14.00">&lt;integer&gt;</text>
 </g>
 <!-- 1&#45;&gt;2 -->
 <g id="edge2" class="edge">
 <title>1&#45;&gt;2</title>
-<path fill="none" stroke="black" d="M27.5,-152.69C27.5,-146.18 27.5,-136.1 27.5,-127.43"/>
-<polygon fill="black" stroke="black" points="31,-127.26 27.5,-117.26 24,-127.26 31,-127.26"/>
+<path fill="none" stroke="black" d="M27,-150.96C27,-144.74 27,-134.65 27,-125.89"/>
+<polygon fill="black" stroke="black" points="30.5,-126.1 27,-116.1 23.5,-126.1 30.5,-126.1"/>
 </g>
 <!-- 3 -->
 <g id="node4" class="node">
 <title>3</title>
-<text text-anchor="middle" x="27.5" y="-54.8" font-family="Times,serif" font-size="14.00">&lt;digit&gt;</text>
+<text text-anchor="middle" x="27" y="-51.2" font-family="Times,serif" font-size="14.00">&lt;digit&gt;</text>
 </g>
 <!-- 2&#45;&gt;3 -->
 <g id="edge3" class="edge">
 <title>2&#45;&gt;3</title>
-<path fill="none" stroke="black" d="M27.5,-101.69C27.5,-95.18 27.5,-85.1 27.5,-76.43"/>
-<polygon fill="black" stroke="black" points="31,-76.26 27.5,-66.26 24,-76.26 31,-76.26"/>
+<path fill="none" stroke="black" d="M27,-100.71C27,-94.49 27,-84.4 27,-75.64"/>
+<polygon fill="black" stroke="black" points="30.5,-75.85 27,-65.85 23.5,-75.85 30.5,-75.85"/>
 </g>
 <!-- 4 -->
 <g id="node5" class="node">
 <title>4</title>
-<text text-anchor="middle" x="27.5" y="-3.8" font-family="Times,serif" font-size="14.00">3</text>
+<text text-anchor="middle" x="27" y="-0.95" font-family="Times,serif" font-size="14.00">3 (51)</text>
 </g>
 <!-- 3&#45;&gt;4 -->
 <g id="edge4" class="edge">
 <title>3&#45;&gt;4</title>
-<path fill="none" stroke="black" d="M27.5,-50.69C27.5,-44.18 27.5,-34.1 27.5,-25.43"/>
-<polygon fill="black" stroke="black" points="31,-25.26 27.5,-15.26 24,-25.26 31,-25.26"/>
+<path fill="none" stroke="black" d="M27,-50.46C27,-44.24 27,-34.15 27,-25.39"/>
+<polygon fill="black" stroke="black" points="30.5,-25.6 27,-15.6 23.5,-25.6 30.5,-25.6"/>
 </g>
 </g>
 </svg>
@@ -14152,138 +14563,138 @@ Test #21 &#39;1 + (2 * 3&#39; 10 UNRESOLVED
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 2.49.1 (20210923.0004)
+<!-- Generated by graphviz version 12.2.1 (20241206.2353)
  -->
 <!-- Pages: 1 -->
-<svg width="95pt" height="482pt"
- viewBox="0.00 0.00 95.00 482.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 478)">
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-478 91,-478 91,4 -4,4"/>
+<svg width="147pt" height="475pt"
+ viewBox="0.00 0.00 146.75 474.50" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 470.5)">
+<polygon fill="white" stroke="none" points="-4,4 -4,-470.5 142.75,-470.5 142.75,4 -4,4"/>
 <!-- 0 -->
 <g id="node1" class="node">
 <title>0</title>
-<text text-anchor="middle" x="43.5" y="-462.8" font-family="Times,serif" font-size="14.00">&lt;start&gt;</text>
+<text text-anchor="middle" x="69.38" y="-453.2" font-family="Times,serif" font-size="14.00">&lt;start&gt;</text>
 </g>
 <!-- 1 -->
 <g id="node2" class="node">
 <title>1</title>
-<text text-anchor="middle" x="43.5" y="-411.8" font-family="Times,serif" font-size="14.00">&lt;expr&gt;</text>
+<text text-anchor="middle" x="69.38" y="-402.95" font-family="Times,serif" font-size="14.00">&lt;expr&gt;</text>
 </g>
 <!-- 0&#45;&gt;1 -->
 <g id="edge1" class="edge">
 <title>0&#45;&gt;1</title>
-<path fill="none" stroke="black" d="M43.5,-458.69C43.5,-452.18 43.5,-442.1 43.5,-433.43"/>
-<polygon fill="black" stroke="black" points="47,-433.26 43.5,-423.26 40,-433.26 47,-433.26"/>
+<path fill="none" stroke="black" d="M69.38,-452.46C69.38,-446.24 69.38,-436.15 69.38,-427.39"/>
+<polygon fill="black" stroke="black" points="72.88,-427.6 69.38,-417.6 65.88,-427.6 72.88,-427.6"/>
 </g>
 <!-- 2 -->
 <g id="node3" class="node">
 <title>2</title>
-<text text-anchor="middle" x="43.5" y="-360.8" font-family="Times,serif" font-size="14.00">&lt;term&gt;</text>
+<text text-anchor="middle" x="69.38" y="-352.7" font-family="Times,serif" font-size="14.00">&lt;term&gt;</text>
 </g>
 <!-- 1&#45;&gt;2 -->
 <g id="edge2" class="edge">
 <title>1&#45;&gt;2</title>
-<path fill="none" stroke="black" d="M43.5,-407.69C43.5,-401.18 43.5,-391.1 43.5,-382.43"/>
-<polygon fill="black" stroke="black" points="47,-382.26 43.5,-372.26 40,-382.26 47,-382.26"/>
+<path fill="none" stroke="black" d="M69.38,-402.21C69.38,-395.99 69.38,-385.9 69.38,-377.14"/>
+<polygon fill="black" stroke="black" points="72.88,-377.35 69.38,-367.35 65.88,-377.35 72.88,-377.35"/>
 </g>
 <!-- 3 -->
 <g id="node4" class="node">
 <title>3</title>
-<text text-anchor="middle" x="43.5" y="-309.8" font-family="Times,serif" font-size="14.00">&lt;factor&gt;</text>
+<text text-anchor="middle" x="69.38" y="-302.45" font-family="Times,serif" font-size="14.00">&lt;factor&gt;</text>
 </g>
 <!-- 2&#45;&gt;3 -->
 <g id="edge3" class="edge">
 <title>2&#45;&gt;3</title>
-<path fill="none" stroke="black" d="M43.5,-356.69C43.5,-350.18 43.5,-340.1 43.5,-331.43"/>
-<polygon fill="black" stroke="black" points="47,-331.26 43.5,-321.26 40,-331.26 47,-331.26"/>
+<path fill="none" stroke="black" d="M69.38,-351.96C69.38,-345.74 69.38,-335.65 69.38,-326.89"/>
+<polygon fill="black" stroke="black" points="72.88,-327.1 69.38,-317.1 65.88,-327.1 72.88,-327.1"/>
 </g>
 <!-- 4 -->
 <g id="node5" class="node">
 <title>4</title>
-<text text-anchor="middle" x="2.5" y="-258.8" font-family="Times,serif" font-size="14.00">(</text>
+<text text-anchor="middle" x="15.38" y="-252.2" font-family="Times,serif" font-size="14.00">( (40)</text>
 </g>
 <!-- 3&#45;&gt;4 -->
 <g id="edge4" class="edge">
 <title>3&#45;&gt;4</title>
-<path fill="none" stroke="black" d="M37.8,-305.69C31.07,-297.64 19.77,-284.14 11.77,-274.58"/>
-<polygon fill="black" stroke="black" points="14.27,-272.11 5.17,-266.69 8.9,-276.6 14.27,-272.11"/>
+<path fill="none" stroke="black" d="M62.75,-301.71C54.74,-294.55 40.99,-282.26 30.36,-272.77"/>
+<polygon fill="black" stroke="black" points="32.97,-270.4 23.18,-266.35 28.3,-275.62 32.97,-270.4"/>
 </g>
 <!-- 5 -->
 <g id="node6" class="node">
 <title>5</title>
-<text text-anchor="middle" x="43.5" y="-258.8" font-family="Times,serif" font-size="14.00">&lt;expr&gt;</text>
+<text text-anchor="middle" x="69.38" y="-252.2" font-family="Times,serif" font-size="14.00">&lt;expr&gt;</text>
 </g>
 <!-- 3&#45;&gt;5 -->
 <g id="edge5" class="edge">
 <title>3&#45;&gt;5</title>
-<path fill="none" stroke="black" d="M43.5,-305.69C43.5,-299.18 43.5,-289.1 43.5,-280.43"/>
-<polygon fill="black" stroke="black" points="47,-280.26 43.5,-270.26 40,-280.26 47,-280.26"/>
+<path fill="none" stroke="black" d="M69.38,-301.71C69.38,-295.49 69.38,-285.4 69.38,-276.64"/>
+<polygon fill="black" stroke="black" points="72.88,-276.85 69.38,-266.85 65.88,-276.85 72.88,-276.85"/>
 </g>
 <!-- 11 -->
 <g id="node12" class="node">
 <title>11</title>
-<text text-anchor="middle" x="84.5" y="-258.8" font-family="Times,serif" font-size="14.00">)</text>
+<text text-anchor="middle" x="123.38" y="-252.2" font-family="Times,serif" font-size="14.00">) (41)</text>
 </g>
 <!-- 3&#45;&gt;11 -->
 <g id="edge11" class="edge">
 <title>3&#45;&gt;11</title>
-<path fill="none" stroke="black" d="M49.2,-305.69C55.93,-297.64 67.23,-284.14 75.23,-274.58"/>
-<polygon fill="black" stroke="black" points="78.1,-276.6 81.83,-266.69 72.73,-272.11 78.1,-276.6"/>
+<path fill="none" stroke="black" d="M76,-301.71C84.01,-294.55 97.76,-282.26 108.39,-272.77"/>
+<polygon fill="black" stroke="black" points="110.45,-275.62 115.57,-266.35 105.78,-270.4 110.45,-275.62"/>
 </g>
 <!-- 6 -->
 <g id="node7" class="node">
 <title>6</title>
-<text text-anchor="middle" x="43.5" y="-207.8" font-family="Times,serif" font-size="14.00">&lt;term&gt;</text>
+<text text-anchor="middle" x="69.38" y="-201.95" font-family="Times,serif" font-size="14.00">&lt;term&gt;</text>
 </g>
 <!-- 5&#45;&gt;6 -->
 <g id="edge6" class="edge">
 <title>5&#45;&gt;6</title>
-<path fill="none" stroke="black" d="M43.5,-254.69C43.5,-248.18 43.5,-238.1 43.5,-229.43"/>
-<polygon fill="black" stroke="black" points="47,-229.26 43.5,-219.26 40,-229.26 47,-229.26"/>
+<path fill="none" stroke="black" d="M69.38,-251.46C69.38,-245.24 69.38,-235.15 69.38,-226.39"/>
+<polygon fill="black" stroke="black" points="72.88,-226.6 69.38,-216.6 65.88,-226.6 72.88,-226.6"/>
 </g>
 <!-- 7 -->
 <g id="node8" class="node">
 <title>7</title>
-<text text-anchor="middle" x="43.5" y="-156.8" font-family="Times,serif" font-size="14.00">&lt;factor&gt;</text>
+<text text-anchor="middle" x="69.38" y="-151.7" font-family="Times,serif" font-size="14.00">&lt;factor&gt;</text>
 </g>
 <!-- 6&#45;&gt;7 -->
 <g id="edge7" class="edge">
 <title>6&#45;&gt;7</title>
-<path fill="none" stroke="black" d="M43.5,-203.69C43.5,-197.18 43.5,-187.1 43.5,-178.43"/>
-<polygon fill="black" stroke="black" points="47,-178.26 43.5,-168.26 40,-178.26 47,-178.26"/>
+<path fill="none" stroke="black" d="M69.38,-201.21C69.38,-194.99 69.38,-184.9 69.38,-176.14"/>
+<polygon fill="black" stroke="black" points="72.88,-176.35 69.38,-166.35 65.88,-176.35 72.88,-176.35"/>
 </g>
 <!-- 8 -->
 <g id="node9" class="node">
 <title>8</title>
-<text text-anchor="middle" x="43.5" y="-105.8" font-family="Times,serif" font-size="14.00">&lt;integer&gt;</text>
+<text text-anchor="middle" x="69.38" y="-101.45" font-family="Times,serif" font-size="14.00">&lt;integer&gt;</text>
 </g>
 <!-- 7&#45;&gt;8 -->
 <g id="edge8" class="edge">
 <title>7&#45;&gt;8</title>
-<path fill="none" stroke="black" d="M43.5,-152.69C43.5,-146.18 43.5,-136.1 43.5,-127.43"/>
-<polygon fill="black" stroke="black" points="47,-127.26 43.5,-117.26 40,-127.26 47,-127.26"/>
+<path fill="none" stroke="black" d="M69.38,-150.96C69.38,-144.74 69.38,-134.65 69.38,-125.89"/>
+<polygon fill="black" stroke="black" points="72.88,-126.1 69.38,-116.1 65.88,-126.1 72.88,-126.1"/>
 </g>
 <!-- 9 -->
 <g id="node10" class="node">
 <title>9</title>
-<text text-anchor="middle" x="43.5" y="-54.8" font-family="Times,serif" font-size="14.00">&lt;digit&gt;</text>
+<text text-anchor="middle" x="69.38" y="-51.2" font-family="Times,serif" font-size="14.00">&lt;digit&gt;</text>
 </g>
 <!-- 8&#45;&gt;9 -->
 <g id="edge9" class="edge">
 <title>8&#45;&gt;9</title>
-<path fill="none" stroke="black" d="M43.5,-101.69C43.5,-95.18 43.5,-85.1 43.5,-76.43"/>
-<polygon fill="black" stroke="black" points="47,-76.26 43.5,-66.26 40,-76.26 47,-76.26"/>
+<path fill="none" stroke="black" d="M69.38,-100.71C69.38,-94.49 69.38,-84.4 69.38,-75.64"/>
+<polygon fill="black" stroke="black" points="72.88,-75.85 69.38,-65.85 65.88,-75.85 72.88,-75.85"/>
 </g>
 <!-- 10 -->
 <g id="node11" class="node">
 <title>10</title>
-<text text-anchor="middle" x="43.5" y="-3.8" font-family="Times,serif" font-size="14.00">3</text>
+<text text-anchor="middle" x="69.38" y="-0.95" font-family="Times,serif" font-size="14.00">3 (51)</text>
 </g>
 <!-- 9&#45;&gt;10 -->
 <g id="edge10" class="edge">
 <title>9&#45;&gt;10</title>
-<path fill="none" stroke="black" d="M43.5,-50.69C43.5,-44.18 43.5,-34.1 43.5,-25.43"/>
-<polygon fill="black" stroke="black" points="47,-25.26 43.5,-15.26 40,-25.26 47,-25.26"/>
+<path fill="none" stroke="black" d="M69.38,-50.46C69.38,-44.24 69.38,-34.15 69.38,-25.39"/>
+<polygon fill="black" stroke="black" points="72.88,-25.6 69.38,-15.6 65.88,-25.6 72.88,-25.6"/>
 </g>
 </g>
 </svg>
@@ -14324,10 +14735,13 @@ Test #21 &#39;1 + (2 * 3&#39; 10 UNRESOLVED
 </div>
 </div>
 
+<details id="Excursion:-A-Class-for-Reducing-with-Grammars">
+<summary>A Class for Reducing with Grammars</summary>
+
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><h3 id="A-Class-for-Reducing-with-Grammars">A Class for Reducing with Grammars<a class="anchor-link" href="#A-Class-for-Reducing-with-Grammars">&#182;</a></h3><p>We introduce the <code>GrammarReducer</code> class, which is again a <code>Reducer</code>.  Note that we derive from <code>CachingReducer</code>, as the strategy will produce several duplicates.</p>
+<div class="text_cell_render border-box-sizing rendered_html"><p>We introduce the <code>GrammarReducer</code> class, which is again a <code>Reducer</code>. Note that we derive from <code>CachingReducer</code>, as the strategy will produce several duplicates.</p>
 </div>
 </div>
 </div>
@@ -14340,7 +14754,17 @@ Test #21 &#39;1 + (2 * 3&#39; 10 UNRESOLVED
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">GrammarReducer</span><span class="p">(</span><span class="n">CachingReducer</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">,</span> <span class="n">parser</span><span class="p">,</span> <span class="n">log_test</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">log_reduce</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Reduce inputs using grammars&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="n">Runner</span><span class="p">,</span> <span class="n">parser</span><span class="p">:</span> <span class="n">Parser</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span>
+                 <span class="n">log_test</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">log_reduce</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Constructor.</span>
+<span class="sd">        `runner` is the runner to be used.</span>
+<span class="sd">        `parser` is the parser to be used.</span>
+<span class="sd">        `log_test` - if set, show tests and results.</span>
+<span class="sd">        `log_reduce` - if set, show reduction steps.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">runner</span><span class="p">,</span> <span class="n">log_test</span><span class="o">=</span><span class="n">log_test</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">parser</span> <span class="o">=</span> <span class="n">parser</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">grammar</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">grammar</span><span class="p">()</span>
@@ -14357,7 +14781,7 @@ Test #21 &#39;1 + (2 * 3&#39; 10 UNRESOLVED
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><h3 id="A-Few-Helpers">A Few Helpers<a class="anchor-link" href="#A-Few-Helpers">&#182;</a></h3><p>We define a number of helper functions, which we will need for our strategy.  <code>tree_list_to_string()</code> does what the name suggest, creating a string from a list of derivation trees:</p>
+<div class="text_cell_render border-box-sizing rendered_html"><h4 id="A-Few-Helpers">A Few Helpers<a class="anchor-link" href="#A-Few-Helpers">&#182;</a></h4><p>We define a number of helper functions, which we will need for our strategy.  <code>tree_list_to_string()</code> does what the name suggest, creating a string from a list of derivation trees:</p>
 </div>
 </div>
 </div>
@@ -14369,7 +14793,21 @@ Test #21 &#39;1 + (2 * 3&#39; 10 UNRESOLVED
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">tree_list_to_string</span><span class="p">(</span><span class="n">q</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn"><a href="GrammarFuzzer.html" class="import" target="_blank">GrammarFuzzer</a></span> <span class="kn">import</span> <span class="n">DerivationTree</span>
+</pre></div>
+
+</div>
+</div></div>
+</div>
+</div>
+
+<div class="input_code">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">tree_list_to_string</span><span class="p">(</span><span class="n">q</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">DerivationTree</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
     <span class="k">return</span> <span class="s2">&quot;[&quot;</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">all_terminals</span><span class="p">(</span><span class="n">tree</span><span class="p">)</span> <span class="k">for</span> <span class="n">tree</span> <span class="ow">in</span> <span class="n">q</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;]&quot;</span>
 </pre></div>
 
@@ -14416,7 +14854,7 @@ Test #21 &#39;1 + (2 * 3&#39; 10 UNRESOLVED
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">possible_combinations</span><span class="p">(</span><span class="n">list_of_lists</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">possible_combinations</span><span class="p">(</span><span class="n">list_of_lists</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">]]:</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">list_of_lists</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="p">[]</span>
 
@@ -14428,6 +14866,7 @@ Test #21 &#39;1 + (2 * 3&#39; 10 UNRESOLVED
             <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">possible_combinations</span><span class="p">(</span><span class="n">list_of_lists</span><span class="p">[</span><span class="mi">1</span><span class="p">:]):</span>
                 <span class="n">new_combo</span> <span class="o">=</span> <span class="p">[</span><span class="n">e</span><span class="p">]</span> <span class="o">+</span> <span class="n">c</span>
                 <span class="n">ret</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_combo</span><span class="p">)</span>
+
     <span class="k">return</span> <span class="n">ret</span>
 </pre></div>
 
@@ -14474,8 +14913,11 @@ Test #21 &#39;1 + (2 * 3&#39; 10 UNRESOLVED
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">number_of_nodes</span><span class="p">(</span><span class="n">tree</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">number_of_nodes</span><span class="p">(</span><span class="n">tree</span><span class="p">:</span> <span class="n">DerivationTree</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
     <span class="p">(</span><span class="n">symbol</span><span class="p">,</span> <span class="n">children</span><span class="p">)</span> <span class="o">=</span> <span class="n">tree</span>
+    <span class="k">if</span> <span class="n">children</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+
     <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="nb">sum</span><span class="p">([</span><span class="n">number_of_nodes</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">children</span><span class="p">])</span>
 </pre></div>
 
@@ -14513,10 +14955,11 @@ Test #21 &#39;1 + (2 * 3&#39; 10 UNRESOLVED
 
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">max_height</span><span class="p">(</span><span class="n">tree</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">max_height</span><span class="p">(</span><span class="n">tree</span><span class="p">:</span> <span class="n">DerivationTree</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
     <span class="p">(</span><span class="n">symbol</span><span class="p">,</span> <span class="n">children</span><span class="p">)</span> <span class="o">=</span> <span class="n">tree</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">children</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">children</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">children</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="mi">1</span>
+
     <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="nb">max</span><span class="p">([</span><span class="n">max_height</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">children</span><span class="p">])</span>
 </pre></div>
 
@@ -14551,7 +14994,7 @@ Test #21 &#39;1 + (2 * 3&#39; 10 UNRESOLVED
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><h3 id="Simplification-Strategies">Simplification Strategies<a class="anchor-link" href="#Simplification-Strategies">&#182;</a></h3><p>Let us now implement our two simplification strategies – replacing subtrees and alternate expansions.</p>
+<div class="text_cell_render border-box-sizing rendered_html"><h4 id="Simplification-Strategies">Simplification Strategies<a class="anchor-link" href="#Simplification-Strategies">&#182;</a></h4><p>Let us now implement our two simplification strategies – replacing subtrees and alternate expansions.</p>
 </div>
 </div>
 </div>
@@ -14560,7 +15003,7 @@ Test #21 &#39;1 + (2 * 3&#39; 10 UNRESOLVED
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><h4 id="Finding-Subtrees">Finding Subtrees<a class="anchor-link" href="#Finding-Subtrees">&#182;</a></h4><p>The method <code>subtrees_with_symbol()</code> returns all subtrees in the given tree which's root is equal to the given symbol.  If <code>ignore_root</code> is set (default), then the root node of <code>tree</code> is not compared against.  (The <code>depth</code> parameter will be discussed below.)</p>
+<div class="text_cell_render border-box-sizing rendered_html"><h5 id="Finding-Subtrees">Finding Subtrees<a class="anchor-link" href="#Finding-Subtrees">&#182;</a></h5><p>The method <code>subtrees_with_symbol()</code> returns all subtrees in the given tree which's root is equal to the given symbol.  If <code>ignore_root</code> is set (default), then the root node of <code>tree</code> is not compared against.  (The <code>depth</code> parameter will be discussed below.)</p>
 </div>
 </div>
 </div>
@@ -14573,9 +15016,11 @@ Test #21 &#39;1 + (2 * 3&#39; 10 UNRESOLVED
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">GrammarReducer</span><span class="p">(</span><span class="n">GrammarReducer</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">subtrees_with_symbol</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tree</span><span class="p">,</span> <span class="n">symbol</span><span class="p">,</span> <span class="n">depth</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">ignore_root</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-        <span class="c1"># Find all subtrees in TREE whose root is SYMBOL.</span>
-        <span class="c1"># If IGNORE_ROOT is true, ignore the root note of TREE.</span>
+    <span class="k">def</span> <span class="nf">subtrees_with_symbol</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tree</span><span class="p">:</span> <span class="n">DerivationTree</span><span class="p">,</span>
+                             <span class="n">symbol</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">depth</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+                             <span class="n">ignore_root</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">DerivationTree</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Find all subtrees in `tree` whose root is `symbol`.</span>
+<span class="sd">        If `ignore_root` is true, ignore the root note of `tree`.&quot;&quot;&quot;</span>
 
         <span class="n">ret</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="p">(</span><span class="n">child_symbol</span><span class="p">,</span> <span class="n">children</span><span class="p">)</span> <span class="o">=</span> <span class="n">tree</span>
@@ -14683,7 +15128,7 @@ Test #21 &#39;1 + (2 * 3&#39; 10 UNRESOLVED
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><h4 id="Alternate-Expansions">Alternate Expansions<a class="anchor-link" href="#Alternate-Expansions">&#182;</a></h4></div>
+<div class="text_cell_render border-box-sizing rendered_html"><h5 id="Alternate-Expansions">Alternate Expansions<a class="anchor-link" href="#Alternate-Expansions">&#182;</a></h5></div>
 </div>
 </div>
 </div>
@@ -14704,7 +15149,8 @@ Test #21 &#39;1 + (2 * 3&#39; 10 UNRESOLVED
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">GrammarReducer</span><span class="p">(</span><span class="n">GrammarReducer</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">alternate_reductions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tree</span><span class="p">,</span> <span class="n">symbol</span><span class="p">,</span> <span class="n">depth</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">alternate_reductions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tree</span><span class="p">:</span> <span class="n">DerivationTree</span><span class="p">,</span> <span class="n">symbol</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> 
+                             <span class="n">depth</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
         <span class="n">reductions</span> <span class="o">=</span> <span class="p">[]</span>
 
         <span class="n">expansions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">grammar</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">symbol</span><span class="p">,</span> <span class="p">[])</span>
@@ -14859,7 +15305,7 @@ Test #21 &#39;1 + (2 * 3&#39; 10 UNRESOLVED
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><h4 id="Both-Strategies-Together">Both Strategies Together<a class="anchor-link" href="#Both-Strategies-Together">&#182;</a></h4></div>
+<div class="text_cell_render border-box-sizing rendered_html"><h5 id="Both-Strategies-Together">Both Strategies Together<a class="anchor-link" href="#Both-Strategies-Together">&#182;</a></h5></div>
 </div>
 </div>
 </div>
@@ -14880,8 +15326,9 @@ Test #21 &#39;1 + (2 * 3&#39; 10 UNRESOLVED
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">GrammarReducer</span><span class="p">(</span><span class="n">GrammarReducer</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">symbol_reductions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tree</span><span class="p">,</span> <span class="n">symbol</span><span class="p">,</span> <span class="n">depth</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Find all expansion alternatives for the given symbol&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">symbol_reductions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tree</span><span class="p">:</span> <span class="n">DerivationTree</span><span class="p">,</span> <span class="n">symbol</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> 
+                          <span class="n">depth</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Find all expansion alternatives for the given symbol&quot;&quot;&quot;</span>
         <span class="n">reductions</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">subtrees_with_symbol</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="n">symbol</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="n">depth</span><span class="p">)</span>
                       <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">alternate_reductions</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="n">symbol</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="n">depth</span><span class="p">))</span>
 
@@ -15008,7 +15455,7 @@ Test #21 &#39;1 + (2 * 3&#39; 10 UNRESOLVED
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><h3 id="The-Reduction-Strategy">The Reduction Strategy<a class="anchor-link" href="#The-Reduction-Strategy">&#182;</a></h3><p>We are now able to return a number of alternatives for each symbol in the tree.  This is what we apply in the core function of our reduction strategy, <code>reduce_subtree()</code>.  Starting with <code>subtree</code>, for every child, we find possible reductions.  For every reduction, we replace the child with the reduction and test the resulting (full) tree.  If it fails, our reduction was successful; otherwise, we put the child back into place and try out the next reduction.  Eventually, we apply <code>reduce_subtree()</code> on all children, reducing these as well.</p>
+<div class="text_cell_render border-box-sizing rendered_html"><h4 id="The-Reduction-Strategy">The Reduction Strategy<a class="anchor-link" href="#The-Reduction-Strategy">&#182;</a></h4><p>We are now able to return a number of alternatives for each symbol in the tree.  This is what we apply in the core function of our reduction strategy, <code>reduce_subtree()</code>.  Starting with <code>subtree</code>, for every child, we find possible reductions.  For every reduction, we replace the child with the reduction and test the resulting (full) tree.  If it fails, our reduction was successful; otherwise, we put the child back into place and try out the next reduction.  Eventually, we apply <code>reduce_subtree()</code> on all children, reducing these as well.</p>
 </div>
 </div>
 </div>
@@ -15021,9 +15468,10 @@ Test #21 &#39;1 + (2 * 3&#39; 10 UNRESOLVED
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">GrammarReducer</span><span class="p">(</span><span class="n">GrammarReducer</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">reduce_subtree</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tree</span><span class="p">,</span> <span class="n">subtree</span><span class="p">,</span> <span class="n">depth</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">reduce_subtree</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tree</span><span class="p">:</span> <span class="n">DerivationTree</span><span class="p">,</span>
+                       <span class="n">subtree</span><span class="p">:</span> <span class="n">DerivationTree</span><span class="p">,</span> <span class="n">depth</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
         <span class="n">symbol</span><span class="p">,</span> <span class="n">children</span> <span class="o">=</span> <span class="n">subtree</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">children</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">children</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">children</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">False</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">log_reduce</span><span class="p">:</span>
@@ -15033,6 +15481,9 @@ Test #21 &#39;1 + (2 * 3&#39; 10 UNRESOLVED
         <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
             <span class="n">reduced_child</span> <span class="o">=</span> <span class="kc">False</span>
             <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">child</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">children</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">child</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="k">continue</span>
+
                 <span class="p">(</span><span class="n">child_symbol</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="o">=</span> <span class="n">child</span>
                 <span class="k">for</span> <span class="n">reduction</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">symbol_reductions</span><span class="p">(</span>
                         <span class="n">child</span><span class="p">,</span> <span class="n">child_symbol</span><span class="p">,</span> <span class="n">depth</span><span class="p">):</span>
@@ -15156,10 +15607,12 @@ Test #21 &#39;1 + (2 * 3&#39; 10 UNRESOLVED
 </div>
 </div>
 
+</details>
+
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><p>Let us try this out in practice on our input <code>expr_input</code> and the <code>mystery()</code> function.  How quickly can we reduce it?</p>
+<div class="text_cell_render border-box-sizing rendered_html"><p>Let us try out our <code>GrammarReducer</code> class in practice on our input <code>expr_input</code> and the <code>mystery()</code> function.  How quickly can we reduce it?</p>
 </div>
 </div>
 </div>
@@ -15257,7 +15710,7 @@ Test #5 &#39;(3)&#39; 3 FAIL
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><p>Delta debugging, as introduced above, follows the idea of trying to cut inputs approximately in half, and thus quickly proceeds towards a minimal input.  By replacing a tree with much smaller subtrees, we <em>could</em> possibly reduce a tree significantly, but may need several attempts to do so.  A better strategy is to only consider <em>large</em> subtrees first – both for the subtree replacement as well as for alternate expansions.  To find such <em>large</em> subtrees, we limit the <em>depth</em> by which we search for possible replacements in the subtree – first, by looking at the direct descendants, later at lower descendants.</p>
+<div class="text_cell_render border-box-sizing rendered_html"><p>Delta debugging, as introduced above, follows the idea of trying to cut inputs approximately in half, and thus quickly proceeds towards a minimal input.  By replacing a tree with much smaller subtrees, we <em>could</em> possibly reduce a tree significantly, but may need several attempts to do so.  A better strategy is to only consider <em>large</em> subtrees first – both for the subtree replacement and for alternate expansions.  To find such <em>large</em> subtrees, we limit the <em>depth</em> by which we search for possible replacements in the subtree – first, by looking at the direct descendants, later at lower descendants.</p>
 </div>
 </div>
 </div>
@@ -15332,281 +15785,281 @@ Test #5 &#39;(3)&#39; 3 FAIL
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 2.49.1 (20210923.0004)
+<!-- Generated by graphviz version 12.2.1 (20241206.2353)
  -->
 <!-- Pages: 1 -->
-<svg width="202pt" height="584pt"
- viewBox="0.00 0.00 202.00 584.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 580)">
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-580 198,-580 198,4 -4,4"/>
+<svg width="210pt" height="575pt"
+ viewBox="0.00 0.00 209.62 575.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 571)">
+<polygon fill="white" stroke="none" points="-4,4 -4,-571 205.62,-571 205.62,4 -4,4"/>
 <!-- 0 -->
 <g id="node1" class="node">
 <title>0</title>
-<text text-anchor="middle" x="74.5" y="-564.8" font-family="Times,serif" font-size="14.00">&lt;start&gt;</text>
+<text text-anchor="middle" x="81.62" y="-553.7" font-family="Times,serif" font-size="14.00">&lt;start&gt;</text>
 </g>
 <!-- 1 -->
 <g id="node2" class="node">
 <title>1</title>
-<text text-anchor="middle" x="74.5" y="-513.8" font-family="Times,serif" font-size="14.00">&lt;expr&gt;</text>
+<text text-anchor="middle" x="81.62" y="-503.45" font-family="Times,serif" font-size="14.00">&lt;expr&gt;</text>
 </g>
 <!-- 0&#45;&gt;1 -->
 <g id="edge1" class="edge">
 <title>0&#45;&gt;1</title>
-<path fill="none" stroke="black" d="M74.5,-560.69C74.5,-554.18 74.5,-544.1 74.5,-535.43"/>
-<polygon fill="black" stroke="black" points="78,-535.26 74.5,-525.26 71,-535.26 78,-535.26"/>
+<path fill="none" stroke="black" d="M81.62,-552.96C81.62,-546.74 81.62,-536.65 81.62,-527.89"/>
+<polygon fill="black" stroke="black" points="85.13,-528.1 81.63,-518.1 78.13,-528.1 85.13,-528.1"/>
 </g>
 <!-- 2 -->
 <g id="node3" class="node">
 <title>2</title>
-<text text-anchor="middle" x="27.5" y="-462.8" font-family="Times,serif" font-size="14.00">&lt;term&gt;</text>
+<text text-anchor="middle" x="33.62" y="-453.2" font-family="Times,serif" font-size="14.00">&lt;term&gt;</text>
 </g>
 <!-- 1&#45;&gt;2 -->
 <g id="edge2" class="edge">
 <title>1&#45;&gt;2</title>
-<path fill="none" stroke="black" d="M67.96,-509.69C61.02,-502.45 49.84,-490.79 40.99,-481.57"/>
-<polygon fill="black" stroke="black" points="43.43,-479.05 33.98,-474.26 38.38,-483.9 43.43,-479.05"/>
+<path fill="none" stroke="black" d="M75.74,-502.71C68.76,-495.69 56.89,-483.76 47.53,-474.35"/>
+<polygon fill="black" stroke="black" points="50.16,-472.03 40.63,-467.41 45.2,-476.97 50.16,-472.03"/>
 </g>
 <!-- 7 -->
 <g id="node8" class="node">
 <title>7</title>
-<text text-anchor="middle" x="74.5" y="-462.8" font-family="Times,serif" font-size="14.00"> + </text>
+<text text-anchor="middle" x="81.62" y="-453.2" font-family="Times,serif" font-size="14.00"> + </text>
 </g>
 <!-- 1&#45;&gt;7 -->
 <g id="edge7" class="edge">
 <title>1&#45;&gt;7</title>
-<path fill="none" stroke="black" d="M74.5,-509.69C74.5,-503.18 74.5,-493.1 74.5,-484.43"/>
-<polygon fill="black" stroke="black" points="78,-484.26 74.5,-474.26 71,-484.26 78,-484.26"/>
+<path fill="none" stroke="black" d="M81.62,-502.71C81.62,-496.49 81.62,-486.4 81.62,-477.64"/>
+<polygon fill="black" stroke="black" points="85.13,-477.85 81.63,-467.85 78.13,-477.85 85.13,-477.85"/>
 </g>
 <!-- 8 -->
 <g id="node9" class="node">
 <title>8</title>
-<text text-anchor="middle" x="120.5" y="-462.8" font-family="Times,serif" font-size="14.00">&lt;expr&gt;</text>
+<text text-anchor="middle" x="127.62" y="-453.2" font-family="Times,serif" font-size="14.00">&lt;expr&gt;</text>
 </g>
 <!-- 1&#45;&gt;8 -->
 <g id="edge8" class="edge">
 <title>1&#45;&gt;8</title>
-<path fill="none" stroke="black" d="M80.9,-509.69C87.69,-502.45 98.63,-490.79 107.29,-481.57"/>
-<polygon fill="black" stroke="black" points="109.87,-483.94 114.16,-474.26 104.76,-479.15 109.87,-483.94"/>
+<path fill="none" stroke="black" d="M87.27,-502.71C93.89,-495.76 105.1,-484 114.03,-474.64"/>
+<polygon fill="black" stroke="black" points="116.53,-477.09 120.89,-467.44 111.46,-472.26 116.53,-477.09"/>
 </g>
 <!-- 3 -->
 <g id="node4" class="node">
 <title>3</title>
-<text text-anchor="middle" x="27.5" y="-411.8" font-family="Times,serif" font-size="14.00">&lt;factor&gt;</text>
+<text text-anchor="middle" x="31.62" y="-402.95" font-family="Times,serif" font-size="14.00">&lt;factor&gt;</text>
 </g>
 <!-- 2&#45;&gt;3 -->
 <g id="edge3" class="edge">
 <title>2&#45;&gt;3</title>
-<path fill="none" stroke="black" d="M27.5,-458.69C27.5,-452.18 27.5,-442.1 27.5,-433.43"/>
-<polygon fill="black" stroke="black" points="31,-433.26 27.5,-423.26 24,-433.26 31,-433.26"/>
+<path fill="none" stroke="black" d="M33.38,-452.46C33.12,-446.24 32.7,-436.15 32.34,-427.39"/>
+<polygon fill="black" stroke="black" points="35.85,-427.45 31.93,-417.6 28.85,-427.74 35.85,-427.45"/>
 </g>
 <!-- 4 -->
 <g id="node5" class="node">
 <title>4</title>
-<text text-anchor="middle" x="27.5" y="-360.8" font-family="Times,serif" font-size="14.00">&lt;integer&gt;</text>
+<text text-anchor="middle" x="27.62" y="-352.7" font-family="Times,serif" font-size="14.00">&lt;integer&gt;</text>
 </g>
 <!-- 3&#45;&gt;4 -->
 <g id="edge4" class="edge">
 <title>3&#45;&gt;4</title>
-<path fill="none" stroke="black" d="M27.5,-407.69C27.5,-401.18 27.5,-391.1 27.5,-382.43"/>
-<polygon fill="black" stroke="black" points="31,-382.26 27.5,-372.26 24,-382.26 31,-382.26"/>
+<path fill="none" stroke="black" d="M31.13,-402.21C30.62,-395.99 29.78,-385.9 29.06,-377.14"/>
+<polygon fill="black" stroke="black" points="32.56,-377.02 28.24,-367.35 25.58,-377.6 32.56,-377.02"/>
 </g>
 <!-- 5 -->
 <g id="node6" class="node">
 <title>5</title>
-<text text-anchor="middle" x="27.5" y="-309.8" font-family="Times,serif" font-size="14.00">&lt;digit&gt;</text>
+<text text-anchor="middle" x="20.62" y="-302.45" font-family="Times,serif" font-size="14.00">&lt;digit&gt;</text>
 </g>
 <!-- 4&#45;&gt;5 -->
 <g id="edge5" class="edge">
 <title>4&#45;&gt;5</title>
-<path fill="none" stroke="black" d="M27.5,-356.69C27.5,-350.18 27.5,-340.1 27.5,-331.43"/>
-<polygon fill="black" stroke="black" points="31,-331.26 27.5,-321.26 24,-331.26 31,-331.26"/>
+<path fill="none" stroke="black" d="M26.77,-351.96C25.86,-345.74 24.4,-335.65 23.13,-326.89"/>
+<polygon fill="black" stroke="black" points="26.61,-326.48 21.71,-317.09 19.68,-327.49 26.61,-326.48"/>
 </g>
 <!-- 6 -->
 <g id="node7" class="node">
 <title>6</title>
-<text text-anchor="middle" x="27.5" y="-258.8" font-family="Times,serif" font-size="14.00">1</text>
+<text text-anchor="middle" x="20.62" y="-252.2" font-family="Times,serif" font-size="14.00">1 (49)</text>
 </g>
 <!-- 5&#45;&gt;6 -->
 <g id="edge6" class="edge">
 <title>5&#45;&gt;6</title>
-<path fill="none" stroke="black" d="M27.5,-305.69C27.5,-299.18 27.5,-289.1 27.5,-280.43"/>
-<polygon fill="black" stroke="black" points="31,-280.26 27.5,-270.26 24,-280.26 31,-280.26"/>
+<path fill="none" stroke="black" d="M20.62,-301.71C20.62,-295.49 20.62,-285.4 20.62,-276.64"/>
+<polygon fill="black" stroke="black" points="24.13,-276.85 20.63,-266.85 17.13,-276.85 24.13,-276.85"/>
 </g>
 <!-- 9 -->
 <g id="node10" class="node">
 <title>9</title>
-<text text-anchor="middle" x="120.5" y="-411.8" font-family="Times,serif" font-size="14.00">&lt;term&gt;</text>
+<text text-anchor="middle" x="127.62" y="-402.95" font-family="Times,serif" font-size="14.00">&lt;term&gt;</text>
 </g>
 <!-- 8&#45;&gt;9 -->
 <g id="edge9" class="edge">
 <title>8&#45;&gt;9</title>
-<path fill="none" stroke="black" d="M120.5,-458.69C120.5,-452.18 120.5,-442.1 120.5,-433.43"/>
-<polygon fill="black" stroke="black" points="124,-433.26 120.5,-423.26 117,-433.26 124,-433.26"/>
+<path fill="none" stroke="black" d="M127.62,-452.46C127.62,-446.24 127.62,-436.15 127.62,-427.39"/>
+<polygon fill="black" stroke="black" points="131.13,-427.6 127.63,-417.6 124.13,-427.6 131.13,-427.6"/>
 </g>
 <!-- 10 -->
 <g id="node11" class="node">
 <title>10</title>
-<text text-anchor="middle" x="120.5" y="-360.8" font-family="Times,serif" font-size="14.00">&lt;factor&gt;</text>
+<text text-anchor="middle" x="127.62" y="-352.7" font-family="Times,serif" font-size="14.00">&lt;factor&gt;</text>
 </g>
 <!-- 9&#45;&gt;10 -->
 <g id="edge10" class="edge">
 <title>9&#45;&gt;10</title>
-<path fill="none" stroke="black" d="M120.5,-407.69C120.5,-401.18 120.5,-391.1 120.5,-382.43"/>
-<polygon fill="black" stroke="black" points="124,-382.26 120.5,-372.26 117,-382.26 124,-382.26"/>
+<path fill="none" stroke="black" d="M127.62,-402.21C127.62,-395.99 127.62,-385.9 127.62,-377.14"/>
+<polygon fill="black" stroke="black" points="131.13,-377.35 127.63,-367.35 124.13,-377.35 131.13,-377.35"/>
 </g>
 <!-- 11 -->
 <g id="node12" class="node">
 <title>11</title>
-<text text-anchor="middle" x="79.5" y="-309.8" font-family="Times,serif" font-size="14.00">(</text>
+<text text-anchor="middle" x="74.62" y="-302.45" font-family="Times,serif" font-size="14.00">( (40)</text>
 </g>
 <!-- 10&#45;&gt;11 -->
 <g id="edge11" class="edge">
 <title>10&#45;&gt;11</title>
-<path fill="none" stroke="black" d="M114.8,-356.69C108.07,-348.64 96.77,-335.14 88.77,-325.58"/>
-<polygon fill="black" stroke="black" points="91.27,-323.11 82.17,-317.69 85.9,-327.6 91.27,-323.11"/>
+<path fill="none" stroke="black" d="M121.13,-351.96C113.34,-344.87 100.04,-332.76 89.65,-323.31"/>
+<polygon fill="black" stroke="black" points="92.05,-320.75 82.3,-316.61 87.33,-325.93 92.05,-320.75"/>
 </g>
 <!-- 12 -->
 <g id="node13" class="node">
 <title>12</title>
-<text text-anchor="middle" x="120.5" y="-309.8" font-family="Times,serif" font-size="14.00">&lt;expr&gt;</text>
+<text text-anchor="middle" x="128.62" y="-302.45" font-family="Times,serif" font-size="14.00">&lt;expr&gt;</text>
 </g>
 <!-- 10&#45;&gt;12 -->
 <g id="edge12" class="edge">
 <title>10&#45;&gt;12</title>
-<path fill="none" stroke="black" d="M120.5,-356.69C120.5,-350.18 120.5,-340.1 120.5,-331.43"/>
-<polygon fill="black" stroke="black" points="124,-331.26 120.5,-321.26 117,-331.26 124,-331.26"/>
+<path fill="none" stroke="black" d="M127.75,-351.96C127.88,-345.74 128.09,-335.65 128.27,-326.89"/>
+<polygon fill="black" stroke="black" points="131.76,-327.17 128.47,-317.1 124.76,-327.03 131.76,-327.17"/>
 </g>
 <!-- 24 -->
 <g id="node25" class="node">
 <title>24</title>
-<text text-anchor="middle" x="161.5" y="-309.8" font-family="Times,serif" font-size="14.00">)</text>
+<text text-anchor="middle" x="182.62" y="-302.45" font-family="Times,serif" font-size="14.00">) (41)</text>
 </g>
 <!-- 10&#45;&gt;24 -->
 <g id="edge24" class="edge">
 <title>10&#45;&gt;24</title>
-<path fill="none" stroke="black" d="M126.2,-356.69C132.93,-348.64 144.23,-335.14 152.23,-325.58"/>
-<polygon fill="black" stroke="black" points="155.1,-327.6 158.83,-317.69 149.73,-323.11 155.1,-327.6"/>
+<path fill="none" stroke="black" d="M134.37,-351.96C142.53,-344.8 156.53,-332.51 167.36,-323.02"/>
+<polygon fill="black" stroke="black" points="169.48,-325.81 174.69,-316.59 164.86,-320.55 169.48,-325.81"/>
 </g>
 <!-- 13 -->
 <g id="node14" class="node">
 <title>13</title>
-<text text-anchor="middle" x="120.5" y="-258.8" font-family="Times,serif" font-size="14.00">&lt;term&gt;</text>
+<text text-anchor="middle" x="128.62" y="-252.2" font-family="Times,serif" font-size="14.00">&lt;term&gt;</text>
 </g>
 <!-- 12&#45;&gt;13 -->
 <g id="edge13" class="edge">
 <title>12&#45;&gt;13</title>
-<path fill="none" stroke="black" d="M120.5,-305.69C120.5,-299.18 120.5,-289.1 120.5,-280.43"/>
-<polygon fill="black" stroke="black" points="124,-280.26 120.5,-270.26 117,-280.26 124,-280.26"/>
+<path fill="none" stroke="black" d="M128.62,-301.71C128.62,-295.49 128.62,-285.4 128.62,-276.64"/>
+<polygon fill="black" stroke="black" points="132.13,-276.85 128.63,-266.85 125.13,-276.85 132.13,-276.85"/>
 </g>
 <!-- 14 -->
 <g id="node15" class="node">
 <title>14</title>
-<text text-anchor="middle" x="70.5" y="-207.8" font-family="Times,serif" font-size="14.00">&lt;factor&gt;</text>
+<text text-anchor="middle" x="79.62" y="-201.95" font-family="Times,serif" font-size="14.00">&lt;factor&gt;</text>
 </g>
 <!-- 13&#45;&gt;14 -->
 <g id="edge14" class="edge">
 <title>13&#45;&gt;14</title>
-<path fill="none" stroke="black" d="M113.55,-254.69C106.08,-247.37 94.03,-235.56 84.57,-226.29"/>
-<polygon fill="black" stroke="black" points="86.99,-223.75 77.39,-219.26 82.09,-228.75 86.99,-223.75"/>
+<path fill="none" stroke="black" d="M122.62,-251.46C115.49,-244.44 103.37,-232.51 93.81,-223.1"/>
+<polygon fill="black" stroke="black" points="96.34,-220.67 86.76,-216.15 91.43,-225.66 96.34,-220.67"/>
 </g>
 <!-- 18 -->
 <g id="node19" class="node">
 <title>18</title>
-<text text-anchor="middle" x="120.5" y="-207.8" font-family="Times,serif" font-size="14.00"> * </text>
+<text text-anchor="middle" x="128.62" y="-201.95" font-family="Times,serif" font-size="14.00"> * </text>
 </g>
 <!-- 13&#45;&gt;18 -->
 <g id="edge18" class="edge">
 <title>13&#45;&gt;18</title>
-<path fill="none" stroke="black" d="M120.5,-254.69C120.5,-248.18 120.5,-238.1 120.5,-229.43"/>
-<polygon fill="black" stroke="black" points="124,-229.26 120.5,-219.26 117,-229.26 124,-229.26"/>
+<path fill="none" stroke="black" d="M128.62,-251.46C128.62,-245.24 128.62,-235.15 128.62,-226.39"/>
+<polygon fill="black" stroke="black" points="132.13,-226.6 128.63,-216.6 125.13,-226.6 132.13,-226.6"/>
 </g>
 <!-- 19 -->
 <g id="node20" class="node">
 <title>19</title>
-<text text-anchor="middle" x="166.5" y="-207.8" font-family="Times,serif" font-size="14.00">&lt;term&gt;</text>
+<text text-anchor="middle" x="174.62" y="-201.95" font-family="Times,serif" font-size="14.00">&lt;term&gt;</text>
 </g>
 <!-- 13&#45;&gt;19 -->
 <g id="edge19" class="edge">
 <title>13&#45;&gt;19</title>
-<path fill="none" stroke="black" d="M126.9,-254.69C133.69,-247.45 144.63,-235.79 153.29,-226.57"/>
-<polygon fill="black" stroke="black" points="155.87,-228.94 160.16,-219.26 150.76,-224.15 155.87,-228.94"/>
+<path fill="none" stroke="black" d="M134.27,-251.46C140.89,-244.51 152.1,-232.75 161.03,-223.39"/>
+<polygon fill="black" stroke="black" points="163.53,-225.84 167.89,-216.19 158.46,-221.01 163.53,-225.84"/>
 </g>
 <!-- 15 -->
 <g id="node16" class="node">
 <title>15</title>
-<text text-anchor="middle" x="70.5" y="-156.8" font-family="Times,serif" font-size="14.00">&lt;integer&gt;</text>
+<text text-anchor="middle" x="79.62" y="-151.7" font-family="Times,serif" font-size="14.00">&lt;integer&gt;</text>
 </g>
 <!-- 14&#45;&gt;15 -->
 <g id="edge15" class="edge">
 <title>14&#45;&gt;15</title>
-<path fill="none" stroke="black" d="M70.5,-203.69C70.5,-197.18 70.5,-187.1 70.5,-178.43"/>
-<polygon fill="black" stroke="black" points="74,-178.26 70.5,-168.26 67,-178.26 74,-178.26"/>
+<path fill="none" stroke="black" d="M79.62,-201.21C79.62,-194.99 79.62,-184.9 79.62,-176.14"/>
+<polygon fill="black" stroke="black" points="83.13,-176.35 79.63,-166.35 76.13,-176.35 83.13,-176.35"/>
 </g>
 <!-- 16 -->
 <g id="node17" class="node">
 <title>16</title>
-<text text-anchor="middle" x="70.5" y="-105.8" font-family="Times,serif" font-size="14.00">&lt;digit&gt;</text>
+<text text-anchor="middle" x="79.62" y="-101.45" font-family="Times,serif" font-size="14.00">&lt;digit&gt;</text>
 </g>
 <!-- 15&#45;&gt;16 -->
 <g id="edge16" class="edge">
 <title>15&#45;&gt;16</title>
-<path fill="none" stroke="black" d="M70.5,-152.69C70.5,-146.18 70.5,-136.1 70.5,-127.43"/>
-<polygon fill="black" stroke="black" points="74,-127.26 70.5,-117.26 67,-127.26 74,-127.26"/>
+<path fill="none" stroke="black" d="M79.62,-150.96C79.62,-144.74 79.62,-134.65 79.62,-125.89"/>
+<polygon fill="black" stroke="black" points="83.13,-126.1 79.63,-116.1 76.13,-126.1 83.13,-126.1"/>
 </g>
 <!-- 17 -->
 <g id="node18" class="node">
 <title>17</title>
-<text text-anchor="middle" x="70.5" y="-54.8" font-family="Times,serif" font-size="14.00">2</text>
+<text text-anchor="middle" x="79.62" y="-51.2" font-family="Times,serif" font-size="14.00">2 (50)</text>
 </g>
 <!-- 16&#45;&gt;17 -->
 <g id="edge17" class="edge">
 <title>16&#45;&gt;17</title>
-<path fill="none" stroke="black" d="M70.5,-101.69C70.5,-95.18 70.5,-85.1 70.5,-76.43"/>
-<polygon fill="black" stroke="black" points="74,-76.26 70.5,-66.26 67,-76.26 74,-76.26"/>
+<path fill="none" stroke="black" d="M79.62,-100.71C79.62,-94.49 79.62,-84.4 79.62,-75.64"/>
+<polygon fill="black" stroke="black" points="83.13,-75.85 79.63,-65.85 76.13,-75.85 83.13,-75.85"/>
 </g>
 <!-- 20 -->
 <g id="node21" class="node">
 <title>20</title>
-<text text-anchor="middle" x="166.5" y="-156.8" font-family="Times,serif" font-size="14.00">&lt;factor&gt;</text>
+<text text-anchor="middle" x="174.62" y="-151.7" font-family="Times,serif" font-size="14.00">&lt;factor&gt;</text>
 </g>
 <!-- 19&#45;&gt;20 -->
 <g id="edge20" class="edge">
 <title>19&#45;&gt;20</title>
-<path fill="none" stroke="black" d="M166.5,-203.69C166.5,-197.18 166.5,-187.1 166.5,-178.43"/>
-<polygon fill="black" stroke="black" points="170,-178.26 166.5,-168.26 163,-178.26 170,-178.26"/>
+<path fill="none" stroke="black" d="M174.62,-201.21C174.62,-194.99 174.62,-184.9 174.62,-176.14"/>
+<polygon fill="black" stroke="black" points="178.13,-176.35 174.63,-166.35 171.13,-176.35 178.13,-176.35"/>
 </g>
 <!-- 21 -->
 <g id="node22" class="node">
 <title>21</title>
-<text text-anchor="middle" x="166.5" y="-105.8" font-family="Times,serif" font-size="14.00">&lt;integer&gt;</text>
+<text text-anchor="middle" x="174.62" y="-101.45" font-family="Times,serif" font-size="14.00">&lt;integer&gt;</text>
 </g>
 <!-- 20&#45;&gt;21 -->
 <g id="edge21" class="edge">
 <title>20&#45;&gt;21</title>
-<path fill="none" stroke="black" d="M166.5,-152.69C166.5,-146.18 166.5,-136.1 166.5,-127.43"/>
-<polygon fill="black" stroke="black" points="170,-127.26 166.5,-117.26 163,-127.26 170,-127.26"/>
+<path fill="none" stroke="black" d="M174.62,-150.96C174.62,-144.74 174.62,-134.65 174.62,-125.89"/>
+<polygon fill="black" stroke="black" points="178.13,-126.1 174.63,-116.1 171.13,-126.1 178.13,-126.1"/>
 </g>
 <!-- 22 -->
 <g id="node23" class="node">
 <title>22</title>
-<text text-anchor="middle" x="166.5" y="-54.8" font-family="Times,serif" font-size="14.00">&lt;digit&gt;</text>
+<text text-anchor="middle" x="174.62" y="-51.2" font-family="Times,serif" font-size="14.00">&lt;digit&gt;</text>
 </g>
 <!-- 21&#45;&gt;22 -->
 <g id="edge22" class="edge">
 <title>21&#45;&gt;22</title>
-<path fill="none" stroke="black" d="M166.5,-101.69C166.5,-95.18 166.5,-85.1 166.5,-76.43"/>
-<polygon fill="black" stroke="black" points="170,-76.26 166.5,-66.26 163,-76.26 170,-76.26"/>
+<path fill="none" stroke="black" d="M174.62,-100.71C174.62,-94.49 174.62,-84.4 174.62,-75.64"/>
+<polygon fill="black" stroke="black" points="178.13,-75.85 174.63,-65.85 171.13,-75.85 178.13,-75.85"/>
 </g>
 <!-- 23 -->
 <g id="node24" class="node">
 <title>23</title>
-<text text-anchor="middle" x="166.5" y="-3.8" font-family="Times,serif" font-size="14.00">3</text>
+<text text-anchor="middle" x="174.62" y="-0.95" font-family="Times,serif" font-size="14.00">3 (51)</text>
 </g>
 <!-- 22&#45;&gt;23 -->
 <g id="edge23" class="edge">
 <title>22&#45;&gt;23</title>
-<path fill="none" stroke="black" d="M166.5,-50.69C166.5,-44.18 166.5,-34.1 166.5,-25.43"/>
-<polygon fill="black" stroke="black" points="170,-25.26 166.5,-15.26 163,-25.26 170,-25.26"/>
+<path fill="none" stroke="black" d="M174.62,-50.46C174.62,-44.24 174.62,-34.15 174.62,-25.39"/>
+<polygon fill="black" stroke="black" points="178.13,-25.6 174.63,-15.6 171.13,-25.6 178.13,-25.6"/>
 </g>
 </g>
 </svg>
@@ -15651,7 +16104,7 @@ Test #5 &#39;(3)&#39; 3 FAIL
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><p>At a depth of 2, we have the <code>&lt;term&gt;</code> subtree on the left hand side:</p>
+<div class="text_cell_render border-box-sizing rendered_html"><p>At a depth of 2, we have the <code>&lt;term&gt;</code> subtree on the left-hand side:</p>
 </div>
 </div>
 </div>
@@ -15684,7 +16137,7 @@ Test #5 &#39;(3)&#39; 3 FAIL
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><p>At a depth of 3, we have the <code>&lt;term&gt;</code> subtree on the right hand side:</p>
+<div class="text_cell_render border-box-sizing rendered_html"><p>At a depth of 3, we have the <code>&lt;term&gt;</code> subtree on the right-hand side:</p>
 </div>
 </div>
 </div>
@@ -15928,7 +16381,7 @@ Test #3 &#39;3&#39; 1 PASS
 <div class="output_area">
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.16416517300000066
+<pre>0.0751019999734126
 </pre>
 </div>
 
@@ -16008,7 +16461,7 @@ Test #3 &#39;3&#39; 1 PASS
 <div class="output_area">
 
 <div class="output_text output_subarea output_execute_result">
-<pre>5.339235703
+<pre>1.6051183340023272
 </pre>
 </div>
 
@@ -16048,7 +16501,7 @@ Test #3 &#39;3&#39; 1 PASS
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><h2 id="Background">Background<a class="anchor-link" href="#Background">&#182;</a></h2><p>The "lexical" delta debugging algorithm discussed here stems from [<a href="https://doi.org/10.1109/32.988498">Zeller <em>et al</em>, 2002</a>]; actually, this is the exact Python implementation as used by Zeller in 2002.  The idea of systematically reducing inputs has been discovered a number of times, although not as  automatic and generic as delta debugging. [<a href="https://www.microsoft.com/en-us/research/publication/massive-stochastic-testing-of-sql/">Slutz <em>et al</em>, 1998</a>], for instance, discusses systematic reduction of SQL statements for SQL databases; the general process as manual work is well described by [Kernighan <em>et al</em>, 1999].</p>
+<div class="text_cell_render border-box-sizing rendered_html"><h2 id="Background">Background<a class="anchor-link" href="#Background">&#182;</a></h2><p>The "lexical" delta debugging algorithm discussed here stems from [<a href="https://doi.org/10.1109/32.988498">Zeller <em>et al</em>, 2002</a>]; actually, this is the exact Python implementation as used by Zeller in 2002.  The idea of systematically reducing inputs has been discovered a number of times, although not as automatic and generic as delta debugging. [<a href="https://www.microsoft.com/en-us/research/publication/massive-stochastic-testing-of-sql/">Slutz <em>et al</em>, 1998</a>], for instance, discusses systematic reduction of SQL statements for SQL databases; the general process as manual work is well described by [Kernighan <em>et al</em>, 1999].</p>
 </div>
 </div>
 </div>
@@ -16066,7 +16519,36 @@ Test #3 &#39;3&#39; 1 PASS
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><p>While <code>GrammarReducer</code> is a generic approach that can be parameterized with an arbitrary grammar, <em>language-specific</em> approaches can do a much better job for the language at hand.  <em>C-Reduce</em> [<a href="https://doi.org/10.1145/2254064.2254104">Regehr <em>et al</em>, 2012</a>] is a reducer specifically targeting the reduction of programming languages.  Besides reductions in the style of delta debugging or tree transformations, C-Reduce comes with more than 30 source-to-source transformations that replace aggregates by scalars, remove function parameters at a definition and all call sites, change functions to return <code>void</code> and deleting all <code>return</code> statements, and many more.  While specifically instantiated for the C language (and used for testing C compilers), these principles extend to arbitrary programming languages following an ALGOL-like syntax.  When testing a compiler, C-Reduce is the tool to go for.</p>
+<div class="text_cell_render border-box-sizing rendered_html"><p>While applying delta debugging to code lines does a decent job, <em>syntactic</em> and especially <em>language-specific</em> approaches can do a much better job for the programming language at hand:</p>
+<ul>
+<li><p><em>C-Reduce</em> [<a href="https://doi.org/10.1145/2254064.2254104">Regehr <em>et al</em>, 2012</a>] is a reducer specifically targeting the reduction of programming languages.  Besides reductions in the style of delta debugging or tree transformations, C-Reduce comes with more than 30 source-to-source transformations that replace aggregates by scalars, remove function parameters at a definition and all call sites, change functions to return <code>void</code> and deleting all <code>return</code> statements, and many more.  While specifically instantiated for the C language (and used for testing C compilers), these principles extend to arbitrary programming languages following an ALGOL-like syntax.</p>
+</li>
+<li><p>Kalhauge and Palsberg [<a href="https://doi.org/10.1145/3338906.3338956">Kalhauge <em>et al</em>, 2019</a>] introduce <em>binary reduction of dependency graphs</em>, a general solution for reducing arbitrary inputs with dependencies. Their <em>J-Reduce</em> tool specifically targets Java programs, and again is much faster than delta debugging and achieves a higher reduction rate.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div class="input_markdown">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html"><p>Reducing inputs also works well in the context of <em>property-based testing</em>; that is, generating data structures for individual functions, which can then be reduced ("shrunk") upon failure. The <a href="https://hypothesis.works">Hypothesis</a> fuzzer has a number of type-specific shrinking strategies; this <a href="https://hypothesis.works/articles/integrated-shrinking/">blog article</a> discusses some of its features.</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="input_markdown">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html"><p>The chapter on <a href="https://www.debuggingbook.org/html/DeltaDebugger.html">"Reducing Failure-Inducing Inputs" in the Debugging Book</a> has an alternate implementation <code>DeltaDebugger</code> of delta debugging that is even easier to deploy; here, one simply writes</p>
+<div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">DeltaDebugger</span><span class="p">()</span> <span class="k">as</span> <span class="n">dd</span><span class="p">:</span>
+    <span class="n">fun</span><span class="p">(</span><span class="n">args</span><span class="o">...</span><span class="p">)</span>
+<span class="n">dd</span>
+</pre></div>
+<p>to reduce the input in <code>args</code> for a failing (exception-throwing) function <code>fun()</code>. The chapter also  discusses further usage examples, including reducing <em>code</em> to a minimum.</p>
 </div>
 </div>
 </div>
@@ -16098,7 +16580,7 @@ Test #3 &#39;3&#39; 1 PASS
 Extend it such that whenever a new input is added to the population, it is first reduced using delta debugging.</p>
 
     
-<p><div class="solution_link"><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/master?filepath=docs/notebooks/Reducer.ipynb#Exercises" target=_blank>Use the notebook</a> to work on the exercises and see solutions.</div></p>
+<p><div class="solution_link"><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/HEAD?labpath=docs%2Fnotebooks/Reducer.ipynb#Exercises" target=_blank>Use the notebook</a> to work on the exercises and see solutions.</div></p>
 </div>
 </div>
 </div>
@@ -16107,10 +16589,10 @@ Extend it such that whenever a new input is added to the population, it is first
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><h3 id="Exercise-2:-Reduction-by-Production">Exercise 2: Reduction by Production<a class="anchor-link" href="#Exercise-2:-Reduction-by-Production">&#182;</a></h3><p>Grammar-based input reduction, as sketched above, might be a good algorithm, but is by no means the only alternative.  One interesting question is whether "reduction" should only be limited to elements already present, or whether one would be allowed to also create <em>new</em> elements.  These would not be present in the original input, yet still allow to produce a much smaller input that would still reproduce the original failure.</p>
+<div class="text_cell_render border-box-sizing rendered_html"><h3 id="Exercise-2:-Reduction-by-Production">Exercise 2: Reduction by Production<a class="anchor-link" href="#Exercise-2:-Reduction-by-Production">&#182;</a></h3><p>Grammar-based input reduction, as sketched above, might be a good algorithm, but is by no means the only alternative.  One interesting question is whether "reduction" should only be limited to elements already present, or whether one would be allowed to also create <em>new</em> elements.  These would not be present in the original input, yet still allow producing a much smaller input that would still reproduce the original failure.</p>
 
     
-<p><div class="solution_link"><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/master?filepath=docs/notebooks/Reducer.ipynb#Exercises" target=_blank>Use the notebook</a> to work on the exercises and see solutions.</div></p>
+<p><div class="solution_link"><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/HEAD?labpath=docs%2Fnotebooks/Reducer.ipynb#Exercises" target=_blank>Use the notebook</a> to work on the exercises and see solutions.</div></p>
 </div>
 </div>
 </div>
@@ -16126,10 +16608,10 @@ Extend it such that whenever a new input is added to the population, it is first
 &lt;integer&gt; ::= &lt;digits&gt;
 &lt;not-a-number&gt; ::= NaN
 &lt;digits&gt; ::= [0-9]+</code></pre>
-<p>Assume the input <code>100.99</code> fails.  We might be able to reduce it to a minimum of, say, <code>1.9</code>.  However, we cannot reduce it to an <code>&lt;integer&gt;</code> or to <code>&lt;not-a-number&gt;</code>, as these symbols do not occur in the original input.  By allowing to <em>create</em> alternatives for these symbols, we could also tests inputs such as <code>1</code> or <code>NaN</code> and further generalize the class of inputs for which the program fails.</p>
+<p>Assume the input <code>100.99</code> fails.  We might be able to reduce it to a minimum of, say, <code>1.9</code>.  However, we cannot reduce it to an <code>&lt;integer&gt;</code> or to <code>&lt;not-a-number&gt;</code>, as these symbols do not occur in the original input.  By allowing to <em>create</em> alternatives for these symbols, we could also test inputs such as <code>1</code> or <code>NaN</code> and further generalize the class of inputs for which the program fails.</p>
 
     
-<p><div class="solution_link"><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/master?filepath=docs/notebooks/Reducer.ipynb#Exercises" target=_blank>Use the notebook</a> to work on the exercises and see solutions.</div></p>
+<p><div class="solution_link"><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/HEAD?labpath=docs%2Fnotebooks/Reducer.ipynb#Exercises" target=_blank>Use the notebook</a> to work on the exercises and see solutions.</div></p>
 </div>
 </div>
 </div>
@@ -16141,7 +16623,7 @@ Extend it such that whenever a new input is added to the population, it is first
 <div class="text_cell_render border-box-sizing rendered_html"><p>Create a class <code>GenerativeGrammarReducer</code> as subclass of <code>GrammarReducer</code>; extend the method <code>reduce_subtree()</code> accordingly.</p>
 
     
-<p><div class="solution_link"><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/master?filepath=docs/notebooks/Reducer.ipynb#Exercises" target=_blank>Use the notebook</a> to work on the exercises and see solutions.</div></p>
+<p><div class="solution_link"><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/HEAD?labpath=docs%2Fnotebooks/Reducer.ipynb#Exercises" target=_blank>Use the notebook</a> to work on the exercises and see solutions.</div></p>
 </div>
 </div>
 </div>
@@ -16163,7 +16645,7 @@ Extend it such that whenever a new input is added to the population, it is first
 <p>Compare delta debugging and grammar-based debugging on the benchmark.  Implement HDD [<a href="https://doi.org/10.1145/1134285.1134307">Misherghi <em>et al</em>, 2006</a>] and <em>Generalized Tree Reduction</em> [<a href="http://dl.acm.org/citation.cfm?id=3155562.3155669">Herfert <em>et al</em>, 2017</a>] and add them to your comparison.  Which approach performs best, and under which circumstances?</p>
 
     
-<p><div class="solution_link"><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/master?filepath=docs/notebooks/Reducer.ipynb#Exercises" target=_blank>Use the notebook</a> to work on the exercises and see solutions.</div></p>
+<p><div class="solution_link"><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/HEAD?labpath=docs%2Fnotebooks/Reducer.ipynb#Exercises" target=_blank>Use the notebook</a> to work on the exercises and see solutions.</div></p>
 </div>
 </div>
 </div>
@@ -16175,7 +16657,7 @@ Extend it such that whenever a new input is added to the population, it is first
 The content of this project is licensed under the
 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target=_blank>Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 The source code that is part of the content, as well as the source code used to format and display that content is licensed under the <a href="https://github.com/uds-se/fuzzingbook/blob/master/LICENSE.md#mit-license">MIT License</a>.
-<a href="https://github.com/uds-se/fuzzingbook/commits/master/notebooks/Reducer.ipynb" target=_blank)>Last change: 2020-11-27 20:15:24+01:00</a> &bull; 
+<a href="https://github.com/uds-se/fuzzingbook/commits/master/notebooks/Reducer.ipynb" target=_blank)>Last change: 2023-11-11 18:18:06+01:00</a> &bull; 
 <a href="#citation" id="cite" onclick="revealCitation()">Cite</a> &bull;
 <a href="https://cispa.de/en/impressum" target=_blank>Imprint</a>
 </p>
@@ -16191,19 +16673,19 @@ function revealCitation() {
 <a name="citation"></a>
 <h2>How to Cite this Work</h2>
 <p>
-Andreas Zeller, Rahul Gopinath, Marcel Böhme, Gordon Fraser, and Christian Holler: "<a href="https://www.fuzzingbook.org/html/Reducer.html">Reducing Failure-Inducing Inputs</a>".  In Andreas Zeller, Rahul Gopinath, Marcel Böhme, Gordon Fraser, and Christian Holler, "<a href="https://www.fuzzingbook.org/">The Fuzzing Book</a>", <a href="https://www.fuzzingbook.org/html/Reducer.html">https://www.fuzzingbook.org/html/Reducer.html</a>.  Retrieved 2020-11-27 20:15:24+01:00.
+Andreas Zeller, Rahul Gopinath, Marcel Böhme, Gordon Fraser, and Christian Holler: "<a href="https://www.fuzzingbook.org/html/Reducer.html">Reducing Failure-Inducing Inputs</a>".  In Andreas Zeller, Rahul Gopinath, Marcel Böhme, Gordon Fraser, and Christian Holler, "<a href="https://www.fuzzingbook.org/">The Fuzzing Book</a>", <a href="https://www.fuzzingbook.org/html/Reducer.html">https://www.fuzzingbook.org/html/Reducer.html</a>.  Retrieved 2023-11-11 18:18:06+01:00.
 </p>
 <pre>
-@incollection{fuzzingbook2020:Reducer,
+@incollection{fuzzingbook2023:Reducer,
     author = {Andreas Zeller and Rahul Gopinath and Marcel B{\"o}hme and Gordon Fraser and Christian Holler},
     booktitle = {The Fuzzing Book},
     title = {Reducing Failure-Inducing Inputs},
-    year = {2020},
+    year = {2023},
     publisher = {CISPA Helmholtz Center for Information Security},
     howpublished = {\url{https://www.fuzzingbook.org/html/Reducer.html}},
-    note = {Retrieved 2020-11-27 20:15:24+01:00},
+    note = {Retrieved 2023-11-11 18:18:06+01:00},
     url = {https://www.fuzzingbook.org/html/Reducer.html},
-    urldate = {2020-11-27 20:15:24+01:00}
+    urldate = {2023-11-11 18:18:06+01:00}
 }
 </pre>
 </div>

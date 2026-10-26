@@ -78,7 +78,7 @@ def get_intro(notebook):
 def markdown_to_text(s):
     """Convert Markdown to plain text"""
     html = markdown.markdown(s)
-    return "".join(BeautifulSoup(html, features='lxml').findAll(text=True)).strip()
+    return "".join(BeautifulSoup(html, features='lxml').findAll(string=True)).strip()
 
 def format_title(title):
     """Break title into two lines if too long"""
@@ -100,8 +100,9 @@ def get_text_contents(notebook):
 
     return contents
    
-def draw_notebook_dependencies(notebooks, 
-    format='svg', transitive_reduction=True, clusters=True, project='fuzzingbook'):
+def draw_notebook_dependencies(notebooks, *,
+    format='svg', link_type='html',
+    transitive_reduction=True, clusters=True, project='fuzzingbook'):
     dot = Digraph(comment="Notebook dependencies")
     # dot.attr(size='20,30', rank='max')
     
@@ -159,9 +160,9 @@ def draw_notebook_dependencies(notebooks,
                 module_intro = markdown_to_text(get_intro(module_file))
                 module_tooltip = f'{module_title} ({module})\n\n{module_intro}'
 
-                dot.node(basename, URL='%s.ipynb' % basename, 
+                dot.node(basename, URL=f'{basename}.{link_type}', 
                     label=format_title(title), tooltip=tooltip, **node_attrs)
-                dot.node(module, URL='%s.ipynb' % module, 
+                dot.node(module, URL=f'{module}.{link_type}', 
                     label=format_title(module_title), tooltip=module_tooltip, **node_attrs)
                 dot.edge(module, basename)
                 
@@ -170,23 +171,34 @@ def draw_notebook_dependencies(notebooks,
         dot.subgraph(cluster)
     
     if transitive_reduction:
+        # Reduce the graph using 'tred'
         dot.format = 'gv'
         dot.save('depend.gv')
         os.system('tred depend.gv > depend.gv~ && mv depend.gv~ depend.gv')
         dot = Source.from_file('depend.gv')
-        os.remove('depend.gv')
 
+    # Render the graph
     dot.format = format
     dot.render('depend')
-    os.system('cat depend.' + format)
-    os.remove('depend')
-    os.remove('depend.' + format)
+    
+    # Print on standard output
+    with open('depend.' + format, 'r') as file:
+        for line in file:
+             print(line, end="")
+
+    # Clean up
+    for suffix in ['', '.' + format, '.gv~', '.gv']:
+        try:
+            os.remove('depend' + suffix)
+        except FileNotFoundError:
+            pass
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--graph", action='store_true', help="Produce graph")
     parser.add_argument("--graph-format", action='store', default='svg', help="Graph format (gv, pdf, svg, ...)")
+    parser.add_argument("--link-type", action='store', default='html', help="Link format (html, pdf, ipynb, ...)")
     parser.add_argument("--project", action='store', help="Project name")
     parser.add_argument("--transitive-reduction", action='store_true', help="Use transitive reduction")
     parser.add_argument("--cluster-by-parts", action='store_true', help="Cluster by parts")
@@ -194,6 +206,11 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if args.graph:
-        draw_notebook_dependencies(args.notebooks, args.graph_format, args.transitive_reduction, args.cluster_by_parts, args.project)
+        draw_notebook_dependencies(args.notebooks, 
+        format=args.graph_format,
+        link_type=args.link_type,
+        transitive_reduction=args.transitive_reduction,
+        clusters=args.cluster_by_parts,
+        project=args.project)
     else:
         print_notebook_dependencies(args.notebooks)

@@ -17,6 +17,7 @@ import io
 import html
 import urllib
 import shelve
+import dbm
 
 try:
     import nbformat
@@ -34,6 +35,7 @@ parser.add_argument("--project", help="project name", default="fuzzingbook")
 parser.add_argument("--title", help="book title", default="The Fuzzing Book")
 parser.add_argument("--authors", help="list of authors", default="A. Zeller et al.")
 parser.add_argument("--twitter", help="twitter handle", default="@FuzzingBook")
+parser.add_argument("--mastodon", help="mastodon.social handle", default="@TheFuzzingBook")
 parser.add_argument("--menu-prefix", help="prefix to html files in menu")
 parser.add_argument("--all-chapters", help="List of all chapters")
 parser.add_argument("--public-chapters", help="List of public chapters")
@@ -48,10 +50,15 @@ project = args.project
 booktitle = args.title
 authors = args.authors
 twitter = args.twitter
+mastodon = args.mastodon
 
 site_html = f"https://www.{project}.org/"
 github_html = f"https://github.com/uds-se/{project}/"
-notebook_html = f"https://mybinder.org/v2/gh/uds-se/{project}/master?filepath=docs/"
+notebook_html =  f"https://mybinder.org/v2/gh/uds-se/{project}/HEAD?labpath=docs%2F"
+
+# Old path, using Jupyter notebook instead of Jupyter Lab
+# notebook_html = f"https://mybinder.org/v2/gh/uds-se/{project}/master?filepath=docs/"
+
 
 # Menus
 # For icons, see https://fontawesome.com/cheatsheet
@@ -73,8 +80,10 @@ menu_start = r"""
 menu_end = r"""
      <li class="has-sub"><a href="#"><span title="Share"><i class="fa fa-fw fa-comments"></i> </span> <span class="menu_4">Share</span></a>
         <ul>
-            <li><a href="__SHARE_TWITTER__" target="popup" __TWITTER_ONCLICK__><i class="fa fa-fw fa-twitter"></i> Share on Twitter</a>
+<!--
+            <li><a href="__SHARE_TWITTER__" target="popup" __TWITTER_ONCLICK__><i class="fa fa-fw fa-twitter"></i> Share on X</a>
             <li><a href="__SHARE_FACEBOOK__" target="popup" __FACEBOOK_ONCLICK__><i class="fa fa-fw fa-facebook"></i> Share on Facebook</a>
+-->
             <li><a href="__SHARE_MAIL__"><i class="fa fa-fw fa-envelope"></i> Share by Email</a>
             <li><a href="#citation" id="cite" onclick="revealCitation()"><i class="fa fa-fw fa-mortar-board"></i> Cite</a>
         </ul>
@@ -206,8 +215,9 @@ def get_description(notebook):
 
 def get_sections(notebook):
     """Return the section titles from a notebook file"""
+
     contents = get_text_contents(notebook)
-    matches = re.findall(r'^(# .*)', contents, re.MULTILINE)
+    matches = re.findall(r'\n\s*\n(# .*)', contents, re.MULTILINE)
     if len(matches) >= 5:
         # Multiple top sections (book?) - use these
         pass
@@ -218,13 +228,28 @@ def get_sections(notebook):
     sections = [match.replace(r'\n', '') for match in matches]
     # print("Sections", repr(sections).encode('utf-8'))
     
-    # Filter out second synopsis section
+    # Move last synopsis section to top; ignore all others
     if '## Synopsis' in sections:
-        sections = ['## Synopsis'] + [sec for sec in sections if sec != '## Synopsis']
-    
+        synopsis_sections = []
+        body_sections = []
+        in_synopsis = False
+        for sec in sections:
+            if sec == '## Synopsis':
+                in_synopsis = True
+                synopsis_sections = []
+            elif sec.startswith('## '):
+                in_synopsis = False
+            
+            if in_synopsis:
+                synopsis_sections.append(sec)
+            else:
+                body_sections.append(sec)
+                
+        sections = synopsis_sections + body_sections
+
     # Filter out "End of Excursion" titles
     sections = [sec for sec in sections 
-        if sec != '## End of Excursion' and sec != '### End of Excursion']
+        if not sec.endswith('# End of Excursion')]
 
     return sections
 
@@ -310,7 +335,23 @@ assert bibtex_unescape(r"B{\"o}hme") == 'Böhme'
 assert bibtex_unescape(r"P{\`e}zze") == 'Pèzze'
 
 LINKS_DB = 'links'
-links_db = shelve.open(LINKS_DB)
+links_db = None
+
+for sleep_time in [1, 2, 4, 8, 16, 32, 64, 128]:
+    if links_db:
+        break
+    try:
+        links_db = shelve.open(LINKS_DB)
+    except dbm.error:
+        links_db = None
+        print(f"Links database is busy; retrying in {sleep_time} seconds")
+        time.sleep(sleep_time)
+
+if links_db is None:
+    # Last attempt
+    links_db = shelve.open(LINKS_DB)
+
+
 if args.clear_link_cache:
     for link in links_db.keys():
         del links_db[link]
@@ -384,7 +425,7 @@ def add_links_to_imports(contents, html_file):
             link = f'https://graphviz.readthedocs.io/'
         elif module in ['git', 'git.exc']:
             link = f'https://gitpython.readthedocs.io/'
-        elif module in ['enforce', 'showast', 'multiprocess']:
+        elif module in ['enforce', 'showast', 'showast2', 'multiprocess']:
             link = f'https://pypi.org/project/{module}/'
         elif module == 'magic':
             link = 'https://pypi.org/project/python-magic/'
@@ -392,6 +433,8 @@ def add_links_to_imports(contents, html_file):
             link = 'https://github.com/google/diff-match-patch'
         elif module == 'easyplotly':
             link = 'https://mwouts.github.io/easyplotly/'
+        elif module.startswith('isla'):
+            link = 'https://rindphi.github.io/isla/'
         elif module.startswith('numpy'):
             link = 'https://numpy.org/'
         elif module.startswith('networkx'):
@@ -400,6 +443,8 @@ def add_links_to_imports(contents, html_file):
             link = 'https://matplotlib.org/stable/api/toolkits/'
         elif module.startswith('matplotlib'):
             link = 'https://matplotlib.org/'
+        elif module.startswith('pandas'):
+            link = 'https://pandas.pydata.org/'
         elif module.startswith('plotly'):
             link = 'https://plotly.com/python/'
         elif module.startswith('scipy'):
@@ -861,6 +906,13 @@ end_of_exercise = '''
 <p><div class="solution_link"><a href="__CHAPTER_NOTEBOOK_IPYNB__#Exercises" target=_blank>Use the notebook</a> to work on the exercises and see solutions.</div></p>
 '''
 
+# Survey banner
+# banner = '''
+# <p><div class="banner">Help shaping the future of __BOOKTITLE__ and
+# <a target=_new href="https://docs.google.com/forms/d/e/1FAIpQLScyO6j5EsrtS0pse7qVHeDoOj188JgC8SepWFZIO32N6gre8Q/viewform?usp=sf_link">take part in our 2024 reader survey!</a></div></p>
+# '''
+banner = ''
+
 if args.home:
     share_message = (r'I just read "' + booktitle 
         + rf'" ({twitter}) at ' + site_html)
@@ -899,6 +951,7 @@ chapter_contents = chapter_contents \
     .replace("<__STRUCTURED_ALL_CHAPTERS_MENU__>", structured_all_chapters_menu) \
     .replace("<__ALL_SECTIONS_MENU__>", all_sections_menu) \
     .replace("<__END_OF_EXERCISE__>", end_of_exercise) \
+    .replace("<__BANNER__>", banner) \
     .replace("__PROJECT__", project) \
     .replace("__PAGE_TITLE__", page_title) \
     .replace("__BOOKTITLE_BETA__", booktitle_beta) \
@@ -970,6 +1023,7 @@ if args.home:
 chapter_contents = re.sub(r"<title>.*</title>", 
     "<title>" + page_title + "</title>", chapter_contents, 1)
 
+# Add a beta warning
 beta_warning = None
 if is_todo_chapter:
     beta_warning = '<p><em class="beta">' + todo_suffix + '&nbsp;This chapter is work in progress ("beta").  It is incomplete and may change at any time.</em></p>'
@@ -978,6 +1032,10 @@ elif is_ready_chapter:
 
 if beta_warning is not None:
     chapter_contents = chapter_contents.replace("</h1>", "</h1>" + beta_warning)
+
+# Add a Mastodon verification link
+chapter_contents = re.sub(r"</title>", 
+    f'</title>\n<link rel="me" href="https://mastodon.social/{mastodon}">', chapter_contents, 1)
 
 # And write it out again
 print("post_html.py: Writing", chapter_html_file)

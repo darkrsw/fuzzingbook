@@ -1,26 +1,47 @@
 #!/bin/bash
 
+# Enable incompatible extensions
+# echo postBuild: Enabling incompatible Jupyter extensions...
+# NBCONFIG_PATH=$HOME/.jupyter/nbconfig
+# mkdir -p $NBCONFIG_PATH
+# echo '{
+#     "nbext_hide_incompat": false
+# }' > $NBCONFIG_PATH/common.json
+
 # Install and enable Jupyter nbextensions
 # https://github.com/binder-examples/jupyter-extension
 # https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/install.html
-echo postBuild: Installing Jupyter extensions...
-jupyter contrib nbextension install --user
-jupyter nbextension enable toc2/main --user
-jupyter nbextension enable exercise2/main --user
+# echo postBuild: Installing Jupyter extensions...
+# jupyter contrib nbextension install --user
+# jupyter nbextension enable toc2/main --user
+# jupyter nbextension enable exercise2/main --user
+# jupyter nbextensions_configurator enable --user
+# jupyter nbextension list
+
+# Install and set up Jupyter lab extensions
+echo postBuild: Installing Jupyter Lab extensions...
+pip install jupyterlab-markup  # Mermaid in Jupyter Lab
+pip install jupyterlab-cell-flash
+jupyter labextension disable "@jupyterlab/apputils-extension:announcements"
+jupyter lab build
 
 # Install grcov
 echo postBuild: Installing grcov...
 cargo install grcov
 
+# # Install mermaid
+echo postBuild: Installing mermaid...
+npm i mermaid
+
 # run matplotlib once to generate the font cache
 echo postBuild: Generating matplotlib font cache...
-python -c "import matplotlib as mpl; mpl.use('Agg'); import pylab as plt; fig, ax = plt.subplots(); fig.savefig('test.png')"
+python3 -c "import matplotlib as mpl; mpl.use('Agg'); import pylab as plt; fig, ax = plt.subplots(); fig.savefig('test.png')"
 test -e test.png && rm test.png
 
 # Trust notebooks such that users can see their HTML and JS output
 echo postBuild: Trusting notebooks...
 for notebook in notebooks/*.ipynb docs/notebooks/*.ipynb docs/beta/notebooks/*.ipynb; do
-    echo postBuild: Trusting notebook "$notebook" ...
+    # echo postBuild: Trusting notebook "$notebook" ...
     jupyter trust "$notebook"
 done
 

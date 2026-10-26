@@ -26,15 +26,16 @@ RE_FROM_BOOKUTILS = re.compile(r'^from bookutils import .*$', re.MULTILINE)
 # * functions: `def func()`
 # * classes: `class X:`
 # * constants: `UPPERCASE_VARIABLES`
-# * types: `TypeVariables`, and
-# * imports: `import foo`
+# * types: `TypeVariables`
+# * imports: `import foo`, and
+# * any code that starts with a comment `# do import`
 #
 # PLEASE NOTE: if you change this, also change the corresponding 
 # definition in bookutils/import_notebooks.py
-RE_CODE = re.compile(r"^(def |class |@|[A-Z][A-Za-z0-9_]+ [-+*/]?= |[A-Z][A-Za-z0-9_]+[.:]|import |from )")
+RE_CODE = re.compile(r"^(def |class |@|[A-Z][A-Za-z0-9_]+ [-+*/]?= |[A-Z][A-Za-z0-9_]+[.:]|import |from |#\s*do import)")
 
 # Things to import only if main (reduces dependencies)
-RE_IMPORT_IF_MAIN = re.compile(r'^(from|import)[ \t]+(matplotlib|mpl_toolkits|numpy|scipy|IPython|requests|FTB|Collector|bookutils import YouTubeVideo).*$', re.MULTILINE)
+RE_IMPORT_IF_MAIN = re.compile(r'^(from|import)[ \t]+(matplotlib|mpl_toolkits|numpy|scipy|IPython|FTB|Collector|bookutils import YouTubeVideo).*$', re.MULTILINE)
 
 # Strip blank lines
 RE_BLANK_LINES = re.compile(r'^[ \t]*$', re.MULTILINE)
@@ -50,7 +51,7 @@ HEADER = """#!/usr/bin/env python3
 # Web site: https://www.{project}.org/html/{module}.html
 # Last change: {timestamp}
 #
-# Copyright (c) 2021 CISPA Helmholtz Center for Information Security
+# Copyright (c) 2021-2025 CISPA Helmholtz Center for Information Security
 # Copyright (c) 2018-2020 Saarland University, authors, and contributors
 #
 # Permission is hereby granted, free of charge, to any person obtaining a
@@ -82,7 +83,7 @@ This file can be _executed_ as a script, running all experiments:
 or _imported_ as a package, providing classes, functions, and constants:
 
     >>> from {project}.{module} import <identifier>
-    
+
 but before you do so, _read_ it and _interact_ with it at:
 
     https://www.{project}.org/html/{module}.html
@@ -148,7 +149,7 @@ def indent_code(code: str) -> str:
 def fix_imports(code: str) -> str:
     # For proper packaging, we must import our modules from the local dir
     # Our modules all start with an upper-case letter
-    
+
     if mypy:
         return code
 
@@ -167,12 +168,12 @@ def fix_imports(code: str) -> str:
                   r'from . import \1', code, flags=re.MULTILINE)
 
     return code
-    
+
 class_renamings: Dict[str, int] = {}
 current_class: Optional[str] = None
 
-RE_SUBCLASS = re.compile(r'^class ([A-Z][^(:]*)[(:]')
-RE_SUBCLASS_SELF = re.compile(r'^class ([A-Z].*)\(\1\):$', flags=re.MULTILINE)
+RE_SUBCLASS = re.compile(r'^class ([a-zA-Z]\w*[^(:]*)[(:]')
+RE_SUBCLASS_SELF = re.compile(r'^class ([a-zA-Z]\w*)\s*\(\s*\1\s*\):\s*$', flags=re.MULTILINE)
 
 def fix_subclass_self(code: str) -> str:
     if not mypy:
@@ -181,7 +182,7 @@ def fix_subclass_self(code: str) -> str:
     match = RE_SUBCLASS.search(code)
     if match:
         class_name = match.group(1)
-        
+
         global current_class
         if class_name == current_class:
             # Add body to current class definition
@@ -195,7 +196,7 @@ def fix_subclass_self(code: str) -> str:
             class_renamings[class_name] = 1
 
         new_class_name = f'{class_name}_{class_renamings[class_name]}'
-            
+
         code = code.replace(f'class {class_name}({class_name}',
                             f'class __NEW_CLASS__(__OLD_CLASS__')
         current_class = class_name
@@ -215,7 +216,7 @@ def fix_subclass_self(code: str) -> str:
         code = code.replace('__CLASS__', class_name)
 
     return code
-    
+
 def fix_code(code: str) -> str:
     return fix_subclass_self(code)
 
@@ -232,7 +233,7 @@ def print_utf8(s: str) -> None:
 def decode_title(s: str) -> str:
     # We have non-breaking spaces in some titles
     return s.replace('\xa0', ' ')
-    
+
 def split_title(s: str) -> Tuple[str, str]:
     """Split a title into hashes and text"""
     list = s.split(' ', 1)
@@ -245,8 +246,8 @@ def print_if_main(code: str) -> None:
     else:
         print_utf8("\nif __name__ == '__main__':\n")
         print_utf8(indent_code(code) + "\n")
-        
-def get_notebook_synopsis(notebook_name: str, 
+
+def get_notebook_synopsis(notebook_name: str,
                           path: Optional[List[str]] = None) -> Tuple[Optional[str], str]:
     notebook_path = notebook_name
 
@@ -256,7 +257,7 @@ def get_notebook_synopsis(notebook_name: str,
     # load the notebook
     with io.open(notebook_path, 'r', encoding='utf-8') as f:
         notebook = nbformat.read(f, 4)
-    
+
     for cell in notebook.cells:
         if cell.cell_type != 'markdown':
             continue
@@ -268,17 +269,20 @@ def get_notebook_synopsis(notebook_name: str,
 
         if not synopsis and contents.startswith('## Synopsis'):
             synopsis = contents
-            
+
         if title and synopsis:
             break
-            
+
     return title, fix_synopsis(synopsis)
-    
-def export_notebook_code(notebook_name: str, 
+
+
+SYNOPSIS_TITLE = "## Synopsis"
+
+def export_notebook_code(notebook_name: str,
                          project: str = "fuzzingbook",
                          path: Optional[List[str]] = None) -> None:
     notebook_path = notebook_name
-    
+
     title, synopsis = get_notebook_synopsis(notebook_name, path)
 
     if project == "debuggingbook":
@@ -293,12 +297,12 @@ def export_notebook_code(notebook_name: str,
     # shell = InteractiveShell.instance()
 
     # Get versioning info
-    notebook_modification_time = os.path.getmtime(notebook_path)    
+    notebook_modification_time = os.path.getmtime(notebook_path)
     timestamp = datetime.datetime.fromtimestamp(notebook_modification_time) \
         .astimezone().isoformat(sep=' ', timespec='seconds')
     module = os.path.splitext(os.path.basename(notebook_name))[0]
 
-    header = HEADER.format(module=module, 
+    header = HEADER.format(module=module,
                            timestamp=timestamp,
                            project=project,
                            booktitle=booktitle,
@@ -307,15 +311,35 @@ def export_notebook_code(notebook_name: str,
 
     print_utf8(header)
     sep = ''
+    
+    # Move synopsis cells to end
+    cells = []  # Non-synopsis cells
+    synopsis_cells = []  # Cells of the (last) synopsis
 
+    in_synopsis = False
     for cell in notebook.cells:
+        if cell.source.startswith(SYNOPSIS_TITLE):
+            in_synopsis = True
+            synopsis_cells = []
+        elif cell.source.startswith("## "):
+            in_synopsis = False
+        
+        if in_synopsis:
+            synopsis_cells.append(cell)
+        else:
+            cells.append(cell)
+            
+    cells += synopsis_cells
+
+    for cell in cells:
         if cell.cell_type == 'code':
             code = cell.source
-            
+            match_code = RE_CODE.match(code)
+
             if RE_DOCASSERT.match(code):
                 # Assertion as part of documentation - skip
                 continue
-                
+
             while code.startswith('#') or code.startswith('\n'):
                 # Skip leading comments
                 if code.find('\n') >= 0:
@@ -326,10 +350,15 @@ def export_notebook_code(notebook_name: str,
             if len(code.strip()) == 0:
                 # Empty code
                 continue
-            
+
             bang = False
             if code.startswith('!'):
-                code = "import os\nos.system(f" + repr(code[1:]) + ")"
+                new_code = "import os"
+                for line in code.split('\n'):
+                    if line.startswith('!'):
+                        line = line[1:]
+                    new_code += f"\nos.system(f" + repr(line) + ")"
+                code = new_code
                 bang = True
 
             if RE_IMPORT_BOOKUTILS.match(code):
@@ -346,7 +375,7 @@ def export_notebook_code(notebook_name: str,
             elif RE_IGNORE.match(code):
                 # Code to ignore - comment out
                 print_utf8("\n" + prefix_code(code, "# ") + "\n")
-            elif RE_CODE.match(code) and not bang:
+            elif (RE_CODE.match(code) or match_code) and not bang:
                 # imports, classes, and defs
                 code = fix_imports(code)
                 code = fix_code(code)
@@ -380,11 +409,12 @@ def export_notebook_code(notebook_name: str,
                 # We don't include contents, as they fall under a different license
                 # print_utf8("\n" + prefix_code(contents, "# ") + "\n")
                 pass
-                
+
     if mypy:
+        # Ensure we get the original class names when importing
         print_utf8('\n# Original class names\n')
         for class_name in class_renamings:
-            print_utf8(f'{class_name} = {class_name}_{class_renamings[class_name]}\n')
+            print_utf8(f'{class_name} = {class_name}_{class_renamings[class_name]}  # type: ignore\n')
 
 if __name__ == '__main__':
     args = sys.argv
@@ -395,7 +425,7 @@ if __name__ == '__main__':
         args = args[3:]
     else:
         args = args[1:]
-    
+
     if len(args) > 1 and args[0] == '--mypy':
         mypy = True
         args = args[1:]

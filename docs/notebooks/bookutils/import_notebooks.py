@@ -9,6 +9,7 @@ from IPython import get_ipython
 from nbformat import read
 from IPython.core.interactiveshell import InteractiveShell
 from importlib.abc import MetaPathFinder
+from importlib.machinery import ModuleSpec
 
 import linecache
 import ast
@@ -21,15 +22,19 @@ from typing import Optional, List, Any, Dict
 # * functions: `def func()`
 # * classes: `class X:`
 # * constants: `UPPERCASE_VARIABLES`
-# * types: `TypeVariables`, and
-# * imports: `import foo`
+# * types: `TypeVariables`
+# * imports: `import foo`, and
+# * any code that starts with a comment `# do import`
 #
 # PLEASE NOTE: if you change this, also change the corresponding 
 # definition in utils/export_notebook_code.py
-RE_CODE = re.compile(r"^(def |class |@|[A-Z][A-Za-z0-9_]+ [-+*/]?= |[A-Z][A-Za-z0-9_]+[.:]|import |from )")
+RE_CODE = re.compile(r"^(def |class |@|[A-Z][A-Za-z0-9_]+ [-+*/]?= |[A-Z][A-Za-z0-9_]+[.:]|import |from |#\s*do import)")
 
 def do_import(code: str) -> bool:
     """Return True if code is to be exported"""
+    if RE_CODE.match(code) is not None:
+        return True
+
     while code.startswith('#') or code.startswith('\n'):
         # Skip leading comments
         code = code[code.find('\n') + 1:]
@@ -39,7 +44,10 @@ def do_import(code: str) -> bool:
 assert do_import("def foo():\n    pass")
 assert do_import("# ignore\ndef foo():\n    pass")
 assert do_import("# ignore\nclass Bar:\n    pass")
+assert do_import("# do import this\nfoo = bar")
 assert do_import("XYZ = 123")
+assert do_import("Timeout = A if f() else B")
+assert do_import("Zoo: Set[Animal] = {...}")
 assert not do_import("xyz = 123")
 assert not do_import("foo()")
 
@@ -127,10 +135,11 @@ class NotebookFinder(MetaPathFinder):
     def __init__(self) -> None:
         self.loaders: Dict[Any, Any] = {}
 
+    # Deprecated since Python 3.4
     def find_module(self, fullname: str, path: Any = None) -> Any:
         nb_path = find_notebook(fullname, path)
         if not nb_path:
-            return
+            return None
 
         key = path
         if path:
@@ -140,5 +149,13 @@ class NotebookFinder(MetaPathFinder):
         if key not in self.loaders:
             self.loaders[key] = NotebookLoader(path)
         return self.loaders[key]
+        
+    # New since Python 3.4
+    def find_spec(self, fullname: str, path: Any = None, target: Any = None) -> Any:
+        loader = self.find_module(fullname, path)
+        if not loader:
+            return None
+        
+        return ModuleSpec(fullname, loader)
 
 sys.meta_path.append(NotebookFinder())

@@ -12,6 +12,7 @@ with fuzzingbook adaptations -->
 <html>
 <head>
 <meta charset="utf-8" /><title>Fuzzingbook Release Notes - The Fuzzing Book</title>
+<link rel="me" href="https://mastodon.social/@TheFuzzingBook">
 
 <style type="text/css">
     /*!
@@ -11621,22 +11622,23 @@ td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5
 span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 .highlight .hll { background-color: #ffffcc }
 .highlight { background: #f8f8f8; }
-.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .c { color: #3D7B7B; font-style: italic } /* Comment */
 .highlight .err { border: 1px solid #FF0000 } /* Error */
 .highlight .k { color: #008000; font-weight: bold } /* Keyword */
 .highlight .o { color: #666666 } /* Operator */
-.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
-.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
-.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
-.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
-.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #9C6500 } /* Comment.Preproc */
+.highlight .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
 .highlight .gd { color: #A00000 } /* Generic.Deleted */
 .highlight .ge { font-style: italic } /* Generic.Emph */
-.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.highlight .gr { color: #E40000 } /* Generic.Error */
 .highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.highlight .gi { color: #00A000 } /* Generic.Inserted */
-.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gi { color: #008400 } /* Generic.Inserted */
+.highlight .go { color: #717171 } /* Generic.Output */
 .highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
 .highlight .gs { font-weight: bold } /* Generic.Strong */
 .highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
@@ -11649,15 +11651,15 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .kt { color: #B00040 } /* Keyword.Type */
 .highlight .m { color: #666666 } /* Literal.Number */
 .highlight .s { color: #BA2121 } /* Literal.String */
-.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .na { color: #687822 } /* Name.Attribute */
 .highlight .nb { color: #008000 } /* Name.Builtin */
 .highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
 .highlight .no { color: #880000 } /* Name.Constant */
 .highlight .nd { color: #AA22FF } /* Name.Decorator */
-.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
-.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .ni { color: #717171; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
 .highlight .nf { color: #0000FF } /* Name.Function */
-.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nl { color: #767600 } /* Name.Label */
 .highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
 .highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
 .highlight .nv { color: #19177C } /* Name.Variable */
@@ -11674,11 +11676,11 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
-.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
 .highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
-.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
 .highlight .sx { color: #008000 } /* Literal.String.Other */
-.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .sr { color: #A45A77 } /* Literal.String.Regex */
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
@@ -11795,10 +11797,13 @@ MathJax.Hub.Config({
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
+<meta name="theme-color" content="#bb0000" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#cc0000" media="(prefers-color-scheme: dark)">
+
 <meta property="og:url" content="https://www.fuzzingbook.org/html/ReleaseNotes.html" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Fuzzingbook Release Notes - The Fuzzing Book" />
-<meta property="og:description" content="This book comes with version numbers; these correspond to the version numbers in the Python pip package." />
+<meta property="og:description" content="This book and its code use numbered versioning. The version numbers correspond to the version numbers in the Python pip package." />
 <meta property="og:image" content="https://www.fuzzingbook.org/html/PICS/wordcloud.png" />
 
 <meta name="twitter:dnt" content="on">
@@ -11886,7 +11891,7 @@ MathJax.Hub.Config({
 <li><a href="GreyboxFuzzer.html">Greybox Fuzzing</a></li>
 <li><a href="SearchBasedFuzzer.html">Search-Based Fuzzing</a></li>
 <li><a href="MutationAnalysis.html">Mutation Analysis</a></li>
-</ul><li class="has-sub"><a href="03_Syntactical_Fuzzing.html" class="chapters"><span class="part_number">III</span> Syntactical Fuzzing <i class="fa fa-fw fa-caret-right"></i></a>
+</ul><li class="has-sub"><a href="03_Syntactical_Fuzzing.html" class="chapters"><span class="part_number">III</span> Syntactic Fuzzing <i class="fa fa-fw fa-caret-right"></i></a>
 <ul>
 <li><a href="Grammars.html">Fuzzing with Grammars</a></li>
 <li><a href="GrammarFuzzer.html">Efficient Grammar Fuzzing</a></li>
@@ -11896,8 +11901,9 @@ MathJax.Hub.Config({
 <li><a href="GeneratorGrammarFuzzer.html">Fuzzing with Generators</a></li>
 <li><a href="GreyboxGrammarFuzzer.html">Greybox Fuzzing with Grammars</a></li>
 <li><a href="Reducer.html">Reducing Failure-Inducing Inputs</a></li>
-</ul><li class="has-sub"><a href="04_Semantical_Fuzzing.html" class="chapters"><span class="part_number">IV</span> Semantical Fuzzing <i class="fa fa-fw fa-caret-right"></i></a>
+</ul><li class="has-sub"><a href="04_Semantical_Fuzzing.html" class="chapters"><span class="part_number">IV</span> Semantic Fuzzing <i class="fa fa-fw fa-caret-right"></i></a>
 <ul>
+<li><a href="FuzzingWithConstraints.html">Fuzzing with Constraints</a></li>
 <li><a href="GrammarMiner.html">Mining Input Grammars</a></li>
 <li><a href="InformationFlow.html">Tracking Information Flow</a></li>
 <li><a href="ConcolicFuzzer.html">Concolic Fuzzing</a></li>
@@ -11908,6 +11914,7 @@ MathJax.Hub.Config({
 <li><a href="ConfigurationFuzzer.html">Testing Configurations</a></li>
 <li><a href="APIFuzzer.html">Fuzzing APIs</a></li>
 <li><a href="Carver.html">Carving Unit Tests</a></li>
+<li><a href="PythonFuzzer.html">Testing Compilers <strong class="new_chapter">&bull;</strong></a></li>
 <li><a href="WebFuzzer.html">Testing Web Applications</a></li>
 <li><a href="GUIFuzzer.html">Testing Graphical User Interfaces</a></li>
 </ul><li class="has-sub"><a href="06_Managing_Fuzzing.html" class="chapters"><span class="part_number">VI</span> Managing Fuzzing <i class="fa fa-fw fa-caret-right"></i></a>
@@ -11916,9 +11923,11 @@ MathJax.Hub.Config({
 <li><a href="WhenToStopFuzzing.html">When To Stop Fuzzing</a></li>
 </ul><li class="has-sub"><a href="99_Appendices.html" class="chapters">Appendices <i class="fa fa-fw fa-caret-right"></i></a>
 <ul>
+<li><a href="AcademicPrototyping.html">Academic Prototyping</a></li>
 <li><a href="PrototypingWithPython.html">Prototyping with Python</a></li>
 <li><a href="ExpectError.html">Error Handling</a></li>
 <li><a href="Timer.html">Timer</a></li>
+<li><a href="Timeout.html">Timeout</a></li>
 <li><a href="ClassDiagram.html">Class Diagrams</a></li>
 <li><a href="RailroadDiagrams.html">Railroad Diagrams</a></li>
 <li><a href="ControlFlow.html">Control Flow Graph</a></li>
@@ -11927,7 +11936,18 @@ MathJax.Hub.Config({
         </ol>
      </li>
      <li class="has-sub"><a href="#"><span title="Fuzzingbook Release Notes"><i class="fa fa-fw fa-list-ul"></i></span> <span class="menu_2">Fuzzingbook Release Notes</span></a>
-           <ul><li class="has-sub"><a href="#Version-1.x-(in-progress)">&nbsp;&bull;&nbsp;&nbsp; Version 1.x (in progress)</a>
+           <ul><li class="has-sub"><a href="#Current-Version-(in-progress)">&nbsp;&bull;&nbsp;&nbsp; Current Version (in progress)</a>
+</li><li class="has-sub"><a href="#Version-1.2.2-(released-2024-11-10)">&nbsp;&bull;&nbsp;&nbsp; Version 1.2.2 (released 2024-11-10)</a>
+</li><li class="has-sub"><a href="#Version-1.2.1-(released-2023-11-13)">&nbsp;&bull;&nbsp;&nbsp; Version 1.2.1 (released 2023-11-13)</a>
+</li><li class="has-sub"><a href="#Version-1.2-(released-2023-10-23)">&nbsp;&bull;&nbsp;&nbsp; Version 1.2 (released 2023-10-23)</a>
+</li><li class="has-sub"><a href="#Version-1.1-(released-2022-05-18)">&nbsp;&bull;&nbsp;&nbsp; Version 1.1 (released 2022-05-18)</a>
+</li><li class="has-sub"><a href="#Version-1.0.7-(released-2022-01-25)">&nbsp;&bull;&nbsp;&nbsp; Version 1.0.7 (released 2022-01-25)</a>
+</li><li class="has-sub"><a href="#Version-1.0.6-(released-2022-01-18)">&nbsp;&bull;&nbsp;&nbsp; Version 1.0.6 (released 2022-01-18)</a>
+</li><li class="has-sub"><a href="#Version-1.0.5-(released-2022-01-10)">&nbsp;&bull;&nbsp;&nbsp; Version 1.0.5 (released 2022-01-10)</a>
+</li><li class="has-sub"><a href="#Version-1.0.4-(released-2022-01-04)">&nbsp;&bull;&nbsp;&nbsp; Version 1.0.4 (released 2022-01-04)</a>
+</li><li class="has-sub"><a href="#Version-1.0.3-(released-2021-12-14)">&nbsp;&bull;&nbsp;&nbsp; Version 1.0.3 (released 2021-12-14)</a>
+</li><li class="has-sub"><a href="#Version-1.0.2-(released-2021-12-08)">&nbsp;&bull;&nbsp;&nbsp; Version 1.0.2 (released 2021-12-08)</a>
+</li><li class="has-sub"><a href="#Version-1.0.1-(released-2021-11-23)">&nbsp;&bull;&nbsp;&nbsp; Version 1.0.1 (released 2021-11-23)</a>
 </li><li class="has-sub"><a href="#Version-1.0-(released-2021-11-04)">&nbsp;&bull;&nbsp;&nbsp; Version 1.0 (released 2021-11-04)</a>
 </li><li class="has-sub"><a href="#Version-0.9.5-(released-2021-06-08)">&nbsp;&bull;&nbsp;&nbsp; Version 0.9.5 (released 2021-06-08)</a>
 </li><li class="has-sub"><a href="#Version-0.9.0">&nbsp;&bull;&nbsp;&nbsp; Version 0.9.0</a>
@@ -11938,7 +11958,7 @@ MathJax.Hub.Config({
      
      <li class="has-sub"><a href="#"><span title="Resources"><i class="fa fa-fw fa-cube"></i> </span><span class="menu_3">Resources</span></a>
      <ul>
-     <li><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/master?filepath=docs/notebooks/ReleaseNotes.ipynb" target="_blank" class="edit_as_notebook"><i class="fa fa-fw fa-edit"></i> Edit as Notebook</a></li>
+     <li><a href="https://mybinder.org/v2/gh/uds-se/fuzzingbook/HEAD?labpath=docs%2Fnotebooks/ReleaseNotes.ipynb" target="_blank" class="edit_as_notebook"><i class="fa fa-fw fa-edit"></i> Edit as Notebook</a></li>
      <li><a href="https://www.fuzzingbook.org/slides/ReleaseNotes.slides.html" target="_blank"><i class="fa fa-fw fa-video-camera"></i> View Slides</a></li>
      <li><a href="https://www.fuzzingbook.org/code/ReleaseNotes.py"><i class="fa fa-fw fa-download"></i> Download Code (.py)</a></li>
      <li><a href="https://www.fuzzingbook.org/notebooks/ReleaseNotes.ipynb"><i class="fa fa-fw fa-download"></i> Download Notebook (.ipynb)</a></li>
@@ -11951,12 +11971,14 @@ MathJax.Hub.Config({
      
      <li class="has-sub"><a href="#"><span title="Share"><i class="fa fa-fw fa-comments"></i> </span> <span class="menu_4">Share</span></a>
         <ul>
+<!--
             <li><a href="https://twitter.com/intent/tweet?text=I%20just%20read%20%22Fuzzingbook%20Release%20Notes%22%20(part%20of%20@FuzzingBook)%20at%20https%3a%2f%2fwww.fuzzingbook.org%2fhtml%2fReleaseNotes.html" target="popup" 
 onclick="window.open('https://twitter.com/intent/tweet?text=I%20just%20read%20%22Fuzzingbook%20Release%20Notes%22%20(part%20of%20@FuzzingBook)%20at%20https%3a%2f%2fwww.fuzzingbook.org%2fhtml%2fReleaseNotes.html','popup','width=600,height=600'); return false;"
-><i class="fa fa-fw fa-twitter"></i> Share on Twitter</a>
+><i class="fa fa-fw fa-twitter"></i> Share on X</a>
             <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.fuzzingbook.org%2fhtml%2fReleaseNotes.html" target="popup" 
 onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.fuzzingbook.org%2fhtml%2fReleaseNotes.html','popup','width=600,height=600'); return false;"
 ><i class="fa fa-fw fa-facebook"></i> Share on Facebook</a>
+-->
             <li><a href="mailto:?subject=Fuzzingbook%20Release%20Notes&body=I%20just%20read%20%22Fuzzingbook%20Release%20Notes%22%20(part%20of%20@FuzzingBook)%20at%20https%3a%2f%2fwww.fuzzingbook.org%2fhtml%2fReleaseNotes.html"><i class="fa fa-fw fa-envelope"></i> Share by Email</a>
             <li><a href="#citation" id="cite" onclick="revealCitation()"><i class="fa fa-fw fa-mortar-board"></i> Cite</a>
         </ul>
@@ -11980,7 +12002,15 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><h1 id="Fuzzingbook-Release-Notes">Fuzzingbook Release Notes<a class="anchor-link" href="#Fuzzingbook-Release-Notes">&#182;</a></h1><p>This book comes with version numbers; these correspond to the version numbers in <a href="Importing.html">the Python pip package</a>.</p>
+<div class="text_cell_render border-box-sizing rendered_html"><h1 id="Fuzzingbook-Release-Notes">Fuzzingbook Release Notes<a class="anchor-link" href="#Fuzzingbook-Release-Notes">&#182;</a></h1></div>
+</div>
+</div>
+</div>
+
+<div class="input_markdown">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html"><p>This book and its code use numbered versioning. The version numbers correspond to the version numbers in <a href="Importing.html">the Python pip package</a>.</p>
 </div>
 </div>
 </div>
@@ -11989,9 +12019,186 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="input_markdown">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html"><h2 id="Version-1.x-(in-progress)">Version 1.x (in progress)<a class="anchor-link" href="#Version-1.x-(in-progress)">&#182;</a></h2><ul>
-<li>We are adding more material (videos, quizzes) to the book.</li>
-<li>The code stays largely unchanged.</li>
+<div class="text_cell_render border-box-sizing rendered_html"><h2 id="Current-Version-(in-progress)">Current Version (in progress)<a class="anchor-link" href="#Current-Version-(in-progress)">&#182;</a></h2><p>This is the version we are preparing for the next release (e.g. what you get when you check out the latest version from <a href="https://github.com/uds-se/fuzzingbook/">the GitHub repo</a>).
+Major changes will show up here as we make them.</p>
+<ul>
+<li>Updates to <code>requirements.txt</code>, using the latest and greatest third-party modules</li>
+<li>Python 3.9 is no longer supported.</li>
+<li>In notebooks under Python 3.12, automatic garbage collection would cause a method <code>_clean_thread_parent_frames()</code> to be executed with certain functions, interfering with tracing and dynamic analysis. This is now disabled.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div class="input_markdown">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html"><h2 id="Version-1.2.2-(released-2024-11-10)">Version 1.2.2 (released 2024-11-10)<a class="anchor-link" href="#Version-1.2.2-(released-2024-11-10)">&#182;</a></h2><ul>
+<li>Adapted the code to work with Python 3.13:<ul>
+<li>Work around an error in the <code>showast</code> module</li>
+<li>Extended the <a href="PythonFuzzer.html">chapter on Compiler Testing</a> to work with Python 3.13 and later</li>
+<li>Added automatic Python 3.13 tests into our workflow</li>
+</ul>
+</li>
+<li>Fix: Outputting code coverage using the <code>Coverage</code> class would prefix <em>covered</em> code with <code>#</code>, rather than <em>uncovered</em> code as should be. This has been fixed.</li>
+<li>Lots of additional typos fixed, <a href="https://github.com/uds-se/fuzzingbook/pull/181">thanks to Sergey Bronnikov</a>.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div class="input_markdown">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html"><h2 id="Version-1.2.1-(released-2023-11-13)">Version 1.2.1 (released 2023-11-13)<a class="anchor-link" href="#Version-1.2.1-(released-2023-11-13)">&#182;</a></h2><ul>
+<li>Importing book classes from third-party code would accidentally set a fixed random seed, making all further random decisions deterministic (i.e. produce the same result every time). This is now fixed.</li>
+<li>Minor updates to Python package requirements.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div class="input_markdown">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html"><h2 id="Version-1.2-(released-2023-10-23)">Version 1.2 (released 2023-10-23)<a class="anchor-link" href="#Version-1.2-(released-2023-10-23)">&#182;</a></h2><ul>
+<li>For announcements, we now use Mastodon (<a href="https://mastodon.social/@TheFuzzingBook">@TheFuzzingBook@mastodon.social</a>) instead of X. <a href="https://mastodon.social/@TheFuzzingBook">Follow us on Mastodon</a>!</li>
+<li>We have a <a href="FuzzingWithConstraints.html">new chapter on Fuzzing with Constraints</a> in which we introduce the ISLa constraint language / fuzzer / parser.</li>
+<li>We have a <a href="PythonFuzzer.html">new chapter on Compiler Testing</a> in which we use grammars to generate, parse, and evolve Python code.</li>
+<li><p>We now regularly test our code on various Python versions.</p>
+<ul>
+<li>Python 3.12: all chapters work, except for <a href="SymbolicFuzzer.html">Symbolic Fuzzing</a>.</li>
+<li>Python 3.11: all chapters work.</li>
+<li>Python 3.10: all chapters work.</li>
+<li>Python 3.9: all chapters work, except for the two new chapters listed above. (ISLa needs 3.10 or later.)</li>
+</ul>
+<p>For development, we recommend Python 3.10 or 3.11.</p>
+</li>
+<li>We fixed several typos throughout the book, using the awesome <a href="https://github.com/valentjn/vscode-ltex">LTeX</a> grammar/spell checker</li>
+<li><code>ProbabilisticGrammarMiner</code> now properly handles empty expansions (<a href="https://github.com/uds-se/fuzzingbook/pull/154">Issue #154</a>) - thanks to <a href="https://github.com/martineberlein">Martin Eberlein</a>!</li>
+<li>The <a href="Fuzzer.html">chapter on Fuzzing</a> now has a more detailed computation of the probability of deleting your home directory. Thanks to <a href="https://github.com/mhamami-abuomar">mhamami-abuomar</a>!</li>
+<li>We no longer support <code>fuzzingbook</code> DockerHub images.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div class="input_markdown">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html"><h2 id="Version-1.1-(released-2022-05-18)">Version 1.1 (released 2022-05-18)<a class="anchor-link" href="#Version-1.1-(released-2022-05-18)">&#182;</a></h2><p>Changes since 1.0:</p>
+<ul>
+<li>The book has lots of new material (videos, quizzes).</li>
+<li>The code now has static type annotations (and is type checked).</li>
+<li>Requirements and install procedures have been reworked.</li>
+<li>Apart from code fixes, code semantics stays unchanged.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div class="input_markdown">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html"><p>Changes and fixes since 1.0.7:</p>
+<ul>
+<li>All videos are re-cut – thanks to Aman Roy!</li>
+<li><code>Fuzzer.runs()</code> now returns a list <em>comprehension</em> instead of a list (Issue <a href="https://github.com/uds-se/fuzzingbook/pull/106">#106</a>)</li>
+<li>Code using <code>selenium</code> has been updated to the latest version.</li>
+<li>Fixed a problem in <code>FasterGrammarFuzzer</code> (Issue <a href="https://github.com/uds-se/fuzzingbook/pull/130">#130</a>) - thanks to <a href="https://github.com/CuriousGeorgiy">CuriousGeorgiy</a>!</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div class="input_markdown">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html"><h2 id="Version-1.0.7-(released-2022-01-25)">Version 1.0.7 (released 2022-01-25)<a class="anchor-link" href="#Version-1.0.7-(released-2022-01-25)">&#182;</a></h2><ul>
+<li>The <code>WebFuzzer</code> constructor now allows using a subclass of <code>HTMLGrammarMiner</code>.</li>
+<li>The <code>GUIFuzzer</code> constructor now allows using a subclass of <code>GUIGrammarMiner</code>.</li>
+<li>Class diagrams are now simplified, as we skip non-public methods defined in other chapters.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div class="input_markdown">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html"><h2 id="Version-1.0.6-(released-2022-01-18)">Version 1.0.6 (released 2022-01-18)<a class="anchor-link" href="#Version-1.0.6-(released-2022-01-18)">&#182;</a></h2><ul>
+<li>Fixed a major performance bug in grammar fuzzing (Issue <a href="https://github.com/uds-se/fuzzingbook/pull/117">#117</a>)</li>
+<li>We now work with recent versions of <code>z3-solver</code> (Issue <a href="https://github.com/uds-se/fuzzingbook/issues/115">#115</a>)</li>
+<li>In the <a href="ConfigurationFuzzer.html">chapter on configuration fuzzing</a>, the <code>OptionGrammarMiner</code> will now capture args from external Python scripts that are protected by <code>if __name__ == '__main__'</code></li>
+<li>Various minor fixes and documentation improvements</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div class="input_markdown">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html"><h2 id="Version-1.0.5-(released-2022-01-10)">Version 1.0.5 (released 2022-01-10)<a class="anchor-link" href="#Version-1.0.5-(released-2022-01-10)">&#182;</a></h2><ul>
+<li>This release increases compatibility with various Z3 versions for <a href="ConcolicFuzzer.html">concolic fuzzing</a>.</li>
+<li>In the <a href="SymbolicFuzzer.html">chapter on symbolic fuzzing</a>, the <code>AdvancedSymbolicFuzzer</code> is now named <code>SymbolicFuzzer</code> plain and simple. (<code>AdvancedSymbolicFuzzer</code> still works as an alias).</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div class="input_markdown">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html"><h2 id="Version-1.0.4-(released-2022-01-04)">Version 1.0.4 (released 2022-01-04)<a class="anchor-link" href="#Version-1.0.4-(released-2022-01-04)">&#182;</a></h2><p>Happy new year!</p>
+<ul>
+<li>This release fixes some bugs in the <a href="ConcolicFuzzer.html">chapter on concolic fuzzing</a>, notably in the <code>ConcolicTracer.zeval()</code> method.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div class="input_markdown">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html"><h2 id="Version-1.0.3-(released-2021-12-14)">Version 1.0.3 (released 2021-12-14)<a class="anchor-link" href="#Version-1.0.3-(released-2021-12-14)">&#182;</a></h2><ul>
+<li>On Unix, the <a href="ExpectError.html"><code>ExpectTimeout</code></a> class is now much more performant</li>
+<li>The chapter on <a href="GreyboxGrammarFuzzer.html">greybox fuzzing with grammars</a> should now run on Windows, too</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div class="input_markdown">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html"><h2 id="Version-1.0.2-(released-2021-12-08)">Version 1.0.2 (released 2021-12-08)<a class="anchor-link" href="#Version-1.0.2-(released-2021-12-08)">&#182;</a></h2><ul>
+<li>Minor fixes in the <code>AFLGoSchedule</code> and <code>AFLFastSchedule</code> classes in the <a href="GreyboxFuzzer.html">chapter on greybox fuzzing</a>.</li>
+<li>Minor fixes across the board.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div class="input_markdown">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html"><h2 id="Version-1.0.1-(released-2021-11-23)">Version 1.0.1 (released 2021-11-23)<a class="anchor-link" href="#Version-1.0.1-(released-2021-11-23)">&#182;</a></h2><ul>
+<li>The code now passes <code>mypy</code> static type checks.</li>
+<li>The <code>Coverage</code> class now supports <code>function_names()</code> and <code>__repr__()</code> methods. Its <code>__exit__()</code> method is no longer included in coverage.</li>
+<li>Minor fixes across the board.</li>
 </ul>
 </div>
 </div>
@@ -12003,7 +12210,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html"><h2 id="Version-1.0-(released-2021-11-04)">Version 1.0 (released 2021-11-04)<a class="anchor-link" href="#Version-1.0-(released-2021-11-04)">&#182;</a></h2><ul>
 <li>We now support (but also require) <strong>Python 3.9 or later</strong>. Earlier versions still required Python 3.6 due to some outdated modules such as <code>astor</code> and <code>enforce</code> we depended upon (and now don't anymore).</li>
-<li>We added missing dependencies to the <code>fuzzingbook</code> pip package (Issue <a href="https://github.com/uds-se/debuggingbook/issues/44">#44</a> in <code>debuggingbook</code>) such that <code>pip install fuzzingbook</code> also installs all the packages it depends upon. Thanks to @TheSilvus for reporting this!</li>
+<li>We added missing dependencies to the <code>fuzzingbook</code> pip package (<a href="https://github.com/uds-se/debuggingbook/issues/44">Issue #44</a> in <code>debuggingbook</code>) such that <code>pip install fuzzingbook</code> also installs all the packages it depends upon. Thanks to @TheSilvus for reporting this!</li>
 <li>We fixed a warning '.gitignore is a symbolic link' during git checkout (<a href="https://github.com/uds-se/debuggingbook/issues/43">Issue #43</a>) Thanks to @rjc for reporting this!</li>
 <li>We identified some chapters that were using <code>numpy.random</code> rather than Python <code>random</code>, resulting in, well, random results every time we'd build the book. This is now fixed, and more consistent.</li>
 <li>Under the hood, we have adopted several more improvements from our sister project <a href="https://www.debuggingbook.org">"The Debugging Book"</a>. Notably, the build process is much streamlined, and we run <a href="https://github.com/uds-se/fuzzingbook/actions">continuous integration tests</a> to ensure quality of changes and pull requests.</li>
@@ -12103,7 +12310,7 @@ onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2
 The content of this project is licensed under the
 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target=_blank>Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 The source code that is part of the content, as well as the source code used to format and display that content is licensed under the <a href="https://github.com/uds-se/fuzzingbook/blob/master/LICENSE.md#mit-license">MIT License</a>.
-<a href="https://github.com/uds-se/fuzzingbook/commits/master/notebooks/ReleaseNotes.ipynb" target=_blank)>Last change: 2021-11-04 12:53:41+01:00</a> &bull; 
+<a href="https://github.com/uds-se/fuzzingbook/commits/master/notebooks/ReleaseNotes.ipynb" target=_blank)>Last change: 2025-01-22 09:23:35+01:00</a> &bull; 
 <a href="#citation" id="cite" onclick="revealCitation()">Cite</a> &bull;
 <a href="https://cispa.de/en/impressum" target=_blank>Imprint</a>
 </p>
@@ -12119,19 +12326,19 @@ function revealCitation() {
 <a name="citation"></a>
 <h2>How to Cite this Work</h2>
 <p>
-Andreas Zeller, Rahul Gopinath, Marcel Böhme, Gordon Fraser, and Christian Holler: "<a href="https://www.fuzzingbook.org/html/ReleaseNotes.html">Fuzzingbook Release Notes</a>".  In Andreas Zeller, Rahul Gopinath, Marcel Böhme, Gordon Fraser, and Christian Holler, "<a href="https://www.fuzzingbook.org/">The Fuzzing Book</a>", <a href="https://www.fuzzingbook.org/html/ReleaseNotes.html">https://www.fuzzingbook.org/html/ReleaseNotes.html</a>.  Retrieved 2021-11-04 12:53:41+01:00.
+Andreas Zeller, Rahul Gopinath, Marcel Böhme, Gordon Fraser, and Christian Holler: "<a href="https://www.fuzzingbook.org/html/ReleaseNotes.html">Fuzzingbook Release Notes</a>".  In Andreas Zeller, Rahul Gopinath, Marcel Böhme, Gordon Fraser, and Christian Holler, "<a href="https://www.fuzzingbook.org/">The Fuzzing Book</a>", <a href="https://www.fuzzingbook.org/html/ReleaseNotes.html">https://www.fuzzingbook.org/html/ReleaseNotes.html</a>.  Retrieved 2025-01-22 09:23:35+01:00.
 </p>
 <pre>
-@incollection{fuzzingbook2021:ReleaseNotes,
+@incollection{fuzzingbook2025:ReleaseNotes,
     author = {Andreas Zeller and Rahul Gopinath and Marcel B{\"o}hme and Gordon Fraser and Christian Holler},
     booktitle = {The Fuzzing Book},
     title = {Fuzzingbook Release Notes},
-    year = {2021},
+    year = {2025},
     publisher = {CISPA Helmholtz Center for Information Security},
     howpublished = {\url{https://www.fuzzingbook.org/html/ReleaseNotes.html}},
-    note = {Retrieved 2021-11-04 12:53:41+01:00},
+    note = {Retrieved 2025-01-22 09:23:35+01:00},
     url = {https://www.fuzzingbook.org/html/ReleaseNotes.html},
-    urldate = {2021-11-04 12:53:41+01:00}
+    urldate = {2025-01-22 09:23:35+01:00}
 }
 </pre>
 </div>

@@ -40,6 +40,12 @@ def convert(svg_filename, png_filename):
 
     else:
         raise ValueError("Please install Inkscape (preferred) or ImageMagick")
+        
+
+def sanitize_svg(svg):
+    # Don't include (unique) object addresses in SVG
+    # they are not rendered anyway
+    return re.sub(r" at 0x[0-9a-f]*", "", svg)
 
 
 def notebook_synopsis(notebook_name):
@@ -83,7 +89,10 @@ and then make use of the following features.
                 elif cell.source.startswith("# docassert"):
                     pass
                 else:
-                    synopsis += "```python\n>>> " + cell.source.replace('\n', '\n>>> ') + "\n```\n"
+                    cmd = '>>> ' + cell.source.replace('\n', '\n>>> ')
+                    synopsis += "```python\n" + cmd + "\n```\n"
+                    # print(cmd)
+
                 output_text = ''
                 for output in cell.outputs:
                     text = None
@@ -108,7 +117,7 @@ and then make use of the following features.
                                 
                             print("Creating", svg_filename)
                             with open(svg_filename, "w") as f:
-                                f.write(svg)
+                                f.write(sanitize_svg(svg))
                             print("Creating", png_filename)
                             
                             convert(svg_filename, png_filename)
@@ -126,7 +135,7 @@ and then make use of the following features.
                     # PNG output
                     if (text is None and hasattr(output, 'data') and
                         'image/png' in output.data):
-                        png = output.data['image/png']
+                        png = output.data['image/png'].strip()
                         if png is not None:
                             png_basename = (notebook_basename +
                                 '-synopsis-' + repr(img_count) + '.png')
@@ -195,7 +204,7 @@ def update_synopsis(notebook_name, synopsis):
         notebook = nbformat.read(f, 4)
     
     for i, cell in enumerate(notebook.cells):
-        if cell.source.startswith("## Synopsis"):
+        if cell.source.startswith(SYNOPSIS_TITLE):
             # Update cell
             if cell.source == synopsis:
                 return
@@ -212,6 +221,84 @@ def update_synopsis(notebook_name, synopsis):
             
     # print(nbformat.writes(notebook))
     
+    # Convert notebook to 4.5
+    notebook = nbformat.convert(notebook, 4)
+    
+    if 'normalize' in dir(nbformat):
+        # Normalize notebook - only in recent nbformat versions
+        notebook = nbformat.normalize(notebook, 4)
+
+    # Write notebook out again
+    with io.open(notebook_path, 'w', encoding='utf-8') as f:
+        f.write(nbformat.writes(notebook))
+        
+    print("Updated " + notebook_path)
+
+
+def move_synopsis(notebook_name):
+    notebook_path = notebook_name
+    notebook_noext = os.path.splitext(notebook_path)[0]
+    notebook_basename = os.path.basename(notebook_noext)
+
+    # Read notebook
+    with io.open(notebook_path, 'r', encoding='utf-8') as f:
+        notebook = nbformat.read(f, 4)
+
+    # Split notebook cells
+    cells = []  # Non-synopsis cells
+    synopsis_cells = []  # Cells of the (last) synopsis
+
+    in_synopsis = False
+    for cell in notebook.cells:
+        if cell.source.startswith(SYNOPSIS_TITLE):
+            in_synopsis = True
+            synopsis_cells = []
+        elif cell.source.startswith("## "):
+            in_synopsis = False
+        
+        if in_synopsis:
+            synopsis_cells.append(cell)
+        else:
+            cells.append(cell)
+            
+    print(f"{notebook_basename}: Found {len(synopsis_cells)} synopsis cells and {len(cells)} other cells")
+
+    if len(synopsis_cells) == 0:
+        # No synopsis
+        return
+
+    # Add synopsis text
+    synopsis_first_cell_text = SYNOPSIS_TITLE + f"""
+To [use the code provided in this chapter](Importing.ipynb), write
+
+```python
+>>> from {args.project}.{notebook_basename} import <identifier>
+```
+
+and then make use of the following features.
+
+**Note**: The examples in this section only work after the rest of the cells have been executed.
+"""
+    synopsis_cells[0].source = synopsis_first_cell_text
+
+    # Insert synopsis back again before first heading
+    new_cells = []
+    inserted_synopsis = False
+    for cell in cells:
+        if cell.source.startswith("## ") and not inserted_synopsis:
+            new_cells += synopsis_cells
+            inserted_synopsis = True
+        new_cells.append(cell)
+        
+    notebook.cells = new_cells
+        
+    # Convert notebook to 4.5
+    notebook = nbformat.convert(notebook, 4)
+    
+    if 'normalize' in dir(nbformat):
+        # Normalize notebook - only in recent nbformat versions
+        notebook = nbformat.normalize(notebook, 4)
+
     # Write notebook out again
     with io.open(notebook_path, 'w', encoding='utf-8') as f:
         f.write(nbformat.writes(notebook))
@@ -221,12 +308,16 @@ def update_synopsis(notebook_name, synopsis):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--project", help="project name", default="fuzzingbook")
-    parser.add_argument("--update", action='store_true', 
-                        help="Update synopsis section")
+    parser.add_argument("--update", action='store_true', help="Update synopsis section")
+    parser.add_argument("--move", action='store_true', help="Move synopsis section upfront, without rendering")
     parser.add_argument("notebooks", nargs='*', help="notebooks to extract/update synopsis for")
     args = parser.parse_args()
 
     for notebook in args.notebooks:
+        if args.move:
+            move_synopsis(notebook)
+            continue
+
         synopsis = notebook_synopsis(notebook)
         if not synopsis:
             continue
